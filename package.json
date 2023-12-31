@@ -1,0 +1,21 @@
+{
+  "name": "utima-ui",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jan Šimeček",
+  "license": "MIT",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@utima/eslint-config": "^0.10.0",
+    "eslint": "^8.56.0",
+    "turbo": "^1.11.2",
+    "typescript": "^5.3.3"
+  }
+}
