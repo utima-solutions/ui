@@ -11,12 +11,6 @@
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
   },
   "include": [
     "src"
