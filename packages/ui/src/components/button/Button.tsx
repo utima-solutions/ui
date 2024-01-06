@@ -35,7 +35,7 @@ const styles = stylex.create({
 
 const variants = stylex.create({
   default: {
-    backgroundColor: 'gray',
+    backgroundColor: primary.default,
     color: 'white',
     ':hover': {
       backgroundColor: 'darkgray',

@@ -1,6 +1,7 @@
 import * as stylex from '@stylexjs/stylex';
 
 export const primary = stylex.defineVars({
+  default: 'gray',
   '50': '#f0fdfa',
   '100': '#ccfbf1',
   '200': '#99f6e4',

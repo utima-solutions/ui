@@ -10,6 +10,18 @@
     "dev": "tsc -w",
     "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'"
   },
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js",
+      "types": "./dist/src/index.js.d.ts"
+    },
+    "./tokens/*": {
+      "import": "./dist/src/tokens/*.js",
+      "default": "./dist/src/tokens/*.js",
+      "types": "./dist/src/tokens/*.d.ts"
+    }
+  },
   "keywords": [
     "utima",
     "ui",
