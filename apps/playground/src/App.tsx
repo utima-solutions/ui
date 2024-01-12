@@ -1,7 +1,7 @@
 import './app.css';
 
 import * as stylex from '@stylexjs/stylex';
-import { Box, Button } from '@utima/ui';
+import { Box, TestButton } from '@utima/ui';
 import { primary } from '@utima/ui/tokens/colors.stylex';
 
 const styles = stylex.create({
@@ -33,14 +33,14 @@ function App() {
   return (
     <div {...stylex.props([theme])}>
       <Box items='center' direction='col'>
-        <Button>Default button</Button>
-        <Button variant='muted'>Muted button</Button>
-        <Button variant='outline'>Outline button</Button>
-        <Button variant='outline' style={styles.override}>
-          Outline override
-        </Button>
-        <Button variant='secondary'>Secondary button</Button>
-        <Button variant='primary'>Primary button</Button>
+        <TestButton>Test button</TestButton>
+        <TestButton variant='secondary' size='sm'>
+          Test button
+        </TestButton>
+        <TestButton variant='destructive'>Test button</TestButton>
+        <TestButton variant='destructive' size='lg'>
+          Test button
+        </TestButton>
       </Box>
     </div>
   );
