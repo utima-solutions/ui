@@ -1,28 +1,22 @@
 import './app.css';
-
 import * as stylex from '@stylexjs/stylex';
-import { Button, Flex } from '@utima/ui';
-import { colors, theme } from '@utima/ui/tokens/colors.stylex';
 
-const customTheme = stylex.createTheme(colors, {
-  ...theme,
+import { StylexTest } from './StylexTest';
+import { Title } from './Title';
+
+const styles = stylex.create({
+  container: {
+    padding: '16px',
+  },
 });
 
 function App() {
   return (
-    <div {...stylex.props([customTheme])}>
-      <Flex gap={12} items='center' justify='start' wrap='wrap'>
-        <Button>Test button</Button>
-        <Flex gap={24} items='center' justify='start'>
-          <Button variant='secondary' size='sm'>
-            Test button
-          </Button>
-          <Button variant='destructive'>Test button</Button>
-        </Flex>
-        <Button variant='destructive' size='lg'>
-          Test button
-        </Button>
-      </Flex>
+    <div {...stylex.props(styles.container)}>
+      <Title>StyleX</Title>
+      <StylexTest />
+      <Title>TailwindCSS</Title>
+      <StylexTest />
     </div>
   );
 }

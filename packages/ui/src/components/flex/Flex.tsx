@@ -10,6 +10,7 @@ export type FlexProps = {
   reverse?: boolean;
   gap?: number;
   children?: React.ReactNode;
+  style?: stylex.StyleXStyles;
 };
 
 export function Flex({
@@ -21,6 +22,7 @@ export function Flex({
   verticalReverse,
   reverse,
   gap = 0,
+  style,
   ...restProps
 }: FlexProps) {
   return (
@@ -36,6 +38,7 @@ export function Flex({
         items && itemsStyles[items],
         flex && flexStyles[flex],
         styles.gap(gap),
+        style,
       )}
     />
   );

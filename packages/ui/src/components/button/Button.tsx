@@ -2,10 +2,11 @@ import { Slot } from '@radix-ui/react-slot';
 import * as stylex from '@stylexjs/stylex';
 import { forwardRef, ComponentProps } from 'react';
 
-import { colors } from '../../tokens/colors.stylex';
+import { buttonTokens } from '../../tokens/button.stylex';
 
 export type ButtonProps = Omit<ComponentProps<'button'>, 'style'> & {
   asChild?: boolean;
+  outline?: boolean;
   variant?: keyof typeof variants;
   size?: keyof typeof sizes;
   style?: stylex.StyleXStyles;
@@ -13,7 +14,14 @@ export type ButtonProps = Omit<ComponentProps<'button'>, 'style'> & {
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   function Button(
-    { size = 'default', variant = 'default', asChild, style, ...restProps },
+    {
+      size = 'default',
+      variant = 'primary',
+      outline,
+      asChild,
+      style,
+      ...restProps
+    },
     ref,
   ) {
     const Comp = asChild ? Slot : 'button';
@@ -21,8 +29,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Comp
         ref={ref as any}
-        {...stylex.props(styles.base, variants[variant], sizes[size], style)}
         {...restProps}
+        {...stylex.props(
+          styles.base,
+          variants[variant],
+          outline && outlineVariants[variant],
+          sizes[size],
+          style,
+        )}
       />
     );
   },
@@ -30,14 +44,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
 const styles = stylex.create({
   base: {
-    border: 'none',
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: '0.375rem',
-    fontSize: '0.875rem',
-    lineHeight: '1.25rem',
-    fontWeight: 500,
+    borderRadius: buttonTokens.borderRadius,
+    border: `${buttonTokens.borderWidth} solid ${buttonTokens.borderColor}`,
+    fontWeight: buttonTokens.fontWeight,
+    fontSize: buttonTokens.fontSize,
+    lineHeight: buttonTokens.lineHeight,
     whiteSpace: 'nowrap',
     transitionProperty:
       'color, background-color, border-color, text-decoration-color, fill, stroke',
@@ -48,25 +62,62 @@ const styles = stylex.create({
 });
 
 const variants = stylex.create({
-  default: {
-    boxShadow:
-      '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
-    color: '#ffffff',
-    backgroundColor: 'rgb(24, 24, 27)',
-    ':hover': { backgroundColor: 'rgba(24, 24, 27,0.9)' },
-    ':active': { backgroundColor: 'rgba(24, 24, 27,0.8)' },
-  },
-  destructive: {
-    color: '#ffffff',
-    backgroundColor: colors['button.primaryBg'],
-    ':hover': { backgroundColor: 'rgba(239, 68, 68,0.9)' },
-    ':active': { backgroundColor: 'rgba(239, 68, 68,0.8)' },
+  primary: {
+    color: buttonTokens.primaryColor,
+    background: buttonTokens.primaryBg,
+    ':hover': {
+      color: buttonTokens.primaryHoverColor,
+      background: buttonTokens.primaryHoverBg,
+    },
+    ':active': {
+      color: buttonTokens.primaryActiveColor,
+      background: buttonTokens.primaryActiveBg,
+    },
   },
   secondary: {
-    backgroundColor: colors.secondary500,
-    color: 'rgb(24, 24, 27)',
-    ':hover': { backgroundColor: 'rgba(244, 244, 245,0.9)' },
-    ':active': { backgroundColor: 'rgba(244, 244, 245,0.8)' },
+    color: buttonTokens.secondaryColor,
+    background: buttonTokens.secondaryBg,
+    ':hover': {
+      color: buttonTokens.secondaryHoverColor,
+      background: buttonTokens.secondaryHoverBg,
+    },
+    ':active': {
+      color: buttonTokens.secondaryActiveColor,
+      background: buttonTokens.secondaryActiveBg,
+    },
+  },
+});
+
+const outlineVariants = stylex.create({
+  primary: {
+    color: buttonTokens.primaryBg,
+    borderColor: buttonTokens.primaryBg,
+    background: 'transparent',
+    ':hover': {
+      color: buttonTokens.primaryHoverBg,
+      borderColor: buttonTokens.primaryHoverBg,
+      background: 'transparent',
+    },
+    ':active': {
+      color: buttonTokens.primaryActiveBg,
+      borderColor: buttonTokens.primaryActiveBg,
+      background: 'transparent',
+    },
+  },
+  secondary: {
+    color: buttonTokens.secondaryBg,
+    borderColor: buttonTokens.secondaryBg,
+    background: 'transparent',
+    ':hover': {
+      color: buttonTokens.secondaryHoverBg,
+      borderColor: buttonTokens.secondaryHoverBg,
+      background: 'transparent',
+    },
+    ':active': {
+      color: buttonTokens.secondaryActiveBg,
+      borderColor: buttonTokens.secondaryActiveBg,
+      background: 'transparent',
+    },
   },
 });
 
