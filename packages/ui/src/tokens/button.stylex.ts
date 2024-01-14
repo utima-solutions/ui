@@ -1,5 +1,10 @@
 import * as stylex from '@stylexjs/stylex';
 
+export const globals = {
+  primaryColor: '#2563EB',
+  secondaryColor: '#6B7280',
+};
+
 export const buttonTheme = {
   fontWeight: '500',
   fontSize: '0.875rem',
@@ -9,7 +14,7 @@ export const buttonTheme = {
   borderColor: 'transparent',
 
   // Primary variant
-  primaryBg: '#2563EB',
+  primaryBg: globals.primaryColor,
   primaryColor: '#FFFFFF',
   primaryHoverBg: '#1D4ED8',
   primaryHoverColor: '#FFFFFF',
@@ -17,7 +22,7 @@ export const buttonTheme = {
   primaryActiveColor: '#FFFFFF',
 
   // Secondary variant
-  secondaryBg: '#6B7280',
+  secondaryBg: globals.secondaryColor,
   secondaryColor: '#FFFFFF',
   secondaryHoverBg: '#4B5563',
   secondaryHoverColor: '#FFFFFF',
