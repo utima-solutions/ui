@@ -1,4 +1,3 @@
-import './app.css';
 import * as stylex from '@stylexjs/stylex';
 import { Button } from '@utima/ui';
 import { buttonTokens, buttonTheme } from '@utima/ui/tokens/button.stylex';
