@@ -1,3 +1,4 @@
 export * from './components/button/Button';
 export * from './components/flex/Flex';
 export * from './components/button/TailwindButton';
+export * from './components/button/EmotionButton';

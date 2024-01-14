@@ -50,3 +50,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.tailwind-override {
+  --primary: #cc0000;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #cc0;
+  --secondary-foreground: #FFFFFF;
+}

@@ -20,11 +20,11 @@ export function TailwindTest() {
         </TailwindButton>
       </Wrapper>
       <Wrapper>
-        <TailwindButton outline variant='primary'>
+        <TailwindButton className='p-6 bg-emerald-500 hover:bg-emerald-400 active:bg-emerald-700 rounded-full' outline variant='primary'>
           Custom styles override
         </TailwindButton>
       </Wrapper>
-      <div>
+      <div className='tailwind-override'>
         <Wrapper>
           <TailwindButton variant='primary'>Theme Override Primary button</TailwindButton>
           <TailwindButton variant='secondary' size='sm'>
