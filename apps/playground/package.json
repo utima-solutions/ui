@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@stylexjs/stylex": "^0.3.0",
     "@utima/ui": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,7 +20,6 @@
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8",
-    "vite-plugin-stylex": "^0.4.1"
+    "vite": "^5.0.8"
   }
 }

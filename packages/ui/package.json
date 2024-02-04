@@ -1,7 +1,7 @@
 {
   "name": "@utima/ui",
   "version": "0.0.1",
-  "description": "Utima UI based on styleX",
+  "description": "Utima UI based on shadcn's UI and Radix Primitives with some modifications.",
   "type": "module",
   "types": "./dist/src/index.d.ts",
   "main": "./dist/src/index.js",
@@ -25,7 +25,6 @@
   "keywords": [
     "utima",
     "ui",
-    "stylex",
     "react",
     "css",
     "css-in-js",
@@ -40,12 +39,8 @@
     "@types/react": "^18.2.46",
     "react": "^18.2.0"
   },
-  "dependencies": {
-    "@stylexjs/stylex": "^0.3.0"
-  },
   "peerDependencies": {
     "react": ">=18",
-    "react-dom": ">=18",
-    "@stylexjs/stylex": "0.3"
+    "react-dom": ">=18"
   }
 }
