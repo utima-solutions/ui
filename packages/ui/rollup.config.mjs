@@ -1,3 +1,4 @@
+import { nodeExternals } from 'rollup-plugin-node-externals';
 import typescript from 'rollup-plugin-typescript2';
 
 /**
@@ -7,6 +8,7 @@ export default [
   {
     input: `src/index.ts`,
     plugins: [
+      nodeExternals(),
       typescript({
         rollupCommonJSResolveHack: false,
         useTsconfigDeclarationDir: true,
