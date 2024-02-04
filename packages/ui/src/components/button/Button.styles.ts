@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-import { twOverrides } from '@/utils';
+import { twOverrides } from '@/overrides';
 
 const defaultBorder = 'bg-none bg-transparent border';
 

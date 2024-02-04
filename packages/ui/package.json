@@ -17,6 +17,11 @@
       "default": "./dist/cjs/index.js",
       "types": "./dist/src/index.d.ts"
     },
+    "./overrides": {
+      "import": "./dist/esm/overrides.js",
+      "default": "./dist/cjs/overrides.js",
+      "types": "./dist/src/overrides.d.ts"
+    },
     "./plugin": {
       "require": "./plugin.cjs",
       "default": "./plugin.cjs",

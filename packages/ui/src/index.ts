@@ -1,4 +1,4 @@
-export { cn, setComponentOverrides } from './utils';
+export { cn } from './utils';
 
 /**
  * Re-export radix utilities, so we can use them in the consuming app

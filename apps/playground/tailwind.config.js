@@ -7,7 +7,7 @@ export default {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    `${path.dirname(require.resolve('@utima/ui'))}/index.mjs`,
+    `${path.dirname(require.resolve('@utima/ui'))}/**/*.js`,
   ],
   theme: {
     extend: {},
