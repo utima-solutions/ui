@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "turbo dev",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,9 +16,12 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@utima/eslint-config": "^0.10.0",
+    "@types/react": "^18.2.52",
+    "@utima/eslint-config": "^0.10.4",
     "eslint": "^8.56.0",
-    "turbo": "^1.11.2",
+    "rollup": "^4.9.6",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "turbo": "^1.12.2",
     "typescript": "^5.3.3"
   }
 }

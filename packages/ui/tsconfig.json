@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.base.json",
+  "extends": "../../tsconfig.lib.json",
   "compilerOptions": {
     "target": "ES2018",
     "lib": [
@@ -10,9 +10,20 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
-    "outDir": "dist",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+    },
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "**/.*/",
+    "**/node_modules/**",
+    "**/dist/**"
   ],
 }

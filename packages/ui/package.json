@@ -6,20 +6,20 @@
   "types": "./dist/src/index.d.ts",
   "main": "./dist/src/index.js",
   "scripts": {
-    "build": "tsc -b",
-    "dev": "tsc -w",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
     "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'"
   },
   "exports": {
     ".": {
-      "import": "./dist/src/index.js",
-      "default": "./dist/src/index.js",
-      "types": "./dist/src/index.js.d.ts"
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.cjs",
+      "types": "./dist/src/index.d.ts"
     },
-    "./tokens/*": {
-      "import": "./dist/src/tokens/*.js",
-      "default": "./dist/src/tokens/*.js",
-      "types": "./dist/src/tokens/*.d.ts"
+    "./plugin": {
+      "require": "./plugin.cjs",
+      "default": "./plugin.cjs",
+      "types": "./plugin.d.ts"
     }
   },
   "keywords": [
@@ -36,11 +36,28 @@
   "author": "Jan Šimeček",
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^18.2.46",
-    "react": "^18.2.0"
+    "@types/lodash.get": "^4.4.9",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.4.1"
   },
   "peerDependencies": {
+    "lucide-react": "*",
     "react": ">=18",
     "react-dom": ">=18"
+  },
+  "dependencies": {
+    "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-avatar": "^1.0.4",
+    "@radix-ui/react-dropdown-menu": "^2.0.6",
+    "@radix-ui/react-label": "^2.0.2",
+    "@radix-ui/react-select": "^2.0.0",
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": ">=2",
+    "lodash.get": "4",
+    "tailwind-merge": ">=2",
+    "ts-deepmerge": "^7.0.0",
+    "type-fest": ">=4"
   }
 }

@@ -1,23 +1,32 @@
 {
   "compilerOptions": {
-    "target": "ES2018",
-    "moduleResolution": "Bundler",
-    "declaration": true,
-    "allowJs": true,
-    "sourceMap": true,
+    // Compiler features
+    "jsx": "react-jsx", // support JSX
+    "allowJs": true, // allow importing `.js` from `.ts`
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "declaration": false,
+    "declarationMap": false,
+
+    // More efficient builds + references support
+    "composite": false,
+    "incremental": true,
+
+    // Enable latest ES Features
+    "useDefineForClassFields": true,
+
+    // Backwards compatibility
     "esModuleInterop": true,
     "isolatedModules": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "useDefineForClassFields": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "incremental": true,
+
+    // Best practices
+    "moduleDetection": "force",
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "composite": true,
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-  }
+    "verbatimModuleSyntax": true, // Force the use of type
+
+    // Type checking flags
+    "strict": true, // enables all strict rules
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": true,
+  },
 }
