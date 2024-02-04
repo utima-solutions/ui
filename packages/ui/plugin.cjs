@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin');
 const { merge } = require('ts-deepmerge');
 
 const baseColors = {
-  background: '#FFFFFF',
+  background: '#ffffff',
   foreground: '#1f2937',
   muted: {
     bg: '#e5e7eb',
@@ -10,27 +10,27 @@ const baseColors = {
   },
   primary: {
     bg: '#2563eb',
-    fg: '#FFFFFF',
+    fg: '#ffffff',
   },
   secondary: {
     bg: '#374151',
-    fg: '#FFFFFF',
+    fg: '#ffffff',
+  },
+  accent: {
+    bg: '#a855f7',
+    fg: '#ffffff',
   },
   danger: {
     bg: '#e11d48',
-    fg: '#FFFFFF',
+    fg: '#ffffff',
   },
   success: {
     bg: '#22c55e',
-    fg: '#FFFFFF',
+    fg: '#ffffff',
   },
   warning: {
     bg: '#facc15',
     fg: '#000000',
-  },
-  accent: {
-    bg: '#a855f7',
-    fg: '#a855f7',
   },
   border: '#d1d5db',
   input: '#d1d5db',

@@ -17,6 +17,8 @@ export const buttonDef = twOverrides(
           'bg-primary text-primary-fg hover:bg-primary/80 active:bg-primary/90 ring-primary/35',
         secondary:
           'bg-secondary text-secondary-fg hover:bg-secondary/80 active:bg-secondary/90 ring-secondary/35',
+        accent:
+          'bg-accent text-accent-fg hover:bg-accent/80 active:bg-accent/90 ring-accent/35',
         success:
           'bg-success text-success-fg hover:bg-success/80 active:bg-success/90 ring-success/35',
         danger:
@@ -24,7 +26,7 @@ export const buttonDef = twOverrides(
         warning:
           'bg-warning text-warning-fg hover:bg-warning/80 active:bg-warning/90 ring-warning/35',
         ghost:
-          'text-accent-fg hover:bg-accent hover:text-accent-fg active:text-accent-fg/70 active:bg-accent/90 ring-accent-fg/35',
+          'text-foreground hover:bg-foreground/5 active:bg-foreground/10 ring-foreground/70',
         link: 'text-foreground hover:text-foreground/70 active:text-foreground/90 underline-offset-4 hover:underline ring-foreground/70',
       },
       size: {
@@ -36,6 +38,7 @@ export const buttonDef = twOverrides(
       outline: {
         primary: `${defaultBorder} border-primary text-primary hover:bg-primary/10 active:bg-primary/15`,
         secondary: `${defaultBorder} border-secondary text-secondary hover:bg-secondary/10 active:bg-secondary/15`,
+        accent: `${defaultBorder} border-accent text-accent hover:bg-accent/10 active:bg-accent/15`,
         success: `${defaultBorder} border-success text-success hover:bg-success/10 active:bg-success/15`,
         danger: `${defaultBorder} border-danger text-danger hover:bg-danger/10 active:bg-danger/15`,
         warning: `${defaultBorder} border-warning text-warning hover:bg-warning/10 active:bg-warning/15`,

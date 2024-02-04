@@ -13,6 +13,7 @@ function App() {
         <Button variant='secondary' size='lg' icon={<PlusCircle size={18} />}>
           Secondary
         </Button>
+        <Button variant='accent'>Accent</Button>
         <Button loading variant='danger'>
           Danger
         </Button>
@@ -31,6 +32,9 @@ function App() {
         </Button>
         <Button outline variant='secondary'>
           Secondary
+        </Button>
+        <Button outline variant='accent'>
+          Accent
         </Button>
         <Button outline variant='danger'>
           Danger
