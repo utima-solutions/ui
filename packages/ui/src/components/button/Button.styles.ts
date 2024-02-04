@@ -30,8 +30,9 @@ export const buttonDef = twOverrides(
         link: 'text-foreground hover:text-foreground/70 active:text-foreground/90 underline-offset-4 hover:underline ring-foreground/70',
       },
       size: {
-        base: 'h-9 px-4 py-2 text-sm gap-x-1',
+        xs: 'h-7 rounded-md px-2 text-xs',
         sm: 'h-8 rounded-md px-3 text-sm',
+        md: 'h-9 px-4 py-2 text-sm gap-x-1',
         lg: 'h-10 rounded-lg px-4 text-base gap-x-1.5',
         icon: 'h-9 w-9',
       },

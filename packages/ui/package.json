@@ -9,7 +9,9 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'"
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build"
   },
   "exports": {
     ".": {
@@ -42,9 +44,21 @@
   "author": "Jan Šimeček",
   "license": "MIT",
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.12",
+    "@storybook/addon-interactions": "^7.6.12",
+    "@storybook/addon-links": "^7.6.12",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.12",
+    "@storybook/react": "^7.6.12",
+    "@storybook/react-vite": "^7.6.12",
+    "@storybook/test": "^7.6.12",
     "@types/lodash.get": "^4.4.9",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
-    "tailwindcss": "^3.4.1"
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.12",
+    "tailwindcss": "^3.4.1",
+    "vite-tsconfig-paths": "^4.3.1"
   },
   "peerDependencies": {
     "lucide-react": "*",

@@ -3,7 +3,7 @@ import type { VariantProps } from 'class-variance-authority';
 import { Loader2 } from 'lucide-react';
 import { forwardRef, type ReactNode } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '@/index';
 
 import { buttonStyles } from './Button.styles';
 
@@ -22,7 +22,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       children,
       variant = 'primary',
-      size = 'base',
+      size = 'md',
       outline = false,
       asChild = false,
       loading = false,

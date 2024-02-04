@@ -132,3 +132,4 @@ dist
 dist
 .turbo
 out
+storybook-static
