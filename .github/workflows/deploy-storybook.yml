@@ -37,11 +37,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           overwrite: true
-          name: storybook-static
+          name: github-pages
           path: ./packages/ui/storybook-static
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: storybook-static
+          artifact_name: github-pages
