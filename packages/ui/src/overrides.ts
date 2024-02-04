@@ -3,21 +3,8 @@ import { twMerge } from 'tailwind-merge';
 import type { PartialDeep } from 'type-fest';
 
 import type { avatarDef } from './components/avatar/Avatar.styles';
+import type { badgeDef } from './components/badge/Badge.styles';
 import type { buttonDef } from './components/button/Button.styles';
-
-// import type { alertDialogDef } from './alertDialog/AlertDialog';
-// import type { avatarDef } from './avatar/avatar.styles';
-// import type {
-//   badgeDef,
-//   buttonDef,
-//   dividerDef,
-//   inputDef,
-//   labelDef,
-//   tableDef,
-//   toastDef,
-//   tooltipDef,
-// } from './index';
-// import type { selectDef } from './select/select.styles';
 
 /**
  * This should hold types for all component style definitions
@@ -26,15 +13,7 @@ import type { buttonDef } from './components/button/Button.styles';
 type ComponentOverridesDef = {
   button: typeof buttonDef;
   avatar: typeof avatarDef;
-  // badge: typeof badgeDef;
-  // divider: typeof dividerDef;
-  // table: typeof tableDef;
-  // input: typeof inputDef;
-  // label: typeof labelDef;
-  // toast: typeof toastDef;
-  // tooltip: typeof tooltipDef;
-  // select: typeof selectDef;
-  // alertDialog: typeof alertDialogDef;
+  badge: typeof badgeDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

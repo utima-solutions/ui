@@ -41,11 +41,10 @@ jobs:
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
+        id: upload
         with:
           path: ./packages/ui/storybook-static
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: github-pages
