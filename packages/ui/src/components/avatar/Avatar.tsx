@@ -13,6 +13,10 @@ import { AvatarFallback } from './AvatarFallback';
 import { AvatarImage } from './AvatarImage';
 
 type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
+  Pick<
+    ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>,
+    'onLoadingStatusChange'
+  > &
   VariantProps<typeof avatarStyles> & {
     delayMs?: number;
     fallback?: string;
@@ -24,7 +28,16 @@ export const Avatar = forwardRef<
   ElementRef<typeof AvatarPrimitive.Root>,
   AvatarProps
 >(function Avatar(
-  { className, fallback, delayMs = 500, size, src, alt, ...props },
+  {
+    className,
+    fallback,
+    delayMs,
+    size,
+    src,
+    alt,
+    onLoadingStatusChange,
+    ...props
+  },
   ref,
 ) {
   return (
@@ -33,7 +46,11 @@ export const Avatar = forwardRef<
       className={cn(avatarStyles({ size }), className)}
       {...props}
     >
-      <AvatarImage src={src} alt={alt} />
+      <AvatarImage
+        onLoadingStatusChange={onLoadingStatusChange}
+        src={src}
+        alt={alt}
+      />
       <AvatarFallback delayMs={delayMs}>{fallback}</AvatarFallback>
     </AvatarPrimitive.Root>
   );

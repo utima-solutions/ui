@@ -19,7 +19,8 @@
     },
   },
   "include": [
-    "src"
+    "src",
+    "plugin.d.ts"
   ],
   "exclude": [
     "**/.*/",

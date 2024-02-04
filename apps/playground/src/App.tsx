@@ -1,6 +1,6 @@
 import './componentOverrides';
 import './app.css';
-import { Button } from '@utima/ui';
+import { Avatar, Button } from '@utima/ui';
 import { PlusCircle } from 'lucide-react';
 
 function App() {
@@ -61,7 +61,8 @@ function App() {
       <div className='flex flex-col gap-5 p-5'>
         <h4 className='text-xl font-semibold text-foreground'>Avatar</h4>
         <div className='flex flex-wrap gap-5'>
-          {/* <Avatar /> */}
+          <Avatar />
+          <Avatar src='https://i.pravatar.cc/300' />
         </div>
       </div>
     </div>

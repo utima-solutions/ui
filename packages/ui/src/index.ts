@@ -9,5 +9,11 @@ export { Slot } from '@radix-ui/react-slot';
 /**
  * Components
  */
+// Buttton
 export { Button } from './components/button/Button';
+
+// Avatar
+export * as AvatarPrimitives from '@radix-ui/react-avatar';
 export { Avatar } from './components/avatar/Avatar';
+export { AvatarFallback } from './components/avatar/AvatarFallback';
+export { AvatarImage } from './components/avatar/AvatarImage';
