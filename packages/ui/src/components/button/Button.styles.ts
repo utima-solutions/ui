@@ -10,7 +10,7 @@ const defaultBorder = 'bg-none bg-transparent border';
 export const buttonDef = twOverrides(
   {
     button:
-      'inline-flex focus:ring-2 focus:ring-offset-1 items-center justify-center rounded-md border-0 focus:outline-none transition-all disabled:opacity-65',
+      'inline-flex font-semibold focus:ring-2 focus:ring-offset-1 items-center justify-center rounded-md border-0 focus:outline-none transition-all disabled:opacity-65',
     variants: {
       variant: {
         primary:

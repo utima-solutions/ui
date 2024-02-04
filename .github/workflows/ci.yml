@@ -63,7 +63,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://utima-solutions.github.io/ui
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
