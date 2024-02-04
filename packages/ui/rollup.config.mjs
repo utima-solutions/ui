@@ -13,17 +13,18 @@ export default [
         tsconfig: 'tsconfig.build.json',
       }),
     ],
-    external: ['zod', 'type-fest'],
     output: [
       {
-        file: './dist/index.mjs',
+        dir: './dist/esm',
         format: 'es',
         sourcemap: true,
+        preserveModules: true,
       },
       {
-        file: './dist/index.cjs',
+        dir: './dist/cjs',
         format: 'cjs',
         sourcemap: true,
+        preserveModules: true,
       },
     ],
   },

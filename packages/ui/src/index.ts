@@ -10,3 +10,4 @@ export { Slot } from '@radix-ui/react-slot';
  * Components
  */
 export { Button } from './components/button/Button';
+export { Avatar } from './components/avatar/Avatar';
