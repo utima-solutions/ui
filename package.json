@@ -6,7 +6,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "lint:fix": "turbo lint -- --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "changeset": "changeset add"
   },
   "keywords": [],
   "author": "Jan Šimeček",
@@ -24,5 +25,8 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "turbo": "^1.12.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.1"
   }
 }
