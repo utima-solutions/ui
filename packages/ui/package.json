@@ -9,7 +9,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
+    "lint:fix": "npm run lint -- --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
   },
