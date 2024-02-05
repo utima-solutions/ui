@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.3.1
+
+### Patch Changes
+
+- [`2c64273`](https://github.com/utima-solutions/ui/commit/2c642739fe3976c8d544ed7f1c13e278a6fc5581) Thanks [@jsimck](https://github.com/jsimck)! - Added missing Tooltip export
+
 ## 0.3.0
 
 ### Minor Changes
