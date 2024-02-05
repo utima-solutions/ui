@@ -1,5 +1,13 @@
 # @utima/ui
 
+## 0.2.0
+
+### Minor Changes
+
+- [`f43a943`](https://github.com/utima-solutions/ui/commit/f43a9433af87ad3152945207e347e66b68295279) Thanks [@jsimck](https://github.com/jsimck)! - Added `Input` component
+  Added `Table` component
+  Added `Label` component
+
 ## 0.1.0
 
 ### Minor Changes
