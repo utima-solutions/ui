@@ -13,7 +13,5 @@ export { Slot } from '@radix-ui/react-slot';
 export { Button } from './components/button/Button';
 
 // Avatar
-export * as AvatarPrimitives from '@radix-ui/react-avatar';
+export * as AvatarPrimitives from './components/avatar';
 export { Avatar } from './components/avatar/Avatar';
-export { AvatarFallback } from './components/avatar/AvatarFallback';
-export { AvatarImage } from './components/avatar/AvatarImage';
