@@ -12,6 +12,9 @@ export { Slot } from '@radix-ui/react-slot';
 // Buttton
 export { Button } from './components/button/Button';
 
+// Badge
+export { Badge } from './components/badge/Badge';
+
 // Avatar
 export * as AvatarPrimitives from './components/avatar';
 export { Avatar } from './components/avatar/Avatar';
@@ -22,5 +25,6 @@ export { Label } from './components/label/Label';
 // Table
 export * as Table from './components/table';
 
-// Input
+// Inputs
 export { Input } from './components/input/Input';
+export { TextArea } from './components/input/TextArea';

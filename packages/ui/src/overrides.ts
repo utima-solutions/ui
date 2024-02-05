@@ -8,6 +8,7 @@ import type { buttonDef } from './components/button/Button.styles';
 import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
 import type { tableDef } from './components/table/Table.styles';
+import type { tooltipDef } from './components/tooltip/Tooltip.styles';
 
 /**
  * This should hold types for all component style definitions
@@ -20,6 +21,7 @@ type ComponentOverridesDef = {
   label: typeof labelDef;
   table: typeof tableDef;
   input: typeof inputDef;
+  tooltip: typeof tooltipDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;
