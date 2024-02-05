@@ -15,3 +15,12 @@ export { Button } from './components/button/Button';
 // Avatar
 export * as AvatarPrimitives from './components/avatar';
 export { Avatar } from './components/avatar/Avatar';
+
+// Label
+export { Label } from './components/label/Label';
+
+// Table
+export * as Table from './components/table';
+
+// Input
+export { Input } from './components/input/Input';

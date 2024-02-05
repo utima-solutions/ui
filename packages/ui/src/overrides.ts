@@ -5,6 +5,9 @@ import type { PartialDeep } from 'type-fest';
 import type { avatarDef } from './components/avatar/Avatar.styles';
 import type { badgeDef } from './components/badge/Badge.styles';
 import type { buttonDef } from './components/button/Button.styles';
+import type { inputDef } from './components/input/Input';
+import type { labelDef } from './components/label/Label.styles';
+import type { tableDef } from './components/table/Table.styles';
 
 /**
  * This should hold types for all component style definitions
@@ -14,6 +17,9 @@ type ComponentOverridesDef = {
   button: typeof buttonDef;
   avatar: typeof avatarDef;
   badge: typeof badgeDef;
+  label: typeof labelDef;
+  table: typeof tableDef;
+  input: typeof inputDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

@@ -47,6 +47,14 @@ type TailwindPluginOptions = {
       bg: string;
       fg: string;
     };
+    table: {
+      fg: string;
+      bg: string;
+      border: string;
+    };
+    input: {
+      border: string;
+    };
   };
 };
 

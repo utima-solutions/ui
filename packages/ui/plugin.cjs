@@ -33,7 +33,6 @@ const baseColors = {
     fg: '#000000',
   },
   border: '#d1d5db',
-  input: '#d1d5db',
   placeholder: '#6b7280',
   popover: {
     bg: '#f3f4f6',
@@ -47,7 +46,10 @@ const defaultOptions = {
     // Base colors
     background: baseColors.background,
     foreground: baseColors.foreground,
+    placeholder: baseColors.placeholder,
+    border: baseColors.border,
 
+    // Variant colors
     muted: {
       bg: baseColors.muted.bg,
       fg: baseColors.muted.fg,
@@ -77,15 +79,18 @@ const defaultOptions = {
       fg: baseColors.accent.fg,
     },
 
-    // Utility colors
-    border: baseColors.border,
-    input: baseColors.input,
-    placeholder: baseColors.placeholder,
-
     // Component-specific colors
     popover: {
       bg: baseColors.popover.bg,
       fg: baseColors.popover.fg,
+    },
+    table: {
+      bg: baseColors.background,
+      fg: baseColors.foreground,
+      border: baseColors.border,
+    },
+    input: {
+      border: baseColors.border,
     },
   },
 };
@@ -139,6 +144,14 @@ module.exports = plugin.withOptions(
             popover: {
               DEFAULT: colors.popover.bg,
               fg: colors.popover.fg,
+            },
+            table: {
+              DEFAULT: colors.table.bg,
+              fg: colors.table.fg,
+              border: colors.table.border,
+            },
+            input: {
+              border: colors.input.border,
             },
           },
         },
