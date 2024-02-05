@@ -1,5 +1,13 @@
 # @utima/ui
 
+## 0.3.0
+
+### Minor Changes
+
+- [`bc9843e`](https://github.com/utima-solutions/ui/commit/bc9843ed225806459725a7bfa1a96a00f8372b90) Thanks [@jsimck](https://github.com/jsimck)! - Added `TextArea` component
+  Added `Badge` component
+  Added `Tooltip` component
+
 ## 0.2.0
 
 ### Minor Changes
