@@ -7,6 +7,7 @@ import type { badgeDef } from './components/badge/Badge.styles';
 import type { buttonDef } from './components/button/Button.styles';
 import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
+import type { selectDef } from './components/select/select.styles';
 import type { tableDef } from './components/table/Table.styles';
 import type { tooltipDef } from './components/tooltip/Tooltip.styles';
 
@@ -22,6 +23,7 @@ type ComponentOverridesDef = {
   table: typeof tableDef;
   input: typeof inputDef;
   tooltip: typeof tooltipDef;
+  select: typeof selectDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;
