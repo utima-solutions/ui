@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.4.0
+
+### Minor Changes
+
+- [`f5dbd4c`](https://github.com/utima-solutions/ui/commit/f5dbd4c7a8d4c7721f9a33489522b11e455dfbe2) Thanks [@jsimck](https://github.com/jsimck)! - Added `Select` component and primitives
+
 ## 0.3.1
 
 ### Patch Changes
