@@ -16,7 +16,7 @@ export { Button } from './components/button/Button';
 export { Badge } from './components/badge/Badge';
 
 // Avatar
-export * as AvatarPrimitives from './components/avatar';
+export * as AvatarPrimitive from './components/avatar';
 export { Avatar } from './components/avatar/Avatar';
 
 // Label
@@ -31,3 +31,8 @@ export { TextArea } from './components/input/TextArea';
 
 // Tooltip
 export { Tooltip } from './components/tooltip/Tooltip';
+
+// Select
+export * as SelectPrimitive from './components/select';
+export { Select } from './components/select/Select';
+export { SelectItem } from './components/select/SelectItem';
