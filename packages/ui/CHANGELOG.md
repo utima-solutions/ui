@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.4.1
+
+### Patch Changes
+
+- [`f98a2ce`](https://github.com/utima-solutions/ui/commit/f98a2ce1945b68df1c3f82ba066ecb2e223d406f) Thanks [@jsimck](https://github.com/jsimck)! - Added missing select overrides def
+
 ## 0.4.0
 
 ### Minor Changes
