@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.4.3
+
+### Patch Changes
+
+- [`2eac6d6`](https://github.com/utima-solutions/ui/commit/2eac6d68847465ad4cefec7c10fe30b847bb3118) Thanks [@jsimck](https://github.com/jsimck)! - Fixed rows attr on textarea
+
 ## 0.4.2
 
 ### Patch Changes
