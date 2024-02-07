@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.4.2
+
+### Patch Changes
+
+- [`714abfe`](https://github.com/utima-solutions/ui/commit/714abfebdbb70eadbbcb27c8b641ab82203529aa) Thanks [@jsimck](https://github.com/jsimck)! - Proxy content props in wrapped select component
+
 ## 0.4.1
 
 ### Patch Changes
