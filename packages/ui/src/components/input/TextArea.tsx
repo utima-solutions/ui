@@ -16,7 +16,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     return (
       <textarea
         ref={ref}
-        className={cn(inputStyles({ size, variant }), className)}
+        className={cn(inputStyles({ size, variant }), 'h-auto', className)}
         {...props}
       />
     );
