@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.4.4
+
+### Patch Changes
+
+- [`3235b82`](https://github.com/utima-solutions/ui/commit/3235b827fcb0d88164a062fbf9360f7ecd8737aa) Thanks [@jsimck](https://github.com/jsimck)! - Minor fixes to selected value
+
 ## 0.4.3
 
 ### Patch Changes
