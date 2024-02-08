@@ -78,6 +78,7 @@
     "clsx": ">=2",
     "lodash.get": "4",
     "tailwind-merge": ">=2",
+    "tailwindcss-animate": "^1.0.7",
     "ts-deepmerge": "^7.0.0",
     "type-fest": ">=4"
   }

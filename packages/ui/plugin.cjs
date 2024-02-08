@@ -3,13 +3,13 @@ const { merge } = require('ts-deepmerge');
 
 const baseColors = {
   background: '#ffffff',
-  foreground: '#1f2937',
+  foreground: '#09090b',
   muted: {
     bg: '#e5e7eb',
     fg: '#6b7280',
   },
   primary: {
-    bg: '#2563eb',
+    bg: '#09090b',
     fg: '#ffffff',
   },
   secondary: {
@@ -35,7 +35,7 @@ const baseColors = {
   border: '#d1d5db',
   placeholder: '#6b7280',
   popover: {
-    bg: '#f3f4f6',
+    bg: '#ffffff',
     fg: '#1f2937',
   },
 };

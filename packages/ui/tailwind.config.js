@@ -12,5 +12,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [utimaUi()],
+  plugins: [require('tailwindcss-animate'), utimaUi()],
 };
