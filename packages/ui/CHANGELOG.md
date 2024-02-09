@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.4.5
+
+### Patch Changes
+
+- [`64fd440`](https://github.com/utima-solutions/ui/commit/64fd440ba33f7c4b356122bb67ab3acf8a7c1720) Thanks [@jsimck](https://github.com/jsimck)! - Accessibility select fixes
+
 ## 0.4.4
 
 ### Patch Changes
