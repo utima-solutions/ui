@@ -1,5 +1,12 @@
 # @utima/ui
 
+## 0.5.0
+
+### Minor Changes
+
+- [`f1950d2`](https://github.com/utima-solutions/ui/commit/f1950d2198372b209dbf8c9ea0e2dd2568e1ff7d) Thanks [@jsimck](https://github.com/jsimck)! - Added `Toast` component (using sonner package)
+  Added `info` color to multiple components
+
 ## 0.4.5
 
 ### Patch Changes
