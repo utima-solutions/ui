@@ -1,5 +1,16 @@
 # @utima/ui
 
+## 0.6.0
+
+### Minor Changes
+
+- [`c9a5963`](https://github.com/utima-solutions/ui/commit/c9a596397023b4360cf04a8946b8bacb76a26bea) Thanks [@jsimck](https://github.com/jsimck)! - Added `AspectRatio` component from radix-ui
+  Added installation instructions
+
+### Patch Changes
+
+- [`4bbdaa3`](https://github.com/utima-solutions/ui/commit/4bbdaa3d256a108017b7523ec6b269ae53f58c94) Thanks [@jsimck](https://github.com/jsimck)! - Added readme to pkg
+
 ## 0.5.0
 
 ### Minor Changes
