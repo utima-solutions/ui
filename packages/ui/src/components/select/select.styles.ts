@@ -23,9 +23,10 @@ export const selectDef = twOverrides(
     },
     variants: {
       size: {
+        xs: 'h-6 px-2 py-1.5 text-xs leading-4',
         sm: 'h-7 px-2 py-1.5 text-xs leading-4',
-        md: 'h-8 px-3 py-2 text-sm leading-4',
-        lg: 'h-10 px-3 py-3 text-base leading-4',
+        md: 'h-9 px-3 py-2 text-sm leading-4',
+        lg: 'h-11 px-3 py-3 text-base leading-4',
       },
       variant: {
         default:

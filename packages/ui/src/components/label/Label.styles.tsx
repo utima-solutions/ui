@@ -5,7 +5,7 @@ import { twOverrides } from '@/overrides';
 export const labelDef = twOverrides(
   {
     label:
-      'text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+      'text-foreground font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
     variants: {
       size: {
         xs: 'text-xs leading-3',

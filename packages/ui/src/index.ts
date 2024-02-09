@@ -39,3 +39,6 @@ export { SelectItem } from './components/select/SelectItem';
 
 // Toast
 export { Toast, toast } from './components/toast/Toast';
+
+// Aspect Ratio
+export { AspectRatio } from './components/aspectRatio/AspectRatio';
