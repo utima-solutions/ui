@@ -34,6 +34,9 @@ export const selectDef = twOverrides(
           'border-danger focus-visible:border-danger hover:border-danger/30',
         success:
           'border-success focus-visible:border-success hover:border-success/30',
+        warning:
+          'border-warning focus-visible:border-warning hover:border-warning/30',
+        info: 'border-info focus-visible:border-info hover:border-info/30',
       },
     },
   },

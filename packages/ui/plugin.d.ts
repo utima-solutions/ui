@@ -32,6 +32,10 @@ type TailwindPluginOptions = {
       bg: string;
       fg: string;
     };
+    info: {
+      bg: string;
+      fg: string;
+    };
     accent: {
       bg: string;
       fg: string;

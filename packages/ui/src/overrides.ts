@@ -9,6 +9,7 @@ import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
 import type { selectDef } from './components/select/select.styles';
 import type { tableDef } from './components/table/Table.styles';
+import type { toastDef } from './components/toast/Toast.styles';
 import type { tooltipDef } from './components/tooltip/Tooltip.styles';
 
 /**
@@ -24,6 +25,7 @@ type ComponentOverridesDef = {
   input: typeof inputDef;
   tooltip: typeof tooltipDef;
   select: typeof selectDef;
+  toast: typeof toastDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

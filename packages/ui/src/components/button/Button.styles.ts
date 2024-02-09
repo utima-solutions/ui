@@ -25,6 +25,7 @@ export const buttonDef = twOverrides(
           'bg-danger text-danger-fg hover:bg-danger/80 active:bg-danger/90 ring-danger/35',
         warning:
           'bg-warning text-warning-fg hover:bg-warning/80 active:bg-warning/90 ring-warning/35',
+        info: 'bg-info text-info-fg hover:bg-info/80 active:bg-info/90 ring-info/35',
         ghost:
           'text-foreground hover:bg-foreground/5 active:bg-foreground/10 ring-foreground/70',
         link: 'text-foreground hover:text-foreground/70 active:text-foreground/90 underline-offset-4 hover:underline ring-foreground/70',
@@ -43,6 +44,7 @@ export const buttonDef = twOverrides(
         success: `${defaultBorder} border-success text-success hover:bg-success/10 active:bg-success/15`,
         danger: `${defaultBorder} border-danger text-danger hover:bg-danger/10 active:bg-danger/15`,
         warning: `${defaultBorder} border-warning text-warning hover:bg-warning/10 active:bg-warning/15`,
+        info: `${defaultBorder} border-info text-info hover:bg-info/10 active:bg-info/15`,
         ghost: `${defaultBorder} border-primary/25`,
         link: null,
       },

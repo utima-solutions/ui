@@ -28,6 +28,10 @@ const baseColors = {
     bg: '#22c55e',
     fg: '#ffffff',
   },
+  info: {
+    bg: '#3b82f6',
+    fg: '#ffffff',
+  },
   warning: {
     bg: '#facc15',
     fg: '#000000',
@@ -73,6 +77,10 @@ const defaultOptions = {
     warning: {
       bg: baseColors.warning.bg,
       fg: baseColors.warning.fg,
+    },
+    info: {
+      bg: baseColors.info.bg,
+      fg: baseColors.info.fg,
     },
     accent: {
       bg: baseColors.accent.bg,
@@ -135,6 +143,10 @@ module.exports = plugin.withOptions(
             warning: {
               DEFAULT: colors.warning.bg,
               fg: colors.warning.fg,
+            },
+            info: {
+              DEFAULT: colors.info.bg,
+              fg: colors.info.fg,
             },
             accent: {
               DEFAULT: colors.accent.bg,
