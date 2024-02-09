@@ -5,11 +5,11 @@ import { twOverrides } from '@/overrides';
 export const selectDef = twOverrides(
   {
     item: {
-      base: 'relative cur-pointer flex w-full cursor-pointer select-none items-center rounded text-foreground outline-none focus:bg-input-border/35 transition-colors focus:text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-      text: 'relative left-5',
+      base: 'relative cur-pointer flex w-full cursor-pointer select-none items-center rounded text-foreground outline-none focus:bg-input-border/35 data-[state=checked]:bg-input-border/25 transition-colors focus:text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      text: 'relative left-4',
       icon: 'absolute left-2 flex size-3.5 items-center justify-center',
     },
-    label: 'py-1.5 pl-2 font-semibold text-foreground',
+    label: 'font-semibold text-foreground',
     separator: '-mx-1 my-1 h-px bg-muted',
     trigger:
       'flex w-full transition-colors items-center justify-between rounded-md border border-input-border focus-visible:border-foreground hover:border-foreground bg-background px-3 py-2 text-sm text-foreground ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border focus-visible:border-foreground placeholder:text-muted-foreground focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
@@ -23,9 +23,9 @@ export const selectDef = twOverrides(
     },
     variants: {
       size: {
-        sm: 'h-7 px-2 py-1.5 text-xs',
-        md: 'h-8 px-3 py-2 text-sm',
-        lg: 'h-10 px-3 py-3 text-base',
+        sm: 'h-7 px-2 py-1.5 text-xs leading-4',
+        md: 'h-8 px-3 py-2 text-sm leading-4',
+        lg: 'h-10 px-3 py-3 text-base leading-4',
       },
       variant: {
         default:
