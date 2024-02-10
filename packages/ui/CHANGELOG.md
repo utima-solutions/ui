@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.6.1
+
+### Patch Changes
+
+- [`0f6458d`](https://github.com/utima-solutions/ui/commit/0f6458d2c3a4f5ace3e64bb58224568552ddd928) Thanks [@jsimck](https://github.com/jsimck)! - Added missing w-full to toast items
+
 ## 0.6.0
 
 ### Minor Changes
