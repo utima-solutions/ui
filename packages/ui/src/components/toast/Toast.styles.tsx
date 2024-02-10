@@ -3,7 +3,7 @@ import { twOverrides } from '@/overrides';
 export const toastDef = twOverrides(
   {
     toast:
-      '[&>[data-icon]]:float-left [&>[data-icon]]:mr-3 [&>[data-icon]]:mt-1 group p-4 rounded toast bg-background shadow-lg border-border text-primary drop-shadow',
+      '[&>[data-icon]]:float-left [&>[data-icon]]:mr-3 [&>[data-icon]]:mt-1 group p-4 rounded toast bg-background shadow-lg border-border text-primary drop-shadow w-full',
     title: 'group-[.toaster]:font-bold group-[.toaster]:text-sm',
     description: 'group-[.toaster]:text-sm',
     actionButton:
