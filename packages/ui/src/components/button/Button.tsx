@@ -21,6 +21,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     {
       className,
       children,
+      type = 'button',
       variant = 'primary',
       size = 'md',
       outline = false,
@@ -39,6 +40,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <Comp
+        type={asChild ? undefined : type}
         className={cn(
           buttonStyles({
             variant,

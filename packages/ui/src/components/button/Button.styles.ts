@@ -35,7 +35,11 @@ export const buttonDef = twOverrides(
         sm: 'h-8 rounded-md px-3 text-sm',
         md: 'h-9 px-4 py-2 text-sm gap-x-1',
         lg: 'h-10 rounded-lg px-4 text-base gap-x-1.5',
-        icon: 'h-9 w-9',
+        icon: 'h-9 w-9', // Backwards compatibility, use `size: 'icon-md'` instead
+        'icon-xs': 'h-7 w-7',
+        'icon-sm': 'h-8 w-8',
+        'icon-md': 'h-9 w-9',
+        'icon-lg': 'h-10 w-10',
       },
       outline: {
         primary: `${defaultBorder} border-primary text-primary hover:bg-primary/10 active:bg-primary/15`,
