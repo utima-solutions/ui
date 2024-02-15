@@ -16,6 +16,10 @@ const baseColors = {
     bg: '#374151',
     fg: '#ffffff',
   },
+  default: {
+    bg: '#e5e7eb',
+    fg: '#09090b',
+  },
   accent: {
     bg: '#a855f7',
     fg: '#ffffff',
@@ -65,6 +69,10 @@ const defaultOptions = {
     secondary: {
       bg: baseColors.secondary.bg,
       fg: baseColors.secondary.fg,
+    },
+    default: {
+      bg: baseColors.default.bg,
+      fg: baseColors.default.fg,
     },
     danger: {
       bg: baseColors.danger.bg,
@@ -131,6 +139,10 @@ module.exports = plugin.withOptions(
             secondary: {
               DEFAULT: colors.secondary.bg,
               fg: colors.secondary.fg,
+            },
+            default: {
+              DEFAULT: colors.default.bg,
+              fg: colors.default.fg,
             },
             danger: {
               DEFAULT: colors.danger.bg,

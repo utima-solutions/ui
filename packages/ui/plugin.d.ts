@@ -20,6 +20,10 @@ type TailwindPluginOptions = {
       bg: string;
       fg: string;
     };
+    default: {
+      bg: string;
+      fg: string;
+    };
     danger: {
       bg: string;
       fg: string;
