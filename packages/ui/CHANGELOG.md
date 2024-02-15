@@ -1,5 +1,15 @@
 # @utima/ui
 
+## 0.7.0
+
+### Minor Changes
+
+- [`8d5c252`](https://github.com/utima-solutions/ui/commit/8d5c2528857fef250183c2758198455291349cad) Thanks [@jsimck](https://github.com/jsimck)! - Added new `default` variant to button and badge
+
+### Patch Changes
+
+- [`a2124b8`](https://github.com/utima-solutions/ui/commit/a2124b89638db513e77f2f28a5395d09cf5c6d8e) Thanks [@jsimck](https://github.com/jsimck)! - Added new sizing options to Button"
+
 ## 0.6.1
 
 ### Patch Changes
