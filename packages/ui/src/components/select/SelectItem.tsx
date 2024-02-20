@@ -27,12 +27,12 @@ export const SelectItem = forwardRef<
       )}
       {...props}
     >
-      <ItemIndicator className={selectDef.item.icon}>
-        <CheckIcon size={16} />
-      </ItemIndicator>
       <span className={selectDef.item.text}>
         <ItemText>{children}</ItemText>
       </span>
+      <ItemIndicator className={selectDef.item.icon}>
+        <CheckIcon size={16} />
+      </ItemIndicator>
     </Item>
   );
 });

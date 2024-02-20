@@ -6,8 +6,8 @@ export const selectDef = twOverrides(
   {
     item: {
       base: 'relative cur-pointer flex w-full cursor-pointer select-none items-center rounded text-foreground outline-none focus:bg-input-border/35 data-[state=checked]:bg-input-border/25 transition-colors focus:text-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
-      text: 'relative left-4',
-      icon: 'absolute left-2 flex size-3.5 items-center justify-center',
+      text: 'relative',
+      icon: 'absolute right-2 flex size-3.5 items-center justify-center',
     },
     label: 'font-semibold text-foreground',
     separator: '-mx-1 my-1 h-px bg-muted',
