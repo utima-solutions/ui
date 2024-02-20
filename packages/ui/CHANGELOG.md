@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.8.0
+
+### Minor Changes
+
+- [`6ce3f8e`](https://github.com/utima-solutions/ui/commit/6ce3f8e9f19620aa268f2e44cbeba5430d3e8d4f) Thanks [@jsimck](https://github.com/jsimck)! - Added new switch component
+
 ## 0.7.0
 
 ### Minor Changes
