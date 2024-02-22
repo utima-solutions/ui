@@ -4,12 +4,12 @@ const palette = {
   bg: '#ffffff',
   fg: '#09090b',
   lightFg: '#383941',
-  mutedFg: '#525468',
+  mutedFg: '#60637a',
 
   accent: '#f0f1f7',
   accentFg: '#525468',
   placeholder: '#7b7f95',
-  border: '#a7aab9',
+  border: '#e4e5f1',
   separator: '#e4e5f1',
 
   primary: '#09090b',
@@ -84,6 +84,7 @@ module.exports = plugin.withOptions(
             popover: {
               DEFAULT: colors?.popover?.bg ?? palette.bg,
               fg: colors?.popover?.fg ?? palette.lightFg,
+              border: colors?.popover?.border ?? palette.separator,
             },
 
             // Component specifics

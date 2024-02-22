@@ -9,6 +9,7 @@ import type { buttonDef } from './components/button/Button.styles';
 import type { dropdownDef } from './components/dropdown/Dropdown.styles';
 import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
+import type { popoverDef } from './components/popover/Popover.styles';
 import type { selectDef } from './components/select/select.styles';
 import type { switchDef } from './components/switch/Switch.styles';
 import type { tableDef } from './components/table/Table.styles';
@@ -32,6 +33,7 @@ type ComponentOverridesDef = {
   aspectRatio: typeof aspectRatioDef;
   switch: typeof switchDef;
   dropdown: typeof dropdownDef;
+  popover: typeof popoverDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

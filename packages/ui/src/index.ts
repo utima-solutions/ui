@@ -45,3 +45,6 @@ export { AspectRatio } from './components/aspectRatio/AspectRatio';
 
 // Dropdown
 export * as Dropdown from './components/dropdown';
+
+// Popover
+export * as Popover from './components/popover';
