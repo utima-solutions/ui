@@ -42,3 +42,6 @@ export { Toast, toast } from './components/toast/Toast';
 
 // Aspect Ratio
 export { AspectRatio } from './components/aspectRatio/AspectRatio';
+
+// Dropdown
+export * as Dropdown from './components/dropdown';

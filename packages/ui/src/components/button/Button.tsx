@@ -17,7 +17,7 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
   };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  function Button(
+  (
     {
       className,
       children,
@@ -30,7 +30,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       ...restProps
     },
     ref,
-  ) {
+  ) => {
     const Comp = asChild ? Slot : 'button';
     const Icon = loading ? (
       <Loader2 className='animate-spin' size={size === 'lg' ? 18 : 16} />
