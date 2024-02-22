@@ -14,10 +14,8 @@ export const badgeDef = twOverrides(
           'bg-primary text-primary-fg hover:bg-primary/80 active:bg-primary/90',
         secondary:
           'bg-secondary text-secondary-fg hover:bg-secondary/80 active:bg-secondary/90',
-        default:
+        muted:
           'bg-default text-default-fg hover:bg-default/80 active:bg-default/90',
-        accent:
-          'bg-accent text-accent-fg hover:bg-accent/80 active:bg-accent/90 ring-accent/35',
         success:
           'bg-success text-success-fg hover:bg-success/80 active:bg-success/90',
         danger:
@@ -37,8 +35,7 @@ export const badgeDef = twOverrides(
       outline: {
         primary: `${defaultBorder} border-primary text-primary hover:bg-primary/10 active:bg-primary/15`,
         secondary: `${defaultBorder} border-secondary text-secondary hover:bg-secondary/10 active:bg-secondary/15`,
-        default: `${defaultBorder} border-default text-default hover:bg-default/10 active:bg-default/15`,
-        accent: `${defaultBorder} border-accent text-accent hover:bg-accent/10 active:bg-accent/15`,
+        muted: `${defaultBorder} border-default text-default hover:bg-default/10 active:bg-default/15`,
         success: `${defaultBorder} border-success text-success hover:bg-success/10 active:bg-success/15`,
         danger: `${defaultBorder} border-danger text-danger hover:bg-danger/10 active:bg-danger/15`,
         warning: `${defaultBorder} border-warning text-warning hover:bg-warning/10 active:bg-warning/15`,

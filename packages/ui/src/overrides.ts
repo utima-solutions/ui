@@ -6,6 +6,7 @@ import type { aspectRatioDef } from './components/aspectRatio/AspectRatio.styles
 import type { avatarDef } from './components/avatar/Avatar.styles';
 import type { badgeDef } from './components/badge/Badge.styles';
 import type { buttonDef } from './components/button/Button.styles';
+import type { dropdownDef } from './components/dropdown/Dropdown.styles';
 import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
 import type { selectDef } from './components/select/select.styles';
@@ -30,6 +31,7 @@ type ComponentOverridesDef = {
   toast: typeof toastDef;
   aspectRatio: typeof aspectRatioDef;
   switch: typeof switchDef;
+  dropdown: typeof dropdownDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

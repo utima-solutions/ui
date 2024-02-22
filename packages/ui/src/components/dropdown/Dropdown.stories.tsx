@@ -101,6 +101,8 @@ const meta: Meta<typeof Dropdown.Root> = {
             <span>API</span>
           </Dropdown.Item>
           <Dropdown.Separator />
+          <Dropdown.RadioItem value='2'>Test</Dropdown.RadioItem>
+          <Dropdown.Separator />
           <Dropdown.Item>
             <LogOut className='mr-2 h-4 w-4' />
             <span>Log out</span>

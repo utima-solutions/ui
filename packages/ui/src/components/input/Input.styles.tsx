@@ -5,7 +5,7 @@ import { twOverrides } from '@/overrides';
 export const inputDef = twOverrides(
   {
     input:
-      'transition-all text-foreground font-normal flex w-full rounded-md border placeholder-placeholder bg-background ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-border focus:ring-offset-1 focus-visible:border-foreground disabled:cursor-not-allowed disabled:opacity-60',
+      'transition-all text-input-fg font-normal flex w-full rounded-md border placeholder-placeholder bg-input ring-offset-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-input-border focus:ring-offset-1 focus-visible:border-input-fg disabled:cursor-not-allowed disabled:opacity-60',
     variants: {
       size: {
         xs: 'h-6 px-2 py-1.5 text-xs',
@@ -15,7 +15,7 @@ export const inputDef = twOverrides(
       },
       variant: {
         default:
-          'border-input-border focus-visible:border-foreground hover:border-foreground',
+          'border-input-border focus-visible:border-input-fg hover:border-input-fg',
         danger:
           'border-danger focus-visible:border-danger hover:border-danger/30',
         success:

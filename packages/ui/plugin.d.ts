@@ -8,10 +8,11 @@ type TailwindPluginOptions = {
     // Base colors
     background: string;
     foreground: string;
-    muted: {
-      bg: string;
-      fg: string;
-    };
+    placeholder: string;
+    border: string;
+    separator: string;
+
+    // Accent colors
     primary: {
       bg: string;
       fg: string;
@@ -20,10 +21,12 @@ type TailwindPluginOptions = {
       bg: string;
       fg: string;
     };
-    default: {
+    muted: {
       bg: string;
       fg: string;
     };
+
+    // State colors
     danger: {
       bg: string;
       fg: string;
@@ -40,27 +43,28 @@ type TailwindPluginOptions = {
       bg: string;
       fg: string;
     };
+
+    // Accent for item selections (popovers, select, etc.)
     accent: {
       bg: string;
       fg: string;
     };
 
-    // Utility colors
-    border: string;
-    input: string;
-    placeholder: string;
-
-    // Component-specific colors
+    // Colors for popup components
     popover: {
       bg: string;
       fg: string;
     };
+
+    // Component specifics
     table: {
-      fg: string;
       bg: string;
+      fg: string;
       border: string;
     };
     input: {
+      bg: string;
+      fg: string;
       border: string;
     };
   };

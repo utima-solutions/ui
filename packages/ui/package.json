@@ -82,7 +82,6 @@
     "lodash.get": "4",
     "sonner": "^1.4.0",
     "tailwind-merge": ">=2",
-    "ts-deepmerge": "^7.0.0",
     "type-fest": ">=4"
   }
 }

@@ -7,6 +7,8 @@ import {
 
 import { cn } from '@/utils';
 
+import { dropdownDef } from './Dropdown.styles';
+
 type DropdownSeparatorProps = ComponentPropsWithoutRef<typeof Separator>;
 
 export const DropdownSeparator = forwardRef<
@@ -15,7 +17,7 @@ export const DropdownSeparator = forwardRef<
 >(({ className, ...props }, ref) => (
   <Separator
     ref={ref}
-    className={cn('-mx-1 my-1 h-px bg-muted', className)}
+    className={cn(dropdownDef.separator, className)}
     {...props}
   />
 ));

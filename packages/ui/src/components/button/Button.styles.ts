@@ -10,17 +10,15 @@ const defaultBorder = 'bg-none bg-transparent border';
 export const buttonDef = twOverrides(
   {
     button:
-      'inline-flex font-semibold focus:ring-2 focus:ring-offset-1 items-center justify-center rounded-md border-0 focus:outline-none transition-all disabled:opacity-65',
+      'inline-flex font-semibold focus:ring-2 focus:ring-offset-1 items-center justify-center rounded-md border-0 focus:outline-none transition-all disabled:opacity-65 disabled:cursor-not-allowed',
     variants: {
       variant: {
         primary:
           'bg-primary text-primary-fg hover:bg-primary/80 active:bg-primary/90 ring-primary/35',
         secondary:
           'bg-secondary text-secondary-fg hover:bg-secondary/80 active:bg-secondary/90 ring-secondary/35',
-        default:
-          'bg-default text-default-fg hover:bg-default/80 active:bg-default/90 ring-default/35',
-        accent:
-          'bg-accent text-accent-fg hover:bg-accent/80 active:bg-accent/90 ring-accent/35',
+        muted:
+          'bg-muted text-muted-fg hover:bg-muted/80 active:bg-muted/90 ring-muted/35',
         success:
           'bg-success text-success-fg hover:bg-success/80 active:bg-success/90 ring-success/35',
         danger:
@@ -46,8 +44,7 @@ export const buttonDef = twOverrides(
       outline: {
         primary: `${defaultBorder} border-primary text-primary hover:bg-primary/10 active:bg-primary/15`,
         secondary: `${defaultBorder} border-secondary text-secondary hover:bg-secondary/10 active:bg-secondary/15`,
-        default: `${defaultBorder} border-default text-default hover:bg-default/10 active:bg-default/15`,
-        accent: `${defaultBorder} border-accent text-accent hover:bg-accent/10 active:bg-accent/15`,
+        muted: `${defaultBorder} border-default text-default hover:bg-default/10 active:bg-default/15`,
         success: `${defaultBorder} border-success text-success hover:bg-success/10 active:bg-success/15`,
         danger: `${defaultBorder} border-danger text-danger hover:bg-danger/10 active:bg-danger/15`,
         warning: `${defaultBorder} border-warning text-warning hover:bg-warning/10 active:bg-warning/15`,

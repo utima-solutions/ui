@@ -9,16 +9,18 @@ function App() {
       <div className='flex flex-col gap-5 p-5'>
         <h4 className='text-xl font-semibold text-foreground'>Buttons</h4>
         <div className='flex flex-wrap gap-5'>
-          <Button size='lg' icon={<PlusCircle size={18} />}>
-            Primary
-          </Button>
-          <Button variant='secondary' size='lg' icon={<PlusCircle size={18} />}>
-            Secondary
-          </Button>
-          <Button variant='accent'>Accent</Button>
-          <Button loading variant='danger'>
-            Danger
-          </Button>
+          <div className='divide-x flex align-center [&>*]:rounded-none [&>:first-child]:rounded-l [&>:first-child]:-mr-[1px] [&>:last-child]:rounded-r'>
+            <Button variant='warning' icon={<PlusCircle size={18} />}>
+              Primary
+            </Button>
+            <Button variant='primary' icon={<PlusCircle size={18} />}>
+              Secondary
+            </Button>
+            <Button variant='primary'>Accent</Button>
+            <Button loading variant='primary'>
+              Danger
+            </Button>
+          </div>
           <Button variant='success'>Success</Button>
           <Button variant='ghost'>Ghost</Button>
           <Button variant='link'>Link</Button>
@@ -34,9 +36,6 @@ function App() {
           </Button>
           <Button outline variant='secondary'>
             Secondary
-          </Button>
-          <Button outline variant='accent'>
-            Accent
           </Button>
           <Button outline variant='danger'>
             Danger
