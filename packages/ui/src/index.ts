@@ -48,3 +48,6 @@ export * as Dropdown from './components/dropdown';
 
 // Popover
 export * as Popover from './components/popover';
+
+// Separator
+export { Separator } from './components/separator/Separator';
