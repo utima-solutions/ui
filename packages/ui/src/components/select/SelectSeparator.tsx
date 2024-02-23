@@ -12,12 +12,10 @@ import { selectDef } from './select.styles';
 export const SelectSeparator = forwardRef<
   ElementRef<typeof Separator>,
   ComponentPropsWithoutRef<typeof Separator>
->(function SelectSeparator({ className, ...props }, ref) {
-  return (
-    <Separator
-      ref={ref}
-      className={cn(selectDef.separator, className)}
-      {...props}
-    />
-  );
-});
+>(({ className, ...props }, ref) => (
+  <Separator
+    ref={ref}
+    className={cn(selectDef.separator, className)}
+    {...props}
+  />
+));

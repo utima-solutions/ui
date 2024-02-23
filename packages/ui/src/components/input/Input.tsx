@@ -8,15 +8,12 @@ import { inputStyles } from './Input.styles';
 type InputProps = Omit<ComponentProps<'input'>, 'size'> &
   VariantProps<typeof inputStyles>;
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
-  { className, size = 'md', variant = 'default', ...props },
-  ref,
-) {
-  return (
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ className, size = 'md', variant = 'default', ...props }, ref) => (
     <input
       ref={ref}
       className={cn(inputStyles({ size, variant }), className)}
       {...props}
     />
-  );
-});
+  ),
+);

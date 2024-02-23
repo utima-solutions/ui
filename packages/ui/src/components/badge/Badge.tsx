@@ -11,18 +11,18 @@ export type BadgeProps = ComponentProps<'div'> &
     disabled?: boolean;
   };
 
-export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
-  {
-    className,
-    variant = 'primary',
-    size = 'md',
-    outline = false,
-    disabled = false,
-    ...restProps
-  },
-  ref,
-) {
-  return (
+export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
+  (
+    {
+      className,
+      variant = 'primary',
+      size = 'md',
+      outline = false,
+      disabled = false,
+      ...restProps
+    },
+    ref,
+  ) => (
     <div
       ref={ref}
       className={cn(
@@ -36,5 +36,5 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(function Badge(
       )}
       {...restProps}
     />
-  );
-});
+  ),
+);

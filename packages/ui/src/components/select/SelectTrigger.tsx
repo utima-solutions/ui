@@ -14,7 +14,7 @@ import { useSelectContext } from './useSelectContext';
 export const SelectTrigger = forwardRef<
   ElementRef<typeof Trigger>,
   ComponentPropsWithoutRef<typeof Trigger>
->(function SelectTrigger({ className, children, ...props }, ref) {
+>(({ className, children, ...props }, ref) => {
   const { size, variant } = useSelectContext();
 
   return (

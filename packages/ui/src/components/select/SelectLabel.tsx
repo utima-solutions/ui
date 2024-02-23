@@ -13,7 +13,7 @@ import { useSelectContext } from './useSelectContext';
 export const SelectLabel = forwardRef<
   ElementRef<typeof Label>,
   ComponentPropsWithoutRef<typeof Label>
->(function SelectLabel({ className, ...props }, ref) {
+>(({ className, ...props }, ref) => {
   const { size } = useSelectContext();
 
   return (

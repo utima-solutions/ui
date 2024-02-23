@@ -24,5 +24,3 @@ export const DropdownContent = forwardRef<
     />
   </Portal>
 ));
-
-DropdownContent.displayName = 'DropdownContent';

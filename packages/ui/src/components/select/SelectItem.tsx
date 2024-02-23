@@ -14,7 +14,7 @@ import { useSelectContext } from './useSelectContext';
 export const SelectItem = forwardRef<
   ElementRef<typeof Item>,
   ComponentPropsWithoutRef<typeof Item>
->(function SelectItem({ className, children, ...props }, ref) {
+>(({ className, children, ...props }, ref) => {
   const { size } = useSelectContext();
 
   return (

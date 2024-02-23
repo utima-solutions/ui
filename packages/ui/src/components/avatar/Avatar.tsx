@@ -27,20 +27,20 @@ type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
 export const Avatar = forwardRef<
   ElementRef<typeof AvatarPrimitive.Root>,
   AvatarProps
->(function Avatar(
-  {
-    className,
-    fallback,
-    delayMs,
-    size,
-    src,
-    alt,
-    onLoadingStatusChange,
-    ...props
-  },
-  ref,
-) {
-  return (
+>(
+  (
+    {
+      className,
+      fallback,
+      delayMs,
+      size,
+      src,
+      alt,
+      onLoadingStatusChange,
+      ...props
+    },
+    ref,
+  ) => (
     <AvatarPrimitive.Root
       ref={ref}
       className={cn(avatarStyles({ size }), className)}
@@ -53,5 +53,5 @@ export const Avatar = forwardRef<
       />
       <AvatarFallback delayMs={delayMs}>{fallback}</AvatarFallback>
     </AvatarPrimitive.Root>
-  );
-});
+  ),
+);
