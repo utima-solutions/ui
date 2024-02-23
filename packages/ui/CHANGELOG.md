@@ -1,5 +1,15 @@
 # @utima/ui
 
+## 0.9.0
+
+### Minor Changes
+
+- [`9f9eb86`](https://github.com/utima-solutions/ui/commit/9f9eb8646d7c540923450bfd1305f93eb74c9e16) Thanks [@jsimck](https://github.com/jsimck)! - Added new Separator component
+
+- [`3203078`](https://github.com/utima-solutions/ui/commit/32030789dea37ad752a4660ba0d7f281a7812a2d) Thanks [@jsimck](https://github.com/jsimck)! - Colors cleanup and reorganization
+
+- [`33d4117`](https://github.com/utima-solutions/ui/commit/33d411789d74e250f7393d032069385ff9a5abdb) Thanks [@jsimck](https://github.com/jsimck)! - Added Dropdown component
+
 ## 0.8.0
 
 ### Minor Changes
