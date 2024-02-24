@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.11.1
+
+### Patch Changes
+
+- [`4e6711d`](https://github.com/utima-solutions/ui/commit/4e6711dc416c0e6038b60e074a3ecc411b061adf) Thanks [@jsimck](https://github.com/jsimck)! - Added missing default styles
+
 ## 0.11.0
 
 ### Minor Changes
