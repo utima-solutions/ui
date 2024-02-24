@@ -5,3 +5,4 @@ export { SelectLabel as Label } from './SelectLabel';
 export { SelectSeparator as Separator } from './SelectSeparator';
 export { SelectTrigger as Trigger } from './SelectTrigger';
 export { SelectItem as Item } from './SelectItem';
+export { SelectElement as Element } from './SelectElement';

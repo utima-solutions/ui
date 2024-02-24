@@ -46,3 +46,13 @@ export const Basic: Story = {
     ),
   },
 };
+
+export const Element: Story = {
+  decorators: [
+    (Story, context) => (
+      <Select.Element size='md' {...context.args}>
+        Select
+      </Select.Element>
+    ),
+  ],
+};
