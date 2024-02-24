@@ -1,5 +1,16 @@
 # @utima/ui
 
+## 0.10.0
+
+### Minor Changes
+
+- [`0eb261d`](https://github.com/utima-solutions/ui/commit/0eb261dc7c803a7692fc9b18e1aebcc19966a95a) Thanks [@jsimck](https://github.com/jsimck)! - Added `Command` component
+  Removed export for `AvatarPrimitives`
+
+- [`8a2d84c`](https://github.com/utima-solutions/ui/commit/8a2d84ce987f503a5113423014ec2bf2bcd97a1f) Thanks [@jsimck](https://github.com/jsimck)! - Added `Dialog` component
+
+- [`44d1758`](https://github.com/utima-solutions/ui/commit/44d175828e4d7528dfec3fa2b89b4ececa68a925) Thanks [@jsimck](https://github.com/jsimck)! - Added `Checkbox` component
+
 ## 0.9.0
 
 ### Minor Changes
