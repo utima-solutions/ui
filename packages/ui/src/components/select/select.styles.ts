@@ -10,6 +10,12 @@ export const selectDef = twOverrides(
       base: 'transition-all relative cur-pointer flex w-full bg-input cursor-pointer select-none items-center rounded text-input-fg outline-none focus:bg-accent focus:text-accent-fg data-[state=checked]:bg-accent data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
       text: 'relative',
       icon: 'absolute right-2 flex size-3.5 items-center justify-center',
+      size: {
+        xs: 'h-6 px-2 text-xs leading-4',
+        sm: 'h-7 px-2 text-xs leading-4',
+        md: 'h-8 px-3 text-sm leading-4',
+        lg: 'h-9 px-3 text-base leading-4',
+      },
     },
     label: 'font-semibold text-foreground',
     separator: '-mx-1 my-1 h-px bg-separator',

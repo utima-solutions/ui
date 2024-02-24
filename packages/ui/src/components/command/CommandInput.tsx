@@ -1,5 +1,5 @@
 import { Command as CommandPrimitive } from 'cmdk';
-import { Search } from 'lucide-react';
+import { Loader, Search } from 'lucide-react';
 import {
   forwardRef,
   type ElementRef,
@@ -12,19 +12,25 @@ import { commandDef } from './Command.styles';
 
 type CommandInputProps = ComponentPropsWithoutRef<
   typeof CommandPrimitive.Input
->;
+> & {
+  loading?: boolean;
+};
 
 export const CommandInput = forwardRef<
   ElementRef<typeof CommandPrimitive.Input>,
   CommandInputProps
->(({ className, ...restProps }, ref) => (
-  // eslint-disable-next-line react/no-unknown-property
-  <div className={commandDef.search.wrapper} cmdk-input-wrapper=''>
-    <Search className={commandDef.search.icon} />
-    <CommandPrimitive.Input
-      ref={ref}
-      className={cn(commandDef.search.input, className)}
-      {...restProps}
-    />
+>(({ className, loading = false, ...restProps }, ref) => (
+  <div className={commandDef.input.wrapper} cmdk-input-wrapper=''>
+    <div className={commandDef.input.container}>
+      <Search className={commandDef.input.icon} />
+      <CommandPrimitive.Input
+        ref={ref}
+        className={cn(commandDef.input.input, className)}
+        {...restProps}
+      />
+      <Loader
+        className={cn(commandDef.input.loader, loading && 'opacity-100')}
+      />
+    </div>
   </div>
 ));

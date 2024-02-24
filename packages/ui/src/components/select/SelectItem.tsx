@@ -8,7 +8,7 @@ import {
 
 import { cn } from '@/utils';
 
-import { selectDef, selectStyles } from './select.styles';
+import { selectDef } from './select.styles';
 import { useSelectContext } from './useSelectContext';
 
 export const SelectItem = forwardRef<
@@ -22,7 +22,7 @@ export const SelectItem = forwardRef<
       ref={ref}
       className={cn(
         selectDef.item.base,
-        selectStyles({ size, variant: null }),
+        size && selectDef.item.size[size],
         className,
       )}
       {...restProps}

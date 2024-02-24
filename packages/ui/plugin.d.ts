@@ -54,6 +54,7 @@ type TailwindPluginOptions = {
     popover: {
       bg: string;
       fg: string;
+      border: string;
     };
 
     // Component specifics
