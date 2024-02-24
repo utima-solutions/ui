@@ -1,15 +1,17 @@
-// import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 
-// type CommandDialogProps = ComponentPropsWithoutRef<typeof Dialog>;
+import { Command } from './Command';
+import { commandDef } from './Command.styles';
+import * as Dialog from '../dialog';
 
-// export function CommandDialog({ children, ...restProps }: CommandDialogProps) {
-//   return (
-//     <Dialog {...restProps}>
-//       <DialogContent className='overflow-hidden p-0'>
-//         <Command className='[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5'>
-//           {children}
-//         </Command>
-//       </DialogContent>
-//     </Dialog>
-//   );
-// }
+type CommandDialogProps = ComponentPropsWithoutRef<typeof Dialog.Root>;
+
+export function CommandDialog({ children, ...restProps }: CommandDialogProps) {
+  return (
+    <Dialog.Root {...restProps}>
+      <Dialog.Content className={commandDef.dialog.content}>
+        <Command className={commandDef.dialog.command}>{children}</Command>
+      </Dialog.Content>
+    </Dialog.Root>
+  );
+}
