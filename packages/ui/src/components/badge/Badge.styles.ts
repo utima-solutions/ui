@@ -7,7 +7,7 @@ const defaultBorder = 'bg-none bg-transparent border';
 export const badgeDef = twOverrides(
   {
     badge:
-      'font-semibold inline-flex items-center justify-center border-0 transition-all',
+      'font-medium inline-flex items-center justify-center border-0 transition-all',
     variants: {
       variant: {
         primary:
@@ -23,8 +23,7 @@ export const badgeDef = twOverrides(
         warning:
           'bg-warning text-warning-fg hover:bg-warning/80 active:bg-warning/90',
         info: 'bg-info text-info-fg hover:bg-info/80 active:bg-info/90',
-        ghost:
-          'text-foreground hover:bg-foreground/5 active:bg-foreground/10 ring-foreground/70',
+        ghost: 'text-foreground hover:bg-foreground/5 active:bg-foreground/10',
         link: 'text-foreground hover:text-foreground/70 active:text-foreground/90 underline-offset-4 hover:underline',
       },
       size: {

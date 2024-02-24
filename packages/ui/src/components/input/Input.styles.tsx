@@ -2,10 +2,11 @@ import { cva } from 'class-variance-authority';
 
 import { twOverrides } from '@/overrides';
 
+import { globalDef } from '../global.styles';
+
 export const inputDef = twOverrides(
   {
-    input:
-      'peer transition-all text-input-fg font-normal flex w-full rounded-md border placeholder-placeholder bg-input ring-offset-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-input-border focus:ring-offset-1 focus-visible:border-input-fg disabled:cursor-not-allowed disabled:opacity-60',
+    input: `${globalDef.ring} ring-input-border peer transition-all text-input-fg font-normal flex w-full rounded-md border placeholder-placeholder bg-input focus:border-input-fg disabled:cursor-not-allowed disabled:opacity-60`,
     variants: {
       size: {
         xs: 'h-6 px-2 py-1.5 text-xs',
@@ -15,14 +16,11 @@ export const inputDef = twOverrides(
       },
       variant: {
         default:
-          'border-input-border focus-visible:border-input-fg hover:border-input-fg',
-        danger:
-          'border-danger focus-visible:border-danger hover:border-danger/30',
-        success:
-          'border-success focus-visible:border-success hover:border-success/30',
-        warning:
-          'border-warning focus-visible:border-warning hover:border-warning/30',
-        info: 'border-info focus-visible:border-info hover:border-info/30',
+          'border-input-border focus:border-input-fg hover:border-input-fg',
+        danger: 'border-danger focus:border-danger hover:border-danger/30',
+        success: 'border-success focus:border-success hover:border-success/30',
+        warning: 'border-warning focus:border-warning hover:border-warning/30',
+        info: 'border-info focus:border-info hover:border-info/30',
       },
     },
   },

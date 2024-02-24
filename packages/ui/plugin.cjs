@@ -39,6 +39,7 @@ module.exports = plugin.withOptions(
             placeholder: colors?.placeholder ?? palette.placeholder,
             border: colors?.border ?? palette.border,
             separator: colors?.separator ?? palette.separator,
+            ring: colors?.ring ?? palette.primary,
 
             // Key colors
             primary: {
