@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.11.0
+
+### Minor Changes
+
+- [`ab2221e`](https://github.com/utima-solutions/ui/commit/ab2221e938f9e8ca85e897ccbeeab0025df9ed44) Thanks [@jsimck](https://github.com/jsimck)! - Added `SelectElement` for custom select components that retain the same style as select
+
 ## 0.10.1
 
 ### Patch Changes
