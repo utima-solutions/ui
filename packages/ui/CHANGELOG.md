@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.10.1
+
+### Patch Changes
+
+- [`59de742`](https://github.com/utima-solutions/ui/commit/59de742b7c8385570df112635305cd5ca6df9fa6) Thanks [@jsimck](https://github.com/jsimck)! - Commander styles tweaks
+
 ## 0.10.0
 
 ### Minor Changes
