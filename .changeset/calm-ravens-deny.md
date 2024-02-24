@@ -3,3 +3,4 @@
 ---
 
 Added `Command` component
+Removed export for `AvatarPrimitives`

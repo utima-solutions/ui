@@ -16,7 +16,6 @@ export { Button } from './components/button/Button';
 export { Badge } from './components/badge/Badge';
 
 // Avatar
-export * as AvatarPrimitive from './components/avatar';
 export { Avatar } from './components/avatar/Avatar';
 
 // Label
@@ -57,3 +56,6 @@ export { Checkbox } from './components/checkbox/Checkbox';
 
 // Command
 export * as Command from './components/command';
+
+// Dialog
+export * as Dialog from './components/dialog';

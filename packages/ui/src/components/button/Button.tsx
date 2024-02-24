@@ -3,7 +3,7 @@ import type { VariantProps } from 'class-variance-authority';
 import { Loader2 } from 'lucide-react';
 import { forwardRef, type ReactNode } from 'react';
 
-import { cn } from '@/index';
+import { cn } from '@/utils';
 
 import { buttonStyles } from './Button.styles';
 

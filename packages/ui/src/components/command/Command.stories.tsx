@@ -15,7 +15,7 @@ import { Button } from '../button/Button';
 const meta: Meta<typeof Command.Root> = {
   component: Command.Root,
   tags: ['autodocs'],
-  title: 'Components/Command.',
+  title: 'Components/Command',
   args: {
     // eslint-disable-next-line no-console
     onValueChange: (value: string) => console.info('Value changed:', value),
