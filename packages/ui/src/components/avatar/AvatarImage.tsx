@@ -12,10 +12,10 @@ import { avatarDef } from './Avatar.styles';
 export const AvatarImage = forwardRef<
   ElementRef<typeof AvatarPrimitive.Image>,
   ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
->(({ className, ...props }, ref) => (
+>(({ className, ...restProps }, ref) => (
   <AvatarPrimitive.Image
     ref={ref}
     className={cn(avatarDef.image, className)}
-    {...props}
+    {...restProps}
   />
 ));

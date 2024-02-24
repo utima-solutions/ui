@@ -82,6 +82,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": ">=2",
+    "cmdk": "^0.2.1",
     "lodash.get": "4",
     "sonner": "^1.4.0",
     "tailwind-merge": ">=2",

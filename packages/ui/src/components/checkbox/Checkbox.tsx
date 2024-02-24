@@ -15,11 +15,11 @@ type CheckboxProps = ComponentPropsWithoutRef<typeof Root> &
   Omit<VariantProps<typeof checkboxStyles>, 'thumbSize'>;
 
 export const Checkbox = forwardRef<ElementRef<typeof Root>, CheckboxProps>(
-  ({ className, variant = 'primary', size = 'md', ...props }, ref) => (
+  ({ className, variant = 'primary', size = 'md', ...restProps }, ref) => (
     <Root
       ref={ref}
       className={cn(checkboxStyles({ variant, size }), className)}
-      {...props}
+      {...restProps}
     >
       <Indicator className={cn(checkboxDef.indicator)}>
         <CheckIcon

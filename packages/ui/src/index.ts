@@ -54,3 +54,6 @@ export { Separator } from './components/separator/Separator';
 
 // Checkbox
 export { Checkbox } from './components/checkbox/Checkbox';
+
+// Command
+export * as Command from './components/command';

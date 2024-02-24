@@ -9,10 +9,11 @@ export const checkboxDef = twOverrides(
     indicator: 'flex items-center justify-center text-current',
     icon: '',
     iconSize: {
-      xs: 'h-2 w-2',
+      xs: 'h-2.5 w-2.5',
       sm: 'h-3 w-3',
-      md: 'h-4 w-4',
-      lg: 'h-5 w-5',
+      md: 'h-3.5 w-3.5',
+      lg: 'h-4 w-4',
+      xl: 'h-5 w-5',
     },
     variants: {
       variant: {
@@ -32,9 +33,10 @@ export const checkboxDef = twOverrides(
       },
       size: {
         xs: 'h-3 w-3',
-        sm: 'h-4 w-4',
-        md: 'h-5 w-5',
-        lg: 'h-6 w-6',
+        sm: 'h-3.5 w-3.5',
+        md: 'h-4 w-4',
+        lg: 'h-5 w-5',
+        xl: 'h-6 w-6',
       },
     },
   },

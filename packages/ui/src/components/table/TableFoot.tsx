@@ -6,6 +6,6 @@ import { tableDef } from './Table.styles';
 
 type TableFootProps = ComponentProps<'thead'>;
 
-export function TableFoot({ className, ...props }: TableFootProps) {
-  return <tfoot className={cn(tableDef.foot, className)} {...props} />;
+export function TableFoot({ className, ...restProps }: TableFootProps) {
+  return <tfoot className={cn(tableDef.foot, className)} {...restProps} />;
 }

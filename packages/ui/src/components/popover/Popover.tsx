@@ -14,14 +14,14 @@ type PopoverContentProps = ComponentPropsWithoutRef<typeof Content>;
 export const PopoverContent = forwardRef<
   ElementRef<typeof Content>,
   PopoverContentProps
->(({ className, align = 'center', sideOffset = 4, ...props }, ref) => (
+>(({ className, align = 'center', sideOffset = 4, ...restProps }, ref) => (
   <Portal>
     <Content
       ref={ref}
       align={align}
       sideOffset={sideOffset}
       className={cn(popoverDef.content, className)}
-      {...props}
+      {...restProps}
     />
   </Portal>
 ));

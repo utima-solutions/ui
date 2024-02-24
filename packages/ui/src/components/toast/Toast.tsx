@@ -5,15 +5,15 @@ import { toastDef } from './Toast.styles';
 
 type ToastProps = ComponentProps<typeof Toaster>;
 
-export function Toast({ className, ...props }: ToastProps) {
+export function Toast({ className, ...restProps }: ToastProps) {
   return (
     <Toaster
       className='toaster group'
-      {...props}
+      {...restProps}
       toastOptions={{
         unstyled: true,
         classNames: toastDef,
-        ...props.toastOptions,
+        ...restProps.toastOptions,
       }}
     />
   );

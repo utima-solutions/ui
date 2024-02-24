@@ -14,7 +14,7 @@ import { useSelectContext } from './useSelectContext';
 export const SelectTrigger = forwardRef<
   ElementRef<typeof Trigger>,
   ComponentPropsWithoutRef<typeof Trigger>
->(({ className, children, ...props }, ref) => {
+>(({ className, children, ...restProps }, ref) => {
   const { size, variant } = useSelectContext();
 
   return (
@@ -25,7 +25,7 @@ export const SelectTrigger = forwardRef<
         selectStyles({ size, variant }),
         className,
       )}
-      {...props}
+      {...restProps}
     >
       {children}
       <Icon asChild>

@@ -12,10 +12,10 @@ import { avatarDef } from './Avatar.styles';
 export const AvatarFallback = forwardRef<
   ElementRef<typeof AvatarPrimitive.Fallback>,
   ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
->(({ className, ...props }, ref) => (
+>(({ className, ...restProps }, ref) => (
   <AvatarPrimitive.Fallback
     ref={ref}
     className={cn(avatarDef.fallback, className)}
-    {...props}
+    {...restProps}
   />
 ));

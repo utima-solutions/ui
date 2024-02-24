@@ -14,7 +14,7 @@ import { useSelectContext } from './useSelectContext';
 export const SelectItem = forwardRef<
   ElementRef<typeof Item>,
   ComponentPropsWithoutRef<typeof Item>
->(({ className, children, ...props }, ref) => {
+>(({ className, children, ...restProps }, ref) => {
   const { size } = useSelectContext();
 
   return (
@@ -25,7 +25,7 @@ export const SelectItem = forwardRef<
         selectStyles({ size, variant: null }),
         className,
       )}
-      {...props}
+      {...restProps}
     >
       <span className={selectDef.item.text}>
         <ItemText>{children}</ItemText>

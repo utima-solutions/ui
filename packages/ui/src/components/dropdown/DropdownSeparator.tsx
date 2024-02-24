@@ -14,10 +14,10 @@ type DropdownSeparatorProps = ComponentPropsWithoutRef<typeof Separator>;
 export const DropdownSeparator = forwardRef<
   ElementRef<typeof Separator>,
   DropdownSeparatorProps
->(({ className, ...props }, ref) => (
+>(({ className, ...restProps }, ref) => (
   <Separator
     ref={ref}
     className={cn(dropdownDef.separator, className)}
-    {...props}
+    {...restProps}
   />
 ));

@@ -21,7 +21,7 @@ export const Separator = forwardRef<ElementRef<typeof Root>, SeparatorProps>(
       orientation = 'horizontal',
       decorative = true,
       size = 'sm',
-      ...props
+      ...restProps
     },
     ref,
   ) => (
@@ -36,7 +36,7 @@ export const Separator = forwardRef<ElementRef<typeof Root>, SeparatorProps>(
           : `${separatorDef.variants.sizeVertical[size]} h-full`,
         className,
       )}
-      {...props}
+      {...restProps}
     />
   ),
 );

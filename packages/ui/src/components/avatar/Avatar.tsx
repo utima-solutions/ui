@@ -37,14 +37,14 @@ export const Avatar = forwardRef<
       src,
       alt,
       onLoadingStatusChange,
-      ...props
+      ...restProps
     },
     ref,
   ) => (
     <AvatarPrimitive.Root
       ref={ref}
       className={cn(avatarStyles({ size }), className)}
-      {...props}
+      {...restProps}
     >
       <AvatarImage
         onLoadingStatusChange={onLoadingStatusChange}

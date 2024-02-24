@@ -10,12 +10,12 @@ type LabelProps = Omit<ComponentProps<typeof Root>, 'size'> &
   VariantProps<typeof labelStyles>;
 
 export const Label = forwardRef<ElementRef<typeof Root>, LabelProps>(
-  function Label({ className, size = 'md', ...props }, ref) {
+  function Label({ className, size = 'md', ...restProps }, ref) {
     return (
       <Root
         ref={ref}
         className={cn(labelStyles({ size }), className)}
-        {...props}
+        {...restProps}
       />
     );
   },

@@ -8,7 +8,7 @@ type DropdownShortcutProps = ComponentProps<'span'>;
 
 export function DropdownShortcut({
   className,
-  ...props
+  ...restProps
 }: DropdownShortcutProps) {
-  return <span className={cn(dropdownDef.shortcut, className)} {...props} />;
+  return <span className={cn(dropdownDef.shortcut, className)} {...restProps} />;
 }

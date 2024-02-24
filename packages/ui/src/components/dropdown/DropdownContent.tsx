@@ -14,13 +14,13 @@ export type DropdownContentProps = ComponentPropsWithoutRef<typeof Content>;
 export const DropdownContent = forwardRef<
   ElementRef<typeof Content>,
   ComponentPropsWithoutRef<typeof Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
+>(({ className, sideOffset = 4, ...restProps }, ref) => (
   <Portal>
     <Content
       ref={ref}
       sideOffset={sideOffset}
       className={cn(dropdownDef.content, className)}
-      {...props}
+      {...restProps}
     />
   </Portal>
 ));

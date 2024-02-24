@@ -11,7 +11,7 @@ type SelectRootProps = ComponentPropsWithoutRef<typeof Root> &
 export function SelectRoot({
   size = 'md',
   variant = 'default',
-  ...props
+  ...restProps
 }: SelectRootProps) {
   const contextValue = useMemo(() => {
     return { size, variant };
@@ -19,7 +19,7 @@ export function SelectRoot({
 
   return (
     <SelectContext.Provider value={contextValue}>
-      <Root {...props} />
+      <Root {...restProps} />
     </SelectContext.Provider>
   );
 }

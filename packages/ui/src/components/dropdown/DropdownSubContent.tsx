@@ -14,12 +14,12 @@ type DropdownSubContentProps = ComponentPropsWithoutRef<typeof SubContent>;
 export const DropdownSubContent = forwardRef<
   ElementRef<typeof SubContent>,
   DropdownSubContentProps
->(({ className, ...props }, ref) => (
+>(({ className, ...restProps }, ref) => (
   <Portal>
     <SubContent
       ref={ref}
       className={cn(dropdownDef.subContent, className)}
-      {...props}
+      {...restProps}
     />
   </Portal>
 ));

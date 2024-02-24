@@ -13,7 +13,7 @@ import { useSelectContext } from './useSelectContext';
 export const SelectLabel = forwardRef<
   ElementRef<typeof Label>,
   ComponentPropsWithoutRef<typeof Label>
->(({ className, ...props }, ref) => {
+>(({ className, ...restProps }, ref) => {
   const { size } = useSelectContext();
 
   return (
@@ -24,7 +24,7 @@ export const SelectLabel = forwardRef<
         selectDef.label,
         className,
       )}
-      {...props}
+      {...restProps}
     />
   );
 });

@@ -10,14 +10,14 @@ type TextareaProps = Omit<ComponentProps<'textarea'>, 'size'> &
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   function TextArea(
-    { className, size = 'md', variant = 'default', ...props },
+    { className, size = 'md', variant = 'default', ...restProps },
     ref,
   ) {
     return (
       <textarea
         ref={ref}
         className={cn(inputStyles({ size, variant }), 'h-auto', className)}
-        {...props}
+        {...restProps}
       />
     );
   },

@@ -6,6 +6,6 @@ import { tableDef } from './Table.styles';
 
 type TableHeadProps = ComponentProps<'thead'>;
 
-export function TableHead({ className, ...props }: TableHeadProps) {
-  return <thead className={cn(tableDef.head, className)} {...props} />;
+export function TableHead({ className, ...restProps }: TableHeadProps) {
+  return <thead className={cn(tableDef.head, className)} {...restProps} />;
 }

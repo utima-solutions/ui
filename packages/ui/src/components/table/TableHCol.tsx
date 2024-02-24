@@ -6,9 +6,9 @@ import { tableDef } from './Table.styles';
 
 type TableHColProps = ComponentProps<'th'>;
 
-export function TableHCol({ className, children, ...props }: TableHColProps) {
+export function TableHCol({ className, children, ...restProps }: TableHColProps) {
   return (
-    <th className={cn(tableDef.hCol, className)} {...props}>
+    <th className={cn(tableDef.hCol, className)} {...restProps}>
       {children}
     </th>
   );

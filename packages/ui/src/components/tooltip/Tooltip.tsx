@@ -35,7 +35,7 @@ export const Tooltip = forwardRef<ElementRef<typeof Content>, TooltipProps>(
       open,
       onOpenChange,
       sideOffset = 4,
-      ...props
+      ...restProps
     },
     ref,
   ) {
@@ -52,7 +52,7 @@ export const Tooltip = forwardRef<ElementRef<typeof Content>, TooltipProps>(
               ref={ref}
               sideOffset={sideOffset}
               className={cn(tooltipDef.tooltip, className)}
-              {...props}
+              {...restProps}
             >
               {title}
             </Content>

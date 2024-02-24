@@ -10,7 +10,7 @@ export const labelDef = twOverrides(
       size: {
         xs: 'text-xs leading-3',
         sm: 'text-xs leading-4',
-        md: 'text-sm text-sm leading-5',
+        md: 'text-sm leading-5',
         lg: 'text-base leading-6',
         xl: 'text-lg leading-7',
       },

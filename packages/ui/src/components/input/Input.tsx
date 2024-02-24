@@ -9,11 +9,11 @@ type InputProps = Omit<ComponentProps<'input'>, 'size'> &
   VariantProps<typeof inputStyles>;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, size = 'md', variant = 'default', ...props }, ref) => (
+  ({ className, size = 'md', variant = 'default', ...restProps }, ref) => (
     <input
       ref={ref}
       className={cn(inputStyles({ size, variant }), className)}
-      {...props}
+      {...restProps}
     />
   ),
 );

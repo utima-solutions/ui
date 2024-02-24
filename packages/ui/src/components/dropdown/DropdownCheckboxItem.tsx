@@ -15,12 +15,12 @@ type DropdownCheckboxItemProps = ComponentPropsWithoutRef<typeof CheckboxItem>;
 export const DropdownCheckboxItem = forwardRef<
   ElementRef<typeof CheckboxItem>,
   DropdownCheckboxItemProps
->(({ className, children, checked, ...props }, ref) => (
+>(({ className, children, checked, ...restProps }, ref) => (
   <CheckboxItem
     ref={ref}
     className={cn(dropdownDef.checkbox.item, className)}
     checked={checked}
-    {...props}
+    {...restProps}
   >
     <span className={dropdownDef.checkbox.indicator}>
       <ItemIndicator>

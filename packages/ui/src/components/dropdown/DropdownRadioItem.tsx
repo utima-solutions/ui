@@ -15,11 +15,11 @@ type DropdownRadioItemProps = ComponentPropsWithoutRef<typeof RadioItem>;
 export const DropdownRadioItem = forwardRef<
   ElementRef<typeof RadioItem>,
   DropdownRadioItemProps
->(({ className, children, ...props }, ref) => (
+>(({ className, children, ...restProps }, ref) => (
   <RadioItem
     ref={ref}
     className={cn(dropdownDef.radio.item, className)}
-    {...props}
+    {...restProps}
   >
     <span className={dropdownDef.radio.indicator}>
       <ItemIndicator>

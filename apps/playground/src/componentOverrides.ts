@@ -1,16 +1,16 @@
-import {
-  setComponentOverrides,
-  type ComponentOverrides,
-} from '@utima/ui/overrides';
+// import {
+//   setComponentOverrides,
+//   type ComponentOverrides,
+// } from '@utima/ui/overrides';
 
-const overrides: ComponentOverrides = {
-  button: {
-    variants: {
-      variant: {
-        primary: 'bg-cyan-500',
-      },
-    },
-  },
-};
+// const overrides: ComponentOverrides = {
+//   button: {
+//     variants: {
+//       variant: {
+//         primary: 'bg-cyan-500',
+//       },
+//     },
+//   },
+// };
 
-setComponentOverrides(overrides);
+// setComponentOverrides(overrides);

@@ -14,10 +14,10 @@ type SwitchProps = ComponentPropsWithoutRef<typeof Root> &
   Omit<VariantProps<typeof switchStyles>, 'thumbSize'>;
 
 export const Switch = forwardRef<ElementRef<typeof Root>, SwitchProps>(
-  ({ className, variant = 'primary', size = 'md', ...props }, ref) => (
+  ({ className, variant = 'primary', size = 'md', ...restProps }, ref) => (
     <Root
       className={cn(switchStyles({ variant, size }), className)}
-      {...props}
+      {...restProps}
       ref={ref}
     >
       <Thumb

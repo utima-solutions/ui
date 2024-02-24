@@ -3,11 +3,9 @@ const plugin = require('tailwindcss/plugin');
 const palette = {
   bg: '#ffffff',
   fg: '#09090b',
-  lightFg: '#383941',
   mutedFg: '#60637a',
 
   accent: '#f0f1f7',
-  accentFg: '#525468',
   placeholder: '#7b7f95',
   border: '#e4e5f1',
   separator: '#e4e5f1',
@@ -77,13 +75,13 @@ module.exports = plugin.withOptions(
             // Accent for item selections (popovers, select, etc.)
             accent: {
               DEFAULT: colors?.accent?.bg ?? palette.accent,
-              fg: colors?.accent?.fg ?? palette.accentFg,
+              fg: colors?.accent?.fg ?? palette.fg,
             },
 
             // Colors for popup components
             popover: {
               DEFAULT: colors?.popover?.bg ?? palette.bg,
-              fg: colors?.popover?.fg ?? palette.lightFg,
+              fg: colors?.popover?.fg ?? palette.fg,
               border: colors?.popover?.border ?? palette.separator,
             },
 

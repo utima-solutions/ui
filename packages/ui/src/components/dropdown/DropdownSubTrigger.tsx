@@ -15,11 +15,11 @@ type DropdownSubTriggerProps = ComponentPropsWithoutRef<typeof SubTrigger>;
 export const DropdownSubTrigger = forwardRef<
   ElementRef<typeof SubTrigger>,
   DropdownSubTriggerProps
->(({ className, children, ...props }, ref) => (
+>(({ className, children, ...restProps }, ref) => (
   <SubTrigger
     ref={ref}
     className={cn(dropdownDef.subTrigger.trigger, className)}
-    {...props}
+    {...restProps}
   >
     {children}
     <ChevronRight className={dropdownDef.subTrigger.icon} />

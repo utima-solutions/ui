@@ -6,6 +6,6 @@ import { tableDef } from './Table.styles';
 
 type TableRowProps = ComponentProps<'tr'>;
 
-export function TableRow({ className, ...props }: TableRowProps) {
-  return <tr className={cn(tableDef.row, className)} {...props} />;
+export function TableRow({ className, ...restProps }: TableRowProps) {
+  return <tr className={cn(tableDef.row, className)} {...restProps} />;
 }

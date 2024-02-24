@@ -6,6 +6,6 @@ import { tableDef } from './Table.styles';
 
 type TableColProps = ComponentProps<'td'>;
 
-export function TableCol({ className, ...props }: TableColProps) {
-  return <td className={cn(tableDef.col, className)} {...props} />;
+export function TableCol({ className, ...restProps }: TableColProps) {
+  return <td className={cn(tableDef.col, className)} {...restProps} />;
 }
