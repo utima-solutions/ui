@@ -5,9 +5,9 @@ import { twOverrides } from '@/overrides';
 export const switchDef = twOverrides(
   {
     switch:
-      'peer inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus:ring-2 focus:ring-offset-1 ring-input-border disabled:cursor-not-allowed disabled:opacity-65 data-[state=unchecked]:bg-input-fg/15 hover:data-[state=unchecked]:bg-input-fg/10',
+      'peer inline-flex shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus:ring-2 focus:ring-offset-1 ring-input-border disabled:cursor-not-allowed disabled:opacity-65 data-[state=unchecked]:bg-muted hover:data-[state=unchecked]:bg-muted/80',
     thumb:
-      'pointer-events-none block rounded-full bg-input shadow-lg ring-0 transition-transform data-[state=unchecked]:translate-x-0',
+      'pointer-events-none block rounded-full bg-input ring-0 transition-transform data-[state=unchecked]:translate-x-0',
     thumbSize: {
       xs: 'h-2 w-2 data-[state=checked]:translate-x-3',
       sm: 'h-3 w-3 data-[state=checked]:translate-x-3',

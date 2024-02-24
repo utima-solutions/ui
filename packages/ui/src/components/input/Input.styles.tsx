@@ -5,7 +5,7 @@ import { twOverrides } from '@/overrides';
 export const inputDef = twOverrides(
   {
     input:
-      'transition-all text-input-fg font-normal flex w-full rounded-md border placeholder-placeholder bg-input ring-offset-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-input-border focus:ring-offset-1 focus-visible:border-input-fg disabled:cursor-not-allowed disabled:opacity-60',
+      'peer transition-all text-input-fg font-normal flex w-full rounded-md border placeholder-placeholder bg-input ring-offset-input focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-input-border focus:ring-offset-1 focus-visible:border-input-fg disabled:cursor-not-allowed disabled:opacity-60',
     variants: {
       size: {
         xs: 'h-6 px-2 py-1.5 text-xs',

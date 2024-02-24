@@ -6,6 +6,7 @@ import type { aspectRatioDef } from './components/aspectRatio/AspectRatio.styles
 import type { avatarDef } from './components/avatar/Avatar.styles';
 import type { badgeDef } from './components/badge/Badge.styles';
 import type { buttonDef } from './components/button/Button.styles';
+import type { checkboxDef } from './components/checkbox/Checkbox.styles';
 import type { dropdownDef } from './components/dropdown/Dropdown.styles';
 import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
@@ -36,6 +37,7 @@ type ComponentOverridesDef = {
   dropdown: typeof dropdownDef;
   popover: typeof popoverDef;
   separator: typeof separatorDef;
+  checkbox: typeof checkboxDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

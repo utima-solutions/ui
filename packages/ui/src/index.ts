@@ -51,3 +51,6 @@ export * as Popover from './components/popover';
 
 // Separator
 export { Separator } from './components/separator/Separator';
+
+// Checkbox
+export { Checkbox } from './components/checkbox/Checkbox';
