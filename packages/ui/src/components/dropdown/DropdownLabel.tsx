@@ -15,5 +15,9 @@ export const DropdownLabel = forwardRef<
   ElementRef<typeof Label>,
   DropdownLabelProps
 >(({ className, ...restProps }, ref) => (
-  <Label ref={ref} className={cn(dropdownDef.label, className)} {...restProps} />
+  <Label
+    ref={ref}
+    className={cn(dropdownDef.label, className)}
+    {...restProps}
+  />
 ));

@@ -10,5 +10,7 @@ export function DropdownShortcut({
   className,
   ...restProps
 }: DropdownShortcutProps) {
-  return <span className={cn(dropdownDef.shortcut, className)} {...restProps} />;
+  return (
+    <span className={cn(dropdownDef.shortcut, className)} {...restProps} />
+  );
 }
