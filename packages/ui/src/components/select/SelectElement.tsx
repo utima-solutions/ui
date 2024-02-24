@@ -20,7 +20,14 @@ export const SelectElement = forwardRef<
   SelectElementProps
 >(
   (
-    { className, children, asChild, size = 'md', variant = 'default', ...restProps },
+    {
+      className,
+      children,
+      asChild,
+      size = 'md',
+      variant = 'default',
+      ...restProps
+    },
     ref,
   ) => {
     const Comp = asChild ? Slot : 'button';
