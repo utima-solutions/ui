@@ -18,23 +18,28 @@ type SelectElementProps = VariantProps<typeof selectStyles> &
 export const SelectElement = forwardRef<
   ElementRef<typeof Trigger>,
   SelectElementProps
->(({ className, children, asChild, size, variant, ...restProps }, ref) => {
-  const Comp = asChild ? Slot : 'button';
+>(
+  (
+    { className, children, asChild, size = 'md', variant = 'default', ...restProps },
+    ref,
+  ) => {
+    const Comp = asChild ? Slot : 'button';
 
-  return (
-    <Comp
-      ref={ref}
-      className={cn(
-        selectDef.trigger,
-        selectStyles({ size, variant }),
-        className,
-      )}
-      {...restProps}
-    >
-      {children}
-      <Icon asChild>
-        <ChevronDown size={16} />
-      </Icon>
-    </Comp>
-  );
-});
+    return (
+      <Comp
+        ref={ref}
+        className={cn(
+          selectDef.trigger,
+          selectStyles({ size, variant }),
+          className,
+        )}
+        {...restProps}
+      >
+        {children}
+        <Icon asChild>
+          <ChevronDown size={16} />
+        </Icon>
+      </Comp>
+    );
+  },
+);
