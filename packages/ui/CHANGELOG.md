@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.11.2
+
+### Patch Changes
+
+- [`a5f9605`](https://github.com/utima-solutions/ui/commit/a5f9605067f964e62db8d136559abec863e9ec17) Thanks [@jsimck](https://github.com/jsimck)! - Fixed transparent BG in select
+
 ## 0.11.1
 
 ### Patch Changes
