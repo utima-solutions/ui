@@ -1,5 +1,14 @@
 # @utima/ui
 
+## 0.12.0
+
+### Minor Changes
+
+- [`d0f1b56`](https://github.com/utima-solutions/ui/commit/d0f1b56ab574851e8db2a5154a05c005165cae45) Thanks [@jsimck](https://github.com/jsimck)! - UI Updates
+
+  - Added `CommandLoader` component
+  - Tweaked `Command` input styles
+
 ## 0.11.2
 
 ### Patch Changes
