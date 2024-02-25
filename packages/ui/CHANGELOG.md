@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.12.1
+
+### Patch Changes
+
+- [`eee43b7`](https://github.com/utima-solutions/ui/commit/eee43b7d23ab6d55b52c15083635328ab97ec49a) Thanks [@jsimck](https://github.com/jsimck)! - Dropped `Command.Loader` component in favor of extended `Command.Empty`
+
 ## 0.12.0
 
 ### Minor Changes
