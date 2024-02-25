@@ -1,9 +1,10 @@
 import { Command as CommandPrimitive } from 'cmdk';
-import { PackageSearch } from 'lucide-react';
+import { Loader2, PackageSearch } from 'lucide-react';
 import {
   forwardRef,
   type ElementRef,
   type ComponentPropsWithoutRef,
+  type ReactNode,
 } from 'react';
 
 import { cn } from '@/utils';
@@ -13,7 +14,10 @@ import { commandDef } from './Command.styles';
 type CommandEmptyProps = ComponentPropsWithoutRef<
   typeof CommandPrimitive.Empty
 > & {
+  loading?: boolean;
   hasIcon?: boolean;
+  emptyMessage?: ReactNode;
+  loadingMessage?: ReactNode;
 };
 
 export const CommandEmpty = forwardRef<
@@ -21,7 +25,15 @@ export const CommandEmpty = forwardRef<
   CommandEmptyProps
 >(
   (
-    { className, hasIcon = true, children = 'No results found', ...restProps },
+    {
+      className,
+      hasIcon = true,
+      loading,
+      loadingMessage = 'Loading...',
+      emptyMessage = 'No results found',
+      children,
+      ...restProps
+    },
     ref,
   ) => (
     <CommandPrimitive.Empty
@@ -29,8 +41,22 @@ export const CommandEmpty = forwardRef<
       className={cn(commandDef.empty.content, className)}
       {...restProps}
     >
-      {hasIcon && <PackageSearch className={cn(commandDef.empty.icon)} />}
       {children}
+
+      {/* Custom children override default behavior */}
+      {!children && loading ? (
+        <>
+          {hasIcon && (
+            <Loader2 className={cn(commandDef.empty.icon, 'animate-spin')} />
+          )}
+          {loadingMessage}
+        </>
+      ) : (
+        <>
+          {hasIcon && <PackageSearch className={cn(commandDef.empty.icon)} />}
+          {emptyMessage}
+        </>
+      )}
     </CommandPrimitive.Empty>
   ),
 );
