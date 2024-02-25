@@ -1,5 +1,5 @@
 import { Command as CommandPrimitive } from 'cmdk';
-import { Loader, Search } from 'lucide-react';
+import { Loader2, Search } from 'lucide-react';
 import {
   forwardRef,
   type ElementRef,
@@ -28,7 +28,7 @@ export const CommandInput = forwardRef<
         className={cn(commandDef.input.input, className)}
         {...restProps}
       />
-      <Loader
+      <Loader2
         className={cn(commandDef.input.loader, loading && 'opacity-100')}
       />
     </div>

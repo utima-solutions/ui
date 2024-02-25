@@ -23,7 +23,7 @@ const meta: Meta<typeof Command.Root> = {
       <>
         <Command.Input placeholder='Type a command. or search...' />
         <Command.List>
-          <Command.Empty>No results found.</Command.Empty>
+          <Command.Empty />
           <Command.Group>
             <Command.Item>
               <Calendar className='mr-2 h-4 w-4' />

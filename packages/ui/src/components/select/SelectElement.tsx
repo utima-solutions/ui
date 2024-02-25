@@ -42,9 +42,9 @@ export const SelectElement = forwardRef<
         )}
         {...restProps}
       >
-        {children}
+        {children ?? <span />}
         <Icon asChild>
-          <ChevronDown size={16} />
+          <ChevronDown className='shrink-0' size={16} />
         </Icon>
       </Comp>
     );

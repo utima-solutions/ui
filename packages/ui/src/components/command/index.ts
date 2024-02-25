@@ -7,3 +7,4 @@ export { CommandList as List } from './CommandList';
 export { CommandSeparator as Separator } from './CommandSeparator';
 export { CommandShortcut as Shortcut } from './CommandShortcut';
 export { CommandDialog as Dialog } from './CommandDialog';
+export { CommandLoader as Loader } from './CommandLoader';
