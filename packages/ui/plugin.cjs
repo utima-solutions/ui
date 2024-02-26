@@ -32,6 +32,9 @@ module.exports = plugin.withOptions(
     return {
       theme: {
         extend: {
+          borderRadius: {
+            radius: options?.borderRadius?.radius ?? '.375rem',
+          },
           colors: {
             // Base colors
             background: colors?.background ?? palette.bg,

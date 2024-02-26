@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 import { badgeStyles } from './Badge.styles';
 
-export type BadgeProps = ComponentProps<'div'> &
+export type BadgeProps = ComponentProps<'span'> &
   Omit<VariantProps<typeof badgeStyles>, 'outline' | 'disabled'> & {
     outline?: boolean;
     disabled?: boolean;
@@ -23,7 +23,7 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
     },
     ref,
   ) => (
-    <div
+    <span
       ref={ref}
       className={cn(
         badgeStyles({

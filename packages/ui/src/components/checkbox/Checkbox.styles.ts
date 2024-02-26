@@ -6,7 +6,7 @@ import { globalDef } from '../global.styles';
 
 export const checkboxDef = twOverrides(
   {
-    checkbox: `${globalDef.ring} peer transition-all shrink-0 rounded-sm border border-input-border focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 hover:bg-input-border/25`,
+    checkbox: `${globalDef.ring} peer transition-all shrink-0 rounded-radius border border-input-border focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 hover:bg-input-border/25`,
     indicator: 'flex items-center justify-center text-current',
     icon: '',
     iconSize: {

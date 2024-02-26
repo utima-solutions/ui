@@ -4,14 +4,14 @@ import { twOverrides } from '@/overrides';
 
 import { globalDef } from '../global.styles';
 
-const defaultBorder = 'bg-none bg-transparent border';
+const defaultBorder = 'bg-none bg-transparent border border-inset';
 
 /**
  * Style definition for button components.
  */
 export const buttonDef = twOverrides(
   {
-    button: `${globalDef.ring} inline-flex font-semibold items-center justify-center rounded-md border-0 transition-all disabled:opacity-65 disabled:cursor-not-allowed`,
+    button: `${globalDef.ring} box-border inline-flex font-semibold items-center justify-center rounded-radius border-0 transition-all disabled:opacity-65 disabled:cursor-not-allowed`,
     variants: {
       variant: {
         primary:
@@ -32,15 +32,16 @@ export const buttonDef = twOverrides(
         link: 'text-foreground hover:text-foreground/70 active:text-foreground/90 underline-offset-4 hover:underline ring-foreground',
       },
       size: {
-        xs: 'h-7 rounded-md px-2 text-xs gap-x-1',
-        sm: 'h-8 rounded-md px-3 text-sm gap-x-1',
+        xs: 'h-7 px-2 text-xs gap-x-1',
+        sm: 'h-8 px-3 text-sm gap-x-1',
         md: 'h-9 px-4 py-2 text-sm gap-x-1',
-        lg: 'h-10 rounded-lg px-4 text-base gap-x-1.5',
-        icon: 'h-9 w-9', // Backwards compatibility, use `size: 'icon-md'` instead
-        'icon-xs': 'h-7 w-7',
-        'icon-sm': 'h-8 w-8',
-        'icon-md': 'h-9 w-9',
-        'icon-lg': 'h-10 w-10',
+        lg: 'h-10 px-4 text-base gap-x-1.5',
+        xl: 'h-12 px-5 text-lg gap-x-2',
+        'icon-xs': 'size-7',
+        'icon-sm': 'size-8',
+        'icon-md': 'size-9',
+        'icon-lg': 'size-10',
+        'icon-xl': 'size-12',
       },
       outline: {
         primary: `${defaultBorder} border-primary text-primary hover:bg-primary/10 active:bg-primary/15`,

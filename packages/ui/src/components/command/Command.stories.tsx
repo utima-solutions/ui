@@ -91,7 +91,7 @@ const meta: Meta<typeof Command.Root> = {
   },
   decorators: [
     Story => (
-      <div className='rounded shadow-lg border border-border'>
+      <div className='rounded-radius shadow-lg border border-border'>
         <Story />
       </div>
     ),

@@ -4,6 +4,9 @@ import type typeFest = require('type-fest');
  * Typings for the Tailwind CSS plugin options.
  */
 type TailwindPluginOptions = {
+  borderRadius: {
+    radius: string;
+  };
   colors: {
     // Base colors
     background: string;
