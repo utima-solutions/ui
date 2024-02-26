@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.12.2
+
+### Patch Changes
+
+- [`ae56d90`](https://github.com/utima-solutions/ui/commit/ae56d90344e3e343e4ee378836880b5e848d9cf7) Thanks [@jsimck](https://github.com/jsimck)! - Fixed text alignment on select component"
+
 ## 0.12.1
 
 ### Patch Changes
