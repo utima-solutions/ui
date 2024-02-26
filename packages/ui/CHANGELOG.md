@@ -1,5 +1,15 @@
 # @utima/ui
 
+## 0.13.0
+
+### Minor Changes
+
+- [`898e283`](https://github.com/utima-solutions/ui/commit/898e283402500bcb955ed84bca04715c28a96e65) Thanks [@jsimck](https://github.com/jsimck)! - Button, Badge and Radius updates
+
+  - Added additional sizes to `Badge` and `Button`
+  - Most of the rounded corners now use `border-radius` custom properties, that can be styles using tailwind custom config -> this enables Boxed or more rounded interfaces.
+  - Tweaked `Badge` styles on smaller screens
+
 ## 0.12.2
 
 ### Patch Changes
