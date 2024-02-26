@@ -28,7 +28,7 @@ export const Disabled: Story = { args: { disabled: true } };
 
 export const Icon: Story = {
   args: {
-    size: 'icon',
+    size: 'icon-md',
     icon: <Database size={18} />,
     children: null,
   },
