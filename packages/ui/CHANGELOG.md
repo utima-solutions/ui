@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.13.2
+
+### Patch Changes
+
+- [`fe68635`](https://github.com/utima-solutions/ui/commit/fe68635a7400a865c68ba1c1d1f8c7eacb75af37) Thanks [@jsimck](https://github.com/jsimck)! - Reverted badge sizes to heights
+
 ## 0.13.1
 
 ### Patch Changes
