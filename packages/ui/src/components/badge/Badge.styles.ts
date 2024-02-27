@@ -7,7 +7,7 @@ const defaultBorder = 'bg-none bg-transparent border';
 export const badgeDef = twOverrides(
   {
     badge:
-      'border rounded-radius font-semibold inline-flex items-center transition-all h-auto',
+      'rounded-radius font-semibold inline-flex items-center transition-all h-auto',
     variants: {
       variant: {
         primary: 'bg-primary text-primary-fg',
@@ -28,13 +28,13 @@ export const badgeDef = twOverrides(
         xl: 'px-3 gap-2 text-base h-9',
       },
       outline: {
-        primary: `${defaultBorder} text-primary`,
-        secondary: `${defaultBorder} text-secondary`,
-        muted: `${defaultBorder} text-muted`,
-        success: `${defaultBorder} text-success`,
-        danger: `${defaultBorder} text-danger`,
-        warning: `${defaultBorder} text-warning`,
-        info: `${defaultBorder} text-info`,
+        primary: `${defaultBorder} border-primary text-primary`,
+        secondary: `${defaultBorder} border-secondary text-secondary`,
+        muted: `${defaultBorder} border-muted text-muted`,
+        success: `${defaultBorder} border-success text-success`,
+        danger: `${defaultBorder} border-danger text-danger`,
+        warning: `${defaultBorder} border-warning text-warning`,
+        info: `${defaultBorder} border-info text-info`,
         ghost: `${defaultBorder} border-primary/25`,
         link: null,
       },
