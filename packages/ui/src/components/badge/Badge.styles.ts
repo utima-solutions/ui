@@ -6,7 +6,7 @@ const defaultBorder = 'bg-none bg-transparent border';
 
 export const badgeDef = twOverrides(
   {
-    badge: 'border rounded-radius font-semibold inline transition-all h-auto',
+    badge: 'border rounded-radius font-semibold inline-flex items-center transition-all h-auto',
     variants: {
       variant: {
         primary: 'bg-primary border-primary text-primary-fg',
