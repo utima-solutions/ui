@@ -1,6 +1,6 @@
 {
   "name": "@utima/ui",
-  "version": "0.13.2",
+  "version": "0.13.3",
   "description": "Utima UI based on shadcn's UI and Radix Primitives with some modifications.",
   "sideEffects": false,
   "main": "dist/cjs/index.js",

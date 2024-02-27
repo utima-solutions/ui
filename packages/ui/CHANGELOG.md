@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.13.3
+
+### Patch Changes
+
+- [`5b7d20c`](https://github.com/utima-solutions/ui/commit/5b7d20c1d779fdec74307f36730a69486884e97a) Thanks [@jsimck](https://github.com/jsimck)! - Fixed badge border styles
+
 ## 0.13.2
 
 ### Patch Changes
