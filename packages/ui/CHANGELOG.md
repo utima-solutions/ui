@@ -1,5 +1,13 @@
 # @utima/ui
 
+## 0.13.1
+
+### Patch Changes
+
+- [`28820dd`](https://github.com/utima-solutions/ui/commit/28820dde230721dc30d4f091ea7d718f2a13fbae) Thanks [@jsimck](https://github.com/jsimck)! - Re-added inline-flex to badge
+
+- [`30b84dc`](https://github.com/utima-solutions/ui/commit/30b84dc64eca04955ed67757cee87ef2cd7cbd72) Thanks [@jsimck](https://github.com/jsimck)! - Added missing gap to badge
+
 ## 0.13.0
 
 ### Minor Changes
