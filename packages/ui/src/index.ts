@@ -56,6 +56,10 @@ export { Checkbox } from './components/checkbox/Checkbox';
 
 // Command
 export * as Command from './components/command';
+export { useCommandState } from 'cmdk';
 
 // Dialog
 export * as Dialog from './components/dialog';
+
+// Switch
+export { Switch } from './components/switch/Switch';

@@ -17,18 +17,18 @@
   "exports": {
     ".": {
       "import": "./dist/esm/index.js",
-      "default": "./dist/cjs/index.js",
-      "types": "./dist/src/index.d.ts"
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/cjs/index.js"
     },
     "./overrides": {
       "import": "./dist/esm/overrides.js",
-      "default": "./dist/cjs/overrides.js",
-      "types": "./dist/src/overrides.d.ts"
+      "types": "./dist/src/overrides.d.ts",
+      "default": "./dist/cjs/overrides.js"
     },
     "./plugin": {
       "require": "./plugin.cjs",
-      "default": "./plugin.cjs",
-      "types": "./plugin.d.ts"
+      "types": "./plugin.d.ts",
+      "default": "./plugin.cjs"
     }
   },
   "keywords": [

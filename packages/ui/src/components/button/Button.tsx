@@ -1,13 +1,13 @@
 import { Slot } from '@radix-ui/react-slot';
 import type { VariantProps } from 'class-variance-authority';
 import { Loader2 } from 'lucide-react';
-import { forwardRef, type ReactNode } from 'react';
+import { forwardRef, type ComponentProps, type ReactNode } from 'react';
 
 import { cn } from '@/utils';
 
 import { buttonStyles } from './Button.styles';
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
+type ButtonProps = ComponentProps<'button'> &
   Omit<VariantProps<typeof buttonStyles>, 'outline'> & {
     asChild?: boolean;
     outline?: boolean;

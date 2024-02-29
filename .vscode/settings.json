@@ -3,4 +3,7 @@
   "eslint.options": {
     "overrideConfigFile": "eslint.config.mjs"
   },
+  "tailwindCSS.experimental.classRegex": [
+    ["{([\\s\\S]*)}", ":\\s*['\"`]([^'\"`]*)['\"`]"]
+  ]
 }
