@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.13.4
+
+### Patch Changes
+
+- [`68a380b`](https://github.com/utima-solutions/ui/commit/68a380bb992775bc0ee4527566a842f378f036e3) Thanks [@jsimck](https://github.com/jsimck)! - Fixed disabled on select, added missing Switch export
+
 ## 0.13.3
 
 ### Patch Changes
