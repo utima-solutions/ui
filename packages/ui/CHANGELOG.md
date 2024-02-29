@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.13.5
+
+### Patch Changes
+
+- [`5ab2674`](https://github.com/utima-solutions/ui/commit/5ab26743dec3e9770eca2e3ba792c97f020a6cf4) Thanks [@jsimck](https://github.com/jsimck)! - Reverted invalid changes to disabled select
+
 ## 0.13.4
 
 ### Patch Changes
