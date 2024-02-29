@@ -10,6 +10,7 @@ const meta: Meta<typeof Select> = {
   args: {
     size: 'md',
     placeholder: 'Placeholder',
+    disabled: false,
     variant: 'default',
   },
 };

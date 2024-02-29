@@ -48,14 +48,13 @@ export const Select = forwardRef<ElementRef<typeof Root>, SelectProps>(
       arrowPadding,
       sticky,
       hideWhenDetached,
-      disabled,
       ...restProps
     },
     ref,
   ) => {
     return (
       <Root {...restProps}>
-        <Trigger disabled={disabled} ref={ref} id={id}>
+        <Trigger ref={ref} id={id}>
           <Value placeholder={placeholder} />
         </Trigger>
         <Content
