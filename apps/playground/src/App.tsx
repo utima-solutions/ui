@@ -1,6 +1,6 @@
 import './componentOverrides';
 import './app.css';
-import { Avatar, Button, Layout } from '@utima/ui';
+import { Avatar, Button, Layout, Menu } from '@utima/ui';
 import { PlusCircle } from 'lucide-react';
 
 function App() {
@@ -10,19 +10,25 @@ function App() {
         <div className='bg-black h-full'>ahoj</div>
       </Layout.Header>
       <Layout.Wrapper>
-        <Layout.SideBar>        <div className='bg-black h-full'>ahoj</div>
-</Layout.SideBar>
+        <Layout.SideBar>
+          {' '}
+          <Menu.Root column>
+            <Menu.Item>
+              <Menu.ItemContent
+                iconPath='https://i.pravatar.cc/300'
+                title='Home'
+              />
+            </Menu.Item>
+          </Menu.Root>
+        </Layout.SideBar>
         <Layout.Content>
-          <div className='bg-red-100 flex flex-col'>ahoj
-          <div className='h-screen'>
-            ahoj</div>
-            <div className='h-screen'>
-            ahoj</div>
-            <div className='h-screen'>
-            ahoj</div>
-            <div className='h-screen'>
-            ahoj</div>
-            </div>
+          <div className='bg-red-100 flex flex-col'>
+            ahoj
+            <div className='h-screen'>ahoj</div>
+            <div className='h-screen'>ahoj</div>
+            <div className='h-screen'>ahoj</div>
+            <div className='h-screen'>ahoj</div>
+          </div>
         </Layout.Content>
       </Layout.Wrapper>
     </Layout.Root>

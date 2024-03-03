@@ -66,3 +66,6 @@ export { Switch } from './components/switch/Switch';
 
 // Layout
 export * as Layout from './components/layout';
+
+// Menu
+export * as Menu from './components/menu';
