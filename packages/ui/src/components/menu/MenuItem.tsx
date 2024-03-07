@@ -37,8 +37,8 @@ export function MenuItem({
   const WrapperComponent = asChild ? Slot : 'div';
 
   return (
-    <WrapperComponent className={cn(menuDef.item.root, className)}>
-      <div className={cn(menuDef.item.wrapper)}>
+    <div className={cn(menuDef.item.root, className)}>
+      <WrapperComponent className={cn(menuDef.item.wrapper)}>
         <div className={cn(menuDef.item.content)}>
           {icon && <img src={icon} alt='icon' />}
           <span>{label}</span>
@@ -46,8 +46,8 @@ export function MenuItem({
         {hasChildren && (
           <div onClick={toggleSubmenu}>{isOpen ? '▲' : '▼'}</div>
         )}
-      </div>
+      </WrapperComponent>
       {hasChildren && isOpen && <div>{children}</div>}
-    </WrapperComponent>
+    </div>
   );
 }
