@@ -6,10 +6,9 @@ import { menuDef } from './Menu.styles';
 
 interface MenuRootProps {
   children: ReactNode;
-  column: boolean;
   className?: string;
 }
 
-export function MenuRoot({ children, className, column }: MenuRootProps) {
-  return <div className={ cn(column ? menuDef.rootCol : menuDef.rootRow, className)}>{children}</div>;
+export function MenuRoot({ children, className }: MenuRootProps) {
+  return <div className={ cn(menuDef.root, className)}>{children}</div>;
 }
