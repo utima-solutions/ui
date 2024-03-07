@@ -2,6 +2,9 @@ import './componentOverrides';
 import './app.css';
 import { Avatar, Button, Layout, Menu } from '@utima/ui';
 import { PlusCircle } from 'lucide-react';
+import DashBoard from "../icons/dashboard.svg"
+import { Link } from "react-router-dom";
+
 
 function App() {
   return (
@@ -12,13 +15,17 @@ function App() {
       <Layout.Wrapper>
         <Layout.SideBar>
           {' '}
-          <Menu.Root column>
-            <Menu.Item>
-              <Menu.ItemContent
-                iconPath='https://i.pravatar.cc/300'
-                title='Home'
+          <Menu.Root>
+            <Menu.Item icon={DashBoard} label="Home" />
+            <Menu.Item label="About" />
+            <Menu.Item icon={DashBoard} label="Services">
+              <Menu.Item label="Web Dev" />
+              <Menu.Item
+                label="Design"
               />
+              <Menu.Item  icon={DashBoard} label="SEO" />
             </Menu.Item>
+            <Menu.Item label="Content" />
           </Menu.Root>
         </Layout.SideBar>
         <Layout.Content>
