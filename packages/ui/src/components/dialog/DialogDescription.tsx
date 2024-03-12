@@ -9,11 +9,9 @@ import { cn } from '@/utils';
 
 import { dialogDef } from './Dialog.styles';
 
-type DialogDescriptionProps = ComponentPropsWithoutRef<typeof Description>;
-
 export const DialogDescription = forwardRef<
   ElementRef<typeof Description>,
-  DialogDescriptionProps
+  ComponentPropsWithoutRef<typeof Description>
 >(({ className, ...restProps }, ref) => (
   <Description
     ref={ref}

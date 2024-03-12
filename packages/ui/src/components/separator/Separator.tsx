@@ -1,32 +1,23 @@
 import { Root } from '@radix-ui/react-separator';
-import {
-  forwardRef,
-  type ElementRef,
-  type ComponentPropsWithoutRef,
-} from 'react';
+import { type ComponentPropsWithoutRef, memo } from 'react';
 
 import { cn } from '@/utils';
 
 import { separatorDef } from './Separator.styles';
 
-type SeparatorProps = ComponentPropsWithoutRef<typeof Root> & {
+interface SeparatorProps extends ComponentPropsWithoutRef<typeof Root> {
   size?: keyof typeof separatorDef.variants.sizeHorizontal;
-};
+}
 
-export const Separator = forwardRef<ElementRef<typeof Root>, SeparatorProps>(
-  (
-    {
-      className,
-      style = 'solid',
-      orientation = 'horizontal',
-      decorative = true,
-      size = 'sm',
-      ...restProps
-    },
-    ref,
-  ) => (
+export const Separator = memo(function Separator({
+  className,
+  orientation = 'horizontal',
+  decorative = true,
+  size = 'sm',
+  ...restProps
+}: SeparatorProps) {
+  return (
     <Root
-      ref={ref}
       decorative={decorative}
       orientation={orientation}
       className={cn(
@@ -38,5 +29,5 @@ export const Separator = forwardRef<ElementRef<typeof Root>, SeparatorProps>(
       )}
       {...restProps}
     />
-  ),
-);
+  );
+});

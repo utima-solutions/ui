@@ -5,6 +5,7 @@ import type { PartialDeep } from 'type-fest';
 import type { aspectRatioDef } from './components/aspectRatio/AspectRatio.styles';
 import type { avatarDef } from './components/avatar/Avatar.styles';
 import type { badgeDef } from './components/badge/Badge.styles';
+import type { breadcrumbDef } from './components/breadcrumb/Breadcrumb.styles';
 import type { buttonDef } from './components/button/Button.styles';
 import type { checkboxDef } from './components/checkbox/Checkbox.styles';
 import type { commandDef } from './components/command/Command.styles';
@@ -44,6 +45,7 @@ type ComponentOverridesDef = {
   checkbox: typeof checkboxDef;
   command: typeof commandDef;
   dialog: typeof dialogDef;
+  breadcrumb: typeof breadcrumbDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

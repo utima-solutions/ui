@@ -11,14 +11,13 @@ import { cn } from '@/utils';
 
 import { commandDef } from './Command.styles';
 
-type CommandEmptyProps = ComponentPropsWithoutRef<
-  typeof CommandPrimitive.Empty
-> & {
+interface CommandEmptyProps
+  extends ComponentPropsWithoutRef<typeof CommandPrimitive.Empty> {
   loading?: boolean;
   hasIcon?: boolean;
   emptyMessage?: ReactNode;
   loadingMessage?: ReactNode;
-};
+}
 
 export const CommandEmpty = forwardRef<
   ElementRef<typeof CommandPrimitive.Empty>,

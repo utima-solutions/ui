@@ -35,6 +35,7 @@ export { Tooltip } from './components/tooltip/Tooltip';
 export * as SelectPrimitive from './components/select';
 export { Select } from './components/select/Select';
 export { SelectItem } from './components/select/SelectItem';
+export { useSelectContext } from './components/select/useSelectContext';
 
 // Toast
 export { Toast, toast } from './components/toast/Toast';

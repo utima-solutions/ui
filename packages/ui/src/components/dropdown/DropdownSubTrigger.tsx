@@ -10,11 +10,9 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownSubTriggerProps = ComponentPropsWithoutRef<typeof SubTrigger>;
-
 export const DropdownSubTrigger = forwardRef<
   ElementRef<typeof SubTrigger>,
-  DropdownSubTriggerProps
+  ComponentPropsWithoutRef<typeof SubTrigger>
 >(({ className, children, ...restProps }, ref) => (
   <SubTrigger
     ref={ref}

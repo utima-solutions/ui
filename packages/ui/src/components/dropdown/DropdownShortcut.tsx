@@ -1,16 +1,14 @@
-import type { ComponentProps } from 'react';
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
 import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownShortcutProps = ComponentProps<'span'>;
-
-export function DropdownShortcut({
+export const DropdownShortcut = memo(function DropdownShortcut({
   className,
   ...restProps
-}: DropdownShortcutProps) {
+}: ComponentPropsWithoutRef<'span'>) {
   return (
     <span className={cn(dropdownDef.shortcut, className)} {...restProps} />
   );
-}
+});

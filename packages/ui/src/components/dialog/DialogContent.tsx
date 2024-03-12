@@ -11,11 +11,9 @@ import { cn } from '@/utils';
 import { dialogDef } from './Dialog.styles';
 import { DialogOverlay } from './DialogOverlay';
 
-type DialogContentProps = ComponentPropsWithoutRef<typeof Content>;
-
 export const DialogContent = forwardRef<
   ElementRef<typeof Content>,
-  DialogContentProps
+  ComponentPropsWithoutRef<typeof Content>
 >(({ className, children, ...restProps }, ref) => (
   <Portal>
     <DialogOverlay />

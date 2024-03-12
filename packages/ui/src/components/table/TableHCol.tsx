@@ -1,19 +1,17 @@
-import type { ComponentProps } from 'react';
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
 import { cn } from '@/utils';
 
 import { tableDef } from './Table.styles';
 
-type TableHColProps = ComponentProps<'th'>;
-
-export function TableHCol({
+export const TableHCol = memo(function TableHCol({
   className,
   children,
   ...restProps
-}: TableHColProps) {
+}: ComponentPropsWithoutRef<'th'>) {
   return (
     <th className={cn(tableDef.hCol, className)} {...restProps}>
       {children}
     </th>
   );
-}
+});

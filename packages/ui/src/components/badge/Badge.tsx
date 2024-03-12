@@ -1,30 +1,27 @@
 import type { VariantProps } from 'class-variance-authority';
-import { forwardRef, type ComponentProps } from 'react';
+import { type ComponentPropsWithoutRef, memo } from 'react';
 
 import { cn } from '@/utils';
 
 import { badgeStyles } from './Badge.styles';
 
-export type BadgeProps = ComponentProps<'span'> &
-  Omit<VariantProps<typeof badgeStyles>, 'outline' | 'disabled'> & {
-    outline?: boolean;
-    disabled?: boolean;
-  };
+export interface BadgeProps
+  extends ComponentPropsWithoutRef<'span'>,
+    Omit<VariantProps<typeof badgeStyles>, 'outline' | 'disabled'> {
+  outline?: boolean;
+  disabled?: boolean;
+}
 
-export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
-  (
-    {
-      className,
-      variant = 'primary',
-      size = 'md',
-      outline = false,
-      disabled = false,
-      ...restProps
-    },
-    ref,
-  ) => (
+export const Badge = memo(function Badge({
+  className,
+  variant = 'primary',
+  size = 'md',
+  outline = false,
+  disabled = false,
+  ...restProps
+}: BadgeProps) {
+  return (
     <span
-      ref={ref}
       className={cn(
         badgeStyles({
           variant,
@@ -36,5 +33,5 @@ export const Badge = forwardRef<HTMLDivElement, BadgeProps>(
       )}
       {...restProps}
     />
-  ),
-);
+  );
+});

@@ -10,11 +10,9 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownRadioItemProps = ComponentPropsWithoutRef<typeof RadioItem>;
-
 export const DropdownRadioItem = forwardRef<
   ElementRef<typeof RadioItem>,
-  DropdownRadioItemProps
+  ComponentPropsWithoutRef<typeof RadioItem>
 >(({ className, children, ...restProps }, ref) => (
   <RadioItem
     ref={ref}

@@ -1,14 +1,12 @@
-import type { ComponentProps } from 'react';
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
 import { cn } from '@/utils';
 
 import { commandDef } from './Command.styles';
 
-type CommandShortcutProps = ComponentProps<'span'>;
-
-export function CommandShortcut({
+export const CommandShortcut = memo(function CommandShortcut({
   className,
   ...restProps
-}: CommandShortcutProps) {
+}: ComponentPropsWithoutRef<'span'>) {
   return <span className={cn(commandDef.shortcut, className)} {...restProps} />;
-}
+});

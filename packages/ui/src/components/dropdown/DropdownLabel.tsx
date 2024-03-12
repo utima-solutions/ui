@@ -9,11 +9,9 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownLabelProps = ComponentPropsWithoutRef<typeof Label>;
-
 export const DropdownLabel = forwardRef<
   ElementRef<typeof Label>,
-  DropdownLabelProps
+  ComponentPropsWithoutRef<typeof Label>
 >(({ className, ...restProps }, ref) => (
   <Label
     ref={ref}

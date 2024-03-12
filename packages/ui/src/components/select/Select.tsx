@@ -6,27 +6,28 @@ import {
 
 import { Root, Trigger, Content, Value } from './index';
 
-type SelectProps = ComponentPropsWithoutRef<typeof Root> &
-  Pick<
-    ComponentPropsWithoutRef<typeof Content>,
-    | 'onCloseAutoFocus'
-    | 'onEscapeKeyDown'
-    | 'onPointerDownOutside'
-    | 'position'
-    | 'side'
-    | 'sideOffset'
-    | 'align'
-    | 'alignOffset'
-    | 'avoidCollisions'
-    | 'collisionBoundary'
-    | 'collisionPadding'
-    | 'arrowPadding'
-    | 'sticky'
-    | 'hideWhenDetached'
-  > & {
-    placeholder?: string;
-    id?: string;
-  };
+interface SelectProps
+  extends ComponentPropsWithoutRef<typeof Root>,
+    Pick<
+      ComponentPropsWithoutRef<typeof Content>,
+      | 'onCloseAutoFocus'
+      | 'onEscapeKeyDown'
+      | 'onPointerDownOutside'
+      | 'position'
+      | 'side'
+      | 'sideOffset'
+      | 'align'
+      | 'alignOffset'
+      | 'avoidCollisions'
+      | 'collisionBoundary'
+      | 'collisionPadding'
+      | 'arrowPadding'
+      | 'sticky'
+      | 'hideWhenDetached'
+    > {
+  placeholder?: string;
+  id?: string;
+}
 
 export const Select = forwardRef<ElementRef<typeof Root>, SelectProps>(
   (

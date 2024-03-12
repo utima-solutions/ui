@@ -9,8 +9,6 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-export type DropdownContentProps = ComponentPropsWithoutRef<typeof Content>;
-
 export const DropdownContent = forwardRef<
   ElementRef<typeof Content>,
   ComponentPropsWithoutRef<typeof Content>

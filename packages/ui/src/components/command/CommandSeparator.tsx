@@ -9,13 +9,9 @@ import { cn } from '@/utils';
 
 import { commandDef } from './Command.styles';
 
-type CommandSeparatorProps = ComponentPropsWithoutRef<
-  typeof CommandPrimitive.Separator
->;
-
 export const CommandSeparator = forwardRef<
   ElementRef<typeof CommandPrimitive.Separator>,
-  CommandSeparatorProps
+  ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 >(({ className, ...restProps }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}

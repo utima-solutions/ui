@@ -11,8 +11,9 @@ import { cn } from '@/utils';
 
 import { checkboxDef, checkboxStyles } from './Checkbox.styles';
 
-type CheckboxProps = ComponentPropsWithoutRef<typeof Root> &
-  Omit<VariantProps<typeof checkboxStyles>, 'thumbSize'>;
+interface CheckboxProps
+  extends ComponentPropsWithoutRef<typeof Root>,
+    Omit<VariantProps<typeof checkboxStyles>, 'thumbSize'> {}
 
 export const Checkbox = forwardRef<ElementRef<typeof Root>, CheckboxProps>(
   ({ className, variant = 'primary', size = 'md', ...restProps }, ref) => (

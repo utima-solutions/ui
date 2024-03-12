@@ -10,11 +10,9 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownCheckboxItemProps = ComponentPropsWithoutRef<typeof CheckboxItem>;
-
 export const DropdownCheckboxItem = forwardRef<
   ElementRef<typeof CheckboxItem>,
-  DropdownCheckboxItemProps
+  ComponentPropsWithoutRef<typeof CheckboxItem>
 >(({ className, children, checked, ...restProps }, ref) => (
   <CheckboxItem
     ref={ref}

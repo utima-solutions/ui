@@ -1,11 +1,12 @@
-import type { ComponentProps } from 'react';
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
 import { cn } from '@/utils';
 
 import { dialogDef } from './Dialog.styles';
 
-type DialogFooterProps = ComponentProps<'div'>;
-
-export function DialogFooter({ className, ...restProps }: DialogFooterProps) {
+export const DialogFooter = memo(function DialogFooter({
+  className,
+  ...restProps
+}: ComponentPropsWithoutRef<'div'>) {
   return <div className={cn(dialogDef.footer, className)} {...restProps} />;
-}
+});

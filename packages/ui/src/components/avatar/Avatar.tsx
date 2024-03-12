@@ -12,17 +12,18 @@ import { avatarStyles } from './Avatar.styles';
 import { AvatarFallback } from './AvatarFallback';
 import { AvatarImage } from './AvatarImage';
 
-type AvatarProps = ComponentPropsWithoutRef<typeof AvatarPrimitive.Root> &
-  Pick<
-    ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>,
-    'onLoadingStatusChange'
-  > &
-  VariantProps<typeof avatarStyles> & {
-    delayMs?: number;
-    fallback?: string;
-    src?: string;
-    alt?: string;
-  };
+interface AvatarProps
+  extends ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
+    Pick<
+      ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>,
+      'onLoadingStatusChange'
+    >,
+    VariantProps<typeof avatarStyles> {
+  delayMs?: number;
+  fallback?: string;
+  src?: string;
+  alt?: string;
+}
 
 export const Avatar = forwardRef<
   ElementRef<typeof AvatarPrimitive.Root>,

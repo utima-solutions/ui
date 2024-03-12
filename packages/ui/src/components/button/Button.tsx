@@ -7,14 +7,15 @@ import { cn } from '@/utils';
 
 import { buttonStyles } from './Button.styles';
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  Omit<VariantProps<typeof buttonStyles>, 'outline'> & {
-    asChild?: boolean;
-    outline?: boolean;
-    loading?: boolean;
-    icon?: ReactNode;
-    iconSize?: number;
-  };
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    Omit<VariantProps<typeof buttonStyles>, 'outline'> {
+  asChild?: boolean;
+  outline?: boolean;
+  loading?: boolean;
+  icon?: ReactNode;
+  iconSize?: number;
+}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (

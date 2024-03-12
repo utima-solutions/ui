@@ -9,11 +9,9 @@ import { cn } from '@/utils';
 
 import { popoverDef } from './Popover.styles';
 
-type PopoverContentProps = ComponentPropsWithoutRef<typeof Content>;
-
 export const PopoverContent = forwardRef<
   ElementRef<typeof Content>,
-  PopoverContentProps
+  ComponentPropsWithoutRef<typeof Content>
 >(({ className, align = 'center', sideOffset = 4, ...restProps }, ref) => (
   <Portal>
     <Content
