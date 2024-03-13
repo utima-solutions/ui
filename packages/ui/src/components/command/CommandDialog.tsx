@@ -1,12 +1,13 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
 import { Command } from './Command';
 import { commandDef } from './Command.styles';
 import * as Dialog from '../dialog';
 
-type CommandDialogProps = ComponentPropsWithoutRef<typeof Dialog.Root>;
-
-export function CommandDialog({ children, ...restProps }: CommandDialogProps) {
+export const CommandDialog = memo(function CommandDialog({
+  children,
+  ...restProps
+}: ComponentPropsWithoutRef<typeof Dialog.Root>) {
   return (
     <Dialog.Root {...restProps}>
       <Dialog.Content className={commandDef.dialog.content}>
@@ -14,4 +15,4 @@ export function CommandDialog({ children, ...restProps }: CommandDialogProps) {
       </Dialog.Content>
     </Dialog.Root>
   );
-}
+});

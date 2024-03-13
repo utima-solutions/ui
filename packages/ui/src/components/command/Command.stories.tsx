@@ -11,6 +11,7 @@ import {
 
 import * as Command from '.';
 import { Button } from '../button/Button';
+import { Kbd } from '../kbd/Kbd';
 
 const meta: Meta<typeof Command.Root> = {
   component: Command.Root,
@@ -72,17 +73,17 @@ const meta: Meta<typeof Command.Root> = {
             <Command.Item>
               <PersonStanding className='mr-2 h-4 w-4' />
               <span>Profile</span>
-              <Command.Shortcut>⌘P</Command.Shortcut>
+              <Kbd variant='bordered'>⌘P</Kbd>
             </Command.Item>
             <Command.Item>
               <Mail className='mr-2 h-4 w-4' />
               <span>Mail</span>
-              <Command.Shortcut>⌘B</Command.Shortcut>
+              <Kbd variant='bordered'>⌘B</Kbd>
             </Command.Item>
             <Command.Item>
               <Settings className='mr-2 h-4 w-4' />
               <span>Settings</span>
-              <Command.Shortcut>⌘S</Command.Shortcut>
+              <Kbd variant='bordered'>⌘S</Kbd>
             </Command.Item>
           </Command.Group>
         </Command.List>

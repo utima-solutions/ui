@@ -29,7 +29,6 @@ export const commandDef = twOverrides(
     item: 'transition-all cursor-pointer relative flex select-none items-center rounded-radius px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-fg data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
     list: 'max-h-[300px] overflow-y-auto overflow-x-hidden',
     separator: '-mx-1 h-px bg-separator',
-    shortcut: 'ml-auto text-xs tracking-widest text-muted-fg',
   },
   'command',
 );

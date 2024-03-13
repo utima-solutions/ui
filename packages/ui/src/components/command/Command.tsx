@@ -9,11 +9,9 @@ import { cn } from '@/utils';
 
 import { commandDef } from './Command.styles';
 
-type CommandProps = ComponentPropsWithoutRef<typeof CommandPrimitive>;
-
 export const Command = forwardRef<
   ElementRef<typeof CommandPrimitive>,
-  CommandProps
+  ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...restProps }, ref) => (
   <CommandPrimitive
     ref={ref}

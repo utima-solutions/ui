@@ -9,11 +9,9 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownItemProps = ComponentPropsWithoutRef<typeof Item>;
-
 export const DropdownItem = forwardRef<
   ElementRef<typeof Item>,
-  DropdownItemProps
+  ComponentPropsWithoutRef<typeof Item>
 >(({ className, ...restProps }, ref) => (
   <Item ref={ref} className={cn(dropdownDef.item, className)} {...restProps} />
 ));

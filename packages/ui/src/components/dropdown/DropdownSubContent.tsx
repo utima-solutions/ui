@@ -9,11 +9,9 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownSubContentProps = ComponentPropsWithoutRef<typeof SubContent>;
-
 export const DropdownSubContent = forwardRef<
   ElementRef<typeof SubContent>,
-  DropdownSubContentProps
+  ComponentPropsWithoutRef<typeof SubContent>
 >(({ className, ...restProps }, ref) => (
   <Portal>
     <SubContent

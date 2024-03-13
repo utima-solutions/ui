@@ -1,11 +1,12 @@
-import type { ComponentProps } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
 import { Toaster, toast } from 'sonner';
 
 import { toastDef } from './Toast.styles';
 
-type ToastProps = ComponentProps<typeof Toaster>;
-
-export function Toast({ className, ...restProps }: ToastProps) {
+export function Toast({
+  className,
+  ...restProps
+}: ComponentPropsWithoutRef<typeof Toaster>) {
   return (
     <Toaster
       className='toaster group'

@@ -12,8 +12,9 @@ import { cn } from '@/utils';
 
 import { selectDef, selectStyles } from './select.styles';
 
-type SelectElementProps = VariantProps<typeof selectStyles> &
-  ComponentPropsWithoutRef<typeof Trigger>;
+export interface SelectElementProps
+  extends VariantProps<typeof selectStyles>,
+    ComponentPropsWithoutRef<typeof Trigger> {}
 
 export const SelectElement = forwardRef<
   ElementRef<typeof Trigger>,

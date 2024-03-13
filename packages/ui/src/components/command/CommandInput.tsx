@@ -10,11 +10,10 @@ import { cn } from '@/utils';
 
 import { commandDef } from './Command.styles';
 
-type CommandInputProps = ComponentPropsWithoutRef<
-  typeof CommandPrimitive.Input
-> & {
+export interface CommandInputProps
+  extends ComponentPropsWithoutRef<typeof CommandPrimitive.Input> {
   loading?: boolean;
-};
+}
 
 export const CommandInput = forwardRef<
   ElementRef<typeof CommandPrimitive.Input>,

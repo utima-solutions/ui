@@ -9,11 +9,9 @@ import { cn } from '@/utils';
 
 import { dropdownDef } from './Dropdown.styles';
 
-type DropdownSeparatorProps = ComponentPropsWithoutRef<typeof Separator>;
-
 export const DropdownSeparator = forwardRef<
   ElementRef<typeof Separator>,
-  DropdownSeparatorProps
+  ComponentPropsWithoutRef<typeof Separator>
 >(({ className, ...restProps }, ref) => (
   <Separator
     ref={ref}

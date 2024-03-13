@@ -1,11 +1,12 @@
-import type { ComponentProps } from 'react';
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
 import { cn } from '@/utils';
 
 import { tableDef } from './Table.styles';
 
-type TableProps = ComponentProps<'table'>;
-
-export function Table({ className, ...restProps }: TableProps) {
+export const Table = memo(function Table({
+  className,
+  ...restProps
+}: ComponentPropsWithoutRef<'table'>) {
   return <table className={cn(tableDef.table, className)} {...restProps} />;
-}
+});

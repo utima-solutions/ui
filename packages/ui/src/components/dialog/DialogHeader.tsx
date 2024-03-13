@@ -1,11 +1,12 @@
-import type { ComponentProps } from 'react';
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
 import { cn } from '@/utils';
 
 import { dialogDef } from './Dialog.styles';
 
-type DialogHeaderProps = ComponentProps<'div'>;
-
-export function DialogHeader({ className, ...restProps }: DialogHeaderProps) {
+export const DialogHeader = memo(function DialogHeader({
+  className,
+  ...restProps
+}: ComponentPropsWithoutRef<'div'>) {
   return <div className={cn(dialogDef.header, className)} {...restProps} />;
-}
+});

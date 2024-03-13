@@ -5,60 +5,50 @@ import {
   Trigger,
   Portal,
 } from '@radix-ui/react-tooltip';
-import {
-  forwardRef,
-  type ComponentPropsWithoutRef,
-  type ElementRef,
-  type ReactNode,
-} from 'react';
+import { memo, type ComponentPropsWithoutRef, type ReactNode } from 'react';
 
 import { cn } from '@/utils';
 
 import { tooltipDef } from './Tooltip.styles';
 
-type TooltipProps = Omit<ComponentPropsWithoutRef<typeof Content>, 'title'> &
-  Omit<ComponentPropsWithoutRef<typeof Root>, 'children'> &
-  Omit<ComponentPropsWithoutRef<typeof Provider>, 'children'> & {
-    title: ReactNode;
-  };
+export interface TooltipProps
+  extends Omit<ComponentPropsWithoutRef<typeof Content>, 'title'>,
+    Omit<ComponentPropsWithoutRef<typeof Root>, 'children'>,
+    Omit<ComponentPropsWithoutRef<typeof Provider>, 'children'> {
+  title: ReactNode;
+}
 
-export const Tooltip = forwardRef<ElementRef<typeof Content>, TooltipProps>(
-  function (
-    {
-      className,
-      delayDuration = 700,
-      skipDelayDuration = 300,
-      disableHoverableContent,
-      title,
-      children,
-      defaultOpen,
-      open,
-      onOpenChange,
-      sideOffset = 4,
-      ...restProps
-    },
-    ref,
-  ) {
-    return (
-      <Provider
-        delayDuration={delayDuration}
-        skipDelayDuration={skipDelayDuration}
-        disableHoverableContent={disableHoverableContent}
-      >
-        <Root open={open} onOpenChange={onOpenChange} defaultOpen={defaultOpen}>
-          <Trigger asChild>{children}</Trigger>
-          <Portal>
-            <Content
-              ref={ref}
-              sideOffset={sideOffset}
-              className={cn(tooltipDef.tooltip, className)}
-              {...restProps}
-            >
-              {title}
-            </Content>
-          </Portal>
-        </Root>
-      </Provider>
-    );
-  },
-);
+export const Tooltip = memo(function Tooltip({
+  className,
+  delayDuration = 500,
+  skipDelayDuration = 200,
+  disableHoverableContent,
+  title,
+  children,
+  defaultOpen,
+  open,
+  onOpenChange,
+  sideOffset = 4,
+  ...restProps
+}: TooltipProps) {
+  return (
+    <Provider
+      delayDuration={delayDuration}
+      skipDelayDuration={skipDelayDuration}
+      disableHoverableContent={disableHoverableContent}
+    >
+      <Root open={open} onOpenChange={onOpenChange} defaultOpen={defaultOpen}>
+        <Trigger asChild>{children}</Trigger>
+        <Portal>
+          <Content
+            sideOffset={sideOffset}
+            className={cn(tooltipDef.tooltip, className)}
+            {...restProps}
+          >
+            {title}
+          </Content>
+        </Portal>
+      </Root>
+    </Provider>
+  );
+});
