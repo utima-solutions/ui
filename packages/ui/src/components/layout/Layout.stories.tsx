@@ -1,33 +1,34 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Menu } from 'lucide-react';
 
-import { Layout } from '@/index';
+import * as Layout from '.';
 
-import * as Dropdown from '.';
-
-const meta: Meta<typeof Dropdown.Root> = {
-  component: Dropdown.Root,
+const meta: Meta<typeof Layout.Root> = {
+  component: Layout.Root,
   tags: ['autodocs'],
   title: 'Components/Layout',
+  parameters: {
+    layout: 'fullscreen',
+  },
   args: {
     children: (
-      <Layout.Root>
+      <Layout.Root withHeader withSidebar>
         <Layout.Header>
-          <div className='bg-black h-full'>Hi</div>
+          <Layout.SidebarTrigger>
+            <Menu />
+          </Layout.SidebarTrigger>
         </Layout.Header>
-        <Layout.Wrapper>
-          <Layout.SideBar>
-            <h1>hi</h1>
-          </Layout.SideBar>
-          <Layout.Content>
-            <div className='bg-red-100 flex flex-col'>
-              Hi
-              <div className='h-screen'>Hi</div>
-              <div className='h-screen'>Hi</div>
-              <div className='h-screen'>Hi</div>
-              <div className='h-screen'>Hi</div>
-            </div>
-          </Layout.Content>
-        </Layout.Wrapper>
+        <Layout.SideBar>
+          <h1>hi</h1>
+        </Layout.SideBar>
+        <Layout.Content>
+          Hi
+          <div className='h-screen'>Hi</div>
+          <div className='h-screen'>Hi</div>
+          <div className='h-screen'>Hi</div>
+          <div className='h-screen'>Hi</div>
+          <div className='h-screen'>Hi</div>
+        </Layout.Content>
       </Layout.Root>
     ),
   },
@@ -35,6 +36,6 @@ const meta: Meta<typeof Dropdown.Root> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Dropdown.Root>;
+type Story = StoryObj<typeof Layout.Root>;
 
 export const Basic: Story = {};

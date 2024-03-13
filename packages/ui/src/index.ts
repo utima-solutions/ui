@@ -76,3 +76,8 @@ export { Kbd, type KbdProps } from './components/kbd/Kbd';
 
 // Layout
 export * as Layout from './components/layout';
+export {
+  LayoutContext,
+  type LayoutContextType,
+  useLayoutContext,
+} from './components/layout/useLayoutContext';

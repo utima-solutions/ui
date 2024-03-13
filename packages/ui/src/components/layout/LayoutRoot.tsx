@@ -1,14 +1,35 @@
-import type { ReactNode } from 'react';
+import { type ComponentPropsWithoutRef, useMemo, useState } from 'react';
 
 import { cn } from '@/utils';
 
 import { layoutDef } from './Layout.styles';
+import { LayoutContext, type LayoutContextType } from './useLayoutContext';
 
-interface LayoutRootProps {
-  children: ReactNode;
-  className?: string;
+interface LayoutRootProps extends ComponentPropsWithoutRef<'div'> {
+  withSidebar?: boolean;
+  withHeader?: boolean;
 }
 
-export function LayoutRoot({ children, className }: LayoutRootProps) {
-  return <div className={cn(layoutDef.root, className)}>{children}</div>;
+export function LayoutRoot({
+  className,
+  withSidebar,
+  withHeader,
+  ...restProps
+}: LayoutRootProps) {
+  const [open, setOpen] = useState(false);
+  const contextValue = useMemo<LayoutContextType>(
+    () => ({
+      open,
+      setOpen,
+      withSidebar: !!(withSidebar ?? true),
+      withHeader: !!(withHeader ?? true),
+    }),
+    [open, withSidebar, withHeader],
+  );
+
+  return (
+    <LayoutContext.Provider value={contextValue}>
+      <div className={cn(layoutDef.root, className)} {...restProps} />
+    </LayoutContext.Provider>
+  );
 }
