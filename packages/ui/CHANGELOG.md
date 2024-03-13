@@ -1,5 +1,13 @@
 # @utima/ui
 
+## 0.14.0
+
+### Minor Changes
+
+- [`5cc6b54`](https://github.com/utima-solutions/ui/commit/5cc6b54b5115234f0ce53e424c915a91a8a3032f) Thanks [@jsimck](https://github.com/jsimck)! - Added Breadcrumb component, performance optimizations
+
+- [`9013dc9`](https://github.com/utima-solutions/ui/commit/9013dc98f19f313169596ed7dec3288130289a41) Thanks [@jsimck](https://github.com/jsimck)! - Added Kbd component, it has replaced Dropdown.Shortcut and Command.Shortcut
+
 ## 0.13.5
 
 ### Patch Changes
