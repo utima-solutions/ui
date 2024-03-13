@@ -21,7 +21,6 @@ import type { switchDef } from './components/switch/Switch.styles';
 import type { tableDef } from './components/table/Table.styles';
 import type { toastDef } from './components/toast/Toast.styles';
 import type { tooltipDef } from './components/tooltip/Tooltip.styles';
-import type { menuDef } from './components/menu/Menu.styles';
 
 /**
  * This should hold types for all component style definitions
@@ -47,7 +46,6 @@ type ComponentOverridesDef = {
   command: typeof commandDef;
   dialog: typeof dialogDef;
   layout: typeof layoutDef;
-  menu: typeof menuDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;
