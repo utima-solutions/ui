@@ -4,7 +4,7 @@ import { cn } from '@/utils';
 
 import { breadcrumbDef } from './Breadcrumb.styles';
 
-interface BreadcrumbProps extends ComponentPropsWithoutRef<'nav'> {
+export interface BreadcrumbProps extends ComponentPropsWithoutRef<'nav'> {
   separator?: ReactNode;
 }
 

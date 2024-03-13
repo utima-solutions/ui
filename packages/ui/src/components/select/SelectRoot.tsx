@@ -5,7 +5,7 @@ import { useMemo, type ComponentPropsWithoutRef, memo } from 'react';
 import type { selectStyles } from './select.styles';
 import { SelectContext } from './useSelectContext';
 
-interface SelectRootProps
+export interface SelectRootProps
   extends ComponentPropsWithoutRef<typeof Root>,
     VariantProps<typeof selectStyles> {}
 

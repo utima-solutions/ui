@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 import { inputStyles } from './Input.styles';
 
-interface TextareaProps
+export interface TextareaProps
   extends Omit<ComponentPropsWithoutRef<'textarea'>, 'size'>,
     VariantProps<typeof inputStyles> {}
 

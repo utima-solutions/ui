@@ -6,7 +6,7 @@ import {
 
 import { Root, Trigger, Content, Value } from './index';
 
-interface SelectProps
+export interface SelectProps
   extends ComponentPropsWithoutRef<typeof Root>,
     Pick<
       ComponentPropsWithoutRef<typeof Content>,

@@ -10,7 +10,7 @@ import { cn } from '@/utils';
 
 import { commandDef } from './Command.styles';
 
-interface CommandInputProps
+export interface CommandInputProps
   extends ComponentPropsWithoutRef<typeof CommandPrimitive.Input> {
   loading?: boolean;
 }

@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 import { breadcrumbDef } from './Breadcrumb.styles';
 
-interface BreadcrumbLinkProps extends ComponentPropsWithoutRef<'a'> {
+export interface BreadcrumbLinkProps extends ComponentPropsWithoutRef<'a'> {
   asChild?: boolean;
 }
 

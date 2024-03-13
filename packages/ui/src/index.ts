@@ -10,30 +10,30 @@ export { Slot } from '@radix-ui/react-slot';
  * Components
  */
 // Buttton
-export { Button } from './components/button/Button';
+export { Button, type ButtonProps } from './components/button/Button';
 
 // Badge
-export { Badge } from './components/badge/Badge';
+export { Badge, type BadgeProps } from './components/badge/Badge';
 
 // Avatar
-export { Avatar } from './components/avatar/Avatar';
+export { Avatar, type AvatarProps } from './components/avatar/Avatar';
 
 // Label
-export { Label } from './components/label/Label';
+export { Label, type LabelProps } from './components/label/Label';
 
 // Table
 export * as Table from './components/table';
 
 // Inputs
-export { Input } from './components/input/Input';
-export { TextArea } from './components/input/TextArea';
+export { Input, type InputProps } from './components/input/Input';
+export { TextArea, type TextareaProps } from './components/input/TextArea';
 
 // Tooltip
-export { Tooltip } from './components/tooltip/Tooltip';
+export { Tooltip, type TooltipProps } from './components/tooltip/Tooltip';
 
 // Select
 export * as SelectPrimitive from './components/select';
-export { Select } from './components/select/Select';
+export { Select, type SelectProps } from './components/select/Select';
 export { SelectItem } from './components/select/SelectItem';
 export { useSelectContext } from './components/select/useSelectContext';
 
@@ -50,10 +50,13 @@ export * as Dropdown from './components/dropdown';
 export * as Popover from './components/popover';
 
 // Separator
-export { Separator } from './components/separator/Separator';
+export {
+  Separator,
+  type SeparatorProps,
+} from './components/separator/Separator';
 
 // Checkbox
-export { Checkbox } from './components/checkbox/Checkbox';
+export { Checkbox, type CheckboxProps } from './components/checkbox/Checkbox';
 
 // Command
 export * as Command from './components/command';
@@ -63,4 +66,10 @@ export { useCommandState } from 'cmdk';
 export * as Dialog from './components/dialog';
 
 // Switch
-export { Switch } from './components/switch/Switch';
+export { Switch, type SwitchProps } from './components/switch/Switch';
+
+// Breadcrumb
+export * as Breadcrumb from './components/breadcrumb';
+
+// Kbd
+export { Kbd, type KbdProps } from './components/kbd/Kbd';

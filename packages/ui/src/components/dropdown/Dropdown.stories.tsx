@@ -18,6 +18,7 @@ import {
 
 import * as Dropdown from '.';
 import { Button } from '../button/Button';
+import { Kbd } from '../kbd/Kbd';
 
 const meta: Meta<typeof Dropdown.Root> = {
   component: Dropdown.Root,
@@ -36,22 +37,22 @@ const meta: Meta<typeof Dropdown.Root> = {
             <Dropdown.Item>
               <User className='mr-2 h-4 w-4' />
               <span>Profile</span>
-              <Dropdown.Shortcut>⇧⌘P</Dropdown.Shortcut>
+              <Kbd>⇧⌘P</Kbd>
             </Dropdown.Item>
             <Dropdown.Item>
               <CreditCard className='mr-2 h-4 w-4' />
               <span>Billing</span>
-              <Dropdown.Shortcut>⌘B</Dropdown.Shortcut>
+              <Kbd>⌘B</Kbd>
             </Dropdown.Item>
             <Dropdown.Item>
               <Settings className='mr-2 h-4 w-4' />
               <span>Settings</span>
-              <Dropdown.Shortcut>⌘S</Dropdown.Shortcut>
+              <Kbd>⌘S</Kbd>
             </Dropdown.Item>
             <Dropdown.Item>
               <Keyboard className='mr-2 h-4 w-4' />
               <span>Keyboard shortcuts</span>
-              <Dropdown.Shortcut>⌘K</Dropdown.Shortcut>
+              <Kbd>⌘K</Kbd>
             </Dropdown.Item>
           </Dropdown.Group>
           <Dropdown.Separator />
@@ -84,7 +85,7 @@ const meta: Meta<typeof Dropdown.Root> = {
             <Dropdown.Item>
               <Plus className='mr-2 h-4 w-4' />
               <span>New Team</span>
-              <Dropdown.Shortcut>⌘+T</Dropdown.Shortcut>
+              <Kbd>⌘+T</Kbd>
             </Dropdown.Item>
           </Dropdown.Group>
           <Dropdown.Separator />
@@ -106,7 +107,7 @@ const meta: Meta<typeof Dropdown.Root> = {
           <Dropdown.Item>
             <LogOut className='mr-2 h-4 w-4' />
             <span>Log out</span>
-            <Dropdown.Shortcut>⇧⌘Q</Dropdown.Shortcut>
+            <Kbd>⇧⌘Q</Kbd>
           </Dropdown.Item>
         </Dropdown.Content>
       </>

@@ -7,7 +7,7 @@ import { cn } from '@/utils';
 
 import { buttonStyles } from './Button.styles';
 
-interface ButtonProps
+export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     Omit<VariantProps<typeof buttonStyles>, 'outline'> {
   asChild?: boolean;

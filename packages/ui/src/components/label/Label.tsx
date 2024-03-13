@@ -10,7 +10,7 @@ import { cn } from '@/utils';
 
 import { labelStyles } from './Label.styles';
 
-interface LabelProps
+export interface LabelProps
   extends Omit<ComponentPropsWithoutRef<typeof Root>, 'size'>,
     VariantProps<typeof labelStyles> {}
 

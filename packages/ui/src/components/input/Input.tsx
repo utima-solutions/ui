@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 import { inputStyles } from './Input.styles';
 
-interface InputProps
+export interface InputProps
   extends Omit<ComponentPropsWithoutRef<'input'>, 'size'>,
     VariantProps<typeof inputStyles> {}
 

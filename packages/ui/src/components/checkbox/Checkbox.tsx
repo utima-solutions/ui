@@ -11,7 +11,7 @@ import { cn } from '@/utils';
 
 import { checkboxDef, checkboxStyles } from './Checkbox.styles';
 
-interface CheckboxProps
+export interface CheckboxProps
   extends ComponentPropsWithoutRef<typeof Root>,
     Omit<VariantProps<typeof checkboxStyles>, 'thumbSize'> {}
 

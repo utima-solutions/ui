@@ -12,7 +12,7 @@ import { avatarStyles } from './Avatar.styles';
 import { AvatarFallback } from './AvatarFallback';
 import { AvatarImage } from './AvatarImage';
 
-interface AvatarProps
+export interface AvatarProps
   extends ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
     Pick<
       ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>,

@@ -12,7 +12,7 @@ import { cn } from '@/utils';
 
 import { selectDef, selectStyles } from './select.styles';
 
-interface SelectElementProps
+export interface SelectElementProps
   extends VariantProps<typeof selectStyles>,
     ComponentPropsWithoutRef<typeof Trigger> {}
 

@@ -5,7 +5,7 @@ import { cn } from '@/utils';
 
 import { separatorDef } from './Separator.styles';
 
-interface SeparatorProps extends ComponentPropsWithoutRef<typeof Root> {
+export interface SeparatorProps extends ComponentPropsWithoutRef<typeof Root> {
   size?: keyof typeof separatorDef.variants.sizeHorizontal;
 }
 

@@ -11,7 +11,7 @@ import { cn } from '@/utils';
 
 import { tooltipDef } from './Tooltip.styles';
 
-interface TooltipProps
+export interface TooltipProps
   extends Omit<ComponentPropsWithoutRef<typeof Content>, 'title'>,
     Omit<ComponentPropsWithoutRef<typeof Root>, 'children'>,
     Omit<ComponentPropsWithoutRef<typeof Provider>, 'children'> {

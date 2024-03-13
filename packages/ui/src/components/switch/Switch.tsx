@@ -10,7 +10,7 @@ import { cn } from '@/utils';
 
 import { switchDef, switchStyles } from './Switch.styles';
 
-interface SwitchProps
+export interface SwitchProps
   extends ComponentPropsWithoutRef<typeof Root>,
     Omit<VariantProps<typeof switchStyles>, 'thumbSize'> {}
 
