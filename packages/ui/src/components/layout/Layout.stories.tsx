@@ -17,12 +17,12 @@ const meta: Meta<typeof Layout.Root> = {
           <Layout.SidebarTrigger>
             <Menu />
           </Layout.SidebarTrigger>
+          <h1>Logo</h1>
         </Layout.Header>
         <Layout.SideBar>
-          <h1>hi</h1>
+          <h1>Hi</h1>
         </Layout.SideBar>
         <Layout.Content>
-          Hi
           <div className='h-screen'>Hi</div>
           <div className='h-screen'>Hi</div>
           <div className='h-screen'>Hi</div>
