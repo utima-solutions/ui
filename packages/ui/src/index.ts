@@ -17,6 +17,7 @@ export { Badge, type BadgeProps } from './components/badge/Badge';
 
 // Avatar
 export { Avatar, type AvatarProps } from './components/avatar/Avatar';
+export * as AvatarPrimitive from './components/avatar/index';
 
 // Label
 export { Label, type LabelProps } from './components/label/Label';
