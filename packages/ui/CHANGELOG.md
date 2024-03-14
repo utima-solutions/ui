@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.15.0
+
+### Minor Changes
+
+- [`6d88e20`](https://github.com/utima-solutions/ui/commit/6d88e206b7bccfcb12d3db66d4d640fffefb1b20) Thanks [@jsimck](https://github.com/jsimck)! - Added export for avatar primitives"
+
 ## 0.14.0
 
 ### Minor Changes
