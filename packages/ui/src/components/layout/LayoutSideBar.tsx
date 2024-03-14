@@ -17,11 +17,7 @@ export const LayoutSideBar = memo(function LayoutSideBar({
 }: LayoutSideBarProps) {
   const { open } = useContext(LayoutContext);
 
-  const { withSidebar, withHeader } = useLayoutContext();
-
-  if (!withSidebar) {
-    return null;
-  }
+  const { withHeader } = useLayoutContext();
 
   return (
     <aside
