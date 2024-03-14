@@ -3,7 +3,7 @@ import { twOverrides } from '@/overrides';
 export const layoutDef = twOverrides(
   {
     header:
-      'fixed top-0 z-50 w-full h-16 bg-primary text-primary-fg flex flex-row',
+      'fixed top-0 z-50 w-full h-16 bg-primary text-primary-fg flex flex-row justify-between items-center',
     root: '',
     sideBar: {
       wrapper:

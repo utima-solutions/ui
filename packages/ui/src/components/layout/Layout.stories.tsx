@@ -17,7 +17,7 @@ const meta: Meta<typeof Layout.Root> = {
           <Layout.SidebarTrigger>
             <Menu />
           </Layout.SidebarTrigger>
-          <h1>Logo</h1>
+          <h1>ahoj</h1>
         </Layout.Header>
         <Layout.SideBar>
           <h1>Hi</h1>
