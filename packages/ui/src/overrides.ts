@@ -14,6 +14,7 @@ import type { dropdownDef } from './components/dropdown/Dropdown.styles';
 import type { globalDef } from './components/global.styles';
 import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
+import type { layoutDef } from './components/layout/Layout.styles';
 import type { popoverDef } from './components/popover/Popover.styles';
 import type { selectDef } from './components/select/select.styles';
 import type { separatorDef } from './components/separator/Separator.styles';
@@ -45,6 +46,7 @@ type ComponentOverridesDef = {
   checkbox: typeof checkboxDef;
   command: typeof commandDef;
   dialog: typeof dialogDef;
+  layout: typeof layoutDef;
   breadcrumb: typeof breadcrumbDef;
 };
 
