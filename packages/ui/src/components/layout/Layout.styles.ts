@@ -8,7 +8,6 @@ export const layoutDef = twOverrides(
     sideBar: {
       wrapper:
         'fixed top-0 left-0 z-40 w-64 max-w-full h-screen transition-transform -translate-x-full sm:translate-x-0',
-      wrapperWithoutHeader: 'pt-0',
       content: 'h-full px-3 pb-4 overflow-y-auto bg-primary text-primary-fg',
     },
     content: {

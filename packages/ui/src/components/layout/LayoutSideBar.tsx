@@ -23,7 +23,6 @@ export const LayoutSideBar = memo(function LayoutSideBar({
     <aside
       className={cn(
         layoutDef.sideBar.wrapper,
-        // !withHeader && layoutDef.sideBar.wrapperWithoutHeader,
         (forceOpen ?? open) && 'transform-none',
         className,
       )}
