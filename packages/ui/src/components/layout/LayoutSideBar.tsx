@@ -17,17 +17,20 @@ export const LayoutSideBar = memo(function LayoutSideBar({
 }: LayoutSideBarProps) {
   const { open } = useContext(LayoutContext);
 
-  const { withHeader } = useLayoutContext();
+  const { withHeader, sideBarWidth, headerHeight } = useLayoutContext();
 
   return (
     <aside
       className={cn(
-        withHeader
-          ? layoutDef.sideBar.wrapper
-          : layoutDef.sideBar.wrapperWithoutHeader,
+        layoutDef.sideBar.wrapper,
+        // !withHeader && layoutDef.sideBar.wrapperWithoutHeader,
         (forceOpen ?? open) && 'transform-none',
         className,
       )}
+      style={{
+        width: sideBarWidth ? `${sideBarWidth}px` : '256px',
+        paddingTop: withHeader ? `${headerHeight}px` : '0px',
+      }}
       {...restProps}
     >
       <div className={cn(layoutDef.sideBar.content)}>{children}</div>

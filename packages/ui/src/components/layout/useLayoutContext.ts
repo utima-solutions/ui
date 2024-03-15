@@ -8,6 +8,8 @@ import {
 export type LayoutContextType = {
   withSidebar: boolean;
   withHeader: boolean;
+  headerHeight: number;
+  sideBarWidth: number;
   setOpen: Dispatch<SetStateAction<boolean>>;
   open: boolean;
 };

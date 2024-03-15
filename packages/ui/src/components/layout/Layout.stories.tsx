@@ -3,6 +3,7 @@ import { Menu } from 'lucide-react';
 
 import * as Layout from '.';
 
+// custom width sidebar a custom height header context
 const meta: Meta<typeof Layout.Root> = {
   component: Layout.Root,
   tags: ['autodocs'],
@@ -12,7 +13,7 @@ const meta: Meta<typeof Layout.Root> = {
   },
   args: {
     children: (
-      <Layout.Root withHeader withSidebar>
+      <Layout.Root withSidebar withHeader>
         <Layout.Header>
           <Layout.SidebarTrigger>
             <Menu />
