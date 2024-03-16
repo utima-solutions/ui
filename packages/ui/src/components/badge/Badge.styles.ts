@@ -2,41 +2,39 @@ import { cva } from 'class-variance-authority';
 
 import { twOverrides } from '@/overrides';
 
-const defaultBorder = 'bg-none bg-transparent border';
-
 export const badgeDef = twOverrides(
   {
     badge:
-      'rounded-radius font-semibold inline-flex items-center transition-all h-auto',
+      'rounded-radius border font-semibold inline-flex items-center transition-all h-atuo',
     variants: {
       variant: {
-        primary: 'bg-primary text-primary-fg',
-        secondary: 'bg-secondary text-secondary-fg',
-        muted: 'bg-muted text-muted-fg',
-        success: 'bg-success text-success-fg',
-        danger: 'bg-danger text-danger-fg',
-        warning: 'bg-warning text-warning-fg',
+        primary: 'bg-primary border-primary text-primary-fg',
+        secondary: 'bg-secondary border-secondary text-secondary-fg',
+        muted: 'bg-muted border-muted text-muted-fg',
+        success: 'bg-success border-success text-success-fg',
+        danger: 'bg-danger border-danger text-danger-fg',
+        warning: 'bg-warning border-warning text-warning-fg',
         info: 'bg-info text-info-fg',
-        ghost: 'text-foreground',
-        link: 'text-foreground underline underline-offset-4',
+        ghost: 'text-foreground border-transparent',
+        link: 'text-foreground border-transparent underline underline-offset-4',
       },
       size: {
-        xs: 'px-1 gap-1 text-[10px] h-5',
-        sm: 'px-1.5 gap-1 text-xs h-[22px]',
-        md: 'px-2 gap-1 text-xs h-6',
-        lg: 'px-3 gap-1.5 text-sm h-8',
-        xl: 'px-3 gap-2 text-base h-9',
+        xs: 'py-0.5 px-1 gap-1 text-[10px]',
+        sm: 'py-[2px] px-1.5 gap-1 text-xs',
+        md: 'py-1 px-2 gap-1 text-xs',
+        lg: 'py-1.5 px-3 gap-1.5 text-sm',
+        xl: 'py-2 px-3 gap-2 text-base',
       },
       outline: {
-        primary: `${defaultBorder} border-primary text-primary`,
-        secondary: `${defaultBorder} border-secondary text-secondary`,
-        muted: `${defaultBorder} border-muted text-muted`,
-        success: `${defaultBorder} border-success text-success`,
-        danger: `${defaultBorder} border-danger text-danger`,
-        warning: `${defaultBorder} border-warning text-warning`,
-        info: `${defaultBorder} border-info text-info`,
-        ghost: `${defaultBorder} border-primary/25`,
-        link: null,
+        primary: `bg-background text-primary`,
+        secondary: `bg-background text-secondary`,
+        muted: `bg-background text-muted`,
+        success: `bg-background text-success`,
+        danger: `bg-background text-danger`,
+        warning: `bg-background text-warning`,
+        info: `bg-background text-info`,
+        ghost: `bg-background`,
+        link: `bg-background`,
       },
       disabled: {
         DEFAULT: 'opacity-65 cursor-not-allowed',
