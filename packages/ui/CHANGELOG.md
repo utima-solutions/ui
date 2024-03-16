@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.16.0
+
+### Minor Changes
+
+- [`2239b59`](https://github.com/utima-solutions/ui/commit/2239b59ec061cf3181b4153137ee2e1dcb364f00) Thanks [@jsimck](https://github.com/jsimck)! - Added new Layout component
+
 ## 0.15.0
 
 ### Minor Changes
