@@ -32,6 +32,10 @@ module.exports = plugin.withOptions(
     return {
       theme: {
         extend: {
+          screens: {
+            sidebar: { raw: '(min-width: 640px)' },
+            'sidebar-hidden': { raw: '(max-width: 639px)' },
+          },
           borderRadius: {
             radius: options?.borderRadius?.radius ?? '.375rem',
           },

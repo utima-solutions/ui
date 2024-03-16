@@ -6,31 +6,39 @@ import { layoutDef } from './Layout.styles';
 import { LayoutContext, type LayoutContextType } from './useLayoutContext';
 
 interface LayoutRootProps extends ComponentPropsWithoutRef<'div'> {
-  withSidebar?: boolean;
-  withHeader?: boolean;
-  headerHeight?: number;
-  sideBarWidth?: number;
+  hasSidebar?: boolean;
+  hasHeader?: boolean;
+  headerHeight?: number | string;
+  sidebarWidth?: number | string;
+}
+
+function getLayoutValue(value: number | string): string {
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  return `${value}px`;
 }
 
 export function LayoutRoot({
   className,
-  withSidebar,
-  withHeader,
+  hasSidebar,
+  hasHeader,
   headerHeight,
-  sideBarWidth,
+  sidebarWidth,
   ...restProps
 }: LayoutRootProps) {
   const [open, setOpen] = useState(false);
   const contextValue = useMemo<LayoutContextType>(
     () => ({
-      open,
-      setOpen,
-      withSidebar: !!(withSidebar ?? true),
-      withHeader: !!(withHeader ?? true),
-      headerHeight: headerHeight ?? 64,
-      sideBarWidth: sideBarWidth ?? 256,
+      isSidebarOpened: open,
+      setSidebarOpened: setOpen,
+      hasSidebar: !!(hasSidebar ?? true),
+      hasHeader: !!(hasHeader ?? true),
+      headerHeight: getLayoutValue(headerHeight ?? 64),
+      sidebarWidth: getLayoutValue(sidebarWidth ?? 256),
     }),
-    [open, withSidebar, withHeader, headerHeight, sideBarWidth],
+    [open, hasSidebar, hasHeader, headerHeight, sidebarWidth],
   );
 
   return (

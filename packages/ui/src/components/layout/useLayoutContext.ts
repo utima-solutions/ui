@@ -6,12 +6,12 @@ import {
 } from 'react';
 
 export type LayoutContextType = {
-  withSidebar: boolean;
-  withHeader: boolean;
-  headerHeight: number;
-  sideBarWidth: number;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  open: boolean;
+  hasSidebar: boolean;
+  hasHeader: boolean;
+  headerHeight: string;
+  sidebarWidth: string;
+  setSidebarOpened: Dispatch<SetStateAction<boolean>>;
+  isSidebarOpened: boolean;
 };
 
 /**
@@ -23,7 +23,7 @@ export const LayoutContext = createContext<LayoutContextType>(undefined!);
 /**
  * Helper hook to access current layout state.
  */
-export function useLayoutContext() {
+export function useLayout() {
   const context = useContext(LayoutContext);
 
   if (!context) {

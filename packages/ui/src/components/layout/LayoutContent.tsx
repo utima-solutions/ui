@@ -3,29 +3,36 @@ import { memo, type ComponentPropsWithoutRef } from 'react';
 import { cn } from '@/utils';
 
 import { layoutDef } from './Layout.styles';
-import { useLayoutContext } from './useLayoutContext';
+import { useLayout } from './useLayoutContext';
 
 export const LayoutContent = memo(function LayoutContent({
   className,
   ...restProps
 }: ComponentPropsWithoutRef<'div'>) {
-  const { withSidebar, withHeader, open, setOpen } = useLayoutContext();
+  const {
+    hasSidebar,
+    hasHeader,
+    sidebarWidth,
+    headerHeight,
+    isSidebarOpened,
+    setSidebarOpened,
+  } = useLayout();
 
   return (
     <>
-      {open && (
-        <div
-          onClick={() => setOpen(false)}
-          className={cn(layoutDef.content.overlay)}
-        />
-      )}
       <div
+        onClick={() => setSidebarOpened(false)}
         className={cn(
-          layoutDef.content.base,
-          withSidebar && layoutDef.content.withSidebar,
-          withHeader && layoutDef.content.withHeader,
-          className,
+          layoutDef.content.overlay,
+          isSidebarOpened && 'opacity-1 pointer-events-auto',
         )}
+      />
+      <main
+        className={cn(layoutDef.content.base, className)}
+        style={{
+          marginLeft: hasSidebar ? sidebarWidth : '0px',
+          marginTop: hasHeader ? headerHeight : '0px',
+        }}
         {...restProps}
       />
     </>
