@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.16.2
+
+### Patch Changes
+
+- [`0ade0fa`](https://github.com/utima-solutions/ui/commit/0ade0fa985de27b534b513775436f4894cb0c9fc) Thanks [@jsimck](https://github.com/jsimck)! - Buttons and badges no longer use height to enable text wrap for smaller elements
+
 ## 0.16.1
 
 ### Patch Changes
