@@ -7,7 +7,7 @@ export const layoutDef = twOverrides(
     root: '',
     sidebar: {
       wrapper:
-        'fixed top-0 left-0 z-40 max-w-full h-screen transition-transform -translate-x-full sidebar:translate-x-0',
+        'fixed top-0 left-0 z-40 max-w-full h-screen transition-transform ease-in-out duration-300 -translate-x-full sidebar:translate-x-0',
       content: 'h-full px-3 pb-4 overflow-y-auto bg-primary text-primary-fg',
     },
     content: {
