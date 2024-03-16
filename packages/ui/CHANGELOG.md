@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.16.1
+
+### Patch Changes
+
+- [`d6b04d1`](https://github.com/utima-solutions/ui/commit/d6b04d1ac5a4895b13cd66bd148a886003386dda) Thanks [@jsimck](https://github.com/jsimck)! - Make sidebar animation smoother
+
 ## 0.16.0
 
 ### Minor Changes
