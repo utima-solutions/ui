@@ -27,8 +27,8 @@ jobs:
         shell: bash
         run: npm ci --ignore-scripts
 
-      - name: 🚀 Turbo
-        run: npx turbo run lint build test
+      - name: NX
+        run: npx nx run-many -t build lint test
 
       - name: Publish
         if: endsWith(github.ref, 'main')
