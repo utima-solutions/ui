@@ -1,6 +1,5 @@
-import React, { type ComponentProps } from 'react';
-
-import { Input } from '../../../ui/src/components/input/Input';
+import { Input } from '@utima/ui';
+import type { ComponentProps } from 'react';
 
 type InputControlProps = Omit<ComponentProps<typeof Input>, 'render'>;
 
