@@ -1,7 +1,7 @@
 {
-  "name": "@utima/ui",
-  "version": "0.16.2",
-  "description": "Utima UI based on shadcn's UI and Radix Primitives with some modifications.",
+  "name": "@utima/ui-informed",
+  "version": "0.0.0",
+  "description": "Utima UI-Informed based on Utima UI and form library Informed with support for Zod validations.",
   "sideEffects": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -19,43 +19,32 @@
       "import": "./dist/esm/index.js",
       "types": "./dist/src/index.d.ts",
       "default": "./dist/cjs/index.js"
-    },
-    "./overrides": {
-      "import": "./dist/esm/overrides.js",
-      "types": "./dist/src/overrides.d.ts",
-      "default": "./dist/cjs/overrides.js"
-    },
-    "./plugin": {
-      "require": "./plugin.cjs",
-      "types": "./plugin.d.ts",
-      "default": "./plugin.cjs"
     }
   },
   "keywords": [
     "utima",
     "ui",
+    "informed",
     "radix",
     "shadcn",
     "react",
-    "css",
-    "css-in-js",
-    "component-library",
+    "zod",
+    "validation",
+    "form",
+    "form-library",
     "component",
     "library",
     "components"
   ],
-  "author": "Jan Šimeček",
+  "author": "Matúš Hlaváčik",
   "license": "MIT",
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.16",
     "@storybook/addon-interactions": "^7.6.16",
     "@storybook/addon-links": "^7.6.16",
     "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.16",
     "@storybook/react": "^7.6.16",
     "@storybook/react-vite": "^7.6.16",
-    "@storybook/test": "^7.6.16",
-    "@types/lodash.get": "^4.4.9",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -64,31 +53,10 @@
     "vite-tsconfig-paths": "^4.3.1"
   },
   "peerDependencies": {
+    "@utima/ui": "^0.16.2",
     "lucide-react": "*",
     "react": ">=18",
     "react-dom": ">=18",
     "tailwindcss-animate": "*"
-  },
-  "dependencies": {
-    "@radix-ui/react-alert-dialog": "^1.0.5",
-    "@radix-ui/react-aspect-ratio": "^1.0.3",
-    "@radix-ui/react-avatar": "^1.0.4",
-    "@radix-ui/react-checkbox": "^1.0.4",
-    "@radix-ui/react-dialog": "^1.0.5",
-    "@radix-ui/react-dropdown-menu": "^2.0.6",
-    "@radix-ui/react-label": "^2.0.2",
-    "@radix-ui/react-popover": "^1.0.7",
-    "@radix-ui/react-select": "^2.0.0",
-    "@radix-ui/react-separator": "^1.0.3",
-    "@radix-ui/react-slot": "^1.0.2",
-    "@radix-ui/react-switch": "^1.0.3",
-    "@radix-ui/react-tooltip": "^1.0.7",
-    "class-variance-authority": "^0.7.0",
-    "clsx": ">=2",
-    "cmdk": "^0.2.1",
-    "lodash.get": "4",
-    "sonner": "^1.4.0",
-    "tailwind-merge": ">=2",
-    "type-fest": ">=4"
   }
 }
