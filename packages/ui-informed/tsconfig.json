@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.lib.json",
+  "compilerOptions": {
+    "target": "ES2018",
+    "lib": [
+      "ES2018",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+    },
+  },
+  "include": [
+    "src",
+    "plugin.d.ts"
+  ],
+  "exclude": [
+    "**/.*/",
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+}

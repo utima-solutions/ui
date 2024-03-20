@@ -1,0 +1,5 @@
+*
+!dist/**/*
+!plugin.cjs
+!plugin.d.ts
+!package.json
