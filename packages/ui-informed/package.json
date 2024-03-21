@@ -1,0 +1,60 @@
+{
+  "name": "@utima/ui-informed",
+  "version": "0.0.0",
+  "description": "Utima UI-Informed based on Utima UI and form library Informed with support for Zod validations.",
+  "sideEffects": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
+    "lint:fix": "npm run lint -- --fix",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "npm run build; storybook build"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "keywords": [
+    "utima",
+    "ui",
+    "informed",
+    "radix",
+    "shadcn",
+    "react",
+    "zod",
+    "validation",
+    "form",
+    "form-library",
+    "component",
+    "library",
+    "components"
+  ],
+  "author": "Matúš Hlaváčik",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.16",
+    "@storybook/addon-interactions": "^7.6.16",
+    "@storybook/addon-links": "^7.6.16",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/react": "^7.6.16",
+    "@storybook/react-vite": "^7.6.16",
+    "@utima/ui": "^0.16.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.16",
+    "tailwindcss": "^3.4.1",
+    "vite-tsconfig-paths": "^4.3.1"
+  },
+  "peerDependencies": {
+    "@utima/ui": "^0.16.2",
+    "react": ">=18",
+    "react-dom": ">=18"
+  }
+}
