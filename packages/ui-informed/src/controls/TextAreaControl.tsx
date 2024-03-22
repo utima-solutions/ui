@@ -1,28 +1,31 @@
-import { Input } from '@utima/ui';
+import { TextArea } from '@utima/ui';
 import type { ComponentProps } from 'react';
 
 import { FormControl } from '../FormControl';
 
-type InputControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
+export type TextAreaControlProps = Omit<
+  ComponentProps<typeof FormControl>,
+  'type' | 'render'
+> & { rows: number };
 
 /**
- * Input component that is controlled by Informed. It is a wrapped in the
+ * TextArea component that is controlled by Informed. It is a wrapped in the
  * `FormControl` component, which provides the necessary props for Informed to
  * work along with label and error message handling.
  */
-export function InputControl({
-  type = 'text',
+export function TextAreaControl({
+  rows = 4,
   ...restProps
-}: InputControlProps) {
+}: TextAreaControlProps) {
   return (
     <FormControl
+      type='text'
       {...restProps}
-      type={type}
       render={({ field: { ref, userProps, informed, fieldState } }) => (
-        <Input
+        <TextArea
           ref={ref}
+          rows={rows}
           variant={fieldState.showError ? 'danger' : 'default'}
-          type={type}
           {...userProps}
           {...informed}
         />
