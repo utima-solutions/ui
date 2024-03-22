@@ -50,11 +50,18 @@
     "react-dom": "^18.2.0",
     "storybook": "^7.6.16",
     "tailwindcss": "^3.4.1",
-    "vite-tsconfig-paths": "^4.3.1"
+    "vite-tsconfig-paths": "^4.3.1",
+    "zod": "*"
   },
   "peerDependencies": {
     "@utima/ui": "^0.16.2",
     "react": ">=18",
-    "react-dom": ">=18"
+    "react-dom": ">=18",
+    "zod": "^3.22.4"
+  },
+  "dependencies": {
+    "i18next": "^23.10.1",
+    "informed": "^4.56.3",
+    "react-i18next": "^14.1.0"
   }
 }
