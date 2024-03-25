@@ -1,7 +1,7 @@
 import { Input } from '@utima/ui';
 import type { ComponentProps } from 'react';
 
-import { FormControl } from '../FormControl';
+import { FormControl } from './formControl/FormControl';
 
 type InputControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
 

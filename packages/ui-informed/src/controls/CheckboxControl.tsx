@@ -1,7 +1,7 @@
 import { Checkbox } from '@utima/ui';
 import type { ComponentProps } from 'react';
 
-import { FormControl } from '../FormControl';
+import { FormControl } from './formControl/FormControl';
 
 type CheckboxControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
 

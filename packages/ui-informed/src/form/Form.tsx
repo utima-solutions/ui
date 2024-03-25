@@ -4,11 +4,11 @@ import { useMemo, type ComponentProps } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ZodObject, ZodRawShape } from 'zod';
 
-import { FormContext, type FormContextType } from './hooks/useFormContext';
+import { FormContext, type FormContextType } from '../hooks/useFormContext';
 import {
   useFormSubmitActions,
   type TypedFormState,
-} from './hooks/useFormSubmitActions';
+} from '../hooks/useFormSubmitActions';
 
 export type FormProps<T> = Omit<
   ComponentProps<typeof InformedForm>,

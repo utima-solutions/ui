@@ -1,7 +1,7 @@
 import { Select } from '@utima/ui';
 import type { ComponentProps } from 'react';
 
-import { FormControl } from '../FormControl';
+import { FormControl } from './formControl/FormControl';
 
 type SelectControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
 

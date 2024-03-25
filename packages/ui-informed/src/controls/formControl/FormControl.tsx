@@ -8,8 +8,8 @@ import type { ZodType } from 'zod';
 
 import { FormInfo } from './FormInfo';
 import { FormMessage } from './FormMessage';
-import { useFormContext } from './hooks/useFormContext';
-import { zodResolver, getFieldZodObject } from './zodUtils';
+import { useFormContext } from '../../hooks/useFormContext';
+import { zodResolver, getFieldZodObject } from '../../zodUtils';
 
 const formItemStyles = cva('flex flex-1 gap-2', {
   variants: {
