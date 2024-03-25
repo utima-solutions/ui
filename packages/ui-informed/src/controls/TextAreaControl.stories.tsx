@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { InputControl } from './InputControl';
+import { TextAreaControl } from './TextAreaControl';
 import { Form } from '..';
 
-const meta: Meta<typeof InputControl> = {
-  component: InputControl,
+const meta: Meta<typeof TextAreaControl> = {
+  component: TextAreaControl,
   tags: ['autodocs'],
-  title: 'Controls/InputControl',
+  title: 'Controls/TextAreaControl',
   args: {
     name: 'value',
-    label: 'Input',
+    label: 'TextArea',
     placeholder: 'Placeholder',
     tooltip: 'Tooltip',
   },
@@ -26,7 +26,7 @@ const meta: Meta<typeof InputControl> = {
 
 export default meta;
 
-type Story = StoryObj<typeof InputControl>;
+type Story = StoryObj<typeof TextAreaControl>;
 
 export const Basic: Story = {
   args: {},
