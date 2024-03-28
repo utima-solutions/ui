@@ -8,7 +8,7 @@ import type { ZodType } from 'zod';
 
 import { FormInfo } from './FormInfo';
 import { FormMessage } from './FormMessage';
-import { useFormContext } from '../../hooks/useFormContext';
+import { useFormContext } from '../../form/useFormContext';
 import { zodResolver, getFieldZodObject } from '../../zodUtils';
 
 const formItemStyles = cva('flex flex-1 gap-2', {
@@ -35,19 +35,20 @@ export type FormControlRender = (params: {
   field: ReturnType<typeof useField<UserFields, string | number>>;
 }) => ReactNode;
 
-export type FormItemProps = FieldProps<Omit<UserFields, 'id'>> &
-  VariantProps<typeof formItemStyles> & {
-    children?: ReactNode;
-    className?: string;
-    label?: string;
-    name: string;
-    type?: string;
-    disabled?: boolean;
-    readOnly?: boolean;
-    tooltip?: ReactNode;
-    render: FormControlRender;
-    zodItemSchema?: ZodType;
-  };
+export interface FormItemProps
+  extends FieldProps<Omit<UserFields, 'id'>>,
+    VariantProps<typeof formItemStyles> {
+  children?: ReactNode;
+  className?: string;
+  label?: string;
+  name: string;
+  type?: string;
+  disabled?: boolean;
+  readOnly?: boolean;
+  tooltip?: ReactNode;
+  render: FormControlRender;
+  zodItemSchema?: ZodType;
+}
 
 /**
  * Base form control component, used to wrap form inputs.

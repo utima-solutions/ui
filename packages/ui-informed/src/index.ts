@@ -24,8 +24,8 @@ export { Form } from './form/Form';
 /**
  * Hooks
  */
-export { useFormContext } from './hooks/useFormContext';
+export { useFormContext } from './form/useFormContext';
 export {
-  useFormSubmitActions,
+  useDefaultSubmitActions,
   type TypedFormState,
-} from './hooks/useFormSubmitActions';
+} from './form/useDefaultSubmitActions';

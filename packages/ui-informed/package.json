@@ -51,13 +51,13 @@
     "storybook": "^7.6.16",
     "tailwindcss": "^3.4.1",
     "vite-tsconfig-paths": "^4.3.1",
-    "zod": "*"
+    "zod": "^3.22.4"
   },
   "peerDependencies": {
     "@utima/ui": "^0.16.2",
     "react": ">=18",
     "react-dom": ">=18",
-    "zod": "^3.22.4"
+    "zod": ">=3.0.0 <4.0.0"
   },
   "dependencies": {
     "i18next": "^23.10.1",

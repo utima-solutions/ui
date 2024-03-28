@@ -3,7 +3,9 @@ import type { FormState } from 'informed';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export type TypedFormState<T> = Omit<FormState, 'values'> & { values: T };
+export interface TypedFormState<T> extends Omit<FormState, 'values'> {
+  values: T;
+}
 type UseFormSubmitActionsParams<T> = {
   onSubmit?: (formState: TypedFormState<T>) => Promise<unknown>;
 };
@@ -13,7 +15,7 @@ type UseFormSubmitActionsParams<T> = {
  * actions definitions. These actions also handle confirmation modals
  * and notification messages.
  */
-export function useFormSubmitActions<T>({
+export function useDefaultSubmitActions<T>({
   onSubmit,
 }: UseFormSubmitActionsParams<T>) {
   const { t } = useTranslation();
