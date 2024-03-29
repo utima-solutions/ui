@@ -6,15 +6,15 @@ export * as FormWithControls from './form';
 /**
  * FormControl
  */
-export { FormControl } from './controls/formControl/FormControl';
+export { FormControl } from './formControl/FormControl';
 
 /**
  * Controls
  */
-export { CheckboxControl } from './controls/CheckboxControl';
-export { InputControl } from './controls/InputControl';
-export { SelectControl } from './controls/SelectControl';
-export { TextAreaControl } from './controls/TextAreaControl';
+export { Checkbox } from './controls/checkbox/Checkbox';
+export { Input } from './controls/input/Input';
+export { Select } from './controls/select/Select';
+export { TextArea } from './controls/textArea/TextArea';
 
 /**
  * Form
@@ -29,3 +29,8 @@ export {
   useDefaultSubmitActions,
   type TypedFormState,
 } from './form/useDefaultSubmitActions';
+
+/**
+ * ZodUtils
+ */
+export { isZodError, zodResolver, getFieldZodObject } from './zodUtils';

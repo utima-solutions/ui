@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { SelectItem } from '@utima/ui';
 
-import { SelectControl } from './SelectControl';
-import { Form } from '..';
+import { Select } from './Select';
+import { Form } from '../..';
 
 function SelectItems() {
   const items = [
@@ -22,8 +22,8 @@ function SelectItems() {
   );
 }
 
-const meta: Meta<typeof SelectControl> = {
-  component: SelectControl,
+const meta: Meta<typeof Select> = {
+  component: Select,
   tags: ['autodocs'],
   title: 'Controls/SelectControl',
   args: {
@@ -46,7 +46,7 @@ const meta: Meta<typeof SelectControl> = {
 
 export default meta;
 
-type Story = StoryObj<typeof SelectControl>;
+type Story = StoryObj<typeof Select>;
 
 export const Basic: Story = {
   args: {},

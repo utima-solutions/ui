@@ -1,7 +1,7 @@
-import { Select } from '@utima/ui';
+import { Select as SelectUI } from '@utima/ui';
 import type { ComponentProps } from 'react';
 
-import { FormControl } from './formControl/FormControl';
+import { FormControl } from '../../formControl/FormControl';
 
 type SelectControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
 
@@ -10,7 +10,7 @@ type SelectControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
  * `FormControl` component, which provides the necessary props for Informed to
  * work along with label and error message handling.
  */
-export function SelectControl({
+export function Select({
   type = 'text',
   children,
   ...restProps
@@ -23,7 +23,7 @@ export function SelectControl({
         const { type, disabled, readOnly, ...restProps } = userProps;
 
         return (
-          <Select
+          <SelectUI
             ref={ref}
             size='md'
             value={fieldState.value as string}
@@ -35,7 +35,7 @@ export function SelectControl({
             {...restProps}
           >
             {children}
-          </Select>
+          </SelectUI>
         );
       }}
     />

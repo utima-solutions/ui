@@ -1,20 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { CheckboxControl } from './CheckboxControl';
-import { Form } from '..';
+import { TextArea } from './TextArea';
+import { Form } from '../..';
 
-const meta: Meta<typeof CheckboxControl> = {
-  component: CheckboxControl,
+const meta: Meta<typeof TextArea> = {
+  component: TextArea,
   tags: ['autodocs'],
-  title: 'Controls/CheckboxControl',
+  title: 'Controls/TextAreaControl',
   args: {
-    name: 'input',
-    label: 'Checkbox',
+    name: 'value',
+    label: 'TextArea',
+    placeholder: 'Placeholder',
     tooltip: 'Tooltip',
   },
   decorators: [
     Story => (
-      <Form initialValues={{ input: false }}>
+      <Form initialValues={{ value: '' }}>
         <div className='flex flex-col sm:col-span-3'>
           <Story />
         </div>
@@ -25,7 +26,7 @@ const meta: Meta<typeof CheckboxControl> = {
 
 export default meta;
 
-type Story = StoryObj<typeof CheckboxControl>;
+type Story = StoryObj<typeof TextArea>;
 
 export const Basic: Story = {
   args: {},
