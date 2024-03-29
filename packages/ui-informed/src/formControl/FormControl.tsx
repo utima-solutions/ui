@@ -3,11 +3,11 @@ import { type VariantProps, cva } from 'class-variance-authority';
 import { type FieldProps, useField } from 'informed';
 import { HelpCircle } from 'lucide-react';
 import { useId, type ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
 import type { ZodType } from 'zod';
 
 import { FormInfo } from './FormInfo';
 import { FormMessage } from './FormMessage';
+import { useFormTranslationsContext } from '..';
 import { useFormContext } from '../form/useFormContext';
 import { zodResolver, getFieldZodObject } from '../zodUtils';
 
@@ -69,7 +69,7 @@ export function FormControl({
   ...restProps
 }: FormItemProps) {
   const id = useId();
-  const { t } = useTranslation();
+  const messages = useFormTranslationsContext();
   const {
     disabled,
     loading,
@@ -111,7 +111,7 @@ export function FormControl({
               </FormInfo>
             </Tooltip>
           )}
-          {!required && <FormInfo>({t('labels.optional')})</FormInfo>}
+          {!required && <FormInfo>({messages.labels.optional})</FormInfo>}
         </Label>
       )}
       {/* Every wrapped component should pass render prop */}

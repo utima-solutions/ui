@@ -4,11 +4,6 @@
 export * as FormWithControls from './form';
 
 /**
- * FormControl
- */
-export { FormControl } from './formControl/FormControl';
-
-/**
  * Controls
  */
 export { Checkbox } from './controls/checkbox/Checkbox';
@@ -29,6 +24,19 @@ export {
   useDefaultSubmitActions,
   type TypedFormState,
 } from './form/useDefaultSubmitActions';
+
+/**
+ * FormControl
+ */
+export { FormControl } from './formControl/FormControl';
+
+/**
+ * FormTranslationsContext
+ */
+export {
+  FormTranslationsContext,
+  useFormTranslationsContext,
+} from './formTranslationsContext/useFormTranslationContext';
 
 /**
  * ZodUtils

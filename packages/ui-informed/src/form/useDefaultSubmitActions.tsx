@@ -1,7 +1,8 @@
 import { toast } from '@utima/ui';
 import type { FormState } from 'informed';
 import { useCallback, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+
+import { useFormTranslationsContext } from '..';
 
 export interface TypedFormState<T> extends Omit<FormState, 'values'> {
   values: T;
@@ -18,7 +19,7 @@ type UseFormSubmitActionsParams<T> = {
 export function useDefaultSubmitActions<T>({
   onSubmit,
 }: UseFormSubmitActionsParams<T>) {
-  const { t } = useTranslation();
+  const messages = useFormTranslationsContext();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   /**
@@ -33,28 +34,28 @@ export function useDefaultSubmitActions<T>({
         await onSubmit?.(formState as TypedFormState<T>);
 
         // Show success notification
-        toast.success(t('actions.success.title'), {
-          description: t('actions.success.message'),
+        toast.success(messages.actions.success.title, {
+          description: messages.actions.success.message,
         });
       } catch (error) {
-        toast.error(t('actions.fail.title'), {
+        toast.error(messages.actions.fail.title, {
           description: (error as any).message,
         });
       } finally {
         setIsSubmitting(false);
       }
     },
-    [onSubmit, t],
+    [messages, onSubmit],
   );
 
   /**
    * Submit failure handler, shows notification with error message.
    */
   const handleSubmitFailure = useCallback(() => {
-    toast.error(t('actions.fail.title'), {
-      description: t('actions.fail.message'),
+    toast.error(messages.actions.fail.title, {
+      description: messages.actions.fail.message,
     });
-  }, [t]);
+  }, [messages]);
 
   return {
     handleSubmit,

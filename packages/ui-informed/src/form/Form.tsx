@@ -1,6 +1,5 @@
 import { Form as InformedForm } from 'informed';
 import { useMemo, type ComponentProps } from 'react';
-import { useTranslation } from 'react-i18next';
 import type { ZodObject, ZodRawShape } from 'zod';
 
 import {
@@ -8,6 +7,7 @@ import {
   type TypedFormState,
 } from './useDefaultSubmitActions';
 import { FormContext, type FormContextType } from './useFormContext';
+import { useFormTranslationsContext } from '..';
 
 export interface FormProps<T>
   extends Omit<
@@ -37,7 +37,7 @@ export function Form<T>({
   zodSchema,
   ...restProps
 }: FormProps<T>) {
-  const { t } = useTranslation();
+  const messages = useFormTranslationsContext();
   const { handleSubmit, handleSubmitFailure, isSubmitting } =
     useDefaultSubmitActions<T>({
       onSubmit,
@@ -60,7 +60,7 @@ export function Form<T>({
       onSubmit={handleSubmit}
       onSubmitFailure={handleSubmitFailure}
       errorMessage={{
-        required: t('errors.required'),
+        required: messages.errors.required,
       }}
       {...restProps}
     >
