@@ -1,9 +1,4 @@
 /**
- * FormWithControls
- */
-export * as FormWithControls from './form';
-
-/**
  * Controls
  */
 export { Checkbox } from './controls/checkbox/Checkbox';
