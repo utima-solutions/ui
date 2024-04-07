@@ -1,5 +1,15 @@
 # @utima/ui
 
+## 0.18.0
+
+### Minor Changes
+
+- [#12](https://github.com/utima-solutions/ui/pull/12) [`48b31fd`](https://github.com/utima-solutions/ui/commit/48b31fda17a4657052ed1e72b164c2505eaa7f0e) Thanks [@jsimck](https://github.com/jsimck)! - Added new `Pagination` component
+
+### Patch Changes
+
+- [#12](https://github.com/utima-solutions/ui/pull/12) [`48b31fd`](https://github.com/utima-solutions/ui/commit/48b31fda17a4657052ed1e72b164c2505eaa7f0e) Thanks [@jsimck](https://github.com/jsimck)! - Fixed button and patch invalid border styles on non-outline variatns
+
 ## 0.17.1
 
 ### Patch Changes
