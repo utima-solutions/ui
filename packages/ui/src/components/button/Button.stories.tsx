@@ -33,3 +33,16 @@ export const Icon: Story = {
     children: null,
   },
 };
+
+export const Multiline: Story = {
+  args: {
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  },
+  decorators: [
+    Story => (
+      <div style={{ width: 50 }}>
+        <Story />
+      </div>
+    ),
+  ],
+};

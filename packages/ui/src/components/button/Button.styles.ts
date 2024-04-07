@@ -9,7 +9,7 @@ import { globalDef } from '../global.styles';
  */
 export const buttonDef = twOverrides(
   {
-    button: `${globalDef.ring} border outline-none box-border inline-flex font-semibold items-center justify-center rounded-radius transition-all disabled:opacity-65 disabled:cursor-not-allowed`,
+    button: `${globalDef.ring} outline-none box-border inline-flex font-semibold items-center justify-center rounded-radius transition-all disabled:opacity-65 disabled:cursor-not-allowed`,
     variants: {
       variant: {
         primary:
@@ -30,27 +30,27 @@ export const buttonDef = twOverrides(
         link: 'text-foreground hover:text-foreground/70 active:text-foreground/90 underline-offset-4 hover:underline ring-foreground',
       },
       size: {
-        xs: 'py-1 px-2 text-xs gap-x-1',
-        sm: 'py-1.5 px-3 text-sm gap-x-1',
-        md: 'py-2 px-4 text-sm gap-x-1',
-        lg: 'py-2.5 px-5 text-base gap-x-1.5',
-        xl: 'py-2.5 px-6 text-lg gap-x-2',
+        xs: 'min-h-7 py-1 px-2 text-xs gap-x-1',
+        sm: 'min-h-9 py-1 px-3 text-sm gap-x-1',
+        md: 'min-h-10 py-1.5 px-4 text-sm gap-x-1',
+        lg: 'min-h-11 py-1.5 px-5 text-base gap-x-1.5',
+        xl: 'min-h-12 py-2 px-6 text-lg gap-x-2',
         'icon-xs': 'size-7',
-        'icon-sm': 'size-8',
-        'icon-md': 'size-9',
-        'icon-lg': 'size-10',
+        'icon-sm': 'size-9',
+        'icon-md': 'size-10',
+        'icon-lg': 'size-11',
         'icon-xl': 'size-12',
       },
       outline: {
-        primary: `bg-background text-primary hover:bg-primary/10 active:bg-primary/15`,
-        secondary: `bg-background text-secondary hover:bg-secondary/10 active:bg-secondary/15`,
-        muted: `bg-background text-default hover:bg-default/10 active:bg-default/15`,
-        success: `bg-background text-success hover:bg-success/10 active:bg-success/15`,
-        danger: `bg-background text-danger hover:bg-danger/10 active:bg-danger/15`,
-        warning: `bg-background text-warning hover:bg-warning/10 active:bg-warning/15`,
-        info: `bg-background text-info hover:bg-info/10 active:bg-info/15`,
-        ghost: `bg-background border-primary/25`,
-        link: `bg-background border-primary`,
+        primary: `bg-background border text-primary hover:bg-primary/10 active:bg-primary/15`,
+        secondary: `bg-background border text-secondary hover:bg-secondary/10 active:bg-secondary/15`,
+        muted: `bg-background border text-default hover:bg-default/10 active:bg-default/15`,
+        success: `bg-background border text-success hover:bg-success/10 active:bg-success/15`,
+        danger: `bg-background border text-danger hover:bg-danger/10 active:bg-danger/15`,
+        warning: `bg-background border text-warning hover:bg-warning/10 active:bg-warning/15`,
+        info: `bg-background border text-info hover:bg-info/10 active:bg-info/15`,
+        ghost: `bg-background border border-primary/25`,
+        link: `bg-background border border-primary`,
       },
     },
   },
