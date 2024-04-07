@@ -31,7 +31,6 @@ export const PaginationLink = forwardRef<
 ) {
   const { size: contextSize } = usePaginationContext();
   const Comp = asChild ? Slot : 'a';
-  console.log(contextSize);
 
   return (
     <Comp
