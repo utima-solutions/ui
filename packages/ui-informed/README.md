@@ -2,6 +2,12 @@
 
 Combination of components from Utima/ui and form library Informed.
 
+## Installation
+
+```bash
+npm install @utima/ui-informed informed
+```
+
 # Development
 
 For this package to be working locally for you, you need to have have @utima/ui package built.

@@ -45,7 +45,6 @@
     "@storybook/addon-onboarding": "^1.0.11",
     "@storybook/react": "^7.6.16",
     "@storybook/react-vite": "^7.6.16",
-    "@utima/ui": "^0.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.16",
@@ -54,12 +53,10 @@
     "zod": "^3.22.4"
   },
   "peerDependencies": {
-    "@utima/ui": "^0.18.0",
+    "@utima/ui": "*",
+    "informed": "^>=4",
     "react": ">=18",
     "react-dom": ">=18",
     "zod": ">=3.0.0 <4.0.0"
-  },
-  "dependencies": {
-    "informed": "^4.56.3"
   }
 }
