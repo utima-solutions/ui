@@ -17,7 +17,7 @@ export function MenuSubTrigger({ children }: MenuSubTrigger) {
       <span className='w-full'>{children}</span>
       <button
         onClick={() => setOpened(v => !v)}
-        className='py-2 px-3 transition-colors cursor-pointer hover:bg-slate-800 rounded-radius'
+        className='py-2 px-3 transition-colors cursor-pointer text-menu-fg hover:bg-menu-accent hover:text-menu-accent-fg rounded-radius'
       >
         <ChevronDown
           className={cn(

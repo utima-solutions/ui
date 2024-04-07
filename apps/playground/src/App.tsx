@@ -1,7 +1,14 @@
 import './componentOverrides';
 import './app.css';
 import { Avatar, Button, Layout, Menu } from '@utima/ui';
-import { PlusCircle } from 'lucide-react';
+import {
+  Contact,
+  Home,
+  LayoutDashboard,
+  PlusCircle,
+  User,
+  Lock,
+} from 'lucide-react';
 
 function App() {
   return (
@@ -14,25 +21,34 @@ function App() {
           <Menu.Content>
             <Menu.Label>Group 0</Menu.Label>
             <Menu.Item>
-              <Menu.Link>Home</Menu.Link>
+              <Menu.Link>
+                <Home className='size-5' /> Home
+              </Menu.Link>
             </Menu.Item>
             <Menu.Separator />
             <Menu.Label>Group 1</Menu.Label>
             <Menu.Item>
-              <Menu.Link>Dashboard</Menu.Link>
+              <Menu.Link>
+                <LayoutDashboard className='size-5' /> Dashboard
+              </Menu.Link>
             </Menu.Item>
-            <Menu.Label>Group 3</Menu.Label>
             <Menu.Item>
               <Menu.Sub>
                 <Menu.SubTrigger>
-                  <Menu.Link>Dashboard</Menu.Link>
+                  <Menu.Link>
+                    <Contact className='size-5' /> Contacts
+                  </Menu.Link>
                 </Menu.SubTrigger>
                 <Menu.SubContent>
                   <Menu.SubItem>
-                    <Menu.Link>Profile</Menu.Link>
+                    <Menu.Link>
+                      <User className='size-5' /> Profile
+                    </Menu.Link>
                   </Menu.SubItem>
                   <Menu.SubItem>
-                    <Menu.Link>Account</Menu.Link>
+                    <Menu.Link>
+                      <Lock className='size-5' /> Account
+                    </Menu.Link>
                   </Menu.SubItem>
                   <Menu.Separator />
                   <Menu.SubItem>
@@ -41,15 +57,16 @@ function App() {
                         <Menu.Link>Dashboard</Menu.Link>
                       </Menu.SubTrigger>
                       <Menu.SubContent>
-                        <Menu.Item>
+                        <Menu.Label>Group 1</Menu.Label>
+                        <Menu.SubItem>
                           <Menu.Link>Profile</Menu.Link>
-                        </Menu.Item>
-                        <Menu.Item>
+                        </Menu.SubItem>
+                        <Menu.SubItem>
                           <Menu.Link>Account</Menu.Link>
-                        </Menu.Item>
-                        <Menu.Item>
+                        </Menu.SubItem>
+                        <Menu.SubItem>
                           <Menu.Link>Security</Menu.Link>
-                        </Menu.Item>
+                        </Menu.SubItem>
                       </Menu.SubContent>
                     </Menu.Sub>
                   </Menu.SubItem>

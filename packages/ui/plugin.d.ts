@@ -72,6 +72,11 @@ type TailwindPluginOptions = {
       fg: string;
       border: string;
     };
+    menu: {
+      bg: string;
+      fg: string;
+      border: string;
+    };
   };
 };
 

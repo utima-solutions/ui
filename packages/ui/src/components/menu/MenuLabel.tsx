@@ -6,7 +6,10 @@ export interface MenuLabel {
 
 export function MenuLabel({ children }: MenuLabel) {
   return (
-    <li role='presentation' className='m-1 py-2 px-3 text-sm text-muted'>
+    <li
+      role='presentation'
+      className='py-1 px-3 text-xs text-menu-fg/50 font-medium'
+    >
       {children}
     </li>
   );

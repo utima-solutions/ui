@@ -17,7 +17,7 @@ export function MenuSubContent({ children }: { children: React.ReactNode }) {
       disableDisplayNone
       height={opened ? 'auto' : 0}
     >
-      <div className='bg-slate-800'>
+      <div className='bg-menu-submenu/25'>
         <ul
           className={cn(
             'transition-all ease-in-out duration-300',
