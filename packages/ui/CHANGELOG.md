@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.18.2
+
+### Patch Changes
+
+- [`62cb2a2`](https://github.com/utima-solutions/ui/commit/62cb2a275393415e7d7360278e7a7c7a20437b7f) Thanks [@jsimck](https://github.com/jsimck)! - Fixed disabled prop types on pagination link
+
 ## 0.18.1
 
 ### Patch Changes
