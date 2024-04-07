@@ -14,7 +14,7 @@ export const menuDef = twOverrides(
         'flex items-center py-2 px-3 transition-colors cursor-pointer hover:bg-menu-accent hover:text-menu-accent-fg w-auto rounded-radius gap-4 text-menu-fg',
       active: 'bg-menu-accent text-menu-accent-fg',
     },
-    separator: 'pt-1 mb-1 border-b border-menu-separator',
+    separator: 'pt-1 mb-1 border-b border-menu-border',
     subContent: {
       wrapper: 'bg-menu-submenu',
       content:

@@ -106,16 +106,16 @@ module.exports = plugin.withOptions(
               border: colors?.input?.border ?? palette.border,
             },
             menu: {
-              DEFAULT: colors?.input?.bg ?? palette.bg,
-              fg: colors?.input?.fg ?? palette.fg,
-              border: colors?.input?.border ?? palette.border,
+              DEFAULT: colors?.menu?.bg ?? palette.bg,
+              fg: colors?.menu?.fg ?? palette.fg,
+              border: colors?.menu?.border ?? palette.border,
               accent: {
-                DEFAULT: colors?.menu?.accent ?? palette.menuAccent,
-                fg: colors?.menu?.accent ?? palette.fg,
+                DEFAULT: colors?.menu?.accent?.bg ?? palette.menuAccent,
+                fg: colors?.menu?.accent?.fg ?? palette.fg,
               },
               submenu: {
-                DEFAULT: colors?.menu?.activeBg ?? 'rgba(0, 0, 0, 0.03)',
-                fg: colors?.menu?.activeFg ?? palette.fg,
+                DEFAULT: colors?.menu?.submenu?.bg ?? 'rgba(0, 0, 0, 0.03)',
+                fg: colors?.menu?.submenu?.fg ?? palette.fg,
               },
             },
           },

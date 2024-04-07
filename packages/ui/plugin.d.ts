@@ -76,6 +76,14 @@ type TailwindPluginOptions = {
       bg: string;
       fg: string;
       border: string;
+      accent: {
+        bg: string;
+        fg: string;
+      };
+      submenu: {
+        bg: string;
+        fg: string;
+      };
     };
   };
 };
