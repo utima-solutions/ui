@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.18.1
+
+### Patch Changes
+
+- [`fe76bdd`](https://github.com/utima-solutions/ui/commit/fe76bddb4ccf9ea73a2f3b0724e60cd73b059f66) Thanks [@jsimck](https://github.com/jsimck)! - Added missing `Pagination` Export
+
 ## 0.18.0
 
 ### Minor Changes
