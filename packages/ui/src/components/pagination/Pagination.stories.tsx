@@ -12,7 +12,7 @@ const meta: Meta<typeof Pagination.Root> = {
     children: (
       <Pagination.Content>
         <Pagination.Item>
-          <Pagination.Prev>Previous</Pagination.Prev>
+          <Pagination.Prev disabled>Previous</Pagination.Prev>
         </Pagination.Item>
         <Pagination.Item>
           <PaginationLink>1</PaginationLink>

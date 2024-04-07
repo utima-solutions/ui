@@ -6,5 +6,5 @@ export const paginationDef = {
     content: 'flex h-9 w-9 items-center text-primary justify-center',
   },
   item: '',
-  link: 'cursor-pointer',
+  link: 'cursor-pointer aria-disabled:opacity-65 aria-disabled:cursor-not-allowed aria-disabled:pointer-events-none',
 };

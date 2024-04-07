@@ -13,6 +13,7 @@ export interface PaginationLinkProps
     Pick<VariantProps<typeof buttonStyles>, 'size'> {
   asChild?: boolean;
   active?: boolean;
+  disabled?: boolean;
 }
 
 export const PaginationLink = forwardRef<
@@ -23,6 +24,7 @@ export const PaginationLink = forwardRef<
     className,
     children,
     size = 'md',
+    disabled = false,
     active = false,
     asChild = false,
     ...restProps
@@ -34,6 +36,7 @@ export const PaginationLink = forwardRef<
 
   return (
     <Comp
+      aria-disabled={disabled}
       className={cn(
         buttonStyles({
           size: contextSize ?? size,
