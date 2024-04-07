@@ -86,3 +86,6 @@ export {
   MenuSubContext,
   type MenuSubContextType,
 } from './components/menu/menuSubContext';
+
+// Pagination
+export * as Pagination from './components/pagination';
