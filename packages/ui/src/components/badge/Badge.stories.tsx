@@ -35,3 +35,16 @@ export const TextWrap: Story = {
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, voluptate?',
   },
 };
+
+export const Multiline: Story = {
+  args: {
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  },
+  decorators: [
+    Story => (
+      <div style={{ width: 50 }}>
+        <Story />
+      </div>
+    ),
+  ],
+};

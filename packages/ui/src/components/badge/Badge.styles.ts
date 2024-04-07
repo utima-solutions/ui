@@ -19,11 +19,11 @@ export const badgeDef = twOverrides(
         link: 'text-foreground border-transparent underline underline-offset-4',
       },
       size: {
-        xs: 'py-0.5 px-1 gap-1 text-[10px]',
-        sm: 'py-[2px] px-1.5 gap-1 text-xs',
-        md: 'py-1 px-2 gap-1 text-xs',
-        lg: 'py-1.5 px-3 gap-1.5 text-sm',
-        xl: 'py-2 px-3 gap-2 text-base',
+        xs: 'min-h-5 px-1 gap-1 text-[10px]',
+        sm: 'min-h-6 py-[2px] px-1.5 gap-1 text-xs',
+        md: 'min-h-7 py-[2px] px-2 gap-1 text-xs',
+        lg: 'min-h-9 py-1 px-3 gap-1.5 text-sm',
+        xl: 'min-h-10 py-1 px-3 gap-2 text-base',
       },
       outline: {
         primary: `bg-background text-primary`,
