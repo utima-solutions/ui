@@ -54,7 +54,7 @@
   },
   "peerDependencies": {
     "@utima/ui": "*",
-    "informed": "^>=4",
+    "informed": ">=4",
     "react": ">=18",
     "react-dom": ">=18",
     "zod": ">=3.0.0 <4.0.0"
