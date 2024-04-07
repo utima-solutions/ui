@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.18.3
+
+### Patch Changes
+
+- [`d302b97`](https://github.com/utima-solutions/ui/commit/d302b975992eabdd9639fed65faad96372881873) Thanks [@jsimck](https://github.com/jsimck)! - Added missing overrides def for pagination
+
 ## 0.18.2
 
 ### Patch Changes
