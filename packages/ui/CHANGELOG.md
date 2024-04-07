@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.17.1
+
+### Patch Changes
+
+- [`88bbbcf`](https://github.com/utima-solutions/ui/commit/88bbbcf51bf0985784f618107663228a08c5a4f5) Thanks [@jsimck](https://github.com/jsimck)! - Fixed menu tailwind variables
+
 ## 0.17.0
 
 ### Minor Changes
