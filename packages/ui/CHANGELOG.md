@@ -1,5 +1,15 @@
 # @utima/ui
 
+## 0.17.0
+
+### Minor Changes
+
+- [#11](https://github.com/utima-solutions/ui/pull/11) [`2690456`](https://github.com/utima-solutions/ui/commit/2690456cce8318908758e6343280daee50a999ee) Thanks [@jsimck](https://github.com/jsimck)! - New `menu` component
+
+### Patch Changes
+
+- [#10](https://github.com/utima-solutions/ui/pull/10) [`ed3c242`](https://github.com/utima-solutions/ui/commit/ed3c242fdc7caa5ca923a006ab3869a7393be7e5) Thanks [@jsimck](https://github.com/jsimck)! - Fixed styling with toast
+
 ## 0.16.2
 
 ### Patch Changes
