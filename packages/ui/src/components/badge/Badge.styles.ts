@@ -5,7 +5,7 @@ import { twOverrides } from '@/overrides';
 export const badgeDef = twOverrides(
   {
     badge:
-      'rounded-radius border font-semibold inline-flex items-center transition-all h-atuo',
+      'rounded-radius font-semibold inline-flex items-center transition-all h-atuo',
     variants: {
       variant: {
         primary: 'bg-primary border-primary text-primary-fg',
@@ -26,15 +26,15 @@ export const badgeDef = twOverrides(
         xl: 'min-h-10 py-1 px-3 gap-2 text-base',
       },
       outline: {
-        primary: `bg-background text-primary`,
-        secondary: `bg-background text-secondary`,
-        muted: `bg-background text-muted`,
-        success: `bg-background text-success`,
-        danger: `bg-background text-danger`,
-        warning: `bg-background text-warning`,
-        info: `bg-background text-info`,
-        ghost: `bg-background`,
-        link: `bg-background`,
+        primary: `bg-background border text-primary`,
+        secondary: `bg-background border text-secondary`,
+        muted: `bg-background border text-muted`,
+        success: `bg-background border text-success`,
+        danger: `bg-background border text-danger`,
+        warning: `bg-background border text-warning`,
+        info: `bg-background border text-info`,
+        ghost: `bg-background border`,
+        link: `bg-background border`,
       },
       disabled: {
         DEFAULT: 'opacity-65 cursor-not-allowed',

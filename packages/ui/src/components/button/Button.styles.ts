@@ -9,7 +9,7 @@ import { globalDef } from '../global.styles';
  */
 export const buttonDef = twOverrides(
   {
-    button: `${globalDef.ring} border outline-none box-border inline-flex font-semibold items-center justify-center rounded-radius transition-all disabled:opacity-65 disabled:cursor-not-allowed`,
+    button: `${globalDef.ring} outline-none box-border inline-flex font-semibold items-center justify-center rounded-radius transition-all disabled:opacity-65 disabled:cursor-not-allowed`,
     variants: {
       variant: {
         primary:
@@ -42,15 +42,15 @@ export const buttonDef = twOverrides(
         'icon-xl': 'size-12',
       },
       outline: {
-        primary: `bg-background text-primary hover:bg-primary/10 active:bg-primary/15`,
-        secondary: `bg-background text-secondary hover:bg-secondary/10 active:bg-secondary/15`,
-        muted: `bg-background text-default hover:bg-default/10 active:bg-default/15`,
-        success: `bg-background text-success hover:bg-success/10 active:bg-success/15`,
-        danger: `bg-background text-danger hover:bg-danger/10 active:bg-danger/15`,
-        warning: `bg-background text-warning hover:bg-warning/10 active:bg-warning/15`,
-        info: `bg-background text-info hover:bg-info/10 active:bg-info/15`,
-        ghost: `bg-background border-primary/25`,
-        link: `bg-background border-primary`,
+        primary: `bg-background border text-primary hover:bg-primary/10 active:bg-primary/15`,
+        secondary: `bg-background border text-secondary hover:bg-secondary/10 active:bg-secondary/15`,
+        muted: `bg-background border text-default hover:bg-default/10 active:bg-default/15`,
+        success: `bg-background border text-success hover:bg-success/10 active:bg-success/15`,
+        danger: `bg-background border text-danger hover:bg-danger/10 active:bg-danger/15`,
+        warning: `bg-background border text-warning hover:bg-warning/10 active:bg-warning/15`,
+        info: `bg-background border text-info hover:bg-info/10 active:bg-info/15`,
+        ghost: `bg-background border border-primary/25`,
+        link: `bg-background border border-primary`,
       },
     },
   },
