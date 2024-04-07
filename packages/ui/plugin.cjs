@@ -6,6 +6,7 @@ const palette = {
   mutedFg: '#60637a',
 
   accent: '#f0f1f7',
+  menuAccent: '#cbcdd6',
   placeholder: '#7b7f95',
   border: '#e4e5f1',
   separator: '#e4e5f1',
@@ -103,6 +104,19 @@ module.exports = plugin.withOptions(
               DEFAULT: colors?.input?.bg ?? palette.bg,
               fg: colors?.input?.fg ?? palette.fg,
               border: colors?.input?.border ?? palette.border,
+            },
+            menu: {
+              DEFAULT: colors?.input?.bg ?? palette.bg,
+              fg: colors?.input?.fg ?? palette.fg,
+              border: colors?.input?.border ?? palette.border,
+              accent: {
+                DEFAULT: colors?.menu?.accent ?? palette.menuAccent,
+                fg: colors?.menu?.accent ?? palette.fg,
+              },
+              submenu: {
+                DEFAULT: colors?.menu?.activeBg ?? 'rgba(0, 0, 0, 0.03)',
+                fg: colors?.menu?.activeFg ?? palette.fg,
+              },
             },
           },
         },
