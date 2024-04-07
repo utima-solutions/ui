@@ -1,16 +1,22 @@
-import type { ReactNode } from 'react';
+import { memo, type ComponentPropsWithoutRef, type ReactNode } from 'react';
 
-export interface MenuLabel {
+import { cn } from '@/utils';
+
+import { menuDef } from './Menu.styles';
+
+export interface MenuLabelProps extends ComponentPropsWithoutRef<'li'> {
   children: ReactNode;
 }
 
-export function MenuLabel({ children }: MenuLabel) {
+export const MenuLabel = memo(function MenuLabel({
+  className,
+  ...restProps
+}: MenuLabelProps) {
   return (
     <li
       role='presentation'
-      className='py-1 px-3 text-xs text-menu-fg/50 font-medium'
-    >
-      {children}
-    </li>
+      className={cn(menuDef.label, className)}
+      {...restProps}
+    />
   );
-}
+});

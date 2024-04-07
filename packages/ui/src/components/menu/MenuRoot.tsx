@@ -1,5 +1,12 @@
-export interface MenuRoot {}
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
-export function MenuRoot({ children }: { children: React.ReactNode }) {
-  return <nav className='bg-menu'>{children}</nav>;
-}
+import { cn } from '@/utils';
+
+export interface MenuRootProps extends ComponentPropsWithoutRef<'nav'> {}
+
+export const MenuRoot = memo(function MenuRoot({
+  className,
+  ...restProps
+}: MenuRootProps) {
+  return <nav className={cn('bg-menu', className)} {...restProps} />;
+});

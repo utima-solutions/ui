@@ -1,5 +1,14 @@
-export interface MenuContent {}
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
-export function MenuContent({ children }: { children: React.ReactNode }) {
-  return <ul className='list-none m-0'>{children}</ul>;
-}
+import { cn } from '@/utils';
+
+import { menuDef } from './Menu.styles';
+
+export interface MenuContentProps extends ComponentPropsWithoutRef<'ul'> {}
+
+export const MenuContent = memo(function MenuContent({
+  className,
+  ...restProps
+}: MenuContentProps) {
+  return <ul className={cn(menuDef.content, className)} {...restProps} />;
+});

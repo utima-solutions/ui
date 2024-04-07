@@ -81,3 +81,8 @@ export { useLayout } from './components/layout/useLayoutContext';
 
 // Menu
 export * as Menu from './components/menu';
+export { useMenuSubContext } from './components/menu/useMenuSubContext';
+export {
+  MenuSubContext,
+  type MenuSubContextType,
+} from './components/menu/menuSubContext';

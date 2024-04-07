@@ -1,9 +1,21 @@
-export interface MenuLink {}
+import { memo, type ComponentPropsWithoutRef } from 'react';
 
-export function MenuLink({ children }: { children: React.ReactNode }) {
+import { cn } from '@/utils';
+
+import { menuDef } from './Menu.styles';
+
+export interface MenuLinkProps extends ComponentPropsWithoutRef<'a'> {}
+
+export const MenuLink = memo(function MenuLink({
+  children,
+  className,
+  ...restProps
+}: MenuLinkProps) {
   return (
-    <a className='flex items-center py-2 px-3 transition-colors cursor-pointer hover:bg-menu-accent hover:text-menu-accent-fg w-auto rounded-radius gap-4 text-menu-fg'>
-      {children}
-    </a>
+    <div className={cn(menuDef.link.wrapper)}>
+      <a className={cn(menuDef.link.content, className)} {...restProps}>
+        {children}
+      </a>
+    </div>
   );
-}
+});

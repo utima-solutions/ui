@@ -114,7 +114,7 @@ module.exports = plugin.withOptions(
                 fg: colors?.menu?.accent ?? palette.fg,
               },
               submenu: {
-                DEFAULT: colors?.menu?.activeBg ?? palette.muted,
+                DEFAULT: colors?.menu?.activeBg ?? 'rgba(0, 0, 0, 0.03)',
                 fg: colors?.menu?.activeFg ?? palette.fg,
               },
             },

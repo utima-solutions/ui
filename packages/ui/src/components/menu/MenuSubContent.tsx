@@ -1,13 +1,17 @@
-import { useContext } from 'react';
+import { memo, useContext, type ComponentPropsWithoutRef } from 'react';
 import AnimateHeight from 'react-animate-height';
 
 import { cn } from '@/utils';
 
-import { MenuSubContext, type MenuSubContextType } from './MenuContext';
+import { menuDef } from './Menu.styles';
+import { MenuSubContext, type MenuSubContextType } from './menuSubContext';
 
-export interface MenuSubContent {}
+export interface MenuSubContentProps extends ComponentPropsWithoutRef<'ul'> {}
 
-export function MenuSubContent({ children }: { children: React.ReactNode }) {
+export const MenuSubContent = memo(function MenuSubContent({
+  className,
+  ...restProps
+}: MenuSubContentProps) {
   const { opened } = useContext<MenuSubContextType>(MenuSubContext);
 
   return (
@@ -17,16 +21,16 @@ export function MenuSubContent({ children }: { children: React.ReactNode }) {
       disableDisplayNone
       height={opened ? 'auto' : 0}
     >
-      <div className='bg-menu-submenu/25'>
+      <div className={menuDef.subContent.wrapper}>
         <ul
           className={cn(
-            'transition-all ease-in-out duration-300',
+            menuDef.subContent.content,
             opened ? 'opacity-100' : 'opacity-0',
+            className,
           )}
-        >
-          {children}
-        </ul>
+          {...restProps}
+        />
       </div>
     </AnimateHeight>
   );
-}
+});

@@ -8,18 +8,22 @@ import {
   PlusCircle,
   User,
   Lock,
+  LogOut,
+  Cog,
+  MenuIcon,
 } from 'lucide-react';
 
 function App() {
   return (
     <Layout.Root>
       <Layout.Header>
-        <Layout.SidebarTrigger />
+        <Layout.SidebarTrigger>
+          <MenuIcon />
+        </Layout.SidebarTrigger>
       </Layout.Header>
       <Layout.Sidebar>
         <Menu.Root>
           <Menu.Content>
-            <Menu.Label>Group 0</Menu.Label>
             <Menu.Item>
               <Menu.Link>
                 <Home className='size-5' /> Home
@@ -54,7 +58,7 @@ function App() {
                   <Menu.SubItem>
                     <Menu.Sub>
                       <Menu.SubTrigger>
-                        <Menu.Link>Dashboard</Menu.Link>
+                        <Menu.Link><span className='w-5'></span> Dashboard</Menu.Link>
                       </Menu.SubTrigger>
                       <Menu.SubContent>
                         <Menu.Label>Group 1</Menu.Label>
@@ -72,6 +76,16 @@ function App() {
                   </Menu.SubItem>
                 </Menu.SubContent>
               </Menu.Sub>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link>
+                <LogOut className='size-5' /> Logout
+              </Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link>
+                <Cog className='size-5' /> Settings
+              </Menu.Link>
             </Menu.Item>
           </Menu.Content>
         </Menu.Root>

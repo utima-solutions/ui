@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from 'react';
 
-import { MenuSubContext, type MenuSubContextType } from './MenuContext';
+import { MenuSubContext, type MenuSubContextType } from './menuSubContext';
 
 export interface MenuSub {
   children?: ReactNode;
