@@ -9,8 +9,10 @@ export const menuDef = twOverrides(
     subItem: '',
     link: {
       wrapper: 'm-1',
+      indent: 'pl-12',
       content:
         'flex items-center py-2 px-3 transition-colors cursor-pointer hover:bg-menu-accent hover:text-menu-accent-fg w-auto rounded-radius gap-4 text-menu-fg',
+      active: 'bg-menu-accent text-menu-accent-fg',
     },
     separator: 'pt-1 mb-1 border-b border-menu-separator',
     subContent: {
@@ -20,9 +22,9 @@ export const menuDef = twOverrides(
     },
     subTrigger: {
       wrapper: 'flex justify-between',
-      content: 'w-full [&>*]:pl-1',
+      content: 'w-full',
       button:
-        'px-3 transition-colors cursor-pointer text-menu-fg hover:bg-menu-accent hover:text-menu-accent-fg rounded-radius mr-1',
+        'm-1 px-3 transition-colors cursor-pointer text-menu-fg hover:bg-menu-accent hover:text-menu-accent-fg rounded-radius mr-1',
       icon: 'transition-transform size-5',
     },
   },

@@ -1,8 +1,8 @@
-import { createContext, type Dispatch } from 'react';
+import { createContext } from 'react';
 
 export interface MenuSubContextType {
   opened: boolean;
-  setOpened: Dispatch<React.SetStateAction<boolean>>;
+  setOpened: (value: boolean) => void;
 }
 
 export const MenuSubContext = createContext<MenuSubContextType>(undefined!);

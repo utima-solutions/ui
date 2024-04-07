@@ -19,7 +19,7 @@ export const MenuSubTrigger = memo(function MenuSubTrigger({
     <div className={cn(menuDef.subTrigger.wrapper, className)} {...restProps}>
       <span className={menuDef.subTrigger.content}>{children}</span>
       <button
-        onClick={() => setOpened(v => !v)}
+        onClick={() => setOpened(!opened)}
         className={menuDef.subTrigger.button}
       >
         <ChevronDown

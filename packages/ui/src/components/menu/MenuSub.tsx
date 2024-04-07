@@ -1,20 +1,36 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useCallback, useMemo, useState, type ReactNode } from 'react';
 
 import { MenuSubContext, type MenuSubContextType } from './menuSubContext';
 
 export interface MenuSub {
   children?: ReactNode;
   open?: boolean;
+  defaultOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
 }
 
-export function MenuSub({ children, open }: MenuSub) {
-  const [isOpen, setIsOpen] = useState(false);
+export function MenuSub({
+  children,
+  open,
+  onOpenChange,
+  defaultOpen = false,
+}: MenuSub) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  const handleSetOpened = useCallback(
+    (currentOpen: boolean) => {
+      setIsOpen(currentOpen);
+      onOpenChange?.(currentOpen);
+    },
+    [onOpenChange],
+  );
+
   const contextValue = useMemo<MenuSubContextType>(
     () => ({
       opened: open ?? isOpen,
-      setOpened: setIsOpen,
+      setOpened: handleSetOpened,
     }),
-    [open, isOpen, setIsOpen],
+    [open, isOpen, handleSetOpened],
   );
 
   return (
