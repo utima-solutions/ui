@@ -78,3 +78,6 @@ export { Kbd, type KbdProps } from './components/kbd/Kbd';
 // Layout
 export * as Layout from './components/layout';
 export { useLayout } from './components/layout/useLayoutContext';
+
+// Menu
+export * as Menu from './components/menu';

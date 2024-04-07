@@ -86,6 +86,7 @@
     "clsx": ">=2",
     "cmdk": "^0.2.1",
     "lodash.get": "4",
+    "react-animate-height": "^3.2.3",
     "sonner": "^1.4.0",
     "tailwind-merge": ">=2",
     "type-fest": ">=4"
