@@ -1,5 +1,14 @@
 # @utima/ui-informed
 
+## 0.1.1
+
+### Patch Changes
+
+- [`f4660dc`](https://github.com/utima-solutions/ui/commit/f4660dc5b37bbba249dfe36be8f19ae84a7ac9f3) Thanks [@jsimck](https://github.com/jsimck)! - Fixed unpublished major versions
+
+- Updated dependencies [[`f4660dc`](https://github.com/utima-solutions/ui/commit/f4660dc5b37bbba249dfe36be8f19ae84a7ac9f3)]:
+  - @utima/ui@0.18.4
+
 ## 0.1.0
 
 ### Minor Changes

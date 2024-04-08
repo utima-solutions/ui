@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.18.4
+
+### Patch Changes
+
+- [`f4660dc`](https://github.com/utima-solutions/ui/commit/f4660dc5b37bbba249dfe36be8f19ae84a7ac9f3) Thanks [@jsimck](https://github.com/jsimck)! - Fixed unpublished major versions
+
 ## 0.18.3
 
 ### Patch Changes
