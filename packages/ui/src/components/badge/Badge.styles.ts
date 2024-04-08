@@ -5,7 +5,7 @@ import { twOverrides } from '@/overrides';
 export const badgeDef = twOverrides(
   {
     badge:
-      'rounded-radius font-semibold inline-flex items-center transition-all h-atuo',
+      'rounded-radius text-center font-semibold inline-flex items-center transition-all',
     variants: {
       variant: {
         primary: 'bg-primary border-primary text-primary-fg',
