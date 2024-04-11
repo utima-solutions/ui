@@ -19,7 +19,7 @@ export const selectDef = twOverrides(
     },
     label: 'font-semibold text-foreground',
     separator: '-mx-1 my-1 h-px bg-separator',
-    trigger: `${globalDef.ring} text-left bg-input ring-input-border flex w-full transition-colors items-center justify-between rounded-radius border border-input-border hover:border-input-fg px-3 py-2 text-sm text-input-fg placeholder:text-placeholder focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1`,
+    trigger: `${globalDef.ring} text-left bg-input ring-input-border flex w-full transition-colors items-center justify-between rounded-radius border border-input-border hover:border-input-fg px-3 py-2 text-sm text-input-fg data-[placeholder]:text-placeholder focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1`,
     content: {
       base: 'relative z-50 max-h-[var(--radix-select-content-available-height)] min-w-[var(--radix-popper-anchor-width)] overflow-hidden rounded-radius border border-popover-border bg-popover text-popover-fg shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
       popper:
