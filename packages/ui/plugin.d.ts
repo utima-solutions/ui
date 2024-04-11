@@ -15,6 +15,7 @@ type TailwindPluginOptions = {
     placeholder: string;
     border: string;
     separator: string;
+    ring: string;
 
     // Accent colors
     primary: {
