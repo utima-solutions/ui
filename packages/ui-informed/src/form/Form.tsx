@@ -18,7 +18,8 @@ export interface FormProps<T>
   disabled?: boolean;
   readOnly?: boolean;
   loading?: boolean;
-  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown>;
+  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown> | void;
+  disableDefaultToast?: boolean;
   zodSchema?: ZodObject<ZodRawShape>;
 }
 
@@ -34,6 +35,7 @@ export function Form<T>({
   readOnly = false,
   disabled = false,
   loading = false,
+  disableDefaultToast,
   zodSchema,
   ...restProps
 }: FormProps<T>) {
@@ -41,6 +43,7 @@ export function Form<T>({
   const { handleSubmit, handleSubmitFailure, isSubmitting } =
     useDefaultSubmitActions<T>({
       onSubmit,
+      disableDefaultToast,
     });
 
   const contextValue = useMemo<FormContextType>(
