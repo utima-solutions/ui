@@ -11,10 +11,10 @@
   },
   "include": [
     "src",
+    "./.storybook/**/*",
     "plugin.d.ts"
   ],
   "exclude": [
-    "**/.*/",
     "**/node_modules/**",
     "**/dist/**"
   ],
