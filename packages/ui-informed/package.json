@@ -1,6 +1,6 @@
 {
   "name": "@utima/ui-informed",
-  "version": "1.0.0",
+  "version": "0.19.0",
   "description": "Utima UI-Informed based on Utima UI and form library Informed with support for Zod validations.",
   "sideEffects": false,
   "main": "dist/cjs/index.js",
@@ -48,12 +48,10 @@
   "author": "Matúš Hlaváčik",
   "license": "MIT",
   "devDependencies": {
-    "@utima/ui": "^1.0.0",
     "informed": "^4.58.0",
     "zod": "^3.22.4"
   },
   "peerDependencies": {
-    "@utima/ui": "*",
     "informed": ">=4",
     "react": ">=18",
     "react-dom": ">=18",
