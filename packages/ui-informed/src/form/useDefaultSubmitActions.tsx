@@ -9,6 +9,7 @@ export interface TypedFormState<T> extends Omit<FormState, 'values'> {
 }
 type UseFormSubmitActionsParams<T> = {
   onSubmit?: (formState: TypedFormState<T>) => Promise<unknown>;
+  disableDefaultToast?: boolean;
 };
 
 /**
@@ -18,6 +19,7 @@ type UseFormSubmitActionsParams<T> = {
  */
 export function useDefaultSubmitActions<T>({
   onSubmit,
+  disableDefaultToast,
 }: UseFormSubmitActionsParams<T>) {
   const messages = useFormTranslationsContext();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -34,28 +36,36 @@ export function useDefaultSubmitActions<T>({
         await onSubmit?.(formState as TypedFormState<T>);
 
         // Show success notification
-        toast.success(messages.actions.success.title, {
-          description: messages.actions.success.message,
-        });
+        if (!disableDefaultToast) {
+          toast.success(messages.actions.success.title, {
+            description: messages.actions.success.message,
+          });
+        }
       } catch (error) {
-        toast.error(messages.actions.fail.title, {
-          description: (error as any).message,
-        });
+        if (!disableDefaultToast) {
+          toast.error(messages.actions.fail.title, {
+            description: (error as any).message,
+          });
+        } else {
+          throw error;
+        }
       } finally {
         setIsSubmitting(false);
       }
     },
-    [messages, onSubmit],
+    [disableDefaultToast, messages, onSubmit],
   );
 
   /**
    * Submit failure handler, shows notification with error message.
    */
   const handleSubmitFailure = useCallback(() => {
-    toast.error(messages.actions.fail.title, {
-      description: messages.actions.fail.message,
-    });
-  }, [messages]);
+    if (!disableDefaultToast) {
+      toast.error(messages.actions.fail.title, {
+        description: messages.actions.fail.message,
+      });
+    }
+  }, [disableDefaultToast, messages]);
 
   return {
     handleSubmit,
