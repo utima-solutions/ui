@@ -1,5 +1,11 @@
 # @utima/ui-informed
 
+## 0.1.3
+
+### Patch Changes
+
+- [#16](https://github.com/utima-solutions/ui/pull/16) [`940e47e`](https://github.com/utima-solutions/ui/commit/940e47ea1026ecb4adb9fbdf5a94a87348f32db0) Thanks [@Matushl](https://github.com/Matushl)! - Fix order of Input props to not override `type`
+
 ## 0.1.2
 
 ### Patch Changes
