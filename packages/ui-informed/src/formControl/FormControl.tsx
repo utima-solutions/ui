@@ -64,7 +64,7 @@ export interface FormControlProps
   disabled?: boolean;
   readOnly?: boolean;
   tooltip?: ReactNode;
-  hideOptional?: boolean;
+  showOptional?: boolean;
   render: FormControlRender;
   zodItemSchema?: ZodType;
   position?: 'start' | 'end';
@@ -96,7 +96,7 @@ export function FormControl({
   position = 'end',
   required,
   tooltip,
-  hideOptional,
+  showOptional,
   render,
   zodItemSchema,
   ...restProps
@@ -107,6 +107,7 @@ export function FormControl({
     disabled,
     loading,
     readOnly,
+    showOptional: formShowOptional,
     zodSchema: zodFullSchema,
   } = useFormContext();
 
@@ -142,7 +143,7 @@ export function FormControl({
               </FormInfo>
             </Tooltip>
           )}
-          {!hideOptional && !required && (
+          {(showOptional ?? formShowOptional) && !required && (
             <FormInfo>({messages.labels.optional})</FormInfo>
           )}
         </Label>
