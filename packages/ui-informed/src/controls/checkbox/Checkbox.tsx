@@ -22,6 +22,7 @@ export interface CheckboxProps
  */
 export const Checkbox = memo(function Checkbox({
   description,
+  onCheckedChange,
   ...restProps
 }: CheckboxProps) {
   return (
@@ -34,6 +35,7 @@ export const Checkbox = memo(function Checkbox({
             ref={ref}
             value={fieldState.value as any}
             onCheckedChange={value => {
+              onCheckedChange?.(value);
               fieldApi.setValue(value);
               fieldApi.setTouched(true);
               fieldApi.setFocused(true);
