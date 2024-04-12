@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
     "lint:fix": "npm run lint -- --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "npm run build; storybook build"
@@ -18,7 +18,16 @@
     ".": {
       "import": "./dist/esm/index.js",
       "types": "./dist/src/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js",
       "default": "./dist/cjs/index.js"
+    },
+    "./devtools": {
+      "import": "./dist/esm/Devtools.js",
+      "types": "./dist/src/devtools/Devtools.d.ts",
+      "require": "./dist/cjs/Devtools.js",
+      "node": "./dist/cjs/Devtools.js",
+      "default": "./dist/cjs/Devtools.js"
     }
   },
   "keywords": [
@@ -39,19 +48,8 @@
   "author": "Matúš Hlaváčik",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.16",
-    "@storybook/addon-interactions": "^7.6.16",
-    "@storybook/addon-links": "^7.6.16",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/react": "^7.6.16",
-    "@storybook/react-vite": "^7.6.16",
     "@utima/ui": "^0.18.1",
     "informed": "^4.58.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^7.6.16",
-    "tailwindcss": "^3.4.1",
-    "vite-tsconfig-paths": "^4.3.1",
     "zod": "^3.22.4"
   },
   "peerDependencies": {
@@ -60,5 +58,8 @@
     "react": ">=18",
     "react-dom": ">=18",
     "zod": ">=3.0.0 <4.0.0"
+  },
+  "dependencies": {
+    "react-json-tree": "^0.19.0"
   }
 }

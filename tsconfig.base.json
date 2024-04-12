@@ -1,31 +1,42 @@
 {
   "compilerOptions": {
-    // Compiler features
-    "jsx": "react-jsx", // support JSX
-    "allowJs": true, // allow importing `.js` from `.ts`
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "declaration": false,
-    "declarationMap": false,
+    /* Base Options: */
+    "target": "ES2018",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
 
-    // More efficient builds + references support
-    "composite": false,
+    /* Compiler features */
+    "jsx": "react-jsx", /* support JSX */
+    "allowJs": true, /* allow importing `.js` from `.ts` */
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Dom based libs */
+    "lib": [
+      "ES2018",
+      "dom",
+      "dom.iterable"
+    ],
+
+    /* More efficient builds + references support */
+    "composite": true,
     "incremental": true,
 
-    // Enable latest ES Features
+    /* Enable latest ES Features */
     "useDefineForClassFields": true,
 
-    // Backwards compatibility
+    /* Backwards compatibility */
     "esModuleInterop": true,
     "isolatedModules": true,
 
-    // Best practices
+    /* Best practices */
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "verbatimModuleSyntax": true, // Force the use of type
+    "verbatimModuleSyntax": true, /* Force the use of type */
 
-    // Type checking flags
-    "strict": true, // enables all strict rules
+    /* Strictness */
+    "strict": true,
     "noFallthroughCasesInSwitch": true,
     "useUnknownInCatchVariables": true,
   },

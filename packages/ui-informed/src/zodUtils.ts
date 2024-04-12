@@ -10,6 +10,9 @@ export function isZodError(error: unknown) {
   return error instanceof ZodError;
 }
 
+/**
+ * Create a resolver function for a Zod schema.
+ */
 export function zodResolver(schema?: ZodType) {
   if (!schema) return;
 
@@ -26,14 +29,25 @@ export function zodResolver(schema?: ZodType) {
   };
 }
 
+/**
+ * Get a field schema from a Zod object schema.
+ */
 export function getFieldZodObject(name: string, zodSchema?: AnyZodObject) {
-  if (!zodSchema) return;
+  if (!zodSchema) {
+    return;
+  }
 
   const path = name.split('.');
   let schema = zodSchema;
   for (const key of path) {
-    if (schema instanceof ZodOptional) schema = schema.unwrap();
-    if (!(schema instanceof ZodObject)) return undefined;
+    if (schema instanceof ZodOptional) {
+      schema = schema.unwrap();
+    }
+
+    if (!(schema instanceof ZodObject)) {
+      return undefined;
+    }
+
     schema = schema.shape[key];
   }
 

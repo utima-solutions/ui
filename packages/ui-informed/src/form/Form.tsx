@@ -14,10 +14,11 @@ export interface FormProps<T>
     ComponentProps<typeof InformedForm>,
     'initialValues' | 'onSubmit'
   > {
-  initialValues: T;
+  initialValues?: T | undefined;
   disabled?: boolean;
   readOnly?: boolean;
   loading?: boolean;
+  showOptional?: boolean;
   onSubmit?: (formState: TypedFormState<T>) => Promise<unknown> | void;
   disableDefaultToast?: boolean;
   zodSchema?: ZodObject<ZodRawShape>;
@@ -35,6 +36,7 @@ export function Form<T>({
   readOnly = false,
   disabled = false,
   loading = false,
+  showOptional = false,
   disableDefaultToast,
   zodSchema,
   ...restProps
@@ -52,9 +54,18 @@ export function Form<T>({
       disabled,
       readOnly,
       loading: loading || isSubmitting,
+      showOptional,
       zodSchema,
     }),
-    [initialValues, disabled, loading, isSubmitting, readOnly, zodSchema],
+    [
+      initialValues,
+      disabled,
+      loading,
+      isSubmitting,
+      readOnly,
+      zodSchema,
+      showOptional,
+    ],
   );
 
   return (

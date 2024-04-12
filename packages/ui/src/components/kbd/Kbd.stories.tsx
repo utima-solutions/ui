@@ -8,7 +8,6 @@ const meta: Meta<typeof Kbd> = {
   title: 'Components/Kbd',
   args: {
     children: 'Ctrl + X',
-    variant: 'default',
     size: 'xs',
   },
 };

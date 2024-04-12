@@ -30,6 +30,7 @@ const meta: Meta<typeof Select> = {
     name: 'value',
     label: 'Select',
     placeholder: 'Placeholder',
+    readOnly: false,
     tooltip: 'Tooltip',
     children: <SelectItems />,
   },

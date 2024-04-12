@@ -11,6 +11,7 @@ const meta: Meta<typeof Checkbox> = {
     name: 'input',
     label: 'Checkbox',
     tooltip: 'Tooltip',
+    description: 'Description',
   },
   decorators: [
     Story => (

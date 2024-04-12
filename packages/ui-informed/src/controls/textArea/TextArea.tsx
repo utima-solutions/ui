@@ -1,32 +1,43 @@
-import { TextArea as TextAreaUI } from '@utima/ui';
-import type { ComponentProps } from 'react';
+import {
+  TextArea as TextAreaUI,
+  type TextareaProps as UITextareaProps,
+} from '@utima/ui';
+import { memo } from 'react';
 
-import { FormControl } from '../../formControl/FormControl';
+import {
+  FormControl,
+  type ConsumeFormControlProps,
+} from '../../formControl/FormControl';
 
-export type TextAreaControlProps = Omit<
-  ComponentProps<typeof FormControl>,
-  'type' | 'render'
-> & { rows: number };
+export interface TextAreaProps
+  extends ConsumeFormControlProps<UITextareaProps> {}
 
 /**
  * TextArea component that is controlled by Informed. It is a wrapped in the
  * `FormControl` component, which provides the necessary props for Informed to
  * work along with label and error message handling.
  */
-export function TextArea({ rows = 4, ...restProps }: TextAreaControlProps) {
+export const TextArea = memo(function TextArea({
+  rows = 4,
+  ...restProps
+}: TextAreaProps) {
   return (
     <FormControl
-      type='text'
+      type='textArea'
       {...restProps}
-      render={({ field: { ref, userProps, informed, fieldState } }) => (
-        <TextAreaUI
-          ref={ref}
-          rows={rows}
-          variant={fieldState.showError ? 'danger' : 'default'}
-          {...userProps}
-          {...informed}
-        />
-      )}
+      render={({ userProps, ref, informed, fieldState }) =>
+        userProps.readOnly ? (
+          <p className='text-primary'>{fieldState.value as string}</p>
+        ) : (
+          <TextAreaUI
+            ref={ref}
+            rows={rows}
+            variant={fieldState.showError ? 'danger' : 'default'}
+            {...userProps}
+            {...informed}
+          />
+        )
+      }
     />
   );
-}
+});

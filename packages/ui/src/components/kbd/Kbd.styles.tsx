@@ -14,7 +14,7 @@ export const kbdDef = twOverrides(
         xl: 'text-xl',
       },
       variant: {
-        default: 'opacity-60 tracking-widest',
+        plain: 'opacity-60 tracking-widest',
         bordered: 'shadow-sm bg-white py-0.5 px-1 border-border border',
       },
     },

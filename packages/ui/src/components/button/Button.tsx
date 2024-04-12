@@ -47,8 +47,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             variant,
             size,
             outline: outline && variant ? variant : null,
-            className,
           }),
+          className,
         )}
         ref={ref}
         {...restProps}

@@ -1,40 +1,39 @@
-import { Input as InputUI } from '@utima/ui';
-import type { ComponentProps } from 'react';
+import { Input as UIInput, type InputProps as UIInputProps } from '@utima/ui';
+import { memo } from 'react';
 
-import { FormControl } from '../../formControl/FormControl';
+import {
+  FormControl,
+  type ConsumeFormControlProps,
+} from '../../formControl/FormControl';
 
-type InputControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
+export interface InputProps extends ConsumeFormControlProps<UIInputProps> {}
 
 /**
  * Input component that is controlled by Informed. It is a wrapped in the
  * `FormControl` component, which provides the necessary props for Informed to
  * work along with label and error message handling.
  */
-export function Input({ type = 'text', ...restProps }: InputControlProps) {
-  let formInputType: string;
-  switch (type) {
-    case 'textArea':
-    case 'number':
-      formInputType = type;
-      break;
-
-    default:
-      formInputType = 'text';
-  }
-
+export const Input = memo(function Input({
+  type = 'text',
+  ...restProps
+}: InputProps) {
   return (
     <FormControl
       {...restProps}
-      type={formInputType}
-      render={({ field: { ref, userProps, informed, fieldState } }) => (
-        <InputUI
-          ref={ref}
-          variant={fieldState.showError ? 'danger' : 'default'}
-          {...userProps}
-          {...informed}
-          type={type}
-        />
-      )}
+      type={type === 'number' ? 'number' : 'text'}
+      render={({ userProps, ref, informed, fieldState }) =>
+        userProps.readOnly ? (
+          <p className='text-primary'>{fieldState.value as string}</p>
+        ) : (
+          <UIInput
+            ref={ref}
+            variant={fieldState.showError ? 'danger' : 'default'}
+            type={type}
+            {...userProps}
+            {...informed}
+          />
+        )
+      }
     />
   );
-}
+});
