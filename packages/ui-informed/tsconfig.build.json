@@ -4,6 +4,7 @@
     "declarationDir": "dist",
   },
   "exclude": [
+    "./.storybook/**/*",
     "**/__tests__/*",
   ]
 }
