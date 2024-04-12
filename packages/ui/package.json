@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
+    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
     "lint:fix": "npm run lint -- --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "npm run build; storybook build"
@@ -46,28 +46,6 @@
   ],
   "author": "Jan Šimeček",
   "license": "MIT",
-  "devDependencies": {
-    "@storybook/addon-essentials": "^7.6.16",
-    "@storybook/addon-interactions": "^7.6.16",
-    "@storybook/addon-links": "^7.6.16",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "^7.6.16",
-    "@storybook/react": "^7.6.16",
-    "@storybook/react-vite": "^7.6.16",
-    "@storybook/test": "^7.6.16",
-    "@types/lodash.get": "^4.4.9",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "storybook": "^7.6.16",
-    "tailwindcss": "^3.4.1",
-    "vite-tsconfig-paths": "^4.3.1"
-  },
-  "peerDependencies": {
-    "lucide-react": "*",
-    "react": ">=18",
-    "react-dom": ">=18",
-    "tailwindcss-animate": "*"
-  },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -84,11 +62,20 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": ">=2",
-    "cmdk": "^0.2.1",
+    "cmdk": "^1.0.0",
     "lodash.get": "4",
     "react-animate-height": "^3.2.3",
-    "sonner": "^1.4.0",
+    "sonner": "^1.4.41",
     "tailwind-merge": ">=2",
     "type-fest": ">=4"
+  },
+  "devDependencies": {
+    "@types/lodash.get": "^4.4.9"
+  },
+  "peerDependencies": {
+    "lucide-react": "*",
+    "react": ">=18",
+    "react-dom": ">=18",
+    "tailwindcss-animate": "*"
   }
 }

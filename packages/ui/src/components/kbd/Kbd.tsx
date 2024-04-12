@@ -12,7 +12,7 @@ export interface KbdProps
 export const Kbd = memo(function Kbd({
   className,
   size = 'xs',
-  variant = 'default',
+  variant = 'bordered',
   ...restProps
 }: KbdProps) {
   return (
