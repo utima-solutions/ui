@@ -42,9 +42,7 @@ export interface FormItemProps
   className?: string;
   label?: string;
   name: string;
-  // according to https://github.com/teslamotors/informed/blob/master/src/utils.js#L100
-  // it seems that `type` is just these values:
-  type?: 'text' | 'textArea' | 'number' | 'select' | 'checkbox';
+  type?: string;
   disabled?: boolean;
   readOnly?: boolean;
   tooltip?: ReactNode;

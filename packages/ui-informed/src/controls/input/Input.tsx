@@ -1,33 +1,36 @@
 import { Input as InputUI } from '@utima/ui';
-import type { ComponentProps, HTMLInputTypeAttribute } from 'react';
+import type { ComponentProps } from 'react';
 
 import { FormControl } from '../../formControl/FormControl';
 
-type InputControlProps = Omit<ComponentProps<typeof FormControl>, 'render'> & {
-  // Needs revisit, type conflicts with HTMLInputTypeAttribute
-  // Will be fixed in @utima/informed-ui lib
-  inputType?: HTMLInputTypeAttribute;
-};
+type InputControlProps = Omit<ComponentProps<typeof FormControl>, 'render'>;
 
 /**
  * Input component that is controlled by Informed. It is a wrapped in the
  * `FormControl` component, which provides the necessary props for Informed to
  * work along with label and error message handling.
  */
-export function Input({
-  type = 'text',
-  inputType,
-  ...restProps
-}: InputControlProps) {
+export function Input({ type = 'text', ...restProps }: InputControlProps) {
+  let formInputType: string;
+  switch (type) {
+    case 'textArea':
+    case 'number':
+      formInputType = type;
+      break;
+
+    default:
+      formInputType = 'text';
+  }
+
   return (
     <FormControl
       {...restProps}
-      type={type}
+      type={formInputType}
       render={({ field: { ref, userProps, informed, fieldState } }) => (
         <InputUI
           ref={ref}
           variant={fieldState.showError ? 'danger' : 'default'}
-          type={inputType ?? type}
+          type={type}
           {...userProps}
           {...informed}
         />
