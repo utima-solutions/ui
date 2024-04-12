@@ -14,7 +14,7 @@ export interface SelectProps extends ConsumeFormControlProps<UISelectProps> {}
 
 // Type fixes for dot notation on memo
 interface SelectComponent extends NamedExoticComponent<SelectProps> {
-  Item: NamedExoticComponent<typeof SelectItem>;
+  Item: typeof SelectItem;
 }
 
 /**
@@ -66,6 +66,4 @@ export const Select: SelectComponent = memo(function Select({
 });
 
 // Reexport for convenience
-Select.Item = memo(SelectItem) as unknown as NamedExoticComponent<
-  typeof SelectItem
->;
+Select.Item = memo(SelectItem) as typeof SelectItem;
