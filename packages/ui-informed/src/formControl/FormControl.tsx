@@ -46,6 +46,7 @@ export interface FormItemProps
   disabled?: boolean;
   readOnly?: boolean;
   tooltip?: ReactNode;
+  hideOptional?: boolean;
   render: FormControlRender;
   zodItemSchema?: ZodType;
 }
@@ -64,6 +65,7 @@ export function FormControl({
   type = 'text',
   required,
   tooltip,
+  hideOptional,
   render,
   zodItemSchema,
   ...restProps
@@ -111,7 +113,9 @@ export function FormControl({
               </FormInfo>
             </Tooltip>
           )}
-          {!required && <FormInfo>({messages.labels.optional})</FormInfo>}
+          {!hideOptional && !required && (
+            <FormInfo>({messages.labels.optional})</FormInfo>
+          )}
         </Label>
       )}
       {/* Every wrapped component should pass render prop */}
