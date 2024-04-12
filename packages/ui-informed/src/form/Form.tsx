@@ -9,12 +9,14 @@ import {
 import { FormContext, type FormContextType } from './useFormContext';
 import { useFormTranslationsContext } from '..';
 
+// TODO add option to hide optional labels globally
+
 export interface FormProps<T>
   extends Omit<
     ComponentProps<typeof InformedForm>,
     'initialValues' | 'onSubmit'
   > {
-  initialValues: T;
+  initialValues?: T | undefined;
   disabled?: boolean;
   readOnly?: boolean;
   loading?: boolean;

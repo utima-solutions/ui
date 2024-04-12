@@ -10,6 +10,7 @@ const meta: Meta<typeof Input> = {
   args: {
     name: 'value',
     label: 'Input',
+    readOnly: false,
     placeholder: 'Placeholder',
     tooltip: 'Tooltip',
   },

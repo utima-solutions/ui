@@ -21,35 +21,65 @@ const formItemStyles = cva('flex flex-1 gap-2', {
   },
 });
 
-export type UserFields = {
+export type FieldType = 'text' | 'number' | 'textArea' | 'select' | 'checkbox';
+
+/**
+ * Global field props used by all form controls. These
+ * are passed down through render function's field prop.
+ * Every form control should consume these properly.
+ */
+export interface UserFieldProps {
   id: string;
   name: string;
-  placeholder?: string;
   readOnly?: boolean;
   disabled?: boolean;
-  type?: string;
-};
+  type?: FieldType;
+}
 
-export type FormControlRender = (params: {
-  label?: string;
-  field: ReturnType<typeof useField<UserFields, string | number>>;
-}) => ReactNode;
+/**
+ * Render prop for FormControl component. It receives
+ * field props and user props and should return the actual
+ * form control component.
+ */
+export type FormControlRender = (
+  params: {
+    label?: string;
+    userProps: Omit<UserFieldProps, 'type'>;
+  } & ReturnType<typeof useField<UserFieldProps, string | number>>,
+) => ReactNode;
 
-export interface FormItemProps
-  extends FieldProps<Omit<UserFields, 'id'>>,
+/**
+ * Props for FormControl component. It extends Informed's
+ * FieldProps and VariantProps for styling. It also contains
+ * a render prop to render the actual form control component.
+ */
+export interface FormControlProps
+  extends FieldProps<Omit<UserFieldProps, 'id'>>,
     VariantProps<typeof formItemStyles> {
   children?: ReactNode;
   className?: string;
   label?: string;
   name: string;
-  type?: string;
+  type?: FieldType;
   disabled?: boolean;
   readOnly?: boolean;
   tooltip?: ReactNode;
   hideOptional?: boolean;
   render: FormControlRender;
   zodItemSchema?: ZodType;
+  position?: 'start' | 'end';
 }
+
+/**
+ * Helper subset of FormControl props used for consumer
+ * control components. It contains all props except `render`
+ * and `type`.
+ */
+export interface FormControlConsumerProps
+  extends Omit<FormControlProps, 'render' | 'type'> {}
+export type FormControlConsumerPropsKeys = keyof FormControlConsumerProps;
+export type ConsumeFormControlProps<T> = FormControlConsumerProps &
+  Omit<T, FormControlConsumerPropsKeys>;
 
 /**
  * Base form control component, used to wrap form inputs.
@@ -63,13 +93,14 @@ export function FormControl({
   label,
   name,
   type = 'text',
+  position = 'end',
   required,
   tooltip,
   hideOptional,
   render,
   zodItemSchema,
   ...restProps
-}: FormItemProps) {
+}: FormControlProps) {
   const id = useId();
   const messages = useFormTranslationsContext();
   const {
@@ -83,26 +114,24 @@ export function FormControl({
     ? zodResolver(zodItemSchema)
     : zodResolver(getFieldZodObject(name, zodFullSchema));
 
-  const field = useField<UserFields, string | number>({
+  const field = useField<UserFieldProps, string | number>({
     id,
     name,
     type,
-    disabled:
-      loading ||
-      disabled ||
-      readOnly ||
-      restProps.disabled ||
-      restProps.readOnly,
+    disabled: loading || disabled || restProps.disabled,
     readOnly: readOnly || restProps.readOnly,
     required,
     validate,
     ...restProps,
   });
 
+  const { userProps: _, ...restField } = field;
   const { showError, error } = field.fieldState;
+  const { type: __, ...userProps } = field.userProps;
 
   return field.render(
     <div className={cn(formItemStyles({ layout }), className)}>
+      {position === 'start' && render({ userProps, ...restField, label })}
       {label && (
         <Label className='inline-flex items-center gap-1' htmlFor={id}>
           {label}
@@ -118,8 +147,7 @@ export function FormControl({
           )}
         </Label>
       )}
-      {/* Every wrapped component should pass render prop */}
-      {render({ field, label })}
+      {position === 'end' && render({ userProps, ...restField, label })}
       {showError && <FormMessage>{error as any}</FormMessage>}
     </div>,
   );

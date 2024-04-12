@@ -1,6 +1,8 @@
 import './componentOverrides';
 import './app.css';
 import { Avatar, Button, Layout, Menu } from '@utima/ui';
+import { Checkbox, Form, Input, Select, TextArea } from '@utima/ui-informed';
+import { Debug } from 'informed';
 import {
   Contact,
   Home,
@@ -150,6 +152,34 @@ function App() {
           <div className='flex flex-wrap gap-5'>
             <Avatar />
             <Avatar src='https://i.pravatar.cc/300' />
+          </div>
+        </div>
+        <div className='flex flex-col gap-5 p-5'>
+          <h4 className='text-xl font-semibold text-foreground'>
+            Informed Form
+          </h4>
+          <div className='flex flex-wrap gap-5'>
+            <Form
+              className='gap-4 flex flex-col'
+              onSubmit={values => {
+                console.log('values', values);
+              }}
+            >
+              {/* TODO debugger like react form */}
+              {/* TODO transalte validation messages */}
+              <Debug values />
+              <Input label='Text input' name='text' minLength={2} />
+              <Input label='Password input' name='password' type='password' />
+              <Input label='Number input' name='number' type='number' />
+              <TextArea label='Number input' name='number2' rows={2} />
+              <Checkbox description='yes' label='Password input' name='check' />
+              <Select label='Select' name='select' placeholder='Yadaa'>
+                <Select.Item value='test'>Test</Select.Item>
+                <Select.Item value='test1'>Test 1</Select.Item>
+                <Select.Item value='test2'>Test 2</Select.Item>
+                <Select.Item value='test3'>Test 3</Select.Item>
+              </Select>
+            </Form>
           </div>
         </div>
       </Layout.Content>

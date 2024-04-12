@@ -1,10 +1,10 @@
 /**
  * Controls
  */
-export { Checkbox } from './controls/checkbox/Checkbox';
-export { Input } from './controls/input/Input';
-export { Select } from './controls/select/Select';
-export { TextArea } from './controls/textArea/TextArea';
+export { Checkbox, type CheckboxProps } from './controls/checkbox/Checkbox';
+export { Input, type InputProps } from './controls/input/Input';
+export { Select, type SelectProps } from './controls/select/Select';
+export { TextArea, type TextAreaProps } from './controls/textArea/TextArea';
 
 /**
  * Form

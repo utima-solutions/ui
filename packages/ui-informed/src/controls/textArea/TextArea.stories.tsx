@@ -11,6 +11,7 @@ const meta: Meta<typeof TextArea> = {
     name: 'value',
     label: 'TextArea',
     placeholder: 'Placeholder',
+    readOnly: false,
     tooltip: 'Tooltip',
   },
   decorators: [

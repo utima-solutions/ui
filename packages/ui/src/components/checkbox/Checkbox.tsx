@@ -12,7 +12,7 @@ import { cn } from '@/utils';
 import { checkboxDef, checkboxStyles } from './Checkbox.styles';
 
 export interface CheckboxProps
-  extends ComponentPropsWithoutRef<typeof Root>,
+  extends Omit<ComponentPropsWithoutRef<typeof Root>, 'type'>,
     Omit<VariantProps<typeof checkboxStyles>, 'thumbSize'> {}
 
 export const Checkbox = forwardRef<ElementRef<typeof Root>, CheckboxProps>(
@@ -20,6 +20,7 @@ export const Checkbox = forwardRef<ElementRef<typeof Root>, CheckboxProps>(
     <Root
       ref={ref}
       className={cn(checkboxStyles({ variant, size }), className)}
+      type='button'
       {...restProps}
     >
       <Indicator className={cn(checkboxDef.indicator)}>
