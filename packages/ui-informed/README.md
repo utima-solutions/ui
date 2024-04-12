@@ -61,3 +61,33 @@ function App() {
   );
 }
 ```
+
+### Devtools
+
+Informed already provides debug component. We have been inspired by this component and provided more UI friendly version of it.
+
+You can use it by importing `DevTools` component from `@utima/ui-informed/devtools` package and placing it in your application (it should be placed inside `Form` component since it's bound to it's state):
+
+```javascript
+import { Suspense, lazy } from 'react';
+
+// Use lazy to ensure code splitting
+const UIFormDevtools = lazy(() =>
+  import('@utima/ui-informed/devtools').then(res => {
+    return {
+      default: res.Devtools,
+    };
+  }),
+);
+
+function App() {
+  return (
+    <Form>
+      <Suspense fallback={null}>
+        <UIFormDevtools />
+      </Suspense>
+      ...
+    </Form>
+  );
+}
+```
