@@ -1,5 +1,15 @@
 # @utima/ui
 
+## 1.0.0
+
+### Minor Changes
+
+- [#17](https://github.com/utima-solutions/ui/pull/17) [`922dad1`](https://github.com/utima-solutions/ui/commit/922dad13829ba19eae01d7398ebb2e4c574a8a34) Thanks [@jsimck](https://github.com/jsimck)! - - Added some additional imports for missing component props types
+  - Fixed `Checkbox` component `type` prop.
+  - Updated dependencies (now uses 1.0.0 version of `cmdk` package)
+  - Updated `Kbd` component default styles
+  - Re-exported `Portal` component from radix
+
 ## 0.18.5
 
 ### Patch Changes
