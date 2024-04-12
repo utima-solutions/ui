@@ -1,5 +1,13 @@
 # @utima/ui
 
+## 0.18.5
+
+### Patch Changes
+
+- [#14](https://github.com/utima-solutions/ui/pull/14) [`b0ecc8f`](https://github.com/utima-solutions/ui/commit/b0ecc8fe4c769bc9d69921a8b7beda8408a6e25c) Thanks [@Matushl](https://github.com/Matushl)! - Fix color of Select placeholder text
+
+- [#13](https://github.com/utima-solutions/ui/pull/13) [`47eb558`](https://github.com/utima-solutions/ui/commit/47eb55863d058c948495c79c14c5953c9a5425cb) Thanks [@Matushl](https://github.com/Matushl)! - Add missing ring color to plugin settings
+
 ## 0.18.4
 
 ### Patch Changes
