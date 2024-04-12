@@ -4,7 +4,7 @@ import typescript from 'rollup-plugin-typescript2';
 /**
  * @returns {import('rollup').RollupOptions[]}
  */
-export function createRollupConfig(input = 'src/index.ts') {
+export function createRollupConfig(input = 'src/index.ts', output = './dist') {
   return [
     {
       input,
@@ -18,13 +18,13 @@ export function createRollupConfig(input = 'src/index.ts') {
       ],
       output: [
         {
-          dir: './dist/esm',
+          dir: `${output}/esm`,
           format: 'es',
           sourcemap: true,
           preserveModules: true,
         },
         {
-          dir: './dist/cjs',
+          dir: `${output}/cjs`,
           format: 'cjs',
           sourcemap: true,
           preserveModules: true,

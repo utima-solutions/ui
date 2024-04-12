@@ -4,7 +4,8 @@ export { cn } from './utils';
  * Re-export radix utilities, so we can use them in the consuming app
  * without having to import them from the radix package directly.
  */
-export { Slot } from '@radix-ui/react-slot';
+export { Slot, type SlotProps } from '@radix-ui/react-slot';
+export { Portal, type PortalProps } from '@radix-ui/react-portal';
 
 /**
  * Components
@@ -39,10 +40,13 @@ export { SelectItem } from './components/select/SelectItem';
 export { useSelectContext } from './components/select/useSelectContext';
 
 // Toast
-export { Toast, toast } from './components/toast/Toast';
+export { Toast, type ToastProps, toast } from './components/toast/Toast';
 
 // Aspect Ratio
-export { AspectRatio } from './components/aspectRatio/AspectRatio';
+export {
+  AspectRatio,
+  type AspectRatioProps,
+} from './components/aspectRatio/AspectRatio';
 
 // Dropdown
 export * as Dropdown from './components/dropdown';

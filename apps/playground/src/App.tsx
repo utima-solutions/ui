@@ -2,7 +2,6 @@ import './componentOverrides';
 import './app.css';
 import { Avatar, Button, Layout, Menu } from '@utima/ui';
 import { Checkbox, Form, Input, Select, TextArea } from '@utima/ui-informed';
-import { Debug } from 'informed';
 import {
   Contact,
   Home,
@@ -14,7 +13,15 @@ import {
   Cog,
   MenuIcon,
 } from 'lucide-react';
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
+
+const UIFormDevtools = lazy(() =>
+  import('@utima/ui-informed/devtools').then(res => {
+    return {
+      default: res.Devtools,
+    };
+  }),
+);
 
 function App() {
   const [open, setIsOpen] = useState(true);
@@ -165,9 +172,6 @@ function App() {
                 console.log('values', values);
               }}
             >
-              {/* TODO debugger like react form */}
-              {/* TODO transalte validation messages */}
-              <Debug values />
               <Input label='Text input' name='text' minLength={2} />
               <Input label='Password input' name='password' type='password' />
               <Input label='Number input' name='number' type='number' />
@@ -179,6 +183,10 @@ function App() {
                 <Select.Item value='test2'>Test 2</Select.Item>
                 <Select.Item value='test3'>Test 3</Select.Item>
               </Select>
+
+              <Suspense fallback={null}>
+                <UIFormDevtools />
+              </Suspense>
             </Form>
           </div>
         </div>

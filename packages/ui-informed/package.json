@@ -18,7 +18,16 @@
     ".": {
       "import": "./dist/esm/index.js",
       "types": "./dist/src/index.d.ts",
+      "require": "./dist/cjs/index.js",
+      "node": "./dist/cjs/index.js",
       "default": "./dist/cjs/index.js"
+    },
+    "./devtools": {
+      "import": "./dist/esm/Devtools.js",
+      "types": "./dist/src/devtools/Devtools.d.ts",
+      "require": "./dist/cjs/Devtools.js",
+      "node": "./dist/cjs/Devtools.js",
+      "default": "./dist/cjs/Devtools.js"
     }
   },
   "keywords": [
@@ -49,5 +58,8 @@
     "react": ">=18",
     "react-dom": ">=18",
     "zod": ">=3.0.0 <4.0.0"
+  },
+  "dependencies": {
+    "react-json-tree": "^0.19.0"
   }
 }
