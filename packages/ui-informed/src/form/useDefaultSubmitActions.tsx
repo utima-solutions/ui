@@ -8,7 +8,7 @@ export interface TypedFormState<T> extends Omit<FormState, 'values'> {
   values: T;
 }
 type UseFormSubmitActionsParams<T> = {
-  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown>;
+  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown> | void;
   disableDefaultToast?: boolean;
 };
 

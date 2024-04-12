@@ -18,7 +18,7 @@ export interface FormProps<T>
   disabled?: boolean;
   readOnly?: boolean;
   loading?: boolean;
-  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown>;
+  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown> | void;
   disableDefaultToast?: boolean;
   zodSchema?: ZodObject<ZodRawShape>;
 }
