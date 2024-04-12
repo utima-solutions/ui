@@ -30,9 +30,9 @@ export function Input({ type = 'text', ...restProps }: InputControlProps) {
         <InputUI
           ref={ref}
           variant={fieldState.showError ? 'danger' : 'default'}
-          type={type}
           {...userProps}
           {...informed}
+          type={type}
         />
       )}
     />
