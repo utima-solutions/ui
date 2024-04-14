@@ -1,5 +1,11 @@
 # @utima/ui-informed
 
+## 0.21.4
+
+### Patch Changes
+
+- [`bf88667`](https://github.com/utima-solutions/ui/commit/bf88667c87641c3b43148b9676f8bf4349dbdffe) Thanks [@jsimck](https://github.com/jsimck)! - Updated devtools UI
+
 ## 0.21.3
 
 ### Patch Changes
