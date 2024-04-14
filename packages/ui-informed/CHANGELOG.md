@@ -1,5 +1,19 @@
 # @utima/ui-informed
 
+## 0.21.0
+
+### Minor Changes
+
+- [`25d466a`](https://github.com/utima-solutions/ui/commit/25d466a59770750bfd7737fe98338c01bdff55b8) Thanks [@jsimck](https://github.com/jsimck)! - BREAKING-CHANGE
+
+  - Removed `useDefaultSubmitActions` hook as it was too opinionated and not flexible enough.
+  - Removed bindings to `useDefaultSubmitActions` in Form component. Now it's simple wrapper around informed form providing some global configurations for underlying form controls.
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @utima/ui@0.21.0
+
 ## 0.20.0
 
 ### Minor Changes
