@@ -1,5 +1,11 @@
 # @utima/ui-informed
 
+## 0.21.2
+
+### Patch Changes
+
+- [`4e73269`](https://github.com/utima-solutions/ui/commit/4e73269c56c12fd819c95f5293804c56768e310c) Thanks [@jsimck](https://github.com/jsimck)! - Added missing export for TypedFormState type
+
 ## 0.21.1
 
 ### Patch Changes
