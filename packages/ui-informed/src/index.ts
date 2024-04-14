@@ -9,7 +9,7 @@ export { TextArea, type TextAreaProps } from './controls/textArea/TextArea';
 /**
  * Form
  */
-export { Form, type FormProps } from './form/Form';
+export { Form, type FormProps, type TypedFormState } from './form/Form';
 export {
   useFormContext,
   type FormContext,
