@@ -6,7 +6,13 @@ import { globalDef } from '../global.styles';
 
 export const inputDef = twOverrides(
   {
+    wrapper: 'flex items-center',
     input: `${globalDef.ring} ring-input-border peer transition-all text-input-fg font-normal flex w-full rounded-radius border placeholder-placeholder bg-input focus:border-input-fg disabled:cursor-not-allowed disabled:opacity-60`,
+    addon: {
+      base: 'inline-flex items-center justify-center bg-accent w-fit',
+      before: 'rounded-l-radius rounded-r-none border-r-0',
+      after: 'rounded-r-radius rounded-l-none border-l-0',
+    },
     variants: {
       size: {
         xs: 'h-6 px-2 py-1.5 text-xs',

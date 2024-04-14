@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Cable } from 'lucide-react';
 
 import { TextArea } from './TextArea';
 
@@ -19,3 +20,22 @@ export default meta;
 type Story = StoryObj<typeof TextArea>;
 
 export const Basic: Story = {};
+
+export const AddonBefore: Story = {
+  args: {
+    addonBefore: 'http://',
+  },
+};
+
+export const AddonAfter: Story = {
+  args: {
+    addonAfter: <Cable className='size-4' />,
+  },
+};
+
+export const AddonBoth: Story = {
+  args: {
+    addonBefore: 'http://',
+    addonAfter: '.com',
+  },
+};
