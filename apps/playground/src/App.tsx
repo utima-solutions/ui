@@ -25,6 +25,7 @@ const UIFormDevtools = lazy(() =>
 
 function App() {
   const [open, setIsOpen] = useState(true);
+  const [loading, setIsLoading] = useState(true);
 
   return (
     <Layout.Root>
@@ -118,7 +119,13 @@ function App() {
                 Danger
               </Button>
             </div>
-            <Button variant='success'>Success</Button>
+            <Button
+              loading={loading}
+              onClick={() => setIsLoading(v => !v)}
+              variant='success'
+            >
+              Toggle Loading
+            </Button>
             <Button variant='ghost'>Ghost</Button>
             <Button variant='link'>Link</Button>
             <Button variant='warning'>Warning</Button>
@@ -172,9 +179,19 @@ function App() {
                 console.log('values', values);
               }}
             >
-              <Input label='Text input' name='text' minLength={2} />
-              <Input label='Password input' name='password' type='password' />
-              <Input label='Number input' name='number' type='number' />
+              <Input required label='Text input' name='text' minLength={2} />
+              <Input
+                required
+                label='Password input'
+                name='password'
+                type='password'
+              />
+              <Input
+                required
+                label='Number input'
+                name='number'
+                type='number'
+              />
               <TextArea label='Number input' name='number2' rows={2} />
               <Checkbox description='yes' label='Password input' name='check' />
               <Select label='Select' name='select' placeholder='Yadaa'>
@@ -183,6 +200,8 @@ function App() {
                 <Select.Item value='test2'>Test 2</Select.Item>
                 <Select.Item value='test3'>Test 3</Select.Item>
               </Select>
+
+              <Button type='submit'>Submit</Button>
 
               <Suspense fallback={null}>
                 <UIFormDevtools />

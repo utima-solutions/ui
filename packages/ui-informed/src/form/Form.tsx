@@ -1,5 +1,6 @@
 import { Form as InformedForm, type FormState } from 'informed';
 import {
+  startTransition,
   useCallback,
   useMemo,
   useState,
@@ -70,12 +71,16 @@ export function Form<T>({
    */
   const handleSubmit = useCallback(
     async (formState: FormState) => {
-      setIsSubmitting(true);
+      startTransition(() => {
+        setIsSubmitting(true);
+      });
 
       try {
         await onSubmit?.(formState as TypedFormState<T>);
       } finally {
-        setIsSubmitting(false);
+        startTransition(() => {
+          setIsSubmitting(false);
+        });
       }
     },
     [onSubmit],
