@@ -1,18 +1,30 @@
-import { Form as InformedForm } from 'informed';
-import { useMemo, type ComponentPropsWithoutRef } from 'react';
+import { Form as InformedForm, type FormState } from 'informed';
+import {
+  useCallback,
+  useMemo,
+  useState,
+  type ComponentPropsWithoutRef,
+} from 'react';
 import type { ZodObject, ZodRawShape } from 'zod';
 
 import { FormContext, type FormContextType } from './useFormContext';
 import { useFormTranslationsContext } from '..';
 
+export interface TypedFormState<T> extends Omit<FormState, 'values'> {
+  values: T;
+}
+
 export interface FormProps<T>
-  extends Omit<ComponentPropsWithoutRef<typeof InformedForm>, 'initialValues'> {
+  extends Omit<
+    ComponentPropsWithoutRef<typeof InformedForm>,
+    'initialValues' | 'onSubmit'
+  > {
+  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown> | void;
   initialValues?: T | undefined;
   disabled?: boolean;
   readOnly?: boolean;
   loading?: boolean;
   showOptional?: boolean;
-  disableDefaultToast?: boolean;
   zodSchema?: ZodObject<ZodRawShape>;
 }
 
@@ -23,31 +35,57 @@ export interface FormProps<T>
  */
 export function Form<T>({
   initialValues,
+  onSubmit,
   readOnly = false,
   disabled = false,
   loading = false,
   showOptional = false,
-  disableDefaultToast,
   zodSchema,
   ...restProps
 }: FormProps<T>) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const messages = useFormTranslationsContext();
   const contextValue = useMemo<FormContextType>(
     () => ({
       initialValues,
       disabled,
       readOnly,
-      loading,
+      loading: loading || isSubmitting,
       showOptional,
       zodSchema,
     }),
-    [initialValues, disabled, loading, readOnly, zodSchema, showOptional],
+    [
+      initialValues,
+      disabled,
+      loading,
+      readOnly,
+      zodSchema,
+      showOptional,
+      isSubmitting,
+    ],
+  );
+
+  /**
+   * Promisified submit handler that handles
+   */
+  const handleSubmit = useCallback(
+    async (formState: FormState) => {
+      setIsSubmitting(true);
+
+      try {
+        await onSubmit?.(formState as TypedFormState<T>);
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [onSubmit],
   );
 
   return (
     <FormContext.Provider value={contextValue}>
       <InformedForm
         initialValues={initialValues as Record<string, unknown>}
+        onSubmit={handleSubmit}
         errorMessage={{
           required: messages.errors.required,
         }}
