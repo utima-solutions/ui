@@ -1,7 +1,7 @@
 import { cn } from '@utima/ui';
-import { type ComponentProps, memo } from 'react';
+import { type ComponentPropsWithoutRef, memo } from 'react';
 
-export type FormMessageProps = ComponentProps<'p'>;
+export type FormMessageProps = ComponentPropsWithoutRef<'p'>;
 
 export const FormMessage = memo(function FormMessage({
   className,

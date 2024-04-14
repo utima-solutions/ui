@@ -1,15 +1,12 @@
 import { Form as InformedForm } from 'informed';
-import { useMemo, type ComponentProps } from 'react';
+import { useMemo, type ComponentPropsWithoutRef } from 'react';
 import type { ZodObject, ZodRawShape } from 'zod';
 
 import { FormContext, type FormContextType } from './useFormContext';
 import { useFormTranslationsContext } from '..';
 
 export interface FormProps<T>
-  extends Omit<
-    ComponentProps<typeof InformedForm>,
-    'initialValues' | 'onSubmit'
-  > {
+  extends Omit<ComponentPropsWithoutRef<typeof InformedForm>, 'initialValues'> {
   initialValues?: T | undefined;
   disabled?: boolean;
   readOnly?: boolean;
