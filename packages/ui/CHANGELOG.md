@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.22.0
+
+### Minor Changes
+
+- [`4009b21`](https://github.com/utima-solutions/ui/commit/4009b2192ad2aa618a18f5b799c1548b37eed3bb) Thanks [@jsimck](https://github.com/jsimck)! - Added support for addons to input and textarea components
+
 ## 0.21.4
 
 ## 0.21.3
