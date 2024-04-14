@@ -1,5 +1,11 @@
 # @utima/ui-informed
 
+## 0.21.3
+
+### Patch Changes
+
+- [`f6beb7f`](https://github.com/utima-solutions/ui/commit/f6beb7f7c02e813c6ffd33b9df38d86b1511bd6b) Thanks [@jsimck](https://github.com/jsimck)! - Added some animation to helper text in form control
+
 ## 0.21.2
 
 ### Patch Changes
