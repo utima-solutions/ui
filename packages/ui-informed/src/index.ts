@@ -10,19 +10,11 @@ export { TextArea, type TextAreaProps } from './controls/textArea/TextArea';
  * Form
  */
 export { Form, type FormProps } from './form/Form';
-
-/**
- * Hooks
- */
 export {
   useFormContext,
   type FormContext,
   type FormContextType,
 } from './form/useFormContext';
-export {
-  useDefaultSubmitActions,
-  type TypedFormState,
-} from './form/useDefaultSubmitActions';
 
 /**
  * FormControl

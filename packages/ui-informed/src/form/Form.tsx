@@ -2,10 +2,6 @@ import { Form as InformedForm } from 'informed';
 import { useMemo, type ComponentProps } from 'react';
 import type { ZodObject, ZodRawShape } from 'zod';
 
-import {
-  useDefaultSubmitActions,
-  type TypedFormState,
-} from './useDefaultSubmitActions';
 import { FormContext, type FormContextType } from './useFormContext';
 import { useFormTranslationsContext } from '..';
 
@@ -19,7 +15,6 @@ export interface FormProps<T>
   readOnly?: boolean;
   loading?: boolean;
   showOptional?: boolean;
-  onSubmit?: (formState: TypedFormState<T>) => Promise<unknown> | void;
   disableDefaultToast?: boolean;
   zodSchema?: ZodObject<ZodRawShape>;
 }
@@ -30,8 +25,6 @@ export interface FormProps<T>
  * form state and validation.
  */
 export function Form<T>({
-  onSubmit,
-  children,
   initialValues,
   readOnly = false,
   disabled = false,
@@ -42,45 +35,27 @@ export function Form<T>({
   ...restProps
 }: FormProps<T>) {
   const messages = useFormTranslationsContext();
-  const { handleSubmit, handleSubmitFailure, isSubmitting } =
-    useDefaultSubmitActions<T>({
-      onSubmit,
-      disableDefaultToast,
-    });
-
   const contextValue = useMemo<FormContextType>(
     () => ({
       initialValues,
       disabled,
       readOnly,
-      loading: loading || isSubmitting,
+      loading,
       showOptional,
       zodSchema,
     }),
-    [
-      initialValues,
-      disabled,
-      loading,
-      isSubmitting,
-      readOnly,
-      zodSchema,
-      showOptional,
-    ],
+    [initialValues, disabled, loading, readOnly, zodSchema, showOptional],
   );
 
   return (
-    <InformedForm
-      initialValues={initialValues as Record<string, unknown>}
-      onSubmit={handleSubmit}
-      onSubmitFailure={handleSubmitFailure}
-      errorMessage={{
-        required: messages.errors.required,
-      }}
-      {...restProps}
-    >
-      <FormContext.Provider value={contextValue}>
-        {children}
-      </FormContext.Provider>
-    </InformedForm>
+    <FormContext.Provider value={contextValue}>
+      <InformedForm
+        initialValues={initialValues as Record<string, unknown>}
+        errorMessage={{
+          required: messages.errors.required,
+        }}
+        {...restProps}
+      />
+    </FormContext.Provider>
   );
 }
