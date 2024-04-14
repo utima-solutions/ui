@@ -1,5 +1,11 @@
 # @utima/ui-informed
 
+## 0.21.1
+
+### Patch Changes
+
+- [`d461421`](https://github.com/utima-solutions/ui/commit/d461421981e5451a6dad4ddb6a23eb1d0cac8eed) Thanks [@jsimck](https://github.com/jsimck)! - Reintroduced async onSubmit wrapper around onSubmit informed handler
+
 ## 0.21.0
 
 ### Minor Changes
