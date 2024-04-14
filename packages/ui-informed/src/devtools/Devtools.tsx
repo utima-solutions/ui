@@ -110,13 +110,17 @@ export function Devtools({ className }: DevtoolsProps) {
                 <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium'>
                   State
                 </h4>
-                <JSONTree hideRoot data={formState} theme={theme} />
+                <div className='px-2 py-1'>
+                  <JSONTree hideRoot data={formState} theme={theme} />
+                </div>
               </div>
               <div className='overflow-y-auto max-h-[450px] text-sm'>
                 <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium'>
                   Data
                 </h4>
-                <JSONTree hideRoot data={formState.values} theme={theme} />
+                <div className='px-2 py-1'>
+                  <JSONTree hideRoot data={formState.values} theme={theme} />
+                </div>
               </div>
             </div>
           </div>
