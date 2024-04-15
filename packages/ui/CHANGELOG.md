@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.22.1
+
+### Patch Changes
+
+- [`3672a07`](https://github.com/utima-solutions/ui/commit/3672a07084bda4dca95b05d313eb77f33608a518) Thanks [@jsimck](https://github.com/jsimck)! - Minor UI fixes
+
 ## 0.22.0
 
 ### Minor Changes
