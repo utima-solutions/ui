@@ -1,5 +1,9 @@
 import type { VariantProps } from 'class-variance-authority';
-import { forwardRef, type ComponentPropsWithoutRef, type ReactNode } from 'react';
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ReactNode,
+} from 'react';
 
 import { cn } from '@/utils';
 
