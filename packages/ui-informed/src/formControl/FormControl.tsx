@@ -11,7 +11,7 @@ import { useFormTranslationsContext } from '..';
 import { useFormContext } from '../form/useFormContext';
 import { zodResolver, getFieldZodObject } from '../zodUtils';
 
-const formItemStyles = cva('flex flex-1 transition-all gap-2 relative', {
+const formItemStyles = cva('flex transition-all gap-2 relative', {
   variants: {
     layout: {
       vertical: 'w-full flex-col',

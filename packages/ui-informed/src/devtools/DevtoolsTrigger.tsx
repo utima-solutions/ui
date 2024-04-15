@@ -1,5 +1,4 @@
 import { cn } from '@utima/ui';
-import { Bug } from 'lucide-react';
 import { memo, type ComponentPropsWithoutRef } from 'react';
 
 export interface DevtoolsTriggerProps
@@ -18,7 +17,6 @@ export const DevtoolsTrigger = memo(function DevtoolsTrigger({
       )}
       {...restProps}
     >
-      <Bug className='size-4 text-zinc-50' />
       <span className='inline-block font-bold bg-gradient-to-r from-blue-400 via-green-500 to-purple-500  text-transparent bg-clip-text'>
         Form Devtools
       </span>

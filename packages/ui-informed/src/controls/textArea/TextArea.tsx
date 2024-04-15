@@ -27,7 +27,7 @@ export const TextArea = memo(function TextArea({
       {...restProps}
       render={({ userProps, ref, informed, fieldState }) =>
         userProps.readOnly ? (
-          <p className='text-primary'>{fieldState.value as string}</p>
+          <p className='text-primary'>{(fieldState.value ?? '-') as string}</p>
         ) : (
           <TextAreaUI
             ref={ref}

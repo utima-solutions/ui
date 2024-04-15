@@ -48,7 +48,7 @@ export function Devtools({ className }: DevtoolsProps) {
       {visible && (
         <Portal>
           <div
-            className='w-full text-zinc-100 bg-zinc-800 fixed left-0 bottom-0 z-50  animate-in fade-in slide-in-from-bottom'
+            className='w-full text-zinc-100 bg-zinc-800 fixed left-0 bottom-0 z-[100000] animate-in slide-in-from-bottom duration-300'
             style={{ colorScheme: 'dark' }}
           >
             <button
@@ -119,7 +119,12 @@ export function Devtools({ className }: DevtoolsProps) {
                   Data
                 </h4>
                 <div className='px-2 py-1'>
-                  <JSONTree hideRoot data={formState.values} theme={theme} />
+                  <JSONTree
+                    hideRoot
+                    shouldExpandNodeInitially={(_, __, level) => level <= 3}
+                    data={formState.values}
+                    theme={theme}
+                  />
                 </div>
               </div>
             </div>

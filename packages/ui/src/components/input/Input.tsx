@@ -1,5 +1,5 @@
 import type { VariantProps } from 'class-variance-authority';
-import { forwardRef, type ComponentPropsWithoutRef } from 'react';
+import { forwardRef, type ComponentPropsWithoutRef, type ReactNode } from 'react';
 
 import { cn } from '@/utils';
 
@@ -8,8 +8,8 @@ import { inputDef, inputStyles } from './Input.styles';
 export interface InputProps
   extends Omit<ComponentPropsWithoutRef<'input'>, 'size'>,
     VariantProps<typeof inputStyles> {
-  addonBefore?: React.ReactNode;
-  addonAfter?: React.ReactNode;
+  addonBefore?: ReactNode;
+  addonAfter?: ReactNode;
 }
 
 /**
@@ -53,18 +53,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           {addonBefore}
         </span>
       )}
-      <span>
-        <input
-          ref={ref}
-          className={cn(
-            inputStyles({ size, variant }),
-            addonBefore && 'rounded-l-none',
-            addonAfter && 'rounded-r-none',
-            className,
-          )}
-          {...restProps}
-        />
-      </span>
+      <input
+        ref={ref}
+        className={cn(
+          inputStyles({ size, variant }),
+          addonBefore && 'rounded-l-none',
+          addonAfter && 'rounded-r-none',
+          className,
+        )}
+        {...restProps}
+      />
       {addonAfter && (
         <span
           className={cn(

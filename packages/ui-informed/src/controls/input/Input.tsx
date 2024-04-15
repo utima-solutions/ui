@@ -23,7 +23,7 @@ export const Input = memo(function Input({
       type={type === 'number' ? 'number' : 'text'}
       render={({ userProps, ref, informed, fieldState }) =>
         userProps.readOnly ? (
-          <p className='text-primary'>{fieldState.value as string}</p>
+          <p className='text-primary'>{(fieldState.value ?? '-') as string}</p>
         ) : (
           <UIInput
             ref={ref}
