@@ -18,6 +18,7 @@ import type { layoutDef } from './components/layout/Layout.styles';
 import type { menuDef } from './components/menu/Menu.styles';
 import type { paginationDef } from './components/pagination/Pagination.styles';
 import type { popoverDef } from './components/popover/Popover.styles';
+import type { progressDef } from './components/progress/Progress.styles';
 import type { selectDef } from './components/select/select.styles';
 import type { separatorDef } from './components/separator/Separator.styles';
 import type { switchDef } from './components/switch/Switch.styles';
@@ -52,6 +53,7 @@ type ComponentOverridesDef = {
   breadcrumb: typeof breadcrumbDef;
   menu: typeof menuDef;
   pagination: typeof paginationDef;
+  progress: typeof progressDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;
