@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.23.0
+
+### Minor Changes
+
+- [#18](https://github.com/utima-solutions/ui/pull/18) [`ae3d57a`](https://github.com/utima-solutions/ui/commit/ae3d57aba8a5febb47cf23f23521ac42e7fcafe0) Thanks [@jsimck](https://github.com/jsimck)! - Added new Progress component
+
 ## 0.22.1
 
 ### Patch Changes
