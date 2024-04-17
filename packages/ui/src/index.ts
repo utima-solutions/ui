@@ -42,6 +42,9 @@ export { useSelectContext } from './components/select/useSelectContext';
 // Toast
 export { Toast, type ToastProps, toast } from './components/toast/Toast';
 
+// Progress
+export { Progress, type ProgressProps } from './components/progress/Progress';
+
 // Aspect Ratio
 export {
   AspectRatio,
