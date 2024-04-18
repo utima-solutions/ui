@@ -1,5 +1,18 @@
 # @utima/ui-informed
 
+## 0.24.0
+
+### Minor Changes
+
+- [`4333c06`](https://github.com/utima-solutions/ui/commit/4333c060b8a1cd46de7eaa5d924ad990295a9933) Thanks [@jsimck](https://github.com/jsimck)! - Added `Checkbox` control component
+  Added `group/form` and `is-read-only`, `is-disabled` to be able to style form based on it's state like `group-[.is-disabled]/form:font-bold`
+  Some visual and data fixes
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @utima/ui@0.24.0
+
 ## 0.23.0
 
 ### Patch Changes
