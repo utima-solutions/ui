@@ -1,6 +1,7 @@
 /**
  * Controls
  */
+export { Switch, type SwitchProps } from './controls/switch/Switch';
 export { Checkbox, type CheckboxProps } from './controls/checkbox/Checkbox';
 export { Input, type InputProps } from './controls/input/Input';
 export { Select, type SelectProps } from './controls/select/Select';

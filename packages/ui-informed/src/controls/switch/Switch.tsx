@@ -1,6 +1,6 @@
 import {
-  type CheckboxProps as UICheckboxProps,
-  Checkbox as UICheckbox,
+  type SwitchProps as UISwitchProps,
+  Switch as UISwitch,
   Label,
 } from '@utima/ui';
 import { memo } from 'react';
@@ -10,28 +10,28 @@ import {
   type ConsumeFormControlProps,
 } from '../../formControl/FormControl';
 
-export interface CheckboxProps
-  extends ConsumeFormControlProps<UICheckboxProps> {
+export interface SwitchProps extends ConsumeFormControlProps<UISwitchProps> {
   description?: string;
 }
 
 /**
- * CheckboxControl component that is controlled by Informed. It is a wrapped in the
+ * SwitchControl component that is controlled by Informed. It is a wrapped in the
  * `FormControl` component, which provides the necessary props for Informed to
  * work along with label and error message handling.
  */
-export const Checkbox = memo(function Checkbox({
+export const Switch = memo(function Switch({
   description,
+  type = 'button',
   onCheckedChange,
   ...restProps
-}: CheckboxProps) {
+}: SwitchProps) {
   return (
     <FormControl
       {...restProps}
       type='checkbox'
       render={({ userProps, ref, fieldApi, fieldState }) => (
         <div className='flex gap-2 items-center'>
-          <UICheckbox
+          <UISwitch
             ref={ref}
             value={fieldState.value as string}
             checked={fieldState.value as boolean}
@@ -44,6 +44,7 @@ export const Checkbox = memo(function Checkbox({
             variant={fieldState.showError ? 'danger' : 'primary'}
             {...userProps}
             disabled={userProps.disabled || userProps.readOnly}
+            type='button'
           />
           {description && (
             <Label htmlFor={userProps.id} className='font-normal text-sm'>

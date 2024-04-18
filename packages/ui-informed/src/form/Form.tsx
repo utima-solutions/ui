@@ -1,3 +1,4 @@
+import { cn } from '@utima/ui';
 import { Form as InformedForm, type FormState } from 'informed';
 import {
   startTransition,
@@ -89,6 +90,11 @@ export function Form<T>({
   return (
     <FormContext.Provider value={contextValue}>
       <InformedForm
+        className={cn(
+          'group/form',
+          readOnly && 'is-read-only',
+          disabled && 'is-disabled',
+        )}
         initialValues={initialValues as Record<string, unknown>}
         onSubmit={handleSubmit}
         errorMessage={{

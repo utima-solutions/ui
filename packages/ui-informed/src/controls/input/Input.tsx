@@ -21,8 +21,13 @@ export const Input = memo(function Input({
     <FormControl
       {...restProps}
       type={type === 'number' ? 'number' : 'text'}
-      render={({ userProps, ref, informed, fieldState }) =>
-        userProps.readOnly ? (
+      render={({ userProps, ref, informed, fieldState }) => {
+        // Do not render hidden inputs if they are read-only
+        if (userProps.readOnly && type === 'hidden') {
+          return null;
+        }
+
+        return userProps.readOnly ? (
           <p className='text-primary'>{(fieldState.value ?? '-') as string}</p>
         ) : (
           <UIInput
@@ -32,8 +37,8 @@ export const Input = memo(function Input({
             {...userProps}
             {...informed}
           />
-        )
-      }
+        );
+      }}
     />
   );
 });
