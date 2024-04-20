@@ -1,5 +1,11 @@
 # @utima/ui-informed
 
+## 0.24.2
+
+### Patch Changes
+
+- [`fba52dd`](https://github.com/utima-solutions/ui/commit/fba52dd6283087fb95ee3210702b5227a732e582) Thanks [@jsimck](https://github.com/jsimck)! - Fixed transparent data header in ui informed devtools
+
 ## 0.24.1
 
 ### Patch Changes
