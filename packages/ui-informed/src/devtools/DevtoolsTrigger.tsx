@@ -11,6 +11,7 @@ export const DevtoolsTrigger = memo(function DevtoolsTrigger({
 }: DevtoolsTriggerProps) {
   return (
     <button
+      type='button'
       className={cn(
         'outline-none inline-flex drop-shadow-md shadow-md w-fit gap-2 items-center justify-center rounded-lg bg-zinc-800 text-sm px-4 py-2 transition-all hover:bg-zinc-700 active:scale-95 active:bg-zinc-800',
         className,

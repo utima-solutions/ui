@@ -1,7 +1,7 @@
-import { Portal } from '@utima/ui';
+import { Portal, cn } from '@utima/ui';
 import { useFormState } from 'informed';
 import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { JSONTree } from 'react-json-tree';
 
 import { DevtoolsLabel } from './DevtoolsLabel';
@@ -32,15 +32,25 @@ const theme = {
   base0F: '#EC4899',
 };
 
+const SESSION_KEY = 'utima_ui_informed_devtools_visible';
+
 /**
  * Wrapper around informed Debug component with some custom visuals.
  */
 export function Devtools({ className }: DevtoolsProps) {
-  const [visible, setVisible] = useState(false);
   const formState = useFormState();
+  const [visible, setVisible] = useState<boolean>(() => {
+    const storedVisible = sessionStorage.getItem(SESSION_KEY);
+
+    return storedVisible ? JSON.parse(storedVisible) : false;
+  });
+
+  useEffect(() => {
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify(visible));
+  }, [visible]);
 
   return (
-    <>
+    <div className={cn(visible && 'pb-[500px]')}>
       <DevtoolsTrigger
         onClick={() => setVisible(v => !v)}
         className={className}
@@ -48,10 +58,11 @@ export function Devtools({ className }: DevtoolsProps) {
       {visible && (
         <Portal>
           <div
-            className='w-full text-zinc-100 bg-zinc-800 fixed left-0 bottom-0 z-[100000] animate-in slide-in-from-bottom duration-300'
+            className='w-full text-zinc-100 bg-zinc-800 fixed height-[500px] left-0 bottom-0 z-[100000] animate-in slide-in-from-bottom duration-300'
             style={{ colorScheme: 'dark' }}
           >
             <button
+              type='button'
               className='absolute -top-5 right-2 w-6 h-5 bg-zinc-800 bg-transparent rounded-t-md flex items-center justify-center'
               onClick={() => setVisible(false)}
             >
@@ -131,6 +142,6 @@ export function Devtools({ className }: DevtoolsProps) {
           </div>
         </Portal>
       )}
-    </>
+    </div>
   );
 }
