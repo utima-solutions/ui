@@ -118,7 +118,7 @@ export function Devtools({ className }: DevtoolsProps) {
 
             <div className='grid grid-cols-2 max-h-[450px]'>
               <div className='overflow-y-auto max-h-[450px] text-sm'>
-                <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium'>
+                <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
                   State
                 </h4>
                 <div className='px-2 py-1'>
@@ -126,7 +126,7 @@ export function Devtools({ className }: DevtoolsProps) {
                 </div>
               </div>
               <div className='overflow-y-auto max-h-[450px] text-sm'>
-                <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium'>
+                <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
                   Data
                 </h4>
                 <div className='px-2 py-1'>
