@@ -1,5 +1,11 @@
 # @utima/ui-informed
 
+## 0.24.1
+
+### Patch Changes
+
+- [`61e9339`](https://github.com/utima-solutions/ui/commit/61e9339782fb249aa97a584e5276c1a767a31ef6) Thanks [@jsimck](https://github.com/jsimck)! - Devtools UI fixes
+
 ## 0.24.0
 
 ### Minor Changes
