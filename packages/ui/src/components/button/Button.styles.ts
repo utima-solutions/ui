@@ -10,6 +10,7 @@ import { globalDef } from '../global.styles';
 export const buttonDef = twOverrides(
   {
     button: `${globalDef.ring} outline-none box-border inline-flex font-semibold items-center justify-center rounded-radius transition-all disabled:opacity-65 disabled:cursor-not-allowed`,
+    plain: 'border-none',
     variants: {
       variant: {
         primary:

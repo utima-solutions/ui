@@ -3,13 +3,14 @@ import { type ComponentPropsWithoutRef, memo } from 'react';
 
 import { cn } from '@/utils';
 
-import { badgeStyles } from './Badge.styles';
+import { badgeDef, badgeStyles } from './Badge.styles';
 
 export interface BadgeProps
   extends ComponentPropsWithoutRef<'span'>,
     Omit<VariantProps<typeof badgeStyles>, 'outline' | 'disabled'> {
   outline?: boolean;
   disabled?: boolean;
+  plain?: boolean;
 }
 
 export const Badge = memo(function Badge({
@@ -18,6 +19,7 @@ export const Badge = memo(function Badge({
   size = 'md',
   outline = false,
   disabled = false,
+  plain = false,
   ...restProps
 }: BadgeProps) {
   return (
@@ -26,10 +28,11 @@ export const Badge = memo(function Badge({
         badgeStyles({
           variant,
           size,
-          outline: outline && variant ? variant : null,
+          outline: (outline || plain) && variant ? variant : null,
           disabled: disabled ? 'DEFAULT' : null,
           className,
         }),
+        plain && badgeDef.plain,
       )}
       {...restProps}
     />

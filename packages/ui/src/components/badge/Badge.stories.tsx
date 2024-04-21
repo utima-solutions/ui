@@ -20,6 +20,7 @@ type Story = StoryObj<typeof Badge>;
 
 export const Basic: Story = {};
 export const Outline: Story = { args: { outline: true } };
+export const Plain: Story = { args: { plain: true } };
 export const Disabled: Story = { args: { disabled: true } };
 
 export const TextWrap: Story = {

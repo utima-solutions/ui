@@ -6,6 +6,7 @@ export const badgeDef = twOverrides(
   {
     badge:
       'rounded-radius text-center font-semibold inline-flex items-center transition-all',
+    plain: 'border-none',
     variants: {
       variant: {
         primary: 'bg-primary border-primary text-primary-fg',
