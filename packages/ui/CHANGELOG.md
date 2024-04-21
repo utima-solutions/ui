@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.25.0
+
+### Minor Changes
+
+- [`eb76a6b`](https://github.com/utima-solutions/ui/commit/eb76a6b89df5d593874fd2365bd945e6a707d334) Thanks [@jsimck](https://github.com/jsimck)! - Added `plain` modifier to button and badge
+
 ## 0.24.2
 
 ## 0.24.1
