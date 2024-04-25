@@ -11,7 +11,7 @@ import {
 } from '../../formControl/FormControl';
 
 export interface SelectProps extends ConsumeFormControlProps<UISelectProps> {
-  renderValue?: (value: string) => ReactNode;
+  renderValue?: (value: unknown) => ReactNode;
 }
 
 // Type fixes for dot notation on memo
