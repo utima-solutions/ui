@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.27.0
+
+### Minor Changes
+
+- [`ba2239a`](https://github.com/utima-solutions/ui/commit/ba2239af101f5f8072e58e7dd7e33d70e5322bab) Thanks [@jsimck](https://github.com/jsimck)! - Added `Resizable` component
+
 ## 0.26.1
 
 ## 0.26.0
