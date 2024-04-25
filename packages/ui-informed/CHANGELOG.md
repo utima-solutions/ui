@@ -1,5 +1,19 @@
 # @utima/ui-informed
 
+## 0.26.0
+
+### Minor Changes
+
+- [`56552ec`](https://github.com/utima-solutions/ui/commit/56552ecadc39a851a1465981b06a629799e9a701) Thanks [@jsimck](https://github.com/jsimck)! - Added `readOnly` mode to Select, this is unfortunately not entirely automatic, as you need to provide `renderValue` function, which is used to render current value in readOnly mode. Since we don't have access to the actual value representation, we can't render it automatically.
+  ```
+
+  ```
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @utima/ui@0.26.0
+
 ## 0.25.0
 
 ### Patch Changes
