@@ -1,6 +1,6 @@
 import './componentOverrides';
 import './app.css';
-import { Avatar, Button, Layout, Menu } from '@utima/ui';
+import { Avatar, Button, Layout, Menu, Resizable } from '@utima/ui';
 import { Checkbox, Form, Input, Select, TextArea } from '@utima/ui-informed';
 import {
   Contact,
@@ -166,6 +166,54 @@ function App() {
           <div className='flex flex-wrap gap-5'>
             <Avatar />
             <Avatar src='https://i.pravatar.cc/300' />
+          </div>
+        </div>
+        <div className='flex flex-col gap-5 p-5'>
+          <h4 className='text-xl font-semibold text-foreground'>Resizable</h4>
+          <div className='flex flex-wrap gap-5'>
+            <Resizable.Group
+              direction='horizontal'
+              className='min-h-[200px] max-w-md rounded-lg border'
+            >
+              <Resizable.Panel defaultSize={50}>
+                <div className='flex h-[200px] items-center justify-center p-6'>
+                  <span className='font-semibold'>One</span>
+                </div>
+              </Resizable.Panel>
+              <Resizable.Handle />
+              <Resizable.Panel defaultSize={50}>
+                <Resizable.Group direction='vertical'>
+                  <Resizable.Panel defaultSize={25}>
+                    <div className='flex h-full items-center justify-center p-6'>
+                      <span className='font-semibold'>Two</span>
+                    </div>
+                  </Resizable.Panel>
+                  <Resizable.Handle />
+                  <Resizable.Panel defaultSize={75}>
+                    <div className='flex h-full items-center justify-center p-6'>
+                      <span className='font-semibold'>Three</span>
+                    </div>
+                  </Resizable.Panel>
+                </Resizable.Group>
+              </Resizable.Panel>
+            </Resizable.Group>
+
+            <Resizable.Group
+              direction='vertical'
+              className='min-h-[200px] max-w-md rounded-lg border'
+            >
+              <Resizable.Panel defaultSize={25}>
+                <div className='flex h-full items-center justify-center p-6'>
+                  <span className='font-semibold'>Header</span>
+                </div>
+              </Resizable.Panel>
+              <Resizable.Handle withHandle />
+              <Resizable.Panel defaultSize={75}>
+                <div className='flex h-full items-center justify-center p-6'>
+                  <span className='font-semibold'>Content</span>
+                </div>
+              </Resizable.Panel>
+            </Resizable.Group>
           </div>
         </div>
         <div className='flex flex-col gap-5 p-5'>

@@ -96,3 +96,6 @@ export {
 
 // Pagination
 export * as Pagination from './components/pagination';
+
+// Resizable
+export * as Resizable from './components/resizable';

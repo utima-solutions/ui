@@ -1,4 +1,4 @@
-import { Portal, cn } from '@utima/ui';
+import { Portal, Resizable, cn } from '@utima/ui';
 import { useFormState } from 'informed';
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -32,22 +32,62 @@ const theme = {
   base0F: '#EC4899',
 };
 
-const SESSION_KEY = 'utima_ui_informed_devtools_visible';
+const SESSION_KEY_VISIBLE = 'utima_ui_informed_devtools_visible';
+const SESSION_KEY_HEIGHT = 'utima_ui_informed_devtools_height';
 
 /**
  * Wrapper around informed Debug component with some custom visuals.
  */
 export function Devtools({ className }: DevtoolsProps) {
   const formState = useFormState();
+  const [isResizing, setIsResizing] = useState(false);
+
+  const [height, setHeight] = useState<number>(() => {
+    const storedHeight = sessionStorage.getItem(SESSION_KEY_HEIGHT);
+
+    return storedHeight ? JSON.parse(storedHeight) : 500;
+  });
+
   const [visible, setVisible] = useState<boolean>(() => {
-    const storedVisible = sessionStorage.getItem(SESSION_KEY);
+    const storedVisible = sessionStorage.getItem(SESSION_KEY_VISIBLE);
 
     return storedVisible ? JSON.parse(storedVisible) : false;
   });
 
   useEffect(() => {
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify(visible));
+    sessionStorage.setItem(SESSION_KEY_VISIBLE, JSON.stringify(visible));
   }, [visible]);
+
+  useEffect(() => {
+    sessionStorage.setItem(SESSION_KEY_HEIGHT, JSON.stringify(height));
+  }, [height]);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsResizing(true);
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isResizing) {
+        return;
+      }
+
+      setHeight(window.innerHeight - e.clientY);
+    };
+
+    const handleMouseUp = () => {
+      setIsResizing(false);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mouseup', handleMouseUp);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isResizing]);
 
   return (
     <div className={cn(visible && 'pb-[500px]')}>
@@ -58,9 +98,16 @@ export function Devtools({ className }: DevtoolsProps) {
       {visible && (
         <Portal>
           <div
-            className='w-full text-zinc-100 bg-zinc-800 fixed height-[500px] left-0 bottom-0 z-[100000] animate-in slide-in-from-bottom duration-300'
-            style={{ colorScheme: 'dark' }}
+            className={cn(
+              'w-full text-zinc-100 bg-zinc-800 fixed left-0 bottom-0 z-[100000] animate-in slide-in-from-bottom duration-300',
+              isResizing && 'transition-none',
+            )}
+            style={{ colorScheme: 'dark', height }}
           >
+            <span
+              onMouseDown={handleMouseDown}
+              className='h-1 w-full absolute -top-[2px] cursor-row-resize hover:bg-zinc-500 transition-colors'
+            />
             <button
               type='button'
               className='absolute -top-5 right-2 w-6 h-5 bg-zinc-800 bg-transparent rounded-t-md flex items-center justify-center'
@@ -116,29 +163,52 @@ export function Devtools({ className }: DevtoolsProps) {
               </div>
             </header>
 
-            <div className='grid grid-cols-2 max-h-[450px]'>
-              <div className='overflow-y-auto max-h-[450px] text-sm'>
-                <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
-                  State
-                </h4>
-                <div className='px-2 py-1'>
-                  <JSONTree hideRoot data={formState} theme={theme} />
+            <Resizable.Group
+              storage={sessionStorage}
+              autoSaveId='utima_ui_informed_devtools'
+              direction='horizontal'
+              className='grid grid-cols-2'
+            >
+              <Resizable.Panel>
+                <div
+                  className='overflow-y-auto text-sm'
+                  style={{ colorScheme: 'dark', height: height - 48 }}
+                >
+                  <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
+                    State
+                  </h4>
+                  <div className='px-2 py-1'>
+                    <JSONTree hideRoot data={formState} theme={theme} />
+                  </div>
                 </div>
-              </div>
-              <div className='overflow-y-auto max-h-[450px] text-sm'>
-                <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
-                  Data
-                </h4>
-                <div className='px-2 py-1'>
-                  <JSONTree
-                    hideRoot
-                    shouldExpandNodeInitially={(_, __, level) => level <= 3}
-                    data={formState.values}
-                    theme={theme}
-                  />
+              </Resizable.Panel>
+              <Resizable.Handle
+                withHandle
+                classNames={{
+                  handle: 'bg-zinc-600',
+                  iconWrapper: 'bg-zinc-600 border-zinc-600',
+                  icon: 'text-zinc-100',
+                }}
+              />
+              <Resizable.Panel>
+                <div
+                  className='overflow-y-auto text-sm'
+                  style={{ colorScheme: 'dark', height: height - 48 }}
+                >
+                  <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
+                    Data
+                  </h4>
+                  <div className='px-2 py-1'>
+                    <JSONTree
+                      hideRoot
+                      shouldExpandNodeInitially={(_, __, level) => level <= 3}
+                      data={formState.values}
+                      theme={theme}
+                    />
+                  </div>
                 </div>
-              </div>
-            </div>
+              </Resizable.Panel>
+            </Resizable.Group>
           </div>
         </Portal>
       )}
