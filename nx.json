@@ -13,14 +13,20 @@
       "options": {
         "buildTargetName": "build"
       }
+    },
+    {
+      "plugin": "@nx/storybook/plugin",
+      "options": {
+        "buildStorybookTargetName": "storybook:build",
+        "serveStorybookTargetName": "storybook",
+        "testStorybookTargetName": "storybook:test",
+        "staticStorybookTargetName": "storybook:static"
+      }
     }
   ],
   "namedInputs": {
     "sharedGlobals": [],
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ]
+    "default": ["{projectRoot}/**/*", "sharedGlobals"]
   },
   "targetDefaults": {
     "build": {
