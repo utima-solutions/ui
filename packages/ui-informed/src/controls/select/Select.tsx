@@ -3,14 +3,16 @@ import {
   Select as SelectUI,
   SelectItem,
 } from '@utima/ui';
-import { memo, type NamedExoticComponent } from 'react';
+import { memo, type NamedExoticComponent, type ReactNode } from 'react';
 
 import {
   FormControl,
   type ConsumeFormControlProps,
 } from '../../formControl/FormControl';
 
-export interface SelectProps extends ConsumeFormControlProps<UISelectProps> {}
+export interface SelectProps extends ConsumeFormControlProps<UISelectProps> {
+  renderValue?: (value: string) => ReactNode;
+}
 
 // Type fixes for dot notation on memo
 interface SelectComponent extends NamedExoticComponent<SelectProps> {
@@ -28,6 +30,7 @@ export const Select: SelectComponent = memo(function Select({
   onOpenChange,
   onCloseAutoFocus,
   onValueChange,
+  renderValue,
   ...restProps
 }: SelectProps) {
   return (
@@ -36,6 +39,14 @@ export const Select: SelectComponent = memo(function Select({
       {...restProps}
       render={({ userProps, ref, fieldApi, fieldState }) => {
         const { disabled, readOnly, ...restProps } = userProps;
+
+        if (readOnly && renderValue) {
+          return (
+            <p className='text-primary'>
+              {fieldState.value ? renderValue(fieldState.value as string) : '—'}
+            </p>
+          );
+        }
 
         return (
           <SelectUI
