@@ -4,6 +4,9 @@ import type { ComponentPropsWithoutRef } from 'react';
 
 import { aspectRatioDef } from './AspectRatio.styles';
 
+export interface AspectRatioProps
+  extends ComponentPropsWithoutRef<typeof Root> {}
+
 export function AspectRatio({
   children,
   ...restProps

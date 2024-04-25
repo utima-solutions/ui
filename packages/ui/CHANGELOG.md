@@ -1,5 +1,123 @@
 # @utima/ui
 
+## 0.27.0
+
+### Minor Changes
+
+- [`ba2239a`](https://github.com/utima-solutions/ui/commit/ba2239af101f5f8072e58e7dd7e33d70e5322bab) Thanks [@jsimck](https://github.com/jsimck)! - Added `Resizable` component
+
+## 0.26.1
+
+## 0.26.0
+
+## 0.25.0
+
+### Minor Changes
+
+- [`eb76a6b`](https://github.com/utima-solutions/ui/commit/eb76a6b89df5d593874fd2365bd945e6a707d334) Thanks [@jsimck](https://github.com/jsimck)! - Added `plain` modifier to button and badge
+
+## 0.24.2
+
+## 0.24.1
+
+## 0.24.0
+
+## 0.23.0
+
+### Minor Changes
+
+- [#18](https://github.com/utima-solutions/ui/pull/18) [`ae3d57a`](https://github.com/utima-solutions/ui/commit/ae3d57aba8a5febb47cf23f23521ac42e7fcafe0) Thanks [@jsimck](https://github.com/jsimck)! - Added new Progress component
+
+## 0.22.1
+
+### Patch Changes
+
+- [`3672a07`](https://github.com/utima-solutions/ui/commit/3672a07084bda4dca95b05d313eb77f33608a518) Thanks [@jsimck](https://github.com/jsimck)! - Minor UI fixes
+
+## 0.22.0
+
+### Minor Changes
+
+- [`4009b21`](https://github.com/utima-solutions/ui/commit/4009b2192ad2aa618a18f5b799c1548b37eed3bb) Thanks [@jsimck](https://github.com/jsimck)! - Added support for addons to input and textarea components
+
+## 0.21.4
+
+## 0.21.3
+
+## 0.21.2
+
+## 0.21.1
+
+## 0.21.0
+
+## 0.20.0
+
+### Minor Changes
+
+- [`5d7a49e`](https://github.com/utima-solutions/ui/commit/5d7a49ee5e957d083493ba67632fe1cb7f4d7de1) Thanks [@jsimck](https://github.com/jsimck)! - - Added some additional imports for missing component props types
+  - Fixed `Checkbox` component `type` prop.
+  - Updated dependencies (now uses 1.0.0 version of `cmdk` package)
+  - Updated `Kbd` component default styles
+  - Re-exported `Portal` component from radix
+
+## 0.18.5
+
+### Patch Changes
+
+- [#14](https://github.com/utima-solutions/ui/pull/14) [`b0ecc8f`](https://github.com/utima-solutions/ui/commit/b0ecc8fe4c769bc9d69921a8b7beda8408a6e25c) Thanks [@Matushl](https://github.com/Matushl)! - Fix color of Select placeholder text
+
+- [#13](https://github.com/utima-solutions/ui/pull/13) [`47eb558`](https://github.com/utima-solutions/ui/commit/47eb55863d058c948495c79c14c5953c9a5425cb) Thanks [@Matushl](https://github.com/Matushl)! - Add missing ring color to plugin settings
+
+## 0.18.4
+
+### Patch Changes
+
+- [`f4660dc`](https://github.com/utima-solutions/ui/commit/f4660dc5b37bbba249dfe36be8f19ae84a7ac9f3) Thanks [@jsimck](https://github.com/jsimck)! - Fixed unpublished major versions
+
+## 0.18.3
+
+### Patch Changes
+
+- [`d302b97`](https://github.com/utima-solutions/ui/commit/d302b975992eabdd9639fed65faad96372881873) Thanks [@jsimck](https://github.com/jsimck)! - Added missing overrides def for pagination
+
+## 0.18.2
+
+### Patch Changes
+
+- [`62cb2a2`](https://github.com/utima-solutions/ui/commit/62cb2a275393415e7d7360278e7a7c7a20437b7f) Thanks [@jsimck](https://github.com/jsimck)! - Fixed disabled prop types on pagination link
+
+## 0.18.1
+
+### Patch Changes
+
+- [`fe76bdd`](https://github.com/utima-solutions/ui/commit/fe76bddb4ccf9ea73a2f3b0724e60cd73b059f66) Thanks [@jsimck](https://github.com/jsimck)! - Added missing `Pagination` Export
+
+## 0.18.0
+
+### Minor Changes
+
+- [#12](https://github.com/utima-solutions/ui/pull/12) [`48b31fd`](https://github.com/utima-solutions/ui/commit/48b31fda17a4657052ed1e72b164c2505eaa7f0e) Thanks [@jsimck](https://github.com/jsimck)! - Added new `Pagination` component
+
+### Patch Changes
+
+- [#12](https://github.com/utima-solutions/ui/pull/12) [`48b31fd`](https://github.com/utima-solutions/ui/commit/48b31fda17a4657052ed1e72b164c2505eaa7f0e) Thanks [@jsimck](https://github.com/jsimck)! - Fixed button and patch invalid border styles on non-outline variatns
+
+## 0.17.1
+
+### Patch Changes
+
+- [`88bbbcf`](https://github.com/utima-solutions/ui/commit/88bbbcf51bf0985784f618107663228a08c5a4f5) Thanks [@jsimck](https://github.com/jsimck)! - Fixed menu tailwind variables
+
+## 0.17.0
+
+### Minor Changes
+
+- [#11](https://github.com/utima-solutions/ui/pull/11) [`2690456`](https://github.com/utima-solutions/ui/commit/2690456cce8318908758e6343280daee50a999ee) Thanks [@jsimck](https://github.com/jsimck)! - New `menu` component
+
+### Patch Changes
+
+- [#10](https://github.com/utima-solutions/ui/pull/10) [`ed3c242`](https://github.com/utima-solutions/ui/commit/ed3c242fdc7caa5ca923a006ab3869a7393be7e5) Thanks [@jsimck](https://github.com/jsimck)! - Fixed styling with toast
+
 ## 0.16.2
 
 ### Patch Changes

@@ -15,7 +15,11 @@ import type { globalDef } from './components/global.styles';
 import type { inputDef } from './components/input/Input.styles';
 import type { labelDef } from './components/label/Label.styles';
 import type { layoutDef } from './components/layout/Layout.styles';
+import type { menuDef } from './components/menu/Menu.styles';
+import type { paginationDef } from './components/pagination/Pagination.styles';
 import type { popoverDef } from './components/popover/Popover.styles';
+import type { progressDef } from './components/progress/Progress.styles';
+import type { resizableDef } from './components/resizable/Resizable.styles';
 import type { selectDef } from './components/select/select.styles';
 import type { separatorDef } from './components/separator/Separator.styles';
 import type { switchDef } from './components/switch/Switch.styles';
@@ -48,6 +52,10 @@ type ComponentOverridesDef = {
   dialog: typeof dialogDef;
   layout: typeof layoutDef;
   breadcrumb: typeof breadcrumbDef;
+  menu: typeof menuDef;
+  pagination: typeof paginationDef;
+  progress: typeof progressDef;
+  resizable: typeof resizableDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

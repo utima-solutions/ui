@@ -7,11 +7,16 @@
     }
   ],
   "commit": false,
-  "fixed": [],
+  "fixed": [
+    [
+      "@utima/ui",
+      "@utima/ui-informed"
+    ]
+  ],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
-  "updateInternalDependencies": "patch",
+  "updateInternalDependencies": "minor",
   "ignore": [
     "@utima/ui-playground"
   ]

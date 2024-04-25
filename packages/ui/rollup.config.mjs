@@ -1,33 +1,6 @@
-import { nodeExternals } from 'rollup-plugin-node-externals';
-import typescript from 'rollup-plugin-typescript2';
+import { createRollupConfig } from '../../createRollupConfig.mjs';
 
 /**
  * @type {import('rollup').RollupOptions[]}
  */
-export default [
-  {
-    input: `src/index.ts`,
-    plugins: [
-      nodeExternals(),
-      typescript({
-        rollupCommonJSResolveHack: false,
-        useTsconfigDeclarationDir: true,
-        tsconfig: 'tsconfig.build.json',
-      }),
-    ],
-    output: [
-      {
-        dir: './dist/esm',
-        format: 'es',
-        sourcemap: true,
-        preserveModules: true,
-      },
-      {
-        dir: './dist/cjs',
-        format: 'cjs',
-        sourcemap: true,
-        preserveModules: true,
-      },
-    ],
-  },
-];
+export default [...createRollupConfig()];

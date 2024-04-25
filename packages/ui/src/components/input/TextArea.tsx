@@ -1,25 +1,86 @@
 import type { VariantProps } from 'class-variance-authority';
-import { forwardRef, type ComponentPropsWithoutRef } from 'react';
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ReactNode,
+} from 'react';
 
 import { cn } from '@/utils';
 
-import { inputStyles } from './Input.styles';
+import { inputDef, inputStyles } from './Input.styles';
 
 export interface TextareaProps
   extends Omit<ComponentPropsWithoutRef<'textarea'>, 'size'>,
-    VariantProps<typeof inputStyles> {}
+    VariantProps<typeof inputStyles> {
+  addonBefore?: ReactNode;
+  addonAfter?: ReactNode;
+}
 
+/**
+ * Textarea component with support for addons.
+ *
+ * ```tsx
+ * <TextArea placeholder='Search...' />
+ * ```
+ */
 export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   function TextArea(
-    { className, size = 'md', variant = 'default', ...restProps },
+    {
+      className,
+      size = 'md',
+      variant = 'default',
+      addonBefore,
+      addonAfter,
+      ...restProps
+    },
     ref,
   ) {
-    return (
+    if (!addonAfter && !addonBefore) {
       <textarea
         ref={ref}
         className={cn(inputStyles({ size, variant }), 'h-auto', className)}
         {...restProps}
-      />
+      />;
+    }
+
+    return (
+      <div className={cn(inputDef.wrapper, 'items-stretch')}>
+        {addonBefore && (
+          <span
+            className={cn(
+              inputStyles({ size }),
+              inputDef.addon.base,
+              inputDef.addon.before,
+              'h-auto',
+            )}
+          >
+            {addonBefore}
+          </span>
+        )}
+        <textarea
+          ref={ref}
+          className={cn(
+            inputStyles({ size, variant }),
+            addonBefore && 'rounded-l-none',
+            addonAfter && 'rounded-r-none',
+            'h-auto',
+            className,
+          )}
+          {...restProps}
+        />
+        {addonAfter && (
+          <span
+            className={cn(
+              inputStyles({ size }),
+              inputDef.addon.base,
+              inputDef.addon.after,
+              'h-auto',
+            )}
+          >
+            {addonAfter}
+          </span>
+        )}
+      </div>
     );
   },
 );

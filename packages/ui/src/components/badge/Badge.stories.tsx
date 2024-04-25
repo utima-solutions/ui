@@ -20,6 +20,7 @@ type Story = StoryObj<typeof Badge>;
 
 export const Basic: Story = {};
 export const Outline: Story = { args: { outline: true } };
+export const Plain: Story = { args: { plain: true } };
 export const Disabled: Story = { args: { disabled: true } };
 
 export const TextWrap: Story = {
@@ -34,4 +35,17 @@ export const TextWrap: Story = {
     children:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, voluptate?',
   },
+};
+
+export const Multiline: Story = {
+  args: {
+    children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+  },
+  decorators: [
+    Story => (
+      <div style={{ width: 50 }}>
+        <Story />
+      </div>
+    ),
+  ],
 };

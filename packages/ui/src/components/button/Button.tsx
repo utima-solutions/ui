@@ -5,7 +5,7 @@ import { forwardRef, type ReactNode, type ButtonHTMLAttributes } from 'react';
 
 import { cn } from '@/utils';
 
-import { buttonStyles } from './Button.styles';
+import { buttonDef, buttonStyles } from './Button.styles';
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
@@ -13,6 +13,7 @@ export interface ButtonProps
   asChild?: boolean;
   outline?: boolean;
   loading?: boolean;
+  plain?: boolean;
   icon?: ReactNode;
   iconSize?: number;
 }
@@ -28,6 +29,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       outline = false,
       asChild = false,
       loading = false,
+      plain = false,
       ...restProps
     },
     ref,
@@ -46,9 +48,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           buttonStyles({
             variant,
             size,
-            outline: outline && variant ? variant : null,
-            className,
+            outline: (outline || plain) && variant ? variant : null,
           }),
+          plain && buttonDef.plain,
+          className,
         )}
         ref={ref}
         {...restProps}

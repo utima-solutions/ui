@@ -1,20 +1,83 @@
 import type { VariantProps } from 'class-variance-authority';
-import { forwardRef, type ComponentPropsWithoutRef } from 'react';
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ReactNode,
+} from 'react';
 
 import { cn } from '@/utils';
 
-import { inputStyles } from './Input.styles';
+import { inputDef, inputStyles } from './Input.styles';
 
 export interface InputProps
   extends Omit<ComponentPropsWithoutRef<'input'>, 'size'>,
-    VariantProps<typeof inputStyles> {}
+    VariantProps<typeof inputStyles> {
+  addonBefore?: ReactNode;
+  addonAfter?: ReactNode;
+}
 
-export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, size = 'md', variant = 'default', ...restProps }, ref) => (
-    <input
-      ref={ref}
-      className={cn(inputStyles({ size, variant }), className)}
-      {...restProps}
-    />
-  ),
-);
+/**
+ * Input component with support for addons.
+ *
+ * ```tsx
+ * <Input addonBefore='http://' placeholder='example.com' />
+ * ```
+ */
+export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
+  {
+    className,
+    size = 'md',
+    variant = 'default',
+    addonBefore,
+    addonAfter,
+    ...restProps
+  },
+  ref,
+) {
+  if (!addonAfter && !addonBefore) {
+    return (
+      <input
+        ref={ref}
+        className={cn(inputStyles({ size, variant }), className)}
+        {...restProps}
+      />
+    );
+  }
+
+  return (
+    <div className={inputDef.wrapper}>
+      {addonBefore && (
+        <span
+          className={cn(
+            inputStyles({ size }),
+            inputDef.addon.base,
+            inputDef.addon.before,
+          )}
+        >
+          {addonBefore}
+        </span>
+      )}
+      <input
+        ref={ref}
+        className={cn(
+          inputStyles({ size, variant }),
+          addonBefore && 'rounded-l-none',
+          addonAfter && 'rounded-r-none',
+          className,
+        )}
+        {...restProps}
+      />
+      {addonAfter && (
+        <span
+          className={cn(
+            inputStyles({ size }),
+            inputDef.addon.base,
+            inputDef.addon.after,
+          )}
+        >
+          {addonAfter}
+        </span>
+      )}
+    </div>
+  );
+});

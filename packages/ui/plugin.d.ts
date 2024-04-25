@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 import type typeFest = require('type-fest');
 
 /**
@@ -14,6 +15,7 @@ type TailwindPluginOptions = {
     placeholder: string;
     border: string;
     separator: string;
+    ring: string;
 
     // Accent colors
     primary: {
@@ -70,6 +72,19 @@ type TailwindPluginOptions = {
       bg: string;
       fg: string;
       border: string;
+    };
+    menu: {
+      bg: string;
+      fg: string;
+      border: string;
+      accent: {
+        bg: string;
+        fg: string;
+      };
+      submenu: {
+        bg: string;
+        fg: string;
+      };
     };
   };
 };
