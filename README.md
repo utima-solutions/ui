@@ -1,62 +1,54 @@
-# @utima/ui
+# Utima UI
 
-Collection of react components based on [shadcn/ui](https://ui.shadcn.com/) and [Radix Primitives](https://www.radix-ui.com/primitives/docs/overview/introduction) with some modifications. It is essentially growing collection of components which try to provide higher level API, while still being customizable and composable.
+Monorepository for all packages that are based around **Utima UI Ecosystem**.
 
-All components are styled using [Tailwind CSS](https://tailwindcss.com/). They are theemable through custom tailwind colors + override functionality. Which allows you to add custom styles to the components without the need of wrapping and styling them in your application.
+## Packages
 
-## Documentation
+- [@utima/ui](./packages/ui/README.md) - Collection of **React components** based on [shadcn/ui](https://ui.shadcn.com/) and [Radix Primitives](https://www.radix-ui.com/primitives/docs/overview/introduction) with some modifications. It is essentially a growing collection of components which try to provide higher level API, while still being customizable and composable.
+- [@utima/ui-informed](./packages/ui-informed/README.md) - Collection of **React components** based on [@utima/ui](./packages/ui/README.md) and [informed](https://informed.dev/). It provides higher level API for forms and form fields.
 
-Visit https://utima-solutions.github.io/ui/ storybook, which is automatically generated from the source code. It serves as a documentation and playground for all components.
+## Development guide
 
-## Installation
+We use [pnpm](https://pnpm.io/) as package manager for this repository. Make sure you have it installed before running any commands.
 
-Init tailwindcss in your project, follow instructions on [tailwindcss.com](https://tailwindcss.com/docs/installation).
-
-Install the @utima/ui package and its peer dependencies.
+We recommend using `corepack` to install `pnpm` globally:
 
 ```bash
-npm install @utima/ui lucide-react tailwindcss-animate
+corepack enable
 ```
 
-### `tailwind.config.js`
+Install dependencies:
 
-In your tailwind config file, add the following:
-
-```js
-import path from 'node:path';
-
-import utimaUi from '@utima/ui/plugin';
-
-export default {
-  content: [
-    // This makes sure tailwind can scan the utima ui component classes
-    `${path.dirname(require.resolve('@utima/ui'))}/**/*.js`,
-  ],
-  /**
-   * Init the utima ui plugin and tailwindcss-animate, with optional
-   * customizations.
-   */
-  plugins: [require('tailwindcss-animate'), utimaUi({
-    colors: {
-      primary: {
-        bg: '#cc0000',
-        fg: '#ffffff',
-      },
-    }
-  })],
-};
+```
+pnpm i --frozen-lockfile
 ```
 
-## Usage
+Now you can start working on the packages. Each package has it's own `README.md` file with some additional instructions. Most of the packages contain `dev` package.json script and storybook which can be used to develop and test components.
 
-All imports are available from `@utima/ui` package. Feel free to browse through [public Storybook](https://utima-solutions.github.io/ui/) to see all available components and their props.
+You can also use `playground` Vite application to test components in real world scenario. It's located in `apps/playground` directory.
 
-```jsx
-import { Button } from '@utima/ui';
+## Contribution guide
 
-function App() {
-  return (
-    <Button variant='primary' outline>Click me</Button>
-  );
-}
+Every PR implementing new feature should include [changeset](https://github.com/changesets/changesets). Use `npm run changeset` from the root of the repository to generate new changeset and include it with your PR.
+
+### Release
+
+Make sure all new features are merged to `main` and you are on `main` branch including their changesets. and run:
+
+```bash
+npm run release
+```
+
+#### RC Versions
+
+To enter RC mode, run:
+
+```bash
+npm run release:rc:exit
+```
+
+when in RC mode, all version releases will have `-rc` suffix. To exit RC mode, run:
+
+```bash
+npm run release:rc:exit
 ```
