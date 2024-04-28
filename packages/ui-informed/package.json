@@ -10,9 +10,9 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "pnpm lint -- --fix",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "npm run build; storybook build"
+    "storybook:build": "pnpm build; storybook build"
   },
   "exports": {
     ".": {
@@ -51,14 +51,16 @@
     "informed": "^4.58.0",
     "zod": "^3.22.4"
   },
+  "dependencies": {
+    "@utima/ui": "workspace:^",
+    "class-variance-authority": "^0.7.0",
+    "react-json-tree": "^0.19.0"
+  },
   "peerDependencies": {
+    "lucide-react": "*",
     "informed": ">=4",
     "react": ">=18",
     "react-dom": ">=18",
     "zod": ">=3.0.0 <4.0.0"
-  },
-  "dependencies": {
-    "@utima/ui": "^0.27.0",
-    "react-json-tree": "^0.19.0"
   }
 }

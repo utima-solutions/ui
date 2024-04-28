@@ -1,8 +1,10 @@
 # @utima/ui-informed
 
-Combination of components from Utima/ui and form library Informed.
+[@utima/ui](https://github.com/utima-solutions/ui) **components** that are wrapped with [informed](https://joepuzzo.github.io/informed/) library for form handling and can be used directly in `Form` component from informed.
 
 ## Installation
+
+**Make sure to first install the `@utima/ui` library first, [follow instructions here](https://www.npmjs.com/package/@utima/ui).**
 
 ```bash
 npm install @utima/ui-informed informed
@@ -25,26 +27,12 @@ export default {
 };
 ```
 
-## Development
-
-For this package to be working locally for you, you need to have have @utima/ui package built.
-
 ## Usage
 
 There are some default translations. If you want to replace them you need to wrap your application (or form) with `FormTranslationsContext.Provider` with value that will replace default translations, f.e.:
 
 ```javascript
 const translations = {
-  actions: {
-    success: {
-      title: 'Úspěch',
-      message: 'Položka byla úspěšně uložena.',
-    },
-    fail: {
-      title: 'Neúspěch',
-      message: 'Položka nebyla uložena.',
-    },
-  },
   errors: {
     required: 'Tento údaj je povinný',
   },
@@ -64,7 +52,7 @@ function App() {
 
 ### Devtools
 
-Informed already provides debug component. We have been inspired by this component and provided more UI friendly version of it.
+Informed already provides `<Debug />` component. We have been inspired by this and created more user friendly UI around it.
 
 You can use it by importing `DevTools` component from `@utima/ui-informed/devtools` package and placing it in your application (it should be placed inside `Form` component since it's bound to it's state):
 

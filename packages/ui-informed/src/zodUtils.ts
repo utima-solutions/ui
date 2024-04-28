@@ -45,7 +45,7 @@ export function getFieldZodObject(name: string, zodSchema?: AnyZodObject) {
     }
 
     if (!(schema instanceof ZodObject)) {
-      return undefined;
+      return;
     }
 
     schema = schema.shape[key];

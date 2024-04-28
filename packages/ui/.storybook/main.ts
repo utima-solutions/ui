@@ -1,4 +1,4 @@
-import path from 'path';
+import path from 'node:path';
 
 import type { StorybookConfig } from '@storybook/react-vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
@@ -7,7 +7,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
  * This function is used to resolve the absolute path of a package.
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
  */
-function getAbsolutePath(value) {
+function getAbsolutePath(value: string) {
   return path.dirname(require.resolve(path.join(value, 'package.json')));
 }
 
