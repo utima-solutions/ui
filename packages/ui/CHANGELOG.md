@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.27.1
+
+### Patch Changes
+
+- [#19](https://github.com/utima-solutions/ui/pull/19) [`234be24`](https://github.com/utima-solutions/ui/commit/234be2441f2972d51c5c4d0232626da8a12415dd) Thanks [@jsimck](https://github.com/jsimck)! - Migrated to `pnpm` package manager
+
 ## 0.27.0
 
 ### Minor Changes
