@@ -28,7 +28,7 @@
     "@storybook/react-vite": "^8.0.9",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
-    "@utima/eslint-config": "^0.13.0",
+    "@utima/eslint-config": "^0.13.1",
     "@utima/scripts": "^0.1.3",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "autoprefixer": "^10.4.19",
