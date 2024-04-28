@@ -34,10 +34,13 @@ jobs:
       - name: 🚀 Turbo
         run: pnpm exec turbo run lint build test
 
+      - name: Set publishing config
+        run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
       - name: Publish
         if: endsWith(github.ref, 'main')
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: pnpm exec changeset publish --no-git-tag
 
       - name: Build storybook
