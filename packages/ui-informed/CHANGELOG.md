@@ -1,5 +1,14 @@
 # @utima/ui-informed
 
+## 0.27.2
+
+### Patch Changes
+
+- [#20](https://github.com/utima-solutions/ui/pull/20) [`d87ae89`](https://github.com/utima-solutions/ui/commit/d87ae890f85d99acf5e53759e32f4ba7d1f2d6a4) Thanks [@matej-marcisovsky](https://github.com/matej-marcisovsky)! - Fixed the missing `forwardRef` in the `FormInfo` component that prevented the tooltip from showing.
+
+- Updated dependencies []:
+  - @utima/ui@0.27.2
+
 ## 0.27.1
 
 ### Patch Changes
