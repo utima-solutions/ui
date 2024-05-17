@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.27.3
+
+### Patch Changes
+
+- [`8d87a44`](https://github.com/utima-solutions/ui/commit/8d87a446a62bd8284b6945969809a76f177b9d2f) Thanks [@jsimck](https://github.com/jsimck)! - Added `container` option for popover which is passed to underlaying portal
+
 ## 0.27.2
 
 ## 0.27.1

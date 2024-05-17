@@ -1,6 +1,6 @@
 {
   "name": "@utima/ui-informed",
-  "version": "0.27.2",
+  "version": "0.27.3",
   "description": "Utima UI-Informed based on Utima UI and form library Informed with support for Zod validations.",
   "sideEffects": false,
   "main": "dist/cjs/index.js",
