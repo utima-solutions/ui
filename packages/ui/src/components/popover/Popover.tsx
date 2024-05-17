@@ -9,17 +9,26 @@ import { cn } from '@/utils';
 
 import { popoverDef } from './Popover.styles';
 
+export interface PopoverContentProps
+  extends ComponentPropsWithoutRef<typeof Content>,
+    ComponentPropsWithoutRef<typeof Portal> {}
+
 export const PopoverContent = forwardRef<
   ElementRef<typeof Content>,
-  ComponentPropsWithoutRef<typeof Content>
->(({ className, align = 'center', sideOffset = 4, ...restProps }, ref) => (
-  <Portal>
-    <Content
-      ref={ref}
-      align={align}
-      sideOffset={sideOffset}
-      className={cn(popoverDef.content, className)}
-      {...restProps}
-    />
-  </Portal>
-));
+  PopoverContentProps
+>(
+  (
+    { className, align = 'center', sideOffset = 4, container, ...restProps },
+    ref,
+  ) => (
+    <Portal container={container}>
+      <Content
+        ref={ref}
+        align={align}
+        sideOffset={sideOffset}
+        className={cn(popoverDef.content, className)}
+        {...restProps}
+      />
+    </Portal>
+  ),
+);
