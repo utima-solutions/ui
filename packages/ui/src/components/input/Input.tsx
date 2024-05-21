@@ -1,6 +1,8 @@
 import type { VariantProps } from 'class-variance-authority';
+import { Eye, EyeOff } from 'lucide-react';
 import {
   forwardRef,
+  useState,
   type ComponentPropsWithoutRef,
   type ReactNode,
 } from 'react';
@@ -14,6 +16,7 @@ export interface InputProps
     VariantProps<typeof inputStyles> {
   addonBefore?: ReactNode;
   addonAfter?: ReactNode;
+  passwordPreview?: boolean;
 }
 
 /**
@@ -30,18 +33,44 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     variant = 'default',
     addonBefore,
     addonAfter,
+    passwordPreview = true,
+    type,
     ...restProps
   },
   ref,
 ) {
-  if (!addonAfter && !addonBefore) {
-    return (
+  const [passwordToggle, setPasswordToggle] = useState(false);
+
+  const input = (
+    <div className={inputDef.container}>
       <input
         ref={ref}
-        className={cn(inputStyles({ size, variant }), className)}
+        type={type === 'password' && passwordToggle ? 'text' : type}
+        className={cn(
+          inputStyles({ size, variant }),
+          addonBefore && 'rounded-l-none',
+          addonAfter && 'rounded-r-none',
+          className,
+        )}
         {...restProps}
       />
-    );
+      {passwordPreview && type === 'password' && (
+        <button
+          className={inputDef.passwordPreview.button}
+          onClick={() => setPasswordToggle(v => !v)}
+        >
+          {passwordToggle ? (
+            <EyeOff className={inputDef.passwordPreview.icon} />
+          ) : (
+            <Eye className={inputDef.passwordPreview.icon} />
+          )}
+        </button>
+      )}
+    </div>
+  );
+
+  if (!addonAfter && !addonBefore) {
+    return input;
   }
 
   return (
@@ -57,16 +86,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           {addonBefore}
         </span>
       )}
-      <input
-        ref={ref}
-        className={cn(
-          inputStyles({ size, variant }),
-          addonBefore && 'rounded-l-none',
-          addonAfter && 'rounded-r-none',
-          className,
-        )}
-        {...restProps}
-      />
+      {input}
       {addonAfter && (
         <span
           className={cn(

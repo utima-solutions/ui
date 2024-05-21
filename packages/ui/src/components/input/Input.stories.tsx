@@ -38,3 +38,19 @@ export const AddonBoth: Story = {
     addonAfter: '.com',
   },
 };
+
+export const Passsword: Story = {
+  args: {
+    type: 'password',
+    passwordPreview: true,
+  },
+};
+
+export const PassowordWithAddons: Story = {
+  args: {
+    type: 'password',
+    passwordPreview: true,
+    addonBefore: 'http://',
+    addonAfter: '.com',
+  },
+};
