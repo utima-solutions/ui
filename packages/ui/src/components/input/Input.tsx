@@ -33,7 +33,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     variant = 'default',
     addonBefore,
     addonAfter,
-    passwordPreview = true,
+    passwordPreview,
     type,
     ...restProps
   },
