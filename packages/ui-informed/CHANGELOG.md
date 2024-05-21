@@ -1,5 +1,16 @@
 # @utima/ui-informed
 
+## 0.28.0
+
+### Minor Changes
+
+- [`398ef48`](https://github.com/utima-solutions/ui/commit/398ef4849e50cdb451f53e8c23dd279036bb820b) Thanks [@jsimck](https://github.com/jsimck)! - Added `passwordPreview` toggle to `Input` component, to toggle between visible password (text input) and hiddden (password input)
+
+### Patch Changes
+
+- Updated dependencies [[`398ef48`](https://github.com/utima-solutions/ui/commit/398ef4849e50cdb451f53e8c23dd279036bb820b)]:
+  - @utima/ui@0.28.0
+
 ## 0.27.3
 
 ### Patch Changes
