@@ -67,6 +67,7 @@ export interface FormControlProps
   showOptional?: boolean;
   render: FormControlRender;
   zodItemSchema?: ZodType;
+  size?: 'xs' | 'sm' | 'md' | 'lg';
   position?: 'start' | 'end';
 }
 
@@ -95,6 +96,7 @@ export function FormControl({
   type = 'text',
   position = 'end',
   required,
+  size,
   tooltip,
   showOptional,
   render,
@@ -126,9 +128,9 @@ export function FormControl({
     ...restProps,
   });
 
-  const { userProps: _, ...restField } = field;
+  const { userProps: baseUserProps, ...restField } = field;
   const { showError, error } = field.fieldState;
-  const { type: __, ...userProps } = field.userProps;
+  const { type: __, ...userProps } = baseUserProps;
 
   return field.render(
     <div
@@ -136,7 +138,11 @@ export function FormControl({
     >
       {position === 'start' && render({ userProps, ...restField, label })}
       {label && (
-        <Label className='inline-flex items-center gap-1' htmlFor={id}>
+        <Label
+          className='inline-flex items-center gap-1'
+          size={size}
+          htmlFor={id}
+        >
           {label}
           {tooltip && (
             <Tooltip title={tooltip}>

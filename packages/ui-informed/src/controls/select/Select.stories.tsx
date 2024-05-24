@@ -52,3 +52,21 @@ type Story = StoryObj<typeof Select>;
 export const Basic: Story = {
   args: {},
 };
+
+export const XS: Story = {
+  args: {
+    size: 'xs',
+  },
+};
+
+export const SM: Story = {
+  args: {
+    size: 'sm',
+  },
+};
+
+export const LG: Story = {
+  args: {
+    size: 'lg',
+  },
+};
