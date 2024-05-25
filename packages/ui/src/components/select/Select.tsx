@@ -23,6 +23,8 @@ export interface SelectProps
       | 'collisionPadding'
       | 'arrowPadding'
       | 'sticky'
+      | 'usePortal'
+      | 'container'
       | 'hideWhenDetached'
     > {
   placeholder?: string;
@@ -49,6 +51,8 @@ export const Select = forwardRef<ElementRef<typeof Root>, SelectProps>(
       arrowPadding,
       sticky,
       hideWhenDetached,
+      usePortal,
+      container,
       ...restProps
     },
     ref,
@@ -59,6 +63,8 @@ export const Select = forwardRef<ElementRef<typeof Root>, SelectProps>(
           <Value placeholder={placeholder} />
         </Trigger>
         <Content
+          usePortal={usePortal}
+          container={container}
           onCloseAutoFocus={onCloseAutoFocus}
           onEscapeKeyDown={onEscapeKeyDown}
           onPointerDownOutside={onPointerDownOutside}

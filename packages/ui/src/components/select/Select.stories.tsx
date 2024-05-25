@@ -11,6 +11,7 @@ const meta: Meta<typeof Select> = {
     size: 'md',
     placeholder: 'Placeholder',
     disabled: false,
+    usePortal: true,
     variant: 'default',
   },
 };

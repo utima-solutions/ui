@@ -56,6 +56,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       />
       {passwordPreview && type === 'password' && (
         <button
+          type='button'
           className={inputDef.passwordPreview.button}
           onClick={() => setPasswordToggle(v => !v)}
         >
