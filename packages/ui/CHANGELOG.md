@@ -1,5 +1,12 @@
 # @utima/ui
 
+## 0.29.1
+
+### Patch Changes
+
+- [`69cce37`](https://github.com/utima-solutions/ui/commit/69cce37d361fb8fcca2690f51b046359e58c0e77) Thanks [@jsimck](https://github.com/jsimck)! - Fixed issue with passing props to fragment on select
+  Made Select use Portal by default as it was before
+
 ## 0.29.0
 
 ### Patch Changes

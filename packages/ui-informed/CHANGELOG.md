@@ -1,5 +1,12 @@
 # @utima/ui-informed
 
+## 0.29.1
+
+### Patch Changes
+
+- Updated dependencies [[`69cce37`](https://github.com/utima-solutions/ui/commit/69cce37d361fb8fcca2690f51b046359e58c0e77)]:
+  - @utima/ui@0.29.1
+
 ## 0.29.0
 
 ### Minor Changes
