@@ -1,5 +1,12 @@
 # @utima/ui
 
+## 0.29.0
+
+### Patch Changes
+
+- [`61af825`](https://github.com/utima-solutions/ui/commit/61af8257649c4f79d8febd2ebd49b49d6e38521b) Thanks [@jsimck](https://github.com/jsimck)! - Fixed submit button for password preview
+  Added usePortal for Select component
+
 ## 0.28.0
 
 ### Minor Changes

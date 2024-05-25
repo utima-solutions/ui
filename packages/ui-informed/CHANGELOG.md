@@ -1,5 +1,16 @@
 # @utima/ui-informed
 
+## 0.29.0
+
+### Minor Changes
+
+- [`276a388`](https://github.com/utima-solutions/ui/commit/276a3887fff0f8640a537ada83d40a3a86b4c697) Thanks [@jsimck](https://github.com/jsimck)! - Size prop is now properly passed to label sizing
+
+### Patch Changes
+
+- Updated dependencies [[`61af825`](https://github.com/utima-solutions/ui/commit/61af8257649c4f79d8febd2ebd49b49d6e38521b)]:
+  - @utima/ui@0.29.0
+
 ## 0.28.0
 
 ### Minor Changes
