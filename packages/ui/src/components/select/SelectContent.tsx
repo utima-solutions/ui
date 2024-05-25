@@ -8,7 +8,6 @@ import {
 } from '@radix-ui/react-select';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
 import {
-  Fragment,
   forwardRef,
   type ComponentPropsWithoutRef,
   type ElementRef,
@@ -34,36 +33,36 @@ export const SelectContent = forwardRef<
       children,
       position = 'popper',
       container,
-      usePortal,
+      usePortal = true,
       ...restProps
     },
     ref,
   ) => {
-    const Container = usePortal ? Portal : Fragment;
+    const content = (
+      <Content
+        ref={ref}
+        className={cn(
+          selectDef.content.base,
+          position === 'popper' && selectDef.content.popper,
+          className,
+        )}
+        position={position}
+        {...restProps}
+      >
+        <ScrollUpButton className='flex cursor-default items-center justify-center py-1'>
+          <ChevronUpIcon size={16} />
+        </ScrollUpButton>
+        <Viewport className={cn(selectDef.viewport.base)}>{children}</Viewport>
+        <ScrollDownButton className='flex cursor-default items-center justify-center py-1'>
+          <ChevronDownIcon size={16} />
+        </ScrollDownButton>
+      </Content>
+    );
 
-    return (
-      <Container container={container}>
-        <Content
-          ref={ref}
-          className={cn(
-            selectDef.content.base,
-            position === 'popper' && selectDef.content.popper,
-            className,
-          )}
-          position={position}
-          {...restProps}
-        >
-          <ScrollUpButton className='flex cursor-default items-center justify-center py-1'>
-            <ChevronUpIcon size={16} />
-          </ScrollUpButton>
-          <Viewport className={cn(selectDef.viewport.base)}>
-            {children}
-          </Viewport>
-          <ScrollDownButton className='flex cursor-default items-center justify-center py-1'>
-            <ChevronDownIcon size={16} />
-          </ScrollDownButton>
-        </Content>
-      </Container>
+    return usePortal ? (
+      <Portal container={container}>{content}</Portal>
+    ) : (
+      content
     );
   },
 );
