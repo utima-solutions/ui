@@ -33,8 +33,8 @@ const meta: Meta<typeof Menu.Root> = {
         <Menu.Item>
           <Menu.Sub defaultOpen>
             <Menu.SubTrigger>
-              <Menu.Link>
-                <Contact className='size-5' /> Contacts
+              <Menu.Link disabled>
+                <Contact className='size-5' /> Contacts [disabled]
               </Menu.Link>
             </Menu.SubTrigger>
             <Menu.SubContent>
@@ -52,7 +52,7 @@ const meta: Meta<typeof Menu.Root> = {
               <Menu.SubItem>
                 <Menu.Sub>
                   <Menu.SubTrigger>
-                    <Menu.Link>Dashboard</Menu.Link>
+                    <Menu.Link href='/'>Dashboard</Menu.Link>
                   </Menu.SubTrigger>
                   <Menu.SubContent>
                     <Menu.Label>User Account</Menu.Label>

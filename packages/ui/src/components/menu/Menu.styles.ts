@@ -10,6 +10,7 @@ export const menuDef = twOverrides(
     link: {
       wrapper: 'm-1',
       indent: 'pl-12',
+      disabled: 'pointer-events-none opacity-50',
       content:
         'flex items-center py-2 px-3 transition-colors cursor-pointer hover:bg-menu-accent hover:text-menu-accent-fg w-auto rounded-radius gap-4 text-menu-fg',
       active: 'bg-menu-accent text-menu-accent-fg',
