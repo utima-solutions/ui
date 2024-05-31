@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.30.0
+
+### Minor Changes
+
+- [`cdbc8c9`](https://github.com/utima-solutions/ui/commit/cdbc8c9d19c4e5719ecfc3b776bc11c24ba6807e) Thanks [@jsimck](https://github.com/jsimck)! - Added `disabled` option to MenuLink
+
 ## 0.29.1
 
 ### Patch Changes
