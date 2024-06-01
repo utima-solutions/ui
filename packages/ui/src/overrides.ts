@@ -2,6 +2,7 @@ import { default as get } from 'lodash.get';
 import { twMerge } from 'tailwind-merge';
 import type { PartialDeep } from 'type-fest';
 
+import type { alertDialogDef } from './components/alertDialog/AlertDialog.styles';
 import type { aspectRatioDef } from './components/aspectRatio/AspectRatio.styles';
 import type { avatarDef } from './components/avatar/Avatar.styles';
 import type { badgeDef } from './components/badge/Badge.styles';
@@ -56,6 +57,7 @@ type ComponentOverridesDef = {
   pagination: typeof paginationDef;
   progress: typeof progressDef;
   resizable: typeof resizableDef;
+  alertDialog: typeof alertDialogDef;
 };
 
 export type ComponentOverrides = PartialDeep<ComponentOverridesDef>;

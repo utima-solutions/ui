@@ -73,6 +73,9 @@ export { useCommandState } from 'cmdk';
 // Dialog
 export * as Dialog from './components/dialog';
 
+// AlertDialog
+export * as AlertDialog from './components/alertDialog';
+
 // Switch
 export { Switch, type SwitchProps } from './components/switch/Switch';
 

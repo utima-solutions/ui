@@ -171,8 +171,8 @@ importers:
         specifier: '>=18'
         version: 18.3.1(react@18.3.1)
       react-resizable-panels:
-        specifier: ^2.0.18
-        version: 2.0.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^2.0.19
+        version: 2.0.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sonner:
         specifier: ^1.4.41
         version: 1.4.41(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4513,8 +4513,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-resizable-panels@2.0.18:
-    resolution: {integrity: sha512-rKagCW6C8tTjWRq5jNsASsi4TB2a+IixL9++0G1+kPgAgvULPVf7kE0VbHysC3wdvcGYMa70O46C9YpG7CCkeA==}
+  react-resizable-panels@2.0.19:
+    resolution: {integrity: sha512-v3E41kfKSuCPIvJVb4nL4mIZjjKIn/gh6YqZF/gDfQDolv/8XnhJBek4EiV2gOr3hhc5A3kOGOayk3DhanpaQw==}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0
@@ -10552,7 +10552,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 18.3.1
 
-  react-resizable-panels@2.0.18(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  react-resizable-panels@2.0.19(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
