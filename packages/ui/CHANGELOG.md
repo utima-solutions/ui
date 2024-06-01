@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.31.0
+
+### Minor Changes
+
+- [`e886ba5`](https://github.com/utima-solutions/ui/commit/e886ba50eab1bb05383b43fe38a1fc22c0666b4f) Thanks [@jsimck](https://github.com/jsimck)! - Added new AlertDialog component
+
 ## 0.30.0
 
 ### Minor Changes
