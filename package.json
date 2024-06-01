@@ -10,7 +10,7 @@
     "lint:fix": "turbo lint -- --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
     "changeset": "changeset add",
-    "release": "utima release -d '' --pnpm"
+    "release": "changeset version; git add .; git commit -m \"chore: 🚀 Release\"; changeset tag; git push --follow-tags"
   },
   "keywords": [],
   "author": "Jan Šimeček",
