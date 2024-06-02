@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 0.31.1
+
+### Patch Changes
+
+- [`3698dd8`](https://github.com/utima-solutions/ui/commit/3698dd841e32cf868f904a33cb0dae788cb61dba) Thanks [@jsimck](https://github.com/jsimck)! - Removed default `Button` component for AlertDialog actions. You should not be forced to use Buttons and use anything you want with `asChild` prop
+
 ## 0.31.0
 
 ### Minor Changes
