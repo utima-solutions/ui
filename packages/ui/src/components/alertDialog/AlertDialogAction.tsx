@@ -8,15 +8,16 @@ import {
 import { cn } from '@/utils';
 
 import { alertDialogDef } from './AlertDialog.styles';
-import { Button } from '../button/Button';
 
 export const AlertDialogAction = forwardRef<
   ElementRef<typeof Primitive.Action>,
   ComponentPropsWithoutRef<typeof Primitive.Action>
 >(function AlertDialogAction({ className, ...restProps }, ref) {
   return (
-    <Primitive.Action asChild ref={ref}>
-      <Button className={cn(alertDialogDef.action, className)} {...restProps} />
-    </Primitive.Action>
+    <Primitive.Action
+      ref={ref}
+      className={cn(alertDialogDef.action, className)}
+      {...restProps}
+    />
   );
 });

@@ -1,22 +1,23 @@
 import * as Primitive from '@radix-ui/react-alert-dialog';
-import { type ElementRef, forwardRef } from 'react';
+import {
+  type ElementRef,
+  forwardRef,
+  type ComponentPropsWithoutRef,
+} from 'react';
 
 import { cn } from '@/utils';
 
 import { alertDialogDef } from './AlertDialog.styles';
-import { Button, type ButtonProps } from '../button/Button';
 
 export const AlertDialogCancel = forwardRef<
   ElementRef<typeof Primitive.Cancel>,
-  ButtonProps
->(function AlertDialogCancel({ className, outline = true, ...restProps }, ref) {
+  ComponentPropsWithoutRef<typeof Primitive.Cancel>
+>(function AlertDialogCancel({ className, ...restProps }, ref) {
   return (
-    <Primitive.Cancel asChild ref={ref}>
-      <Button
-        className={cn(alertDialogDef.cancel, className)}
-        outline={outline}
-        {...restProps}
-      />
-    </Primitive.Cancel>
+    <Primitive.Cancel
+      ref={ref}
+      className={cn(alertDialogDef.cancel, className)}
+      {...restProps}
+    />
   );
 });

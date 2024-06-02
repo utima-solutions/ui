@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import * as AlertDialog from './index';
+import { Button } from '../button/Button';
 
 const meta: Meta<typeof AlertDialog.Root> = {
   component: AlertDialog.Root,
@@ -9,7 +10,9 @@ const meta: Meta<typeof AlertDialog.Root> = {
   decorators: [
     Story => (
       <AlertDialog.Root>
-        <AlertDialog.Trigger>Open</AlertDialog.Trigger>
+        <AlertDialog.Trigger asChild>
+          <Button>Open</Button>
+        </AlertDialog.Trigger>
         <AlertDialog.Portal>
           <AlertDialog.Overlay />
           <AlertDialog.Content>
@@ -21,8 +24,12 @@ const meta: Meta<typeof AlertDialog.Root> = {
               </AlertDialog.Description>
             </AlertDialog.Header>
             <AlertDialog.Footer>
-              <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
-              <AlertDialog.Action>Continue</AlertDialog.Action>
+              <AlertDialog.Cancel asChild>
+                <Button variant='ghost'>Cancel</Button>
+              </AlertDialog.Cancel>
+              <AlertDialog.Action asChild>
+                <Button>Continue</Button>
+              </AlertDialog.Action>
             </AlertDialog.Footer>
           </AlertDialog.Content>
         </AlertDialog.Portal>
