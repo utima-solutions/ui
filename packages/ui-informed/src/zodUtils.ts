@@ -4,6 +4,7 @@ import {
   type ZodType,
   ZodOptional,
   ZodObject,
+  ZodArray,
 } from 'zod';
 
 export function isZodError(error: unknown) {
@@ -42,6 +43,10 @@ export function getFieldZodObject(name: string, zodSchema?: AnyZodObject) {
   for (const key of path) {
     if (schema instanceof ZodOptional) {
       schema = schema.unwrap();
+    }
+
+    if (schema instanceof ZodArray) {
+      schema = schema.element;
     }
 
     if (!(schema instanceof ZodObject)) {
