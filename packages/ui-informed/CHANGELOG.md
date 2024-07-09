@@ -1,5 +1,14 @@
 # @utima/ui-informed
 
+## 0.31.2
+
+### Patch Changes
+
+- [#21](https://github.com/utima-solutions/ui/pull/21) [`ea09725`](https://github.com/utima-solutions/ui/commit/ea097252c9226bae613f509215c9f59a8e5b390b) Thanks [@matej-marcisovsky](https://github.com/matej-marcisovsky)! - fixed array field zod schema
+
+- Updated dependencies []:
+  - @utima/ui@0.31.2
+
 ## 0.31.1
 
 ### Patch Changes
