@@ -1,0 +1,3 @@
+Fixnout velikosti ikon u buttonů a pořešit případně něco jako loading nebo něco jiného?
+pořešit border radiusy - jako shadcn, overridnout velikosti jinak nejde overriodvat barva
+overrides by měla být funkce co přijímá utility atd a měla by vracet shallow merge

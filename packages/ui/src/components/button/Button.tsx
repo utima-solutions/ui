@@ -5,7 +5,7 @@ import { forwardRef, type ReactNode, type ButtonHTMLAttributes } from 'react';
 
 import { cn } from '@/utils';
 
-import { buttonDef, buttonStyles } from './Button.styles';
+import { buttonStyles } from './Button.styles';
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
@@ -13,6 +13,7 @@ export interface ButtonProps
   asChild?: boolean;
   outline?: boolean;
   loading?: boolean;
+  rounded?: boolean;
   plain?: boolean;
   icon?: ReactNode;
   iconSize?: number;
@@ -27,6 +28,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = 'primary',
       size = 'md',
       outline = false,
+      rounded = false,
       asChild = false,
       loading = false,
       plain = false,
@@ -41,18 +43,19 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       restProps.icon
     );
 
+    const extracted = cn(
+      buttonStyles({
+        variant,
+        size,
+        outline: (outline || plain) && variant ? variant : null,
+      }),
+      rounded && 'rounded-full',
+      className,
+    );
     return (
       <Comp
         type={asChild ? undefined : type}
-        className={cn(
-          buttonStyles({
-            variant,
-            size,
-            outline: (outline || plain) && variant ? variant : null,
-          }),
-          plain && buttonDef.plain,
-          className,
-        )}
+        className={extracted}
         ref={ref}
         {...restProps}
       >

@@ -3,7 +3,7 @@ import { twOverrides } from '@/overrides';
 export const alertDialogDef = twOverrides(
   {
     title: 'text-lg font-semibold',
-    description: 'text-sm text-muted-foreground',
+    description: 'text-sm text-muted-fg',
     cancel: 'mt-2 sm:mt-0',
     action: '',
     content:

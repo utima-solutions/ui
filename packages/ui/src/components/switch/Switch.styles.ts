@@ -20,8 +20,6 @@ export const switchDef = twOverrides(
           'data-[state=checked]:bg-primary text-primary-fg hover:data-[state=checked]:bg-primary/80 active:data-[state=checked]:bg-primary/90',
         secondary:
           'data-[state=checked]:bg-secondary text-secondary-fg hover:data-[state=checked]:bg-secondary/80 active:data-[state=checked]:bg-secondary/90',
-        muted:
-          'data-[state=checked]:bg-default text-default-fg hover:data-[state=checked]:bg-default/80 active:data-[state=checked]:bg-default/90',
         success:
           'data-[state=checked]:bg-success text-success-fg hover:data-[state=checked]:bg-success/80 active:data-[state=checked]:bg-success/90',
         danger:

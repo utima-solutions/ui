@@ -22,8 +22,6 @@ export const checkboxDef = twOverrides(
           'hover:data-[state=checked]:bg-primary/80 active:data-[state=checked]:bg-primary/90 data-[state=checked]:bg-primary data-[state=checked]:text-primary-fg data-[state=checked]:border-primary ring-primary',
         secondary:
           'hover:data-[state=checked]:bg-secondary/80 active:data-[state=checked]:bg-secondary/90 data-[state=checked]:bg-secondary data-[state=checked]:text-secondary-fg data-[state=checked]:border-secondary ring-secondary',
-        muted:
-          'hover:data-[state=checked]:bg-muted/80 active:data-[state=checked]:bg-muted/90 data-[state=checked]:bg-muted data-[state=checked]:text-muted-fg data-[state=checked]border:text-muted ring-muted',
         success:
           'hover:data-[state=checked]:bg-success/80 active:data-[state=checked]:bg-success/90 data-[state=checked]:bg-success data-[state=checked]:text-success-fg data-[state=checked]:border-success ring-success',
         danger:

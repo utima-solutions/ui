@@ -9,20 +9,17 @@ const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   argTypes: {
     variant: {
-      control: {
-        type: 'select',
-        options: [
-          'primary',
-          'secondary',
-          'muted',
-          'success',
-          'danger',
-          'warning',
-          'info',
-          'ghost',
-          'link',
-        ],
-      },
+      type: 'select',
+      options: [
+        'primary',
+        'secondary',
+        'success',
+        'danger',
+        'warning',
+        'info',
+        'ghost',
+        'link',
+      ],
     },
   },
   args: {
@@ -44,7 +41,7 @@ type Story = StoryObj<typeof Button>;
 export const Basic: Story = {};
 export const Outline: Story = { args: { outline: true } };
 export const Plain: Story = { args: { plain: true } };
-export const Loading: Story = { args: { loading: true } };
+export const Loading: Story = { args: { loading: true, variant: 'success' } };
 export const Disabled: Story = { args: { disabled: true } };
 
 export const Icon: Story = {

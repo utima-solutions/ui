@@ -1,6 +1,6 @@
 import './componentOverrides';
 import './app.css';
-import { Avatar, Button, Layout, Menu, Resizable } from '@utima/ui';
+import { Avatar, Badge, Button, Layout, Menu, Resizable } from '@utima/ui';
 import { Checkbox, Form, Input, Select, TextArea } from '@utima/ui-informed';
 import {
   Contact,
@@ -134,6 +134,22 @@ function App() {
             </Button>
           </div>
           <div className='flex flex-wrap gap-5'>
+            <Button>
+              <PlusCircle size={14} />
+              Primary
+            </Button>
+            <Button variant='secondary'>Secondary</Button>
+            <Button variant='danger'>Danger</Button>
+            <Button variant='success'>Success</Button>
+            <Button variant='warning'>Warning</Button>
+            <Button variant='info'>Info</Button>
+            <Button variant='ghost'>Ghost</Button>
+            <Button variant='link'>Link</Button>
+            <Button variant='secondary' asChild>
+              <a href='/'>asChild</a>
+            </Button>
+          </div>
+          <div className='flex flex-wrap gap-5'>
             <Button outline>
               <PlusCircle size={14} />
               Primary
@@ -147,20 +163,106 @@ function App() {
             <Button outline variant='success'>
               Success
             </Button>
+            <Button outline variant='warning'>
+              Warning
+            </Button>
+            <Button outline variant='info'>
+              Info
+            </Button>
             <Button outline variant='ghost'>
               Ghost
             </Button>
             <Button outline variant='link'>
               Link
             </Button>
-            <Button outline variant='warning'>
-              Warning
-            </Button>
             <Button variant='secondary' asChild>
               <a href='/'>asChild</a>
             </Button>
           </div>
+          <div className='flex flex-wrap gap-5'>
+            <div>
+              <Button size='xs'>Primary xs</Button>
+            </div>
+            <div>
+              <Button size='sm'>Primary sm</Button>
+            </div>
+            <div>
+              <Button size='md'>Primary md</Button>
+            </div>
+            <div>
+              <Button size='xl'>Primary xl</Button>
+            </div>
+            <div>
+              <Button rounded size='xl'>
+                Rounded
+              </Button>
+            </div>
+          </div>
         </div>
+
+        <div className='flex flex-col gap-5 p-5'>
+          <h4 className='text-xl font-semibold text-foreground'>Badges</h4>
+          <div className='flex flex-wrap gap-5'>
+            <Badge>
+              <PlusCircle size={14} />
+              Primary
+            </Badge>
+            <Badge variant='secondary'>Secondary</Badge>
+            <Badge variant='danger'>Danger</Badge>
+            <Badge variant='success'>Success</Badge>
+            <Badge variant='warning'>Warning</Badge>
+            <Badge variant='info'>Info</Badge>
+            <Badge variant='ghost'>Ghost</Badge>
+            <Badge variant='link'>Link</Badge>
+          </div>
+          <div className='flex flex-wrap gap-5'>
+            <Badge outline>
+              <PlusCircle size={14} />
+              Primary
+            </Badge>
+            <Badge outline variant='secondary'>
+              Secondary
+            </Badge>
+            <Badge outline variant='danger'>
+              Danger
+            </Badge>
+            <Badge outline variant='success'>
+              Success
+            </Badge>
+            <Badge outline variant='warning'>
+              Warning
+            </Badge>
+            <Badge outline variant='info'>
+              Info
+            </Badge>
+            <Badge outline variant='ghost'>
+              Ghost
+            </Badge>
+            <Badge outline variant='link'>
+              Link
+            </Badge>
+          </div>
+          <div className='flex flex-wrap gap-5'>
+            <div>
+              <Badge size='xs'>Primary xs</Badge>
+            </div>
+            <div>
+              <Badge size='sm'>Primary sm</Badge>
+            </div>
+            <div>
+              <Badge size='md'>Primary md</Badge>
+            </div>
+            <div>
+              <Badge size='xl'>Primary xl</Badge>
+            </div>
+            <div>
+              <Badge rounded size='xl'>
+                Rounded
+              </Badge>
+            </div>
+          </div>
+        </div>
+
         <div className='flex flex-col gap-5 p-5'>
           <h4 className='text-xl font-semibold text-foreground'>Avatar</h4>
           <div className='flex flex-wrap gap-5'>

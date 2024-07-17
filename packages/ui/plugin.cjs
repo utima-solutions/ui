@@ -1,9 +1,10 @@
 const plugin = require('tailwindcss/plugin');
+const getPalette = require('tailwindcss-palette-generator');
 
 const palette = {
   bg: '#ffffff',
   fg: '#09090b',
-  mutedFg: '#60637a',
+  muted: '#60637a',
 
   accent: '#f0f1f7',
   menuAccent: '#cbcdd6',
@@ -12,13 +13,18 @@ const palette = {
   separator: '#e4e5f1',
 
   primary: '#09090b',
-  secondary: '#60637a',
-  muted: '#cbcdd6',
-  success: '#4ade80',
+  secondary: '#e2e8f0',
+  success: '#22c55e',
   danger: '#ef4444',
-  warning: '#facc15',
-  info: '#60a5fa',
+  warning: '#eab308',
+  info: '#3b82f6',
 };
+
+// FIXME? When this is removed, the dependency is not loaded for some reason...
+getPalette({
+  name: 'danger',
+  color: palette.danger,
+}).danger;
 
 /**
  * Tailwind plugin to extend tailwind CSS with custom
@@ -38,12 +44,14 @@ module.exports = plugin.withOptions(
             'sidebar-hidden': { raw: '(max-width: 639px)' },
           },
           borderRadius: {
+            // TODO
             radius: options?.borderRadius?.radius ?? '.375rem',
           },
           colors: {
             // Base colors
-            background: colors?.background ?? palette.bg,
-            foreground: colors?.foreground ?? palette.fg,
+            background: colors?.background ?? palette.bg, // rename to BG and FG
+            foreground: colors?.foreground ?? palette.fg, // rename to BG and FG
+            muted: colors?.muted ?? palette.muted,
             placeholder: colors?.placeholder ?? palette.placeholder,
             border: colors?.border ?? palette.border,
             separator: colors?.separator ?? palette.separator,
@@ -51,38 +59,62 @@ module.exports = plugin.withOptions(
 
             // Key colors
             primary: {
+              ...getPalette({
+                name: 'primary',
+                color: colors?.primary?.bg ?? palette.primary,
+              }).primary,
               DEFAULT: colors?.primary?.bg ?? palette.fg,
               fg: colors?.primary?.fg ?? palette.bg,
             },
             secondary: {
+              ...getPalette({
+                name: 'secondary',
+                color: colors?.secondary?.bg ?? palette.secondary,
+              }).secondary,
               DEFAULT: colors?.secondary?.bg ?? palette.secondary,
-              fg: colors?.secondary?.fg ?? palette.bg,
-            },
-            muted: {
-              DEFAULT: colors?.muted?.bg ?? palette.muted,
-              fg: colors?.muted?.fg ?? palette.mutedFg,
+              fg: colors?.secondary?.fg ?? palette.fg,
             },
 
             // State colors
             danger: {
+              ...getPalette({
+                name: 'danger',
+                color: colors?.danger?.bg ?? palette.danger,
+              }).danger,
               DEFAULT: colors?.danger?.bg ?? palette.danger,
               fg: colors?.danger?.fg ?? palette.fg,
             },
             success: {
+              ...getPalette({
+                name: 'success',
+                color: colors?.success?.bg ?? palette.success,
+              }).success,
               DEFAULT: colors?.success?.bg ?? palette.success,
               fg: colors?.success?.fg ?? palette.fg,
             },
             warning: {
+              ...getPalette({
+                name: 'warning',
+                color: colors?.warning?.bg ?? palette.warning,
+              }).warning,
               DEFAULT: colors?.warning?.bg ?? palette.warning,
               fg: colors?.warning?.fg ?? palette.fg,
             },
             info: {
+              ...getPalette({
+                name: 'info',
+                color: colors?.info?.bg ?? palette.info,
+              }).info,
               DEFAULT: colors?.info?.bg ?? palette.info,
               fg: colors?.info?.fg ?? palette.fg,
             },
 
             // Accent for item selections (popovers, select, etc.)
             accent: {
+              ...getPalette({
+                name: 'accent',
+                color: colors?.accent?.bg ?? palette.accent,
+              }).accent,
               DEFAULT: colors?.accent?.bg ?? palette.accent,
               fg: colors?.accent?.fg ?? palette.fg,
             },
@@ -95,6 +127,7 @@ module.exports = plugin.withOptions(
             },
 
             // Component specifics
+            // TODO hezčí tabulky
             table: {
               DEFAULT: colors?.table?.bg ?? palette.fg,
               fg: colors?.table?.fg ?? palette.bg,
