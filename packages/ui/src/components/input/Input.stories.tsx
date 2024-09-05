@@ -39,6 +39,25 @@ export const AddonBoth: Story = {
   },
 };
 
+export const Prefix: Story = {
+  args: {
+    prefix: 'http://',
+  },
+};
+
+export const Suffix: Story = {
+  args: {
+    suffix: <Cable className='size-4' />,
+  },
+};
+
+export const PrefixSuffix: Story = {
+  args: {
+    prefix: 'http://',
+    suffix: '.com',
+  },
+};
+
 export const Passsword: Story = {
   args: {
     type: 'password',

@@ -1,6 +1,14 @@
 import './componentOverrides';
 import './app.css';
-import { Avatar, Button, Layout, Menu, Resizable } from '@utima/ui';
+import {
+  Avatar,
+  Button,
+  FormItem,
+  Layout,
+  Menu,
+  Resizable,
+  Input as UIInput,
+} from '@utima/ui';
 import { Checkbox, Form, Input, Select, TextArea } from '@utima/ui-informed';
 import {
   Contact,
@@ -12,6 +20,7 @@ import {
   LogOut,
   Cog,
   MenuIcon,
+  Box,
 } from 'lucide-react';
 import { Suspense, lazy, useState } from 'react';
 
@@ -168,6 +177,114 @@ function App() {
             <Avatar src='https://i.pravatar.cc/300' />
           </div>
         </div>
+        <div className='flex flex-col gap-5 p-5'>
+          <h4 className='text-xl font-semibold text-foreground'>Forms</h4>
+          {/* Variants, outlined, filled, bordered */}
+          {/* Suffix, addon before/after */}
+          {/* Clear icon */}
+          {/* Autosize */}
+          {/* Layout horizontal/vertical/inline */}
+          {/* Error zpráva */}
+          {/* Required mark style */}
+          {/* Warning zpráva */}
+          {/* Array field */}
+          {/* Podporovat select, button a další jako addong */}
+          {/* Možnost šáhnout do form controlu skrz children */}
+
+          {/* https://ant.design/components/input */}
+          {/* https://ant.design/components/form */}
+          {/* Bylo by fajn aby šlo udělat toto https://ant.design/~demos/form-demo-complex-form-control.... nevím jestli bez změny syntaxe? */}
+
+          <Form
+            className='gap-4 flex flex-col'
+            onSubmit={({ values }) => {
+              console.log('values', values);
+            }}
+          >
+            <FormItem.Root>
+              <FormItem.Label>Testing Label</FormItem.Label>
+              <FormItem.Content>
+                <FormItem.Root>
+                  <FormItem.Content>
+                    <UIInput />
+                  </FormItem.Content>
+                  <FormItem.Description>
+                    Lorem ipsum dolor sit amet.
+                  </FormItem.Description>
+                  <FormItem.Message>
+                    Please input your password!
+                  </FormItem.Message>
+                  <FormItem.Message>
+                    Warning input your password!
+                  </FormItem.Message>
+                </FormItem.Root>
+              </FormItem.Content>
+            </FormItem.Root>
+
+            <FormItem.Root>
+              <FormItem.Label>Testing Label</FormItem.Label>
+              <FormItem.Content>
+                <FormItem.Root>
+                  <FormItem.Content>
+                    <UIInput />
+                  </FormItem.Content>
+                  <FormItem.Description>
+                    Lorem ipsum dolor sit amet.
+                  </FormItem.Description>
+                  <FormItem.Message>
+                    Please input your password!
+                  </FormItem.Message>
+                  <FormItem.Message>
+                    Warning input your password!
+                  </FormItem.Message>
+                </FormItem.Root>
+              </FormItem.Content>
+            </FormItem.Root>
+
+            <FormItem.Root>
+              <FormItem.Label htmlFor='test'>Testing Label</FormItem.Label>
+              <FormItem.Content>
+                <FormItem.Root>
+                  <FormItem.Content>
+                    <UIInput id='test' />
+                  </FormItem.Content>
+                  <FormItem.Description>
+                    Lorem ipsum dolor sit amet.
+                  </FormItem.Description>
+                  <FormItem.Message>
+                    Please input your password!
+                  </FormItem.Message>
+                  <FormItem.Message>
+                    Warning input your password!
+                  </FormItem.Message>
+                </FormItem.Root>
+              </FormItem.Content>
+            </FormItem.Root>
+
+            <div className='flex w-full'>
+              <label className='border border-gray-300 rounded-md p-2 flex items-center hover:border-black grow rounded-r-none h-[36px] border-r-0'>
+                <span className='mr-2 flex items-center'>
+                  <Box className='size-4' onClick={() => alert('test')} />
+                </span>
+                <input type='text' className='w-full border-0 outline-none' />
+              </label>
+              <div className='shrink-0 [&_*]:rounded-l-none [&>*]:h-[36px] [&>*]:min-h-[36px]'>
+                {/* <Button variant='danger' onClick={() => alert('test')}>
+              Add
+            </Button> */}
+                <Select name='select' placeholder='Yadaa'>
+                  <Select.Item value='test'>Test</Select.Item>
+                  <Select.Item value='test1'>Test 1</Select.Item>
+                  <Select.Item value='test2'>Test 2</Select.Item>
+                  <Select.Item value='test3'>Test 3</Select.Item>
+                </Select>
+              </div>
+            </div>
+
+            <Button type='submit'>Submit</Button>
+          </Form>
+        </div>
+
         <div className='flex flex-col gap-5 p-5'>
           <h4 className='text-xl font-semibold text-foreground'>Resizable</h4>
           <div className='flex flex-wrap gap-5'>

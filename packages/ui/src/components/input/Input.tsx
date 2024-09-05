@@ -16,6 +16,8 @@ export interface InputProps
     VariantProps<typeof inputStyles> {
   addonBefore?: ReactNode;
   addonAfter?: ReactNode;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
   passwordPreview?: boolean;
 }
 
@@ -33,6 +35,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     variant = 'default',
     addonBefore,
     addonAfter,
+    prefix,
+    suffix,
     passwordPreview,
     type,
     ...restProps
@@ -40,6 +44,28 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
   ref,
 ) {
   const [passwordToggle, setPasswordToggle] = useState(false);
+
+  return (
+    <div className='flex w-full'>
+      {addonBefore && (
+        <div className='shrink-0 [&_*]:rounded-l-none [&>*]:h-[36px] [&>*]:min-h-[36px]'>
+          {addonBefore}
+        </div>
+      )}
+
+      <label className='border border-gray-300 rounded-md p-2 flex items-center hover:border-black grow rounded-r-none h-[36px] border-r-0'>
+        {prefix && <span className='mr-2 flex items-center'>{prefix}</span>}
+        <input type='text' className='w-full border-0 outline-none' />
+        {suffix && <span className='ml-2 flex items-center'>{suffix}</span>}
+      </label>
+
+      {addonAfter && (
+        <div className='shrink-0 [&_*]:rounded-l-none [&>*]:h-[36px] [&>*]:min-h-[36px]'>
+          {addonAfter}
+        </div>
+      )}
+    </div>
+  );
 
   const input = (
     <div className={inputDef.container}>
