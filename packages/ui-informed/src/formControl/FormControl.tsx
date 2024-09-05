@@ -1,6 +1,6 @@
 import { Label, Tooltip, cn } from '@utima/ui';
 import { type VariantProps, cva } from 'class-variance-authority';
-import { type FieldProps, useField } from 'informed';
+import { type FieldProps, useField, useScope } from 'informed';
 import { HelpCircle } from 'lucide-react';
 import { useId, type ReactNode } from 'react';
 import type { ZodType } from 'zod';
@@ -105,6 +105,7 @@ export function FormControl({
 }: FormControlProps) {
   const id = useId();
   const messages = useFormTranslationsContext();
+  const scopedName = useScope(name);
   const {
     disabled,
     loading,
@@ -115,7 +116,7 @@ export function FormControl({
 
   const validate = zodItemSchema
     ? zodResolver(zodItemSchema)
-    : zodResolver(getFieldZodObject(name, zodFullSchema));
+    : zodResolver(getFieldZodObject(scopedName, zodFullSchema));
 
   const field = useField<UserFieldProps, string | number>({
     id,
