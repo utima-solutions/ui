@@ -15,5 +15,8 @@
     "informed": "^4.58.2",
     "lucide-react": "^0.321.0",
     "reset-css": "^5.0.2"
+  },
+  "devDependencies": {
+    "tailwindcss-animate": "^1.0.7"
   }
 }

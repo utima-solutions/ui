@@ -102,3 +102,6 @@ export * as Pagination from './components/pagination';
 
 // Resizable
 export * as Resizable from './components/resizable';
+
+// Form
+export * as FormItem from './components/form';
