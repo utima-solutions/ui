@@ -1,5 +1,14 @@
 # @utima/ui-informed
 
+## 0.31.3
+
+### Patch Changes
+
+- [`8563cb5`](https://github.com/utima-solutions/ui/commit/8563cb5b711b898d53adc3945ad7bd91a9966e3a) Thanks [@jsimck](https://github.com/jsimck)! - Fixed issue where scoped values were not properly resolved in zod schema
+
+- Updated dependencies []:
+  - @utima/ui@0.31.3
+
 ## 0.31.2
 
 ### Patch Changes
