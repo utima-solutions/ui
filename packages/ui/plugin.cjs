@@ -95,11 +95,6 @@ module.exports = plugin.withOptions(
             },
 
             // Component specifics
-            table: {
-              DEFAULT: colors?.table?.bg ?? palette.fg,
-              fg: colors?.table?.fg ?? palette.bg,
-              border: colors?.table?.border ?? palette.border,
-            },
             input: {
               DEFAULT: colors?.input?.bg ?? palette.bg,
               fg: colors?.input?.fg ?? palette.fg,

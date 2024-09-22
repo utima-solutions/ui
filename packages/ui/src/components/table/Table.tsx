@@ -8,5 +8,9 @@ export const Table = memo(function Table({
   className,
   ...restProps
 }: ComponentPropsWithoutRef<'table'>) {
-  return <table className={cn(tableDef.table, className)} {...restProps} />;
+  return (
+    <div className='rounded-radius border-border relative w-full overflow-auto border'>
+      <table className={cn(tableDef.table, className)} {...restProps} />
+    </div>
+  );
 });

@@ -1,6 +1,6 @@
 {
   "name": "@utima/ui-informed",
-  "version": "0.31.3",
+  "version": "1.0.0-alpha.1",
   "description": "Utima UI-Informed based on Utima UI and form library Informed with support for Zod validations.",
   "sideEffects": false,
   "main": "dist/cjs/index.js",
@@ -9,8 +9,6 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ./../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
-    "lint:fix": "pnpm lint -- --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "pnpm build; storybook build"
   },
@@ -48,8 +46,8 @@
   "author": "Matúš Hlaváčik",
   "license": "MIT",
   "devDependencies": {
-    "informed": "^4.58.0",
-    "zod": "^3.22.4"
+    "informed": "^4.60.3",
+    "zod": "^3.23.8"
   },
   "dependencies": {
     "@utima/ui": "workspace:^",

@@ -18,7 +18,7 @@ export const DevtoolsTrigger = memo(function DevtoolsTrigger({
       )}
       {...restProps}
     >
-      <span className='inline-block font-bold bg-gradient-to-r from-blue-400 via-green-500 to-purple-500  text-transparent bg-clip-text'>
+      <span className='inline-block bg-gradient-to-r from-blue-400 via-green-500 to-purple-500 bg-clip-text  font-bold text-transparent'>
         Form Devtools
       </span>
     </button>

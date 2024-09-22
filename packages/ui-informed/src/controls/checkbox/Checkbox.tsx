@@ -30,7 +30,7 @@ export const Checkbox = memo(function Checkbox({
       {...restProps}
       type='checkbox'
       render={({ userProps, ref, fieldApi, fieldState }) => (
-        <div className='flex gap-2 items-center'>
+        <div className='flex items-center gap-2'>
           <UICheckbox
             ref={ref}
             value={fieldState.value as string}
@@ -46,7 +46,7 @@ export const Checkbox = memo(function Checkbox({
             disabled={userProps.disabled || userProps.readOnly}
           />
           {description && (
-            <Label htmlFor={userProps.id} className='font-normal text-sm'>
+            <Label htmlFor={userProps.id} className='text-sm font-normal'>
               {description}
             </Label>
           )}

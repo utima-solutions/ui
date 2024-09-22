@@ -11,7 +11,7 @@ import { useFormTranslationsContext } from '..';
 import { useFormContext } from '../form/useFormContext';
 import { zodResolver, getFieldZodObject } from '../zodUtils';
 
-const formItemStyles = cva('flex transition-all gap-2 relative', {
+const formItemStyles = cva('relative flex gap-2 transition-all', {
   variants: {
     layout: {
       vertical: 'w-full flex-col',
@@ -159,7 +159,7 @@ export function FormControl({
       )}
       {position === 'end' && render({ userProps, ...restField, label })}
       {showError && (
-        <FormMessage className='-bottom-2 absolute animate-in fade-in'>
+        <FormMessage className='animate-in fade-in absolute -bottom-2'>
           {error as any}
         </FormMessage>
       )}

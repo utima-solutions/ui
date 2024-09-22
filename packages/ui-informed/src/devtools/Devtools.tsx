@@ -106,18 +106,18 @@ export function Devtools({ className }: DevtoolsProps) {
           >
             <span
               onMouseDown={handleMouseDown}
-              className='h-1 w-full absolute -top-[2px] cursor-row-resize hover:bg-zinc-500 transition-colors'
+              className='absolute -top-[2px] h-1 w-full cursor-row-resize transition-colors hover:bg-zinc-500'
             />
             <button
               type='button'
-              className='absolute -top-5 right-2 w-6 h-5 bg-zinc-800 bg-transparent rounded-t-md flex items-center justify-center'
+              className='absolute -top-5 right-2 flex h-5 w-6 items-center justify-center rounded-t-md bg-transparent'
               onClick={() => setVisible(false)}
             >
               <ChevronDown className='size-4' />
             </button>
 
             <header className='flex items-center justify-between p-3'>
-              <h4 className='font-bold bg-gradient-to-r from-blue-400 via-green-500 to-purple-500 inline-block text-transparent bg-clip-text'>
+              <h4 className='inline-block bg-gradient-to-r from-blue-400 via-green-500 to-purple-500 bg-clip-text font-bold text-transparent'>
                 @utima/ui-informed
               </h4>
               <div className='flex gap-2'>
@@ -156,7 +156,7 @@ export function Devtools({ className }: DevtoolsProps) {
                   dotClassName='bg-orange-500'
                 >
                   Errors{' '}
-                  <span className='bg-zinc-500 px-1 text-[11px] rounded-md text-zinc-50'>
+                  <span className='rounded-md bg-zinc-500 px-1 text-[11px] text-zinc-50'>
                     {Object.keys(formState.errors).length}
                   </span>
                 </DevtoolsLabel>
@@ -174,7 +174,7 @@ export function Devtools({ className }: DevtoolsProps) {
                   className='overflow-y-auto text-sm'
                   style={{ colorScheme: 'dark', height: height - 48 }}
                 >
-                  <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
+                  <h4 className='sticky top-0 z-10 flex items-center bg-zinc-700 px-3 py-2 text-sm font-medium'>
                     State
                   </h4>
                   <div className='px-2 py-1'>
@@ -195,7 +195,7 @@ export function Devtools({ className }: DevtoolsProps) {
                   className='overflow-y-auto text-sm'
                   style={{ colorScheme: 'dark', height: height - 48 }}
                 >
-                  <h4 className='px-3 py-2 sticky top-0 bg-zinc-700 text-sm flex items-center font-medium z-10'>
+                  <h4 className='sticky top-0 z-10 flex items-center bg-zinc-700 px-3 py-2 text-sm font-medium'>
                     Data
                   </h4>
                   <div className='px-2 py-1'>

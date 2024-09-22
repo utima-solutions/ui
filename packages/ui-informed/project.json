@@ -1,0 +1,10 @@
+{
+  "name": "ui-informed",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "ui-informed/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {}
+  },
+  "tags": []
+}

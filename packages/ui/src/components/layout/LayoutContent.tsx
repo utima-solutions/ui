@@ -32,6 +32,7 @@ export const LayoutContent = memo(function LayoutContent({
         style={{
           marginLeft: hasSidebar ? sidebarWidth : '0px',
           marginTop: hasHeader ? headerHeight : '0px',
+          height: `calc(100vh - ${headerHeight})`,
         }}
         {...restProps}
       />
