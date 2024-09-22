@@ -55,17 +55,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <UILayout.Root>
-      <UILayout.Header className='border-border gap-3 border-b px-7'>
-        <UILayout.SidebarTrigger>
-          <Button size='icon-sm' variant='secondary'>
-            <MenuIcon />
+      <UILayout.Header className='border-border sidebar:px-7 gap-3 border-b px-3'>
+        <UILayout.SidebarTrigger asChild>
+          <Button size='icon-xs'>
+            <MenuIcon className='size-4' />
           </Button>
         </UILayout.SidebarTrigger>
 
         <h1 className='text-lg font-bold text-black'>@utima/ui Playground</h1>
       </UILayout.Header>
       <UILayout.Sidebar className='border-border border-r'>
-        <Menu.Root className='p-3'>
+        <Menu.Root className='sidebar:p-3 p-1'>
           <Menu.Content>
             <Menu.Item>
               <Menu.Link>

@@ -1,5 +1,5 @@
 {
-  "name": "playground",
+  "name": "@utima/ui-playground",
   "private": true,
   "sideEffects": false,
   "type": "module",
