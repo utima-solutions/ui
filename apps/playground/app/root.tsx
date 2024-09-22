@@ -6,6 +6,17 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import { Button, Layout as UILayout, Menu } from '@utima/ui';
+import {
+  Cog,
+  Contact,
+  Home,
+  LayoutDashboard,
+  LogOut,
+  Menu as MenuIcon,
+  Lock,
+  User,
+} from 'lucide-react';
 
 import './tailwind.css';
 
@@ -42,5 +53,88 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 // eslint-disable-next-line react/no-multi-comp
 export default function App() {
-  return <Outlet />;
+  return (
+    <UILayout.Root>
+      <UILayout.Header className='border-border gap-3 border-b px-7'>
+        <UILayout.SidebarTrigger>
+          <Button size='icon-sm' variant='secondary'>
+            <MenuIcon />
+          </Button>
+        </UILayout.SidebarTrigger>
+
+        <h1 className='text-lg font-bold text-black'>@utima/ui Playground</h1>
+      </UILayout.Header>
+      <UILayout.Sidebar className='border-border border-r'>
+        <Menu.Root className='p-3'>
+          <Menu.Content>
+            <Menu.Item>
+              <Menu.Link>
+                <Home className='size-5' /> Home
+              </Menu.Link>
+            </Menu.Item>
+            <Menu.Label>General</Menu.Label>
+            <Menu.Item>
+              <Menu.Link active>
+                <LayoutDashboard className='size-5' /> Dashboard
+              </Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Sub defaultOpen>
+                <Menu.SubTrigger>
+                  <Menu.Link disabled>
+                    <Contact className='size-5' /> Contacts
+                  </Menu.Link>
+                </Menu.SubTrigger>
+                <Menu.SubContent className='bg-white pl-4'>
+                  <Menu.SubItem>
+                    <Menu.Link>
+                      <User className='size-5' /> Profile
+                    </Menu.Link>
+                  </Menu.SubItem>
+                  <Menu.SubItem>
+                    <Menu.Link>
+                      <Lock className='size-5' /> Account
+                    </Menu.Link>
+                  </Menu.SubItem>
+                  <Menu.Separator />
+                  <Menu.SubItem>
+                    <Menu.Sub>
+                      <Menu.SubTrigger>
+                        <Menu.Link href='/'>Dashboard</Menu.Link>
+                      </Menu.SubTrigger>
+                      <Menu.SubContent className='bg-white pl-4'>
+                        <Menu.Label>User Account</Menu.Label>
+                        <Menu.SubItem>
+                          <Menu.Link>Profile</Menu.Link>
+                        </Menu.SubItem>
+                        <Menu.SubItem>
+                          <Menu.Link>Account</Menu.Link>
+                        </Menu.SubItem>
+                        <Menu.SubItem>
+                          <Menu.Link>Security</Menu.Link>
+                        </Menu.SubItem>
+                      </Menu.SubContent>
+                    </Menu.Sub>
+                  </Menu.SubItem>
+                </Menu.SubContent>
+              </Menu.Sub>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link>
+                <LogOut className='size-5' /> Logout
+              </Menu.Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Menu.Link>
+                <Cog className='size-5' /> Settings
+              </Menu.Link>
+            </Menu.Item>
+          </Menu.Content>
+        </Menu.Root>
+      </UILayout.Sidebar>
+      <UILayout.Content className='container p-5'>
+        <Outlet />
+      </UILayout.Content>
+    </UILayout.Root>
+  );
 }

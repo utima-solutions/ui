@@ -2,37 +2,22 @@
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production"
-      ],
-      "outputs": [
-        "{projectRoot}/dist",
-        "{projectRoot}/build"
-      ],
+      "dependsOn": ["^build"],
+      "inputs": ["production"],
+      "outputs": ["{projectRoot}/dist", "{projectRoot}/build"],
       "cache": true
     },
     "storybook:build": {
-      "inputs": [
-        "default"
-      ],
-      "outputs": [
-        "{projectRoot}/storybook-static"
-      ],
+      "inputs": ["default"],
+      "outputs": ["{projectRoot}/storybook-static"],
       "cache": true
     },
     "lint": {
       "cache": true,
       "executor": "@nx/eslint:lint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "{projectRoot}/**/*.{js,ts,jsx,tsx,cjs,mjs}"
-        ]
+        "lintFilePatterns": ["{projectRoot}/**/*.{js,ts,jsx,tsx,cjs,mjs}"]
       },
       "inputs": [
         "{projectRoot}/**/*.{js,ts,jsx,tsx,cjs,mjs}",
@@ -42,14 +27,13 @@
     }
   },
   "namedInputs": {
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "production": [
       "default",
       "!{projectRoot}/jest.config.*",
-      "!{projectRoot}/eslint.config.*"
+      "!{projectRoot}/eslint.config.*",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json"
     ],
     "sharedGlobals": []
   },

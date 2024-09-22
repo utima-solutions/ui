@@ -171,6 +171,12 @@ importers:
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
+      lucide-react:
+        specifier: ^0.445.0
+        version: 0.445.0(react@18.3.1)
+      tailwindcss-animate:
+        specifier: ^1.0.7
+        version: 1.0.7(tailwindcss@3.4.12(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.13))(@types/node@22.5.5)(typescript@5.6.2)))
     devDependencies:
       '@remix-run/dev':
         specifier: ^2.12.1
@@ -5311,6 +5317,11 @@ packages:
     resolution: {integrity: sha512-Fi9VahIna6642U+2nAGSjnXwUBV3WyfFFPQq4yi3w30jtqxDLfSyiYCtCYCYQZ2KWNZc1MDI+rcsa0t+ChdYpw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
+
+  lucide-react@0.445.0:
+    resolution: {integrity: sha512-YrLf3aAHvmd4dZ8ot+mMdNFrFpJD7YRwQ2pUcBhgqbmxtrMP4xDzIorcj+8y+6kpuXBF4JB0NOCTUWIYetJjgA==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0-rc
 
   lz-string@1.5.0:
     resolution: {integrity: sha512-h5bgJWpxJNswbU7qCrV0tIKQCaS3blPDrqKWx+QxzuzL1zGUzij9XCWLrSLsJPu5t+eWA/ycetzYAO5IOMcWAQ==}
@@ -13717,6 +13728,10 @@ snapshots:
   lru-cache@7.18.3: {}
 
   lucide-react@0.321.0(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
+  lucide-react@0.445.0(react@18.3.1):
     dependencies:
       react: 18.3.1
 
