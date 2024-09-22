@@ -1,0 +1,12 @@
+{
+  "mode": "pre",
+  "tag": "alpha",
+  "initialVersions": {
+    "@utima/ui-playground": "0.0.0",
+    "@utima/ui": "0.31.3",
+    "@utima/ui-informed": "0.31.3"
+  },
+  "changesets": [
+    "early-dingos-breathe"
+  ]
+}

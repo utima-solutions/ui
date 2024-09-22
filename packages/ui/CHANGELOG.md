@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 1.0.0-alpha.0
+
+### Major Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`410c8b5`](https://github.com/utima-solutions/ui/commit/410c8b54f86a056aa5d64492b32c84f659fef28b) Thanks [@jsimck](https://github.com/jsimck)! - First alpha release
+
 ## 0.31.3
 
 ## 0.31.2

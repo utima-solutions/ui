@@ -1,6 +1,7 @@
 {
   "name": "@utima/ui-playground",
   "private": true,
+  "version": "0.0.0",
   "sideEffects": false,
   "type": "module",
   "scripts": {
