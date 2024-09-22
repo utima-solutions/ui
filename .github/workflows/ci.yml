@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [$default-branch, main]
+    branches: [$default-branch, main, next]
     tags:
       - '*'
   pull_request:
@@ -42,7 +42,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: Publish
-        if: endsWith(github.ref, 'main')
+        if: endsWith(github.ref, 'main') || endsWith(github.ref, 'next')
         run: pnpm exec changeset publish --no-git-tag
 
       - name: Build storybook
