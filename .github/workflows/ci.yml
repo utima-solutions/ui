@@ -31,8 +31,10 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
+      - uses: nrwl/nx-set-shas@v4
+
       - name: Nx
-        run: npx nx run-many -t build lint test
+        run: npx nx affected -t build lint test --parallel=3
 
       - name: Set publishing config
         run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
