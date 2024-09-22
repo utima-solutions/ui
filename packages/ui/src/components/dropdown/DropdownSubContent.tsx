@@ -1,4 +1,4 @@
-import { Portal, SubContent } from '@radix-ui/react-dropdown-menu';
+import { SubContent } from '@radix-ui/react-dropdown-menu';
 import {
   forwardRef,
   type ElementRef,
@@ -13,11 +13,9 @@ export const DropdownSubContent = forwardRef<
   ElementRef<typeof SubContent>,
   ComponentPropsWithoutRef<typeof SubContent>
 >(({ className, ...restProps }, ref) => (
-  <Portal>
-    <SubContent
-      ref={ref}
-      className={cn(dropdownDef.subContent, className)}
-      {...restProps}
-    />
-  </Portal>
+  <SubContent
+    ref={ref}
+    className={cn(dropdownDef.subContent, className)}
+    {...restProps}
+  />
 ));

@@ -132,8 +132,10 @@ export default function App() {
           </Menu.Content>
         </Menu.Root>
       </UILayout.Sidebar>
-      <UILayout.Content className='container p-5'>
-        <Outlet />
+      <UILayout.Content className='bg-gray-50 p-5'>
+        <div className='container'>
+          <Outlet />
+        </div>
       </UILayout.Content>
     </UILayout.Root>
   );

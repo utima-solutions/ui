@@ -2,15 +2,14 @@ import { twOverrides } from '@/overrides';
 
 export const tableDef = twOverrides(
   {
-    table:
-      'w-full text-sm text-left text-foreground rounded-tl-md rounded-tr-md overflow-hidden',
-    body: '',
-    foot: 'text-xs uppercase text-table-fg bg-table',
-    head: 'text-table-fg bg-table',
-    col: 'p-2 py-3 h-[70px]',
-    row: 'bg-white hover:bg-border/10 border-b border-table-border',
-    hRow: 'text-table-fg bg-table',
-    hCol: 'p-2',
+    table: 'w-full caption-bottom text-sm bg-background',
+    body: '[&_tr:last-child]:border-0',
+    foot: 'border-t bg-muted/25 font-medium [&>tr]:last:border-b-0',
+    head: 'h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0 [&_tr]:border-b',
+    col: 'p-4 align-middle [&:has([role=checkbox])]:pr-0',
+    row: 'border-b transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted',
+    hRow: 'text-foreground',
+    hCol: 'h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0',
   },
   'table',
 );

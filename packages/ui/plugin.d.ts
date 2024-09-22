@@ -63,11 +63,6 @@ type TailwindPluginOptions = {
     };
 
     // Component specifics
-    table: {
-      bg: string;
-      fg: string;
-      border: string;
-    };
     input: {
       bg: string;
       fg: string;
