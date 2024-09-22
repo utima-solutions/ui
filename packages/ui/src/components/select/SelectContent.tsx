@@ -2,8 +2,8 @@ import {
   Content,
   Viewport,
   Portal,
-  type PortalProps,
   ScrollUpButton,
+  type SelectPortalProps,
   ScrollDownButton,
 } from '@radix-ui/react-select';
 import { ChevronDownIcon, ChevronUpIcon } from 'lucide-react';
@@ -20,7 +20,7 @@ import { selectDef } from './select.styles';
 export interface SelectContentProps
   extends ComponentPropsWithoutRef<typeof Content> {
   usePortal?: boolean;
-  container?: PortalProps['container'];
+  container?: SelectPortalProps['container'];
 }
 
 export const SelectContent = forwardRef<

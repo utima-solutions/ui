@@ -1,19 +1,26 @@
 {
-  "name": "@utima/ui-playground",
+  "name": "playground",
   "private": true,
-  "version": "0.0.0",
+  "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
-    "preview": "vite preview"
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "start": "remix-serve ./build/server/index.js",
+    "typecheck": "tsc"
   },
   "dependencies": {
+    "@remix-run/node": "^2.12.1",
+    "@remix-run/react": "^2.12.1",
+    "@remix-run/serve": "^2.12.1",
     "@utima/ui": "workspace:*",
     "@utima/ui-informed": "workspace:*",
-    "informed": "^4.58.2",
-    "lucide-react": "^0.321.0",
-    "reset-css": "^5.0.2"
+    "isbot": "^4.1.0"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^2.12.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }

@@ -19,7 +19,7 @@ const meta: Meta<typeof Popover.Root> = {
           <div className='grid gap-4'>
             <div className='space-y-2'>
               <h4 className='font-semibold leading-none'>Dimensions</h4>
-              <p className='text-sm text-muted-fg'>
+              <p className='text-muted-fg text-sm'>
                 Set the dimensions for the layer.
               </p>
             </div>

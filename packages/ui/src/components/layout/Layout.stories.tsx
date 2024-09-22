@@ -15,21 +15,21 @@ const meta: Meta<typeof Layout.Root> = {
   args: {
     children: (
       <Layout.Root>
-        <Layout.Header className='bg-slate-900 px-3 gap-3'>
+        <Layout.Header className='gap-3 bg-slate-900 px-3'>
           <Layout.SidebarTrigger>
             <Button size='icon-sm' variant='secondary'>
               <Menu />
             </Button>
           </Layout.SidebarTrigger>
 
-          <h1 className='text-white text-lg font-bold'>Company LOGO</h1>
+          <h1 className='text-lg font-bold text-white'>Company LOGO</h1>
         </Layout.Header>
         <Layout.Sidebar className='bg-slate-700 p-2'>
           <ol className='flex flex-col gap-2'>
             <li>
               <a
                 href='#'
-                className='flex gap-2 hover:bg-slate-800 p-2 rounded-radius'
+                className='rounded-radius flex gap-2 p-2 hover:bg-slate-800'
               >
                 <Home /> Home
               </a>
@@ -37,7 +37,7 @@ const meta: Meta<typeof Layout.Root> = {
             <li>
               <a
                 href='#'
-                className='flex gap-2 hover:bg-slate-800 p-2 rounded-radius'
+                className='rounded-radius flex gap-2 p-2 hover:bg-slate-800'
               >
                 <Users /> Users
               </a>
@@ -45,7 +45,7 @@ const meta: Meta<typeof Layout.Root> = {
             <li>
               <a
                 href='#'
-                className='flex gap-2 hover:bg-slate-800 p-2 rounded-radius'
+                className='rounded-radius flex gap-2 p-2 hover:bg-slate-800'
               >
                 <Cloud /> Dashboard
               </a>

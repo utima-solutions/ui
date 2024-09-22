@@ -1,0 +1,10 @@
+{
+  "name": "playground",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "playground/src",
+  "projectType": "application",
+  "targets": {
+    "lint": {}
+  },
+  "tags": []
+}

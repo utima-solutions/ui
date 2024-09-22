@@ -27,15 +27,15 @@ const meta: Meta<typeof Command.Root> = {
           <Command.Empty />
           <Command.Group>
             <Command.Item>
-              <Calendar className='mr-2 h-4 w-4' />
+              <Calendar className='mr-2 size-4' />
               <span>Calendar</span>
             </Command.Item>
             <Command.Item>
-              <ScanFace className='mr-2 h-4 w-4' />
+              <ScanFace className='mr-2 size-4' />
               <span>Search Emoji</span>
             </Command.Item>
             <Command.Item>
-              <Rocket className='mr-2 h-4 w-4' />
+              <Rocket className='mr-2 size-4' />
               <span>Launch</span>
             </Command.Item>
           </Command.Group>
@@ -51,10 +51,10 @@ const meta: Meta<typeof Command.Root> = {
                 <img
                   src='https://picsum.photos/200'
                   alt=''
-                  className='mr-2 h-8 w-8 rounded-full'
+                  className='mr-2 size-8 rounded-full'
                 />
                 <div>
-                  <h4 className='font-semibold text-sm'>Rich custom item</h4>
+                  <h4 className='text-sm font-semibold'>Rich custom item</h4>
                   <p className='text-xs text-gray-500'>
                     Upgradable transitional product
                   </p>
@@ -71,17 +71,17 @@ const meta: Meta<typeof Command.Root> = {
               </Button>
             </Command.Item>
             <Command.Item>
-              <PersonStanding className='mr-2 h-4 w-4' />
+              <PersonStanding className='mr-2 size-4' />
               <span>Profile</span>
               <Kbd variant='bordered'>⌘P</Kbd>
             </Command.Item>
             <Command.Item>
-              <Mail className='mr-2 h-4 w-4' />
+              <Mail className='mr-2 size-4' />
               <span>Mail</span>
               <Kbd variant='bordered'>⌘B</Kbd>
             </Command.Item>
             <Command.Item>
-              <Settings className='mr-2 h-4 w-4' />
+              <Settings className='mr-2 size-4' />
               <span>Settings</span>
               <Kbd variant='bordered'>⌘S</Kbd>
             </Command.Item>
@@ -92,7 +92,7 @@ const meta: Meta<typeof Command.Root> = {
   },
   decorators: [
     Story => (
-      <div className='rounded-radius shadow-lg border border-border'>
+      <div className='rounded-radius border-border border shadow-lg'>
         <Story />
       </div>
     ),

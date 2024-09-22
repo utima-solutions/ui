@@ -30,7 +30,7 @@ export const Switch = memo(function Switch({
       {...restProps}
       type='checkbox'
       render={({ userProps, ref, fieldApi, fieldState }) => (
-        <div className='flex gap-2 items-center'>
+        <div className='flex items-center gap-2'>
           <UISwitch
             ref={ref}
             value={fieldState.value as string}
@@ -47,7 +47,7 @@ export const Switch = memo(function Switch({
             type='button'
           />
           {description && (
-            <Label htmlFor={userProps.id} className='font-normal text-sm'>
+            <Label htmlFor={userProps.id} className='text-sm font-normal'>
               {description}
             </Label>
           )}

@@ -35,22 +35,22 @@ const meta: Meta<typeof Dropdown.Root> = {
           <Dropdown.Separator />
           <Dropdown.Group>
             <Dropdown.Item>
-              <User className='mr-2 h-4 w-4' />
+              <User className='mr-2 size-4' />
               <span>Profile</span>
               <Kbd>⇧⌘P</Kbd>
             </Dropdown.Item>
             <Dropdown.Item>
-              <CreditCard className='mr-2 h-4 w-4' />
+              <CreditCard className='mr-2 size-4' />
               <span>Billing</span>
               <Kbd>⌘B</Kbd>
             </Dropdown.Item>
             <Dropdown.Item>
-              <Settings className='mr-2 h-4 w-4' />
+              <Settings className='mr-2 size-4' />
               <span>Settings</span>
               <Kbd>⌘S</Kbd>
             </Dropdown.Item>
             <Dropdown.Item>
-              <Keyboard className='mr-2 h-4 w-4' />
+              <Keyboard className='mr-2 size-4' />
               <span>Keyboard shortcuts</span>
               <Kbd>⌘K</Kbd>
             </Dropdown.Item>
@@ -58,54 +58,54 @@ const meta: Meta<typeof Dropdown.Root> = {
           <Dropdown.Separator />
           <Dropdown.Group>
             <Dropdown.Item>
-              <Users className='mr-2 h-4 w-4' />
+              <Users className='mr-2 size-4' />
               <span>Team</span>
             </Dropdown.Item>
             <Dropdown.Sub>
               <Dropdown.SubTrigger>
-                <UserPlus className='mr-2 h-4 w-4' />
+                <UserPlus className='mr-2 size-4' />
                 <span>Invite users</span>
               </Dropdown.SubTrigger>
               <Dropdown.SubContent>
                 <Dropdown.Item>
-                  <Mail className='mr-2 h-4 w-4' />
+                  <Mail className='mr-2 size-4' />
                   <span>Email</span>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <MessageSquare className='mr-2 h-4 w-4' />
+                  <MessageSquare className='mr-2 size-4' />
                   <span>Message</span>
                 </Dropdown.Item>
                 <Dropdown.Separator />
                 <Dropdown.Item>
-                  <PlusCircle className='mr-2 h-4 w-4' />
+                  <PlusCircle className='mr-2 size-4' />
                   <span>More...</span>
                 </Dropdown.Item>
               </Dropdown.SubContent>
             </Dropdown.Sub>
             <Dropdown.Item>
-              <Plus className='mr-2 h-4 w-4' />
+              <Plus className='mr-2 size-4' />
               <span>New Team</span>
               <Kbd>⌘+T</Kbd>
             </Dropdown.Item>
           </Dropdown.Group>
           <Dropdown.Separator />
           <Dropdown.Item>
-            <GitBranchPlus className='mr-2 h-4 w-4' />
+            <GitBranchPlus className='mr-2 size-4' />
             <span>GitHub</span>
           </Dropdown.Item>
           <Dropdown.Item>
-            <LifeBuoy className='mr-2 h-4 w-4' />
+            <LifeBuoy className='mr-2 size-4' />
             <span>Support</span>
           </Dropdown.Item>
           <Dropdown.Item disabled>
-            <Cloud className='mr-2 h-4 w-4' />
+            <Cloud className='mr-2 size-4' />
             <span>API</span>
           </Dropdown.Item>
           <Dropdown.Separator />
           <Dropdown.RadioItem value='2'>Test</Dropdown.RadioItem>
           <Dropdown.Separator />
           <Dropdown.Item>
-            <LogOut className='mr-2 h-4 w-4' />
+            <LogOut className='mr-2 size-4' />
             <span>Log out</span>
             <Kbd>⇧⌘Q</Kbd>
           </Dropdown.Item>

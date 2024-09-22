@@ -18,7 +18,7 @@ const meta: Meta<typeof Breadcrumb.Root> = {
         <Breadcrumb.Item>
           <Dropdown.Root>
             <Dropdown.Trigger className='flex items-center gap-1'>
-              <Breadcrumb.Ellipsis className='h-4 w-4' />
+              <Breadcrumb.Ellipsis className='size-4' />
               <span className='sr-only'>Toggle menu</span>
             </Dropdown.Trigger>
             <Dropdown.Content align='start'>

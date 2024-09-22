@@ -31,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
-      - name: 🚀 Turbo
-        run: pnpm exec turbo run lint build test
+      - name: Nx
+        run: npx nx run-many -t build lint test
 
       - name: Set publishing config
         run: pnpm config set '//registry.npmjs.org/:_authToken' "${NODE_AUTH_TOKEN}"
