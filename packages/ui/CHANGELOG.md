@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 1.0.0-alpha.1
+
+### Patch Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`9c876a6`](https://github.com/utima-solutions/ui/commit/9c876a6163a0734864642bb3dca48d305cf25b9e) Thanks [@jsimck](https://github.com/jsimck)! - Updated Layout and table styles
+
 ## 1.0.0-alpha.0
 
 ### Major Changes
