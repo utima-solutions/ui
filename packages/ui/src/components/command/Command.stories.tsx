@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 
 import * as Command from '.';
-import { Button } from '../button/Button';
+import { Button } from '../button/button';
 import { Kbd } from '../kbd/Kbd';
 
 const meta: Meta<typeof Command.Root> = {

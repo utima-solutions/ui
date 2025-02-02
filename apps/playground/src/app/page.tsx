@@ -1,7 +1,7 @@
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
-import { Button } from '@utima/ui';
-import { Download } from 'lucide-react';
+import { Button, IconButton } from '@utima/ui';
+import { Download, Mailbox } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
         <Subtitle>Variants</Subtitle>
         <div className='flex flex-row gap-4 flex-wrap'>
           <div>
-            <Button variant='default'>Default</Button>
+            <Button variant='primary'>Default</Button>
           </div>
           <div>
             <Button variant='destructive'>Destructive</Button>
@@ -35,27 +35,27 @@ export default function Home() {
         <Subtitle>Sizes</Subtitle>
         <div className='flex flex-row gap-4 flex-wrap'>
           <div>
-            <Button size='xs' variant='default'>
+            <Button size='xs' variant='primary'>
             XS
             </Button>
           </div>
           <div>
-            <Button size='sm' variant='default'>
+            <Button size='sm' variant='primary'>
               SM
             </Button>
           </div>
           <div>
-            <Button size='default' variant='default'>
+            <Button size='md' variant='primary'>
               Default
             </Button>
           </div>
           <div>
-            <Button size='lg' variant='default'>
+            <Button size='lg' variant='primary'>
               LG
             </Button>
           </div>
           <div>
-            <Button size='xl' variant='default'>
+            <Button size='xl' variant='primary'>
               XL
             </Button>
           </div>
@@ -63,13 +63,13 @@ export default function Home() {
         <Subtitle>With icons</Subtitle>
         <div className='flex flex-row gap-4 flex-wrap'>
           <div>
-            <Button size='xs' variant='default'><Download className='size-10' /> Default</Button>
+            <Button size='xs' variant='primary'><Download className='size-10' /> Default</Button>
           </div>
           <div>
             <Button size='sm' variant='destructive'><Download /> Destructive</Button>
           </div>
           <div>
-            <Button size='default' variant='ghost'><Download /> Ghost</Button>
+            <Button size='md' variant='ghost'><Download /> Ghost</Button>
           </div>
           <div>
             <Button size='lg' variant='link'><Download /> Link</Button>
@@ -81,13 +81,13 @@ export default function Home() {
         <Subtitle>States</Subtitle>
         <div className='flex flex-row gap-4 flex-wrap'>
           <div>
-            <Button size='xs' variant='default' loading>Default</Button>
+            <Button size='xs' variant='primary' loading>Default</Button>
           </div>
           <div>
-            <Button size='sm' variant='destructive' disabled loading>Destructive</Button>
+            <Button size='sm' variant='destructive' circle disabled loading>Destructive</Button>
           </div>
           <div>
-            <Button size='default' variant='ghost' disabled><Download /> Ghost</Button>
+            <Button size='md' variant='ghost' disabled><Download /> Ghost</Button>
           </div>
           <div>
             <Button size='lg' variant='link' disabled><Download /> Link</Button>
@@ -98,6 +98,103 @@ export default function Home() {
                 As child
               </a>
             </Button>
+          </div>
+        </div>
+      </div>
+
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;IconButton /&gt;</Title>
+        <Subtitle>Variants</Subtitle>
+        <div className='flex flex-row gap-4 flex-wrap'>
+          <div>
+            <IconButton variant='primary'><Mailbox /></IconButton>
+          </div>
+          <div>
+            <IconButton variant='destructive'><Mailbox /></IconButton>
+          </div>
+          <div>
+            <IconButton variant='ghost'><Mailbox /></IconButton>
+          </div>
+          <div>
+            <IconButton variant='link'><Mailbox /></IconButton>
+          </div>
+          <div>
+            <IconButton variant='success'><Mailbox /></IconButton>
+          </div>
+          <div>
+            <IconButton variant='secondary'><Mailbox /></IconButton>
+          </div>
+          <div>
+            <IconButton variant='outline'><Mailbox /></IconButton>
+          </div>
+        </div>
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-row gap-4 flex-wrap'>
+          <div>
+            <IconButton size='xs' variant='primary'>
+              <Download />
+            </IconButton>
+          </div>
+          <div>
+            <IconButton size='sm' variant='primary'>
+              <Download />
+            </IconButton>
+          </div>
+          <div>
+            <IconButton size='md' variant='primary'>
+              <Download />
+            </IconButton>
+          </div>
+          <div>
+            <IconButton size='lg' variant='primary'>
+              <Download />
+            </IconButton>
+          </div>
+          <div>
+            <IconButton size='xl' variant='primary'>
+              <Download />
+            </IconButton>
+          </div>
+        </div>
+        <Subtitle>With icons</Subtitle>
+        <div className='flex flex-row gap-4 flex-wrap'>
+          <div>
+            <IconButton size='xs' variant='primary'><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='sm' variant='destructive'><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='md' variant='ghost'><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='lg' variant='link'><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='xl' variant='success'><Download /></IconButton>
+          </div>
+        </div>
+        <Subtitle>States</Subtitle>
+        <div className='flex flex-row gap-4 flex-wrap'>
+          <div>
+            <IconButton size='xs' variant='primary' loading><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='sm' variant='destructive' circle disabled loading><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='md' variant='ghost' disabled><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='lg' variant='link' disabled><Download /></IconButton>
+          </div>
+          <div>
+            <IconButton size='xl' variant='success' asChild>
+              <a href='/'>
+                <Download />
+              </a>
+            </IconButton>
           </div>
         </div>
       </div>

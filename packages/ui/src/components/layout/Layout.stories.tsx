@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Home, Menu, Users, Cloud } from 'lucide-react';
 
 import * as Layout from '.';
-import { Button } from '../button/Button';
+import { Button } from '../button/button';
 
 // custom width sidebar a custom height header context
 const meta: Meta<typeof Layout.Root> = {

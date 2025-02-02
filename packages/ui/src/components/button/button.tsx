@@ -2,7 +2,6 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import {
   forwardRef,
   memo,
-  type ReactNode,
   type ButtonHTMLAttributes,
 } from 'react';
 import { Loader2 } from 'lucide-react';
@@ -16,7 +15,7 @@ export const buttonVariants = tv({
     variant: {
       success:
         'bg-success text-success-foreground shadow-sm hover:bg-success-light active:bg-success-dark',
-      default: 'bg-primary text-primary-foreground shadow hover:bg-primary-light active:bg-primary-dark',
+      primary: 'bg-primary text-primary-foreground shadow hover:bg-primary-light active:bg-primary-dark',
       destructive:
         'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive-light active:bg-destructive-dark',
       outline:
@@ -27,17 +26,16 @@ export const buttonVariants = tv({
       link: 'text-primary underline-offset-4 hover:underline',
     },
     size: {
-      default: 'h-9 px-4 py-2 [&_svg]:size-4',
+      md: 'h-9 px-4 py-2 [&_svg]:size-4',
       xs: 'h-7 rounded-md px-2 text-xs [&_svg]:size-3 gap-1.5',
       sm: 'h-8 rounded-md px-3 text-xs [&_svg]:size-3.5 gap-1.5',
       lg: 'h-10 rounded-md px-4 [&_svg]:size-4.5',
       xl: 'h-11 rounded-md text-base px-5 [&_svg]:size-5',
-      icon: 'h-9 w-9 p-2 [&_svg]:size-4',
     },
   },
   defaultVariants: {
-    variant: 'default',
-    size: 'default',
+    variant: 'primary',
+    size: 'md',
   },
 });
 
@@ -45,6 +43,7 @@ export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     Omit<VariantProps<typeof buttonVariants>, 'outline'> {
   asChild?: boolean;
+  circle?: boolean;
   loading?: boolean;
 }
 
@@ -59,6 +58,7 @@ export const Button = memo(
         size,
         asChild = false,
         loading = false,
+        circle = false,
         ...restProps
       },
       ref,
@@ -81,6 +81,7 @@ export const Button = memo(
               variant,
               size,
             }),
+            circle && 'rounded-full',
             className,
           )}
           disabled={loading}

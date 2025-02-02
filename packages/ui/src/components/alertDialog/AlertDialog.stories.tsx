@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import * as AlertDialog from './index';
-import { Button } from '../button/Button';
+import { Button } from '../button/button';
 
 const meta: Meta<typeof AlertDialog.Root> = {
   component: AlertDialog.Root,

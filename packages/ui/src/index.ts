@@ -11,7 +11,10 @@ export { Portal, type PortalProps } from '@radix-ui/react-portal';
  * Components
  */
 // Buttton
-export { Button, type ButtonProps } from './components/button/Button';
+export { Button, type ButtonProps, buttonVariants } from './components/button/button';
+
+// IconButton
+export { IconButton, type IconButtonProps, iconButtonVariants } from './components/icon-button/icon-button';
 
 // Badge
 export { Badge, type BadgeProps } from './components/badge/Badge';
