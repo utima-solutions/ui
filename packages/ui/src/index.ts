@@ -19,12 +19,27 @@ export { IconButton, type IconButtonProps, iconButtonVariants } from './componen
 // Badge
 export { Badge, type BadgeProps, badgeVariants } from './components/badge/badge';
 
+// Kbd
+export { Kbd, type KbdProps, kbdVariants } from './components/kbd/kbd';
+
+// Switch
+export { Switch, type SwitchProps, switchVariants } from './components/switch/switch';
+
+// Label
+export { Label, type LabelProps, labelVariants } from './components/label/label';
+
+// Checkbox
+export { Checkbox, type CheckboxProps, checkboxVariants } from './components/checkbox/checkbox';
+
+
+
+
+
+
 // Avatar
 export { Avatar, type AvatarProps } from './components/avatar/Avatar';
 export * as AvatarPrimitive from './components/avatar/index';
 
-// Label
-export { Label, type LabelProps, labelVariants } from './components/label/label';
 
 // Table
 export * as Table from './components/table';
@@ -66,9 +81,6 @@ export {
   type SeparatorProps,
 } from './components/separator/Separator';
 
-// Checkbox
-export { Checkbox, type CheckboxProps } from './components/checkbox/Checkbox';
-
 // Command
 export * as Command from './components/command';
 export { useCommandState } from 'cmdk';
@@ -79,14 +91,10 @@ export * as Dialog from './components/dialog';
 // AlertDialog
 export * as AlertDialog from './components/alertDialog';
 
-// Switch
-export { Switch, type SwitchProps } from './components/switch/Switch';
 
 // Breadcrumb
 export * as Breadcrumb from './components/breadcrumb';
 
-// Kbd
-export { Kbd, type KbdProps } from './components/kbd/Kbd';
 
 // Layout
 export * as Layout from './components/layout';

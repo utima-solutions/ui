@@ -46,6 +46,7 @@ export const Badge = memo(function Badge({
 }: BadgeProps) {
   return (
     <span
+      data-uui-badge
       className={cn(
         badgeVariants({
           variant,

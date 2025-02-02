@@ -1,7 +1,7 @@
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
-import { Button, IconButton, Badge, Label, Kbd } from '@utima/ui';
-import { Download, Mailbox } from 'lucide-react';
+import { Button, IconButton, Badge, Label, Kbd, Checkbox, Switch } from '@utima/ui';
+import { Check, Download, Mailbox } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -415,6 +415,190 @@ export default function Home() {
           </div>
           <div className='flex items-center gap-2'>
             <Kbd size='xl'>↑</Kbd> <Kbd size='xl'>↓</Kbd> to navigate
+          </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Checkbox /&gt;</Title>
+        <Subtitle>Variants</Subtitle>
+        <div className='flex flex-row gap-4 items-center'>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-primary' variant='primary' defaultChecked />
+            <Label htmlFor='checkbox-primary'>Primary</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-success' variant='success' defaultChecked />
+            <Label htmlFor='checkbox-success'>Success</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-destructive' variant='destructive' defaultChecked />
+            <Label htmlFor='checkbox-destructive'>Destructive</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-secondary' variant='secondary' defaultChecked />
+            <Label htmlFor='checkbox-secondary'>Secondary</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-outline' variant='outline' defaultChecked />
+            <Label htmlFor='checkbox-outline'>Outline</Label>
+          </div>
+        </div>
+
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-row gap-4 items-center'>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-xs' size='xs' defaultChecked />
+            <Label htmlFor='checkbox-xs' size='xs'>XS</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-sm' size='sm' defaultChecked />
+            <Label htmlFor='checkbox-sm' size='sm'>SM</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-md' size='md' defaultChecked />
+            <Label htmlFor='checkbox-md'>Default</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-lg' size='lg' defaultChecked />
+            <Label htmlFor='checkbox-lg' size='lg'>LG</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-xl' size='xl' defaultChecked />
+            <Label htmlFor='checkbox-xl' size='xl'>XL</Label>
+          </div>
+        </div>
+
+        <Subtitle>States</Subtitle>
+        <div className='flex flex-row gap-4'>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-checked' defaultChecked />
+            <Label htmlFor='checkbox-checked'>Checked</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-disabled' disabled />
+            <Label htmlFor='checkbox-disabled' disabled>Disabled</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox id='checkbox-disabled-checked' disabled defaultChecked />
+            <Label htmlFor='checkbox-disabled-checked' disabled>Disabled Checked</Label>
+          </div>
+        </div>
+
+        <Subtitle>Customization</Subtitle>
+        <div className='flex flex-row gap-4'>
+          <div className='flex items-center gap-2'>
+            <Checkbox
+              id='checkbox-custom-indicator'
+              variant='primary'
+              defaultChecked
+              indicator={<Download className='size-3' />}
+            />
+            <Label htmlFor='checkbox-custom-indicator'>Custom Icon</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox
+              id='checkbox-custom-class'
+              variant='primary'
+              defaultChecked
+              classNameIndicator='text-yellow-500'
+            />
+            <Label htmlFor='checkbox-custom-class'>Custom Color</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Checkbox
+              id='checkbox-circle'
+              variant='outline'
+              defaultChecked
+              circle
+            />
+            <Label htmlFor='checkbox-circle'>Circle</Label>
+          </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Switch /&gt;</Title>
+        <Subtitle>Variants</Subtitle>
+        <div className='flex flex-row gap-4 items-center'>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-primary' variant='primary' defaultChecked />
+            <Label htmlFor='switch-primary'>Primary</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-success' variant='success' defaultChecked />
+            <Label htmlFor='switch-success'>Success</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-destructive' variant='destructive' defaultChecked />
+            <Label htmlFor='switch-destructive'>Destructive</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-secondary' variant='secondary' defaultChecked />
+            <Label htmlFor='switch-secondary'>Secondary</Label>
+          </div>
+        </div>
+
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-row gap-4 items-center'>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-xs' size='xs' defaultChecked />
+            <Label htmlFor='switch-xs' size='xs'>XS</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-sm' size='sm' defaultChecked />
+            <Label htmlFor='switch-sm' size='sm'>SM</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-md' size='md' defaultChecked />
+            <Label htmlFor='switch-md'>Default</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-lg' size='lg' defaultChecked />
+            <Label htmlFor='switch-lg' size='lg'>LG</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-xl' size='xl' defaultChecked />
+            <Label htmlFor='switch-xl' size='xl'>XL</Label>
+          </div>
+        </div>
+
+        <Subtitle>States</Subtitle>
+        <div className='flex flex-row gap-4'>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-checked' defaultChecked />
+            <Label htmlFor='switch-checked'>Checked</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-disabled' disabled />
+            <Label htmlFor='switch-disabled' disabled>Disabled</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch id='switch-disabled-checked' disabled defaultChecked />
+            <Label htmlFor='switch-disabled-checked' disabled>Disabled Checked</Label>
+          </div>
+        </div>
+
+        <Subtitle>Customization</Subtitle>
+        <div className='flex flex-row gap-4'>
+          <div className='flex items-center gap-2'>
+            <Switch
+              id='switch-custom-thumb'
+              classNameThumb='items-center justify-center inline-flex'
+              variant='primary'
+              defaultChecked
+              thumb={<Check className='size-3' strokeWidth={3} />}
+            />
+            <Label htmlFor='switch-custom-thumb'>Custom Thumb</Label>
+          </div>
+          <div className='flex items-center gap-2'>
+            <Switch
+              id='switch-custom-class'
+              variant='primary'
+              defaultChecked
+              classNameThumb='bg-yellow-500'
+            />
+            <Label htmlFor='switch-custom-class'>Custom Color</Label>
           </div>
         </div>
       </div>

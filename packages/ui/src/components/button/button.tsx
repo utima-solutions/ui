@@ -1,9 +1,5 @@
 import { tv, type VariantProps } from 'tailwind-variants';
-import {
-  forwardRef,
-  memo,
-  type ButtonHTMLAttributes,
-} from 'react';
+import { forwardRef, memo, type ButtonHTMLAttributes } from 'react';
 import { Loader2 } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
 
@@ -15,7 +11,8 @@ export const buttonVariants = tv({
     variant: {
       success:
         'bg-success text-success-foreground shadow-sm hover:bg-success-light active:bg-success-dark',
-      primary: 'bg-primary text-primary-foreground shadow hover:bg-primary-light active:bg-primary-dark',
+      primary:
+        'bg-primary text-primary-foreground shadow hover:bg-primary-light active:bg-primary-dark',
       destructive:
         'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive-light active:bg-destructive-dark',
       outline:
@@ -66,7 +63,7 @@ export const Button = memo(
       const Comp = asChild ? Slot : 'button';
       const content = loading ? (
         <>
-          <Loader2 className='animate-spin' />
+          <Loader2 data-uui-button-loader className='animate-spin' />
           {children}
         </>
       ) : (
@@ -75,6 +72,7 @@ export const Button = memo(
 
       return (
         <Comp
+          data-uui-button
           type={asChild ? undefined : type}
           className={cn(
             buttonVariants({

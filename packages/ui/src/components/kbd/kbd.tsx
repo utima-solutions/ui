@@ -41,7 +41,8 @@ export const Kbd = memo(function Kbd({
   ...restProps
 }: KbdProps) {
   return (
-    <span
+    <kbd
+      data-uui-kbd
       className={cn(
         kbdVariants({
           size,

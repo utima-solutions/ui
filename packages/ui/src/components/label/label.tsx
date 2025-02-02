@@ -34,6 +34,7 @@ export const Label = forwardRef<ElementRef<typeof Root>, LabelProps>(
   function Label({ className, size, disabled, ...restProps }, ref) {
     return (
       <Root
+        data-uui-label
         ref={ref}
         className={cn(
           labelVariants({
