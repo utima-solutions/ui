@@ -1,6 +1,6 @@
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
-import { Button, IconButton, Badge } from '@utima/ui';
+import { Button, IconButton, Badge, Label } from '@utima/ui';
 import { Download, Mailbox } from 'lucide-react';
 
 export default function Home() {
@@ -257,9 +257,6 @@ export default function Home() {
             <Badge variant='destructive'>Destructive</Badge>
           </div>
           <div>
-            <Badge variant='ghost'>Ghost</Badge>
-          </div>
-          <div>
             <Badge variant='secondary'>Secondary</Badge>
           </div>
           <div>
@@ -322,9 +319,39 @@ export default function Home() {
             </Badge>
           </div>
           <div>
-            <Badge variant='ghost' circle>
-              <span className='size-1.5 rounded-full bg-success'></span>Custom Ghost
+            <Badge variant='outline' circle>
+              <span className='size-1.5 rounded-full bg-success'></span>Custom
+              Status
             </Badge>
+          </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Label /&gt;</Title>
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-row gap-4'>
+          <div>
+            <Label size='xs'>Extra Small Label</Label>
+          </div>
+          <div>
+            <Label size='sm'>Small Label</Label>
+          </div>
+          <div>
+            <Label size='md'>Default Label</Label>
+          </div>
+          <div>
+            <Label size='lg'>Large Label</Label>
+          </div>
+          <div>
+            <Label size='xl'>Extra Large Label</Label>
+          </div>
+        </div>
+
+        <Subtitle>States</Subtitle>
+        <div className='flex flex-row gap-4'>
+          <div>
+            <Label disabled>Disabled Label</Label>
           </div>
         </div>
       </div>

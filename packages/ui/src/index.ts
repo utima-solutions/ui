@@ -17,14 +17,14 @@ export { Button, type ButtonProps, buttonVariants } from './components/button/bu
 export { IconButton, type IconButtonProps, iconButtonVariants } from './components/icon-button/icon-button';
 
 // Badge
-export { Badge, type BadgeProps } from './components/badge/Badge';
+export { Badge, type BadgeProps, badgeVariants } from './components/badge/badge';
 
 // Avatar
 export { Avatar, type AvatarProps } from './components/avatar/Avatar';
 export * as AvatarPrimitive from './components/avatar/index';
 
 // Label
-export { Label, type LabelProps } from './components/label/Label';
+export { Label, type LabelProps, labelVariants } from './components/label/label';
 
 // Table
 export * as Table from './components/table';
