@@ -1,6 +1,6 @@
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
-import { Button, IconButton, Badge, Label } from '@utima/ui';
+import { Button, IconButton, Badge, Label, Kbd } from '@utima/ui';
 import { Download, Mailbox } from 'lucide-react';
 
 export default function Home() {
@@ -352,6 +352,69 @@ export default function Home() {
         <div className='flex flex-row gap-4'>
           <div>
             <Label disabled>Disabled Label</Label>
+          </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Kbd /&gt;</Title>
+        <Subtitle>Variants</Subtitle>
+        <div className='flex flex-row gap-4 flex-wrap'>
+          <div>
+            <Kbd variant='outline'>Outline ⌘</Kbd>
+          </div>
+          <div>
+            <Kbd variant='ghost'>Ghost ⌘</Kbd>
+          </div>
+        </div>
+
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-row gap-4 flex-wrap items-center'>
+          <div>
+            <Kbd size='xs'>⌘</Kbd>
+          </div>
+          <div>
+            <Kbd size='sm'>⌘</Kbd>
+          </div>
+          <div>
+            <Kbd size='md'>⌘</Kbd>
+          </div>
+          <div>
+            <Kbd size='lg'>⌘</Kbd>
+          </div>
+          <div>
+            <Kbd size='xl'>⌘</Kbd>
+          </div>
+        </div>
+
+        <Subtitle>Examples</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <div className='flex items-center gap-2'>
+            Press <Kbd>⌘</Kbd> + <Kbd>K</Kbd> to open command menu
+          </div>
+          <div>
+            <Button variant='primary'>
+              Add new
+              <Kbd variant='outline' className='text-primary-foreground/50 bg-transparent border-border/50' size='xs'>⌘ + K</Kbd>
+            </Button>
+          </div>
+          <div className='flex items-center gap-2'>
+            Press <Kbd variant='outline'>Shift</Kbd> +{' '}
+            <Kbd variant='outline'>?</Kbd> for help
+          </div>
+          <div className='flex items-center gap-2'>
+            <Kbd
+              size='lg'
+              variant='outline'
+              circle
+              className='opacity-50 pointer-events-none'
+            >
+              Esc
+            </Kbd>{' '}
+            to close
+          </div>
+          <div className='flex items-center gap-2'>
+            <Kbd size='xl'>↑</Kbd> <Kbd size='xl'>↓</Kbd> to navigate
           </div>
         </div>
       </div>
