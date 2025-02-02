@@ -62,6 +62,12 @@ export {
   separatorVariants,
 } from './components/separator/separator';
 
+// Breadcrumb
+export * as Breadcrumb from './components/breadcrumb';
+export type * from './components/breadcrumb/types';
+
+
+
 
 
 
@@ -116,9 +122,6 @@ export * as Dialog from './components/dialog';
 
 // AlertDialog
 export * as AlertDialog from './components/alertDialog';
-
-// Breadcrumb
-export * as Breadcrumb from './components/breadcrumb';
 
 // Layout
 export * as Layout from './components/layout';

@@ -2,6 +2,9 @@ import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
 import { Button, IconButton, Badge, Label, Kbd, Checkbox, Switch, Separator } from '@utima/ui';
 import { Check, Download, Mailbox } from 'lucide-react';
+import {
+  Breadcrumb,
+} from '@utima/ui';
 
 export default function Home() {
   return (
@@ -637,6 +640,37 @@ export default function Home() {
             <Separator orientation='vertical' size='lg' />
             <Separator orientation='vertical' size='xl' />
           </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Breadcrumb /&gt;</Title>
+        <div className='flex flex-col gap-4'>
+          <Breadcrumb.Root>
+            <Breadcrumb.List>
+              <Breadcrumb.Item>
+                <Breadcrumb.Link href='/'>Home</Breadcrumb.Link>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <Breadcrumb.Separator />
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <Breadcrumb.Ellipsis />
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <Breadcrumb.Separator />
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <Breadcrumb.Link href='/'>Documents</Breadcrumb.Link>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <Breadcrumb.Separator />
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <Breadcrumb.Page>Current Page</Breadcrumb.Page>
+              </Breadcrumb.Item>
+            </Breadcrumb.List>
+          </Breadcrumb.Root>
         </div>
       </div>
     </div>

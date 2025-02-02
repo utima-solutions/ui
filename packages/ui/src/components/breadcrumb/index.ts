@@ -1,13 +1,7 @@
-export {
-  Breadcrumb as Root,
-  type BreadcrumbProps as RootProps,
-} from './Breadcrumb';
-export {
-  BreadcrumbLink as Link,
-  type BreadcrumbLinkProps as LinkProps,
-} from './BreadcrumbLink';
-export { BreadcrumbEllipsis as Ellipsis } from './BreadcrumbEllipsis';
-export { BreadcrumbItem as Item } from './BreadcrumbItem';
-export { BreadcrumbList as List } from './BreadcrumbList';
-export { BreadcrumbPage as Page } from './BreadcrumbPage';
-export { BreadcrumbSeparator as Separator } from './BreadcrumbSeparator';
+export { Breadcrumb as Root } from './breadcrumb';
+export { BreadcrumbItem as Item } from './breadcrumb-item';
+export { BreadcrumbLink as Link } from './breadcrumb-link';
+export { BreadcrumbList as List } from './breadcrumb-list';
+export { BreadcrumbPage as Page } from './breadcrumb-page';
+export { BreadcrumbSeparator as Separator } from './breadcrumb-separator';
+export { BreadcrumbEllipsis as Ellipsis } from './breadcrumb-ellipsis';
