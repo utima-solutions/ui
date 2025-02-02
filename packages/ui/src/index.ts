@@ -66,6 +66,9 @@ export {
 export * as Breadcrumb from './components/breadcrumb';
 export type * from './components/breadcrumb/types';
 
+// Dropdown
+export * as Dropdown from './components/dropdown';
+export type * from './components/dropdown/types';
 
 
 
@@ -106,9 +109,6 @@ export {
   AspectRatio,
   type AspectRatioProps,
 } from './components/aspectRatio/AspectRatio';
-
-// Dropdown
-export * as Dropdown from './components/dropdown';
 
 // Popover
 export * as Popover from './components/popover';

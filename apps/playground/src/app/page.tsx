@@ -1,10 +1,38 @@
+'use client';
+
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
-import { Button, IconButton, Badge, Label, Kbd, Checkbox, Switch, Separator } from '@utima/ui';
-import { Check, Download, Mailbox } from 'lucide-react';
 import {
-  Breadcrumb,
+  Button,
+  IconButton,
+  Badge,
+  Label,
+  Kbd,
+  Checkbox,
+  Switch,
+  Separator,
+  Dropdown,
 } from '@utima/ui';
+import {
+  Check,
+  Cloud,
+  CreditCard,
+  Download,
+  GitBranchPlus,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  Mailbox,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from 'lucide-react';
+import { Breadcrumb } from '@utima/ui';
 
 export default function Home() {
   return (
@@ -398,7 +426,13 @@ export default function Home() {
           <div>
             <Button variant='primary'>
               Add new
-              <Kbd variant='outline' className='text-primary-foreground/50 bg-transparent border-border/50' size='xs'>⌘ + K</Kbd>
+              <Kbd
+                variant='outline'
+                className='text-primary-foreground/50 bg-transparent border-border/50'
+                size='xs'
+              >
+                ⌘ + K
+              </Kbd>
             </Button>
           </div>
           <div className='flex items-center gap-2'>
@@ -435,11 +469,19 @@ export default function Home() {
             <Label htmlFor='checkbox-success'>Success</Label>
           </div>
           <div className='flex items-center gap-2'>
-            <Checkbox id='checkbox-destructive' variant='destructive' defaultChecked />
+            <Checkbox
+              id='checkbox-destructive'
+              variant='destructive'
+              defaultChecked
+            />
             <Label htmlFor='checkbox-destructive'>Destructive</Label>
           </div>
           <div className='flex items-center gap-2'>
-            <Checkbox id='checkbox-secondary' variant='secondary' defaultChecked />
+            <Checkbox
+              id='checkbox-secondary'
+              variant='secondary'
+              defaultChecked
+            />
             <Label htmlFor='checkbox-secondary'>Secondary</Label>
           </div>
           <div className='flex items-center gap-2'>
@@ -452,11 +494,15 @@ export default function Home() {
         <div className='flex flex-row gap-4 items-center'>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-xs' size='xs' defaultChecked />
-            <Label htmlFor='checkbox-xs' size='xs'>XS</Label>
+            <Label htmlFor='checkbox-xs' size='xs'>
+              XS
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-sm' size='sm' defaultChecked />
-            <Label htmlFor='checkbox-sm' size='sm'>SM</Label>
+            <Label htmlFor='checkbox-sm' size='sm'>
+              SM
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-md' size='md' defaultChecked />
@@ -464,11 +510,15 @@ export default function Home() {
           </div>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-lg' size='lg' defaultChecked />
-            <Label htmlFor='checkbox-lg' size='lg'>LG</Label>
+            <Label htmlFor='checkbox-lg' size='lg'>
+              LG
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-xl' size='xl' defaultChecked />
-            <Label htmlFor='checkbox-xl' size='xl'>XL</Label>
+            <Label htmlFor='checkbox-xl' size='xl'>
+              XL
+            </Label>
           </div>
         </div>
 
@@ -480,11 +530,15 @@ export default function Home() {
           </div>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-disabled' disabled />
-            <Label htmlFor='checkbox-disabled' disabled>Disabled</Label>
+            <Label htmlFor='checkbox-disabled' disabled>
+              Disabled
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-disabled-checked' disabled defaultChecked />
-            <Label htmlFor='checkbox-disabled-checked' disabled>Disabled Checked</Label>
+            <Label htmlFor='checkbox-disabled-checked' disabled>
+              Disabled Checked
+            </Label>
           </div>
         </div>
 
@@ -533,7 +587,11 @@ export default function Home() {
             <Label htmlFor='switch-success'>Success</Label>
           </div>
           <div className='flex items-center gap-2'>
-            <Switch id='switch-destructive' variant='destructive' defaultChecked />
+            <Switch
+              id='switch-destructive'
+              variant='destructive'
+              defaultChecked
+            />
             <Label htmlFor='switch-destructive'>Destructive</Label>
           </div>
           <div className='flex items-center gap-2'>
@@ -546,11 +604,15 @@ export default function Home() {
         <div className='flex flex-row gap-4 items-center'>
           <div className='flex items-center gap-2'>
             <Switch id='switch-xs' size='xs' defaultChecked />
-            <Label htmlFor='switch-xs' size='xs'>XS</Label>
+            <Label htmlFor='switch-xs' size='xs'>
+              XS
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Switch id='switch-sm' size='sm' defaultChecked />
-            <Label htmlFor='switch-sm' size='sm'>SM</Label>
+            <Label htmlFor='switch-sm' size='sm'>
+              SM
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Switch id='switch-md' size='md' defaultChecked />
@@ -558,11 +620,15 @@ export default function Home() {
           </div>
           <div className='flex items-center gap-2'>
             <Switch id='switch-lg' size='lg' defaultChecked />
-            <Label htmlFor='switch-lg' size='lg'>LG</Label>
+            <Label htmlFor='switch-lg' size='lg'>
+              LG
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Switch id='switch-xl' size='xl' defaultChecked />
-            <Label htmlFor='switch-xl' size='xl'>XL</Label>
+            <Label htmlFor='switch-xl' size='xl'>
+              XL
+            </Label>
           </div>
         </div>
 
@@ -574,11 +640,15 @@ export default function Home() {
           </div>
           <div className='flex items-center gap-2'>
             <Switch id='switch-disabled' disabled />
-            <Label htmlFor='switch-disabled' disabled>Disabled</Label>
+            <Label htmlFor='switch-disabled' disabled>
+              Disabled
+            </Label>
           </div>
           <div className='flex items-center gap-2'>
             <Switch id='switch-disabled-checked' disabled defaultChecked />
-            <Label htmlFor='switch-disabled-checked' disabled>Disabled Checked</Label>
+            <Label htmlFor='switch-disabled-checked' disabled>
+              Disabled Checked
+            </Label>
           </div>
         </div>
 
@@ -671,6 +741,237 @@ export default function Home() {
               </Breadcrumb.Item>
             </Breadcrumb.List>
           </Breadcrumb.Root>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Dropdown /&gt;</Title>
+        <div className='flex flex-col gap-4'>
+          <Dropdown.Root>
+            <Dropdown.Trigger asChild>
+              <Button>Open</Button>
+            </Dropdown.Trigger>
+            <Dropdown.Portal>
+              <Dropdown.Content className='w-56'>
+                <Dropdown.Label>My Account</Dropdown.Label>
+                <Dropdown.Separator />
+                <Dropdown.Group>
+                  <Dropdown.Item>
+                    <User />
+                    <span>Profile</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⇧⌘P
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <CreditCard />
+                    <span>Billing</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘B
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Settings />
+                    <span>Settings</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘S
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Keyboard />
+                    <span>Keyboard shortcuts</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘K
+                    </Kbd>
+                  </Dropdown.Item>
+                </Dropdown.Group>
+                <Dropdown.Separator />
+                <Dropdown.Group>
+                  <Dropdown.Item>
+                    <Users />
+                    <span>Team</span>
+                  </Dropdown.Item>
+                  <Dropdown.Sub>
+                    <Dropdown.SubTrigger>
+                      <UserPlus />
+                      <span>Invite users</span>
+                    </Dropdown.SubTrigger>
+                    <Dropdown.SubContent>
+                      <Dropdown.Item>
+                        <Mail />
+                        <span>Email</span>
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                        <MessageSquare />
+                        <span>Message</span>
+                      </Dropdown.Item>
+                      <Dropdown.Separator />
+                      <Dropdown.Item>
+                        <PlusCircle />
+                        <span>More...</span>
+                      </Dropdown.Item>
+                    </Dropdown.SubContent>
+                  </Dropdown.Sub>
+                  <Dropdown.Item>
+                    <Plus />
+                    <span>New Team</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘+T
+                    </Kbd>
+                  </Dropdown.Item>
+                </Dropdown.Group>
+                <Dropdown.Separator />
+                <Dropdown.Item>
+                  <GitBranchPlus />
+                  <span>GitHub</span>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <LifeBuoy />
+                  <span>Support</span>
+                </Dropdown.Item>
+                <Dropdown.Item disabled>
+                  <Cloud />
+                  <span>API</span>
+                </Dropdown.Item>
+                <Dropdown.Separator />
+                <Dropdown.RadioItem value='1'>Test</Dropdown.RadioItem>
+                <Dropdown.RadioItem value='2'>Test</Dropdown.RadioItem>
+                <Dropdown.Separator />
+                <Dropdown.CheckboxItem>Test</Dropdown.CheckboxItem>
+                <Dropdown.CheckboxItem>Test</Dropdown.CheckboxItem>
+                <Dropdown.Separator />
+                <Dropdown.Item>
+                  <LogOut />
+                  <span>Log out</span>
+                  <Kbd variant='ghost' size='sm'>
+                    ⇧⌘Q
+                  </Kbd>
+                </Dropdown.Item>
+              </Dropdown.Content>
+            </Dropdown.Portal>
+          </Dropdown.Root>
+          <Subtitle>Sizes</Subtitle>
+          <div className='flex flex-row gap-4'>
+            <Dropdown.Root size='sm'>
+              <Dropdown.Trigger asChild>
+                <Button>Open</Button>
+              </Dropdown.Trigger>
+              <Dropdown.Content className='w-48'>
+                <Dropdown.Label>My Account</Dropdown.Label>
+                <Dropdown.Separator />
+                <Dropdown.Group>
+                  <Dropdown.Item>
+                    <User />
+                    <span>Profile</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⇧⌘P
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <CreditCard />
+                    <span>Billing</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘B
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Settings />
+                    <span>Settings</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘S
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Keyboard />
+                    <span>Keyboard shortcuts</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘K
+                    </Kbd>
+                  </Dropdown.Item>
+                </Dropdown.Group>
+              </Dropdown.Content>
+            </Dropdown.Root>
+
+            <Dropdown.Root size='md'>
+              <Dropdown.Trigger asChild>
+                <Button>Open</Button>
+              </Dropdown.Trigger>
+              <Dropdown.Content className='w-50'>
+                <Dropdown.Label>My Account</Dropdown.Label>
+                <Dropdown.Separator />
+                <Dropdown.Group>
+                  <Dropdown.Item>
+                    <User />
+                    <span>Profile</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⇧⌘P
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <CreditCard />
+                    <span>Billing</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘B
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Settings />
+                    <span>Settings</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘S
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Keyboard />
+                    <span>Keyboard shortcuts</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘K
+                    </Kbd>
+                  </Dropdown.Item>
+                </Dropdown.Group>
+              </Dropdown.Content>
+            </Dropdown.Root>
+
+            <Dropdown.Root size='lg'>
+              <Dropdown.Trigger asChild>
+                <Button>Open</Button>
+              </Dropdown.Trigger>
+              <Dropdown.Content className='w-56'>
+                <Dropdown.Label>My Account</Dropdown.Label>
+                <Dropdown.Separator />
+                <Dropdown.Group>
+                  <Dropdown.Item>
+                    <User />
+                    <span>Profile</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⇧⌘P
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <CreditCard />
+                    <span>Billing</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘B
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Settings />
+                    <span>Settings</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘S
+                    </Kbd>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Keyboard />
+                    <span>Keyboard shortcuts</span>
+                    <Kbd variant='ghost' size='sm'>
+                      ⌘K
+                    </Kbd>
+                  </Dropdown.Item>
+                </Dropdown.Group>
+              </Dropdown.Content>
+            </Dropdown.Root>
+          </div>
         </div>
       </div>
     </div>

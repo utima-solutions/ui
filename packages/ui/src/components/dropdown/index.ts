@@ -1,5 +1,4 @@
 export {
-  Root,
   Trigger,
   Group,
   Sub,
@@ -7,11 +6,12 @@ export {
   Portal,
 } from '@radix-ui/react-dropdown-menu';
 
-export { DropdownCheckboxItem as CheckboxItem } from './DropdownCheckboxItem';
-export { DropdownItem as Item } from './DropdownItem';
-export { DropdownLabel as Label } from './DropdownLabel';
-export { DropdownRadioItem as RadioItem } from './DropdownRadioItem';
-export { DropdownSeparator as Separator } from './DropdownSeparator';
-export { DropdownContent as Content } from './DropdownContent';
-export { DropdownSubContent as SubContent } from './DropdownSubContent';
-export { DropdownSubTrigger as SubTrigger } from './DropdownSubTrigger';
+export { Dropdown as Root } from './dropdown';
+export { DropdownCheckboxItem as CheckboxItem } from './dropdown-checkbox-item';
+export { DropdownItem as Item } from './dropdown-item';
+export { DropdownLabel as Label } from './dropdown-label';
+export { DropdownRadioItem as RadioItem } from './dropdown-radio-item';
+export { DropdownSeparator as Separator } from './dropdown-separator';
+export { DropdownContent as Content } from './dropdown-content';
+export { DropdownSubContent as SubContent } from './dropdown-sub-content';
+export { DropdownSubTrigger as SubTrigger } from './dropdown-sub-trigger';

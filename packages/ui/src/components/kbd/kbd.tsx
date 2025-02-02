@@ -4,10 +4,10 @@ import { memo, type ComponentPropsWithoutRef } from 'react';
 import { cn } from '@/utils';
 
 export const kbdVariants = tv({
-  base: 'inline-flex items-center shadow-black/5 justify-center rounded-md font-mono font-medium text-foreground',
+  base: 'inline-flex items-center shadow-black/5 justify-center rounded-md font-mono font-medium text-foreground tracking-widest',
   variants: {
     variant: {
-      ghost: 'opacity-60 tracking-widest',
+      ghost: 'opacity-60',
       outline: 'shadow-sm bg-white py-0.5 px-1 border-border border',
     },
     size: {
