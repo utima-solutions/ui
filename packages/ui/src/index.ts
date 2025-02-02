@@ -11,25 +11,58 @@ export { Portal, type PortalProps } from '@radix-ui/react-portal';
  * Components
  */
 // Buttton
-export { Button, type ButtonProps, buttonVariants } from './components/button/button';
+export {
+  Button,
+  type ButtonProps,
+  buttonVariants,
+} from './components/button/button';
 
 // IconButton
-export { IconButton, type IconButtonProps, iconButtonVariants } from './components/icon-button/icon-button';
+export {
+  IconButton,
+  type IconButtonProps,
+  iconButtonVariants,
+} from './components/icon-button/icon-button';
 
 // Badge
-export { Badge, type BadgeProps, badgeVariants } from './components/badge/badge';
+export {
+  Badge,
+  type BadgeProps,
+  badgeVariants,
+} from './components/badge/badge';
 
 // Kbd
 export { Kbd, type KbdProps, kbdVariants } from './components/kbd/kbd';
 
 // Switch
-export { Switch, type SwitchProps, switchVariants } from './components/switch/switch';
+export {
+  Switch,
+  type SwitchProps,
+  switchVariants,
+} from './components/switch/switch';
 
 // Label
-export { Label, type LabelProps, labelVariants } from './components/label/label';
+export {
+  Label,
+  type LabelProps,
+  labelVariants,
+} from './components/label/label';
 
 // Checkbox
-export { Checkbox, type CheckboxProps, checkboxVariants } from './components/checkbox/checkbox';
+export {
+  Checkbox,
+  type CheckboxProps,
+  checkboxVariants,
+} from './components/checkbox/checkbox';
+
+// Separator
+export {
+  Separator,
+  type SeparatorProps,
+  separatorVariants,
+} from './components/separator/separator';
+
+
 
 
 
@@ -39,7 +72,6 @@ export { Checkbox, type CheckboxProps, checkboxVariants } from './components/che
 // Avatar
 export { Avatar, type AvatarProps } from './components/avatar/Avatar';
 export * as AvatarPrimitive from './components/avatar/index';
-
 
 // Table
 export * as Table from './components/table';
@@ -75,12 +107,6 @@ export * as Dropdown from './components/dropdown';
 // Popover
 export * as Popover from './components/popover';
 
-// Separator
-export {
-  Separator,
-  type SeparatorProps,
-} from './components/separator/Separator';
-
 // Command
 export * as Command from './components/command';
 export { useCommandState } from 'cmdk';
@@ -91,10 +117,8 @@ export * as Dialog from './components/dialog';
 // AlertDialog
 export * as AlertDialog from './components/alertDialog';
 
-
 // Breadcrumb
 export * as Breadcrumb from './components/breadcrumb';
-
 
 // Layout
 export * as Layout from './components/layout';

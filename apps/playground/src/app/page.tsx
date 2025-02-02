@@ -1,6 +1,6 @@
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
-import { Button, IconButton, Badge, Label, Kbd, Checkbox, Switch } from '@utima/ui';
+import { Button, IconButton, Badge, Label, Kbd, Checkbox, Switch, Separator } from '@utima/ui';
 import { Check, Download, Mailbox } from 'lucide-react';
 
 export default function Home() {
@@ -599,6 +599,43 @@ export default function Home() {
               classNameThumb='bg-yellow-500'
             />
             <Label htmlFor='switch-custom-class'>Custom Color</Label>
+          </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Separator /&gt;</Title>
+        <Subtitle>Orientations</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <div className='space-y-4'>
+            <div>Above horizontal separator</div>
+            <Separator orientation='horizontal' className='w-full' />
+            <div>Below horizontal separator</div>
+          </div>
+          <div className='flex h-8 items-center space-x-4'>
+            <div>Left</div>
+            <Separator orientation='vertical' />
+            <div>Middle</div>
+            <Separator orientation='vertical' />
+            <div>Right</div>
+          </div>
+        </div>
+
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <div className='space-y-4'>
+            <Separator size='xs' />
+            <Separator size='sm' />
+            <Separator size='md' />
+            <Separator size='lg' />
+            <Separator size='xl' />
+          </div>
+          <div className='flex h-8 items-center space-x-4'>
+            <Separator orientation='vertical' size='xs' />
+            <Separator orientation='vertical' size='sm' />
+            <Separator orientation='vertical' size='md' />
+            <Separator orientation='vertical' size='lg' />
+            <Separator orientation='vertical' size='xl' />
           </div>
         </div>
       </div>
