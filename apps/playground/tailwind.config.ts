@@ -1,34 +1,18 @@
-import path from 'node:path';
-
-import utimaUi from '@utima/ui/plugin';
-import type { Config } from 'tailwindcss';
-import tailwindcssAnimate from 'tailwindcss-animate';
+import type { Config } from "tailwindcss";
 
 export default {
   content: [
-    './app/**/{**,.client,.server}/**/*.{js,jsx,ts,tsx}',
-    // This makes sure tailwind can scan the utima ui component classes
-    `${path.dirname(require.resolve('@utima/ui'))}/**/*.js`,
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      fontFamily: {
-        sans: [
-          '"Inter"',
-          'ui-sans-serif',
-          'system-ui',
-          'sans-serif',
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
-        ],
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
       },
     },
   },
-  /**
-   * Init the utima ui plugin and tailwindcss-animate, with optional
-   * customizations.
-   */
-  plugins: [tailwindcssAnimate, utimaUi()],
+  plugins: [],
 } satisfies Config;
