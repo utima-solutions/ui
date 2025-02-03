@@ -12,7 +12,7 @@ export const buttonVariants = tv({
       success:
         'bg-success text-success-foreground shadow-sm hover:bg-success-light active:bg-success-dark',
       primary:
-        'bg-primary text-primary-foreground shadow hover:bg-primary-light active:bg-primary-dark',
+        'bg-primary text-primary-foreground shadow-sm hover:bg-primary-light active:bg-primary-dark',
       destructive:
         'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive-light active:bg-destructive-dark',
       outline:
@@ -23,11 +23,11 @@ export const buttonVariants = tv({
       link: 'text-primary underline-offset-4 hover:underline',
     },
     size: {
-      xs: 'h-7 rounded-md px-2 text-xs [&_svg]:size-3 gap-1.5',
-      sm: 'h-8 rounded-md px-3 text-xs [&_svg]:size-3.5 gap-1.5',
+      xs: 'h-7 rounded-sm px-2 text-xs [&_svg]:size-3 gap-1.5',
+      sm: 'h-8 px-3 text-xs [&_svg]:size-3.5 gap-1.5',
       md: 'h-9 px-3.5 py-2 [&_svg]:size-4',
-      lg: 'h-10 rounded-md px-3.5 [&_svg]:size-4.5',
-      xl: 'h-11 rounded-md text-base px-4 [&_svg]:size-5',
+      lg: 'h-10 rounded-lg px-3.5 [&_svg]:size-4.5',
+      xl: 'h-11 rounded-lg text-base px-4 [&_svg]:size-5',
     },
   },
   defaultVariants: {

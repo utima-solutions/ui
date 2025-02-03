@@ -12,6 +12,7 @@ import {
   Switch,
   Separator,
   Dropdown,
+  Pagination,
 } from '@utima/ui';
 import {
   Check,
@@ -747,231 +748,240 @@ export default function Home() {
       <div className='flex flex-col gap-4'>
         <Title>&lt;Dropdown /&gt;</Title>
         <div className='flex flex-col gap-4'>
-          <Dropdown.Root>
-            <Dropdown.Trigger asChild>
-              <Button>Open</Button>
-            </Dropdown.Trigger>
-            <Dropdown.Portal>
-              <Dropdown.Content className='w-56'>
-                <Dropdown.Label>My Account</Dropdown.Label>
-                <Dropdown.Separator />
-                <Dropdown.Group>
-                  <Dropdown.Item>
-                    <User />
-                    <span>Profile</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⇧⌘P
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <CreditCard />
-                    <span>Billing</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘B
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Settings />
-                    <span>Settings</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘S
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Keyboard />
-                    <span>Keyboard shortcuts</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘K
-                    </Kbd>
-                  </Dropdown.Item>
-                </Dropdown.Group>
-                <Dropdown.Separator />
-                <Dropdown.Group>
-                  <Dropdown.Item>
-                    <Users />
-                    <span>Team</span>
-                  </Dropdown.Item>
-                  <Dropdown.Sub>
-                    <Dropdown.SubTrigger>
-                      <UserPlus />
-                      <span>Invite users</span>
-                    </Dropdown.SubTrigger>
-                    <Dropdown.SubContent>
-                      <Dropdown.Item>
-                        <Mail />
-                        <span>Email</span>
-                      </Dropdown.Item>
-                      <Dropdown.Item>
-                        <MessageSquare />
-                        <span>Message</span>
-                      </Dropdown.Item>
-                      <Dropdown.Separator />
-                      <Dropdown.Item>
-                        <PlusCircle />
-                        <span>More...</span>
-                      </Dropdown.Item>
-                    </Dropdown.SubContent>
-                  </Dropdown.Sub>
-                  <Dropdown.Item>
-                    <Plus />
-                    <span>New Team</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘+T
-                    </Kbd>
-                  </Dropdown.Item>
-                </Dropdown.Group>
-                <Dropdown.Separator />
-                <Dropdown.Item>
-                  <GitBranchPlus />
-                  <span>GitHub</span>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <LifeBuoy />
-                  <span>Support</span>
-                </Dropdown.Item>
-                <Dropdown.Item disabled>
-                  <Cloud />
-                  <span>API</span>
-                </Dropdown.Item>
-                <Dropdown.Separator />
-                <Dropdown.RadioItem value='1'>Test</Dropdown.RadioItem>
-                <Dropdown.RadioItem value='2'>Test</Dropdown.RadioItem>
-                <Dropdown.Separator />
-                <Dropdown.CheckboxItem>Test</Dropdown.CheckboxItem>
-                <Dropdown.CheckboxItem>Test</Dropdown.CheckboxItem>
-                <Dropdown.Separator />
-                <Dropdown.Item>
-                  <LogOut />
-                  <span>Log out</span>
-                  <Kbd variant='ghost' size='sm'>
-                    ⇧⌘Q
-                  </Kbd>
-                </Dropdown.Item>
-              </Dropdown.Content>
-            </Dropdown.Portal>
-          </Dropdown.Root>
-          <Subtitle>Sizes</Subtitle>
-          <div className='flex flex-row gap-4'>
-            <Dropdown.Root size='sm'>
+          <div>
+            <Dropdown.Root>
               <Dropdown.Trigger asChild>
                 <Button>Open</Button>
               </Dropdown.Trigger>
-              <Dropdown.Content className='w-48'>
-                <Dropdown.Label>My Account</Dropdown.Label>
-                <Dropdown.Separator />
-                <Dropdown.Group>
+              <Dropdown.Portal>
+                <Dropdown.Content className='w-56'>
+                  <Dropdown.Label>My Account</Dropdown.Label>
+                  <Dropdown.Separator />
+                  <Dropdown.Group>
+                    <Dropdown.Item>
+                      <User />
+                      <span>Profile</span>
+                      <Kbd variant='ghost' size='sm'>
+                        ⇧⌘P
+                      </Kbd>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <CreditCard />
+                      <span>Billing</span>
+                      <Kbd variant='ghost' size='sm'>
+                        ⌘B
+                      </Kbd>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Settings />
+                      <span>Settings</span>
+                      <Kbd variant='ghost' size='sm'>
+                        ⌘S
+                      </Kbd>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                      <Keyboard />
+                      <span>Keyboard shortcuts</span>
+                      <Kbd variant='ghost' size='sm'>
+                        ⌘K
+                      </Kbd>
+                    </Dropdown.Item>
+                  </Dropdown.Group>
+                  <Dropdown.Separator />
+                  <Dropdown.Group>
+                    <Dropdown.Item>
+                      <Users />
+                      <span>Team</span>
+                    </Dropdown.Item>
+                    <Dropdown.Sub>
+                      <Dropdown.SubTrigger>
+                        <UserPlus />
+                        <span>Invite users</span>
+                      </Dropdown.SubTrigger>
+                      <Dropdown.SubContent>
+                        <Dropdown.Item>
+                          <Mail />
+                          <span>Email</span>
+                        </Dropdown.Item>
+                        <Dropdown.Item>
+                          <MessageSquare />
+                          <span>Message</span>
+                        </Dropdown.Item>
+                        <Dropdown.Separator />
+                        <Dropdown.Item>
+                          <PlusCircle />
+                          <span>More...</span>
+                        </Dropdown.Item>
+                      </Dropdown.SubContent>
+                    </Dropdown.Sub>
+                    <Dropdown.Item>
+                      <Plus />
+                      <span>New Team</span>
+                      <Kbd variant='ghost' size='sm'>
+                        ⌘+T
+                      </Kbd>
+                    </Dropdown.Item>
+                  </Dropdown.Group>
+                  <Dropdown.Separator />
                   <Dropdown.Item>
-                    <User />
-                    <span>Profile</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⇧⌘P
-                    </Kbd>
+                    <GitBranchPlus />
+                    <span>GitHub</span>
                   </Dropdown.Item>
                   <Dropdown.Item>
-                    <CreditCard />
-                    <span>Billing</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘B
-                    </Kbd>
+                    <LifeBuoy />
+                    <span>Support</span>
                   </Dropdown.Item>
+                  <Dropdown.Item disabled>
+                    <Cloud />
+                    <span>API</span>
+                  </Dropdown.Item>
+                  <Dropdown.Separator />
+                  <Dropdown.RadioItem value='1'>Test</Dropdown.RadioItem>
+                  <Dropdown.RadioItem value='2'>Test</Dropdown.RadioItem>
+                  <Dropdown.Separator />
+                  <Dropdown.CheckboxItem>Test</Dropdown.CheckboxItem>
+                  <Dropdown.CheckboxItem>Test</Dropdown.CheckboxItem>
+                  <Dropdown.Separator />
                   <Dropdown.Item>
-                    <Settings />
-                    <span>Settings</span>
+                    <LogOut />
+                    <span>Log out</span>
                     <Kbd variant='ghost' size='sm'>
-                      ⌘S
+                      ⇧⌘Q
                     </Kbd>
                   </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Keyboard />
-                    <span>Keyboard shortcuts</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘K
-                    </Kbd>
-                  </Dropdown.Item>
-                </Dropdown.Group>
-              </Dropdown.Content>
-            </Dropdown.Root>
-
-            <Dropdown.Root size='md'>
-              <Dropdown.Trigger asChild>
-                <Button>Open</Button>
-              </Dropdown.Trigger>
-              <Dropdown.Content className='w-50'>
-                <Dropdown.Label>My Account</Dropdown.Label>
-                <Dropdown.Separator />
-                <Dropdown.Group>
-                  <Dropdown.Item>
-                    <User />
-                    <span>Profile</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⇧⌘P
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <CreditCard />
-                    <span>Billing</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘B
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Settings />
-                    <span>Settings</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘S
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Keyboard />
-                    <span>Keyboard shortcuts</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘K
-                    </Kbd>
-                  </Dropdown.Item>
-                </Dropdown.Group>
-              </Dropdown.Content>
-            </Dropdown.Root>
-
-            <Dropdown.Root size='lg'>
-              <Dropdown.Trigger asChild>
-                <Button>Open</Button>
-              </Dropdown.Trigger>
-              <Dropdown.Content className='w-56'>
-                <Dropdown.Label>My Account</Dropdown.Label>
-                <Dropdown.Separator />
-                <Dropdown.Group>
-                  <Dropdown.Item>
-                    <User />
-                    <span>Profile</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⇧⌘P
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <CreditCard />
-                    <span>Billing</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘B
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Settings />
-                    <span>Settings</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘S
-                    </Kbd>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Keyboard />
-                    <span>Keyboard shortcuts</span>
-                    <Kbd variant='ghost' size='sm'>
-                      ⌘K
-                    </Kbd>
-                  </Dropdown.Item>
-                </Dropdown.Group>
-              </Dropdown.Content>
+                </Dropdown.Content>
+              </Dropdown.Portal>
             </Dropdown.Root>
           </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Pagination /&gt;</Title>
+        <Subtitle>Default</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <Pagination.Root>
+            <Pagination.Content>
+              <Pagination.Prev />
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item>2</Pagination.Item>
+              <Pagination.Item selected>3</Pagination.Item>
+              <Pagination.Item>4</Pagination.Item>
+              <Pagination.Item>5</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+        </div>
+
+        <Subtitle>With ellipsis</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <Pagination.Root>
+            <Pagination.Content>
+              <Pagination.Prev />
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>4</Pagination.Item>
+              <Pagination.Item selected>5</Pagination.Item>
+              <Pagination.Item>6</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+        </div>
+
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <Pagination.Root size='xs'>
+            <Pagination.Content>
+              <Pagination.Prev />
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item selected>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+
+          <Pagination.Root size='sm'>
+            <Pagination.Content>
+              <Pagination.Prev />
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item selected>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+
+          <Pagination.Root size='md'>
+            <Pagination.Content>
+              <Pagination.Prev />
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item selected>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+
+          <Pagination.Root size='lg'>
+            <Pagination.Content>
+              <Pagination.Prev />
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item selected>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+
+          <Pagination.Root size='lg'>
+            <Pagination.Content>
+              <Pagination.Prev />
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item selected>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+        </div>
+
+        <Subtitle>States</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <Pagination.Root>
+            <Pagination.Content>
+              <Pagination.Prev disabled />
+              <Pagination.Item selected>1</Pagination.Item>
+              <Pagination.Item>2</Pagination.Item>
+              <Pagination.Item>3</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next />
+            </Pagination.Content>
+          </Pagination.Root>
+
+          <Pagination.Root>
+            <Pagination.Content>
+              <Pagination.Prev>
+                Custom Previous
+              </Pagination.Prev>
+              <Pagination.Item>1</Pagination.Item>
+              <Pagination.Item>2</Pagination.Item>
+              <Pagination.Item selected>3</Pagination.Item>
+              <Pagination.Ellipsis />
+              <Pagination.Item>10</Pagination.Item>
+              <Pagination.Next disabled>
+                Custom Next
+              </Pagination.Next>
+            </Pagination.Content>
+          </Pagination.Root>
         </div>
       </div>
     </div>

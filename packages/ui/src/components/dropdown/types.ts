@@ -1,9 +1,10 @@
-export type { DropdownProps } from './dropdown';
-export type { DropdownContentProps } from './dropdown-content';
-export type { DropdownItemProps } from './dropdown-item';
-export type { DropdownCheckboxItemProps } from './dropdown-checkbox-item';
-export type { DropdownRadioItemProps } from './dropdown-radio-item';
-export type { DropdownLabelProps } from './dropdown-label';
-export type { DropdownSeparatorProps } from './dropdown-separator';
-export type { DropdownSubTriggerProps } from './dropdown-sub-trigger';
-export type { DropdownSubContentProps } from './dropdown-sub-content';
+export type {
+  DropdownContentProps,
+  DropdownItemProps,
+  DropdownCheckboxItemProps,
+  DropdownRadioItemProps,
+  DropdownLabelProps,
+  DropdownSeparatorProps,
+  DropdownSubTriggerProps,
+  DropdownSubContentProps,
+} from './dropdown';

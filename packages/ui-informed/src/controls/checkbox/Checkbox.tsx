@@ -35,14 +35,14 @@ export const Checkbox = memo(function Checkbox({
             ref={ref}
             value={fieldState.value as string}
             checked={fieldState.value as boolean}
-            onCheckedChange={value => {
+            onCheckedChange={(value) => {
               onCheckedChange?.(value);
               fieldApi.setValue(value);
               fieldApi.setTouched(true);
               fieldApi.setFocused(true);
             }}
-            variant={fieldState.showError ? 'danger' : 'primary'}
             {...userProps}
+            variant={fieldState.showError ? 'destructive' : 'primary'}
             disabled={userProps.disabled || userProps.readOnly}
           />
           {description && (

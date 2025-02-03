@@ -66,17 +66,19 @@ export {
 export * as Breadcrumb from './components/breadcrumb';
 export type * from './components/breadcrumb/types';
 
+// Pagination
+export * as Pagination from './components/pagination';
+export type * from './components/pagination/types';
+
+
+
+
+
+
+
 // Dropdown
 export * as Dropdown from './components/dropdown';
 export type * from './components/dropdown/types';
-
-
-
-
-
-
-
-
 
 // Avatar
 export { Avatar, type AvatarProps } from './components/avatar/Avatar';
@@ -134,9 +136,6 @@ export {
   MenuSubContext,
   type MenuSubContextType,
 } from './components/menu/menuSubContext';
-
-// Pagination
-export * as Pagination from './components/pagination';
 
 // Resizable
 export * as Resizable from './components/resizable';
