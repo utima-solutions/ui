@@ -1,5 +1,6 @@
 import { tv } from 'tailwind-variants';
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
+import { Slot } from '@radix-ui/react-slot';
 
 import { cn } from '@/utils';
 import { ChevronLeft } from 'lucide-react';
@@ -91,18 +92,23 @@ export interface PaginationNextProps
   extends ComponentPropsWithoutRef<'button'> {
   size?: PaginationSize;
   srLabel?: string;
+  asChild?: boolean;
 }
 
 export const PaginationNext = forwardRef<
   HTMLButtonElement,
   PaginationNextProps
->(function PaginationNext({ className, size, srLabel, children, ...props }, ref) {
+>(function PaginationNext(
+  { className, size, srLabel, asChild, children, type, ...props },
+  ref,
+) {
   const { size: contextSize } = usePaginationContext();
+  const Comp = asChild ? Slot : 'button';
 
   return (
-    <button
+    <Comp
       ref={ref}
-      type='button'
+      {...(!asChild && { type: 'button' })}
       data-uui-pagination-next
       className={cn(
         buttonVariants({
@@ -113,9 +119,15 @@ export const PaginationNext = forwardRef<
       )}
       {...props}
     >
-      {children ?? 'Next'}
-      <ChevronRight />
-    </button>
+      {asChild ? (
+        children
+      ) : (
+        <>
+          {children ?? 'Next'}
+          <ChevronRight />
+        </>
+      )}
+    </Comp>
   );
 });
 
@@ -123,18 +135,23 @@ export interface PaginationItemProps
   extends ComponentPropsWithoutRef<'button'> {
   size?: PaginationSize;
   selected?: boolean;
+  asChild?: boolean;
 }
 
 export const PaginationItem = forwardRef<
   HTMLButtonElement,
   PaginationItemProps
->(function PaginationItem({ className, size, selected, ...props }, ref) {
+>(function PaginationItem(
+  { className, size, selected, asChild, type, ...props },
+  ref,
+) {
   const { size: contextSize } = usePaginationContext();
+  const Comp = asChild ? Slot : 'button';
 
   return (
-    <button
+    <Comp
       ref={ref}
-      type='button'
+      {...(!asChild && { type: 'button' })}
       data-uui-pagination-item
       data-selected={selected}
       className={cn(
@@ -177,18 +194,23 @@ export interface PaginationPrevProps
   extends ComponentPropsWithoutRef<'button'> {
   size?: PaginationSize;
   srLabel?: string;
+  asChild?: boolean;
 }
 
 export const PaginationPrev = forwardRef<
   HTMLButtonElement,
   PaginationPrevProps
->(function PaginationPrev({ className, size, srLabel, children, ...props }, ref) {
+>(function PaginationPrev(
+  { className, size, srLabel, asChild, children, type, ...props },
+  ref,
+) {
   const { size: contextSize } = usePaginationContext();
+  const Comp = asChild ? Slot : 'button';
 
   return (
-    <button
+    <Comp
       ref={ref}
-      type='button'
+      {...(!asChild && { type: 'button' })}
       data-uui-pagination-prev
       className={cn(
         buttonVariants({
@@ -199,8 +221,14 @@ export const PaginationPrev = forwardRef<
       )}
       {...props}
     >
-      <ChevronLeft />
-      {children ?? 'Previous'}
-    </button>
+      {asChild ? (
+        children
+      ) : (
+        <>
+          <ChevronLeft />
+          {children ?? 'Previous'}
+        </>
+      )}
+    </Comp>
   );
 });

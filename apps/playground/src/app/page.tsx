@@ -16,6 +16,7 @@ import {
 } from '@utima/ui';
 import {
   Check,
+  ChevronLeft,
   Cloud,
   CreditCard,
   Download,
@@ -969,17 +970,18 @@ export default function Home() {
 
           <Pagination.Root>
             <Pagination.Content>
-              <Pagination.Prev>
-                Custom Previous
+              <Pagination.Prev asChild>
+                <a href='#'>
+                  <ChevronLeft />
+                  As Child
+                </a>
               </Pagination.Prev>
               <Pagination.Item>1</Pagination.Item>
               <Pagination.Item>2</Pagination.Item>
               <Pagination.Item selected>3</Pagination.Item>
               <Pagination.Ellipsis />
               <Pagination.Item>10</Pagination.Item>
-              <Pagination.Next disabled>
-                Custom Next
-              </Pagination.Next>
+              <Pagination.Next disabled>Custom Next</Pagination.Next>
             </Pagination.Content>
           </Pagination.Root>
         </div>
