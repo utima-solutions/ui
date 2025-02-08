@@ -13,6 +13,11 @@ import {
   Separator,
   Dropdown,
   Pagination,
+  Progress,
+  Popover,
+  Input,
+  Tooltip,
+  Resizable,
 } from '@utima/ui';
 import {
   Check,
@@ -799,21 +804,23 @@ export default function Home() {
                         <UserPlus />
                         <span>Invite users</span>
                       </Dropdown.SubTrigger>
-                      <Dropdown.SubContent>
-                        <Dropdown.Item>
-                          <Mail />
-                          <span>Email</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item>
-                          <MessageSquare />
-                          <span>Message</span>
-                        </Dropdown.Item>
-                        <Dropdown.Separator />
-                        <Dropdown.Item>
-                          <PlusCircle />
-                          <span>More...</span>
-                        </Dropdown.Item>
-                      </Dropdown.SubContent>
+                      <Dropdown.Portal>
+                        <Dropdown.SubContent>
+                          <Dropdown.Item>
+                            <Mail />
+                            <span>Email</span>
+                          </Dropdown.Item>
+                          <Dropdown.Item>
+                            <MessageSquare />
+                            <span>Message</span>
+                          </Dropdown.Item>
+                          <Dropdown.Separator />
+                          <Dropdown.Item>
+                            <PlusCircle />
+                            <span>More...</span>
+                          </Dropdown.Item>
+                        </Dropdown.SubContent>
+                      </Dropdown.Portal>
                     </Dropdown.Sub>
                     <Dropdown.Item>
                       <Plus />
@@ -984,6 +991,140 @@ export default function Home() {
               <Pagination.Next disabled>Custom Next</Pagination.Next>
             </Pagination.Content>
           </Pagination.Root>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Progress /&gt;</Title>
+        <Subtitle>Variants</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <Progress value={25} variant='primary' />
+          <Progress value={50} variant='success' />
+          <Progress value={65} variant='destructive' />
+          <Progress value={75} variant='secondary' />
+          <Progress value={90} variant='outline' />
+        </div>
+
+        <Subtitle>Sizes</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <Progress value={75} size='xs' />
+          <Progress value={75} size='sm' />
+          <Progress value={75} size='md' />
+          <Progress value={75} size='lg' />
+          <Progress value={75} size='xl' />
+        </div>
+
+        <Subtitle>Custom max value</Subtitle>
+        <div className='flex flex-col gap-4'>
+          <Progress value={25} max={50} />
+          <Progress value={750} max={1000} />
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Popover /&gt;</Title>
+        <div className='flex flex-row gap-4'>
+          <Popover.Root>
+            <Popover.Trigger asChild>
+              <Button variant='outline'>Open Popover</Button>
+            </Popover.Trigger>
+            <Popover.Portal>
+              <Popover.Content align='start'>
+                <div className='grid gap-4'>
+                  <div className='space-y-2'>
+                    <h4 className='font-medium leading-none'>Dimensions</h4>
+                    <p className='text-sm text-muted-foreground'>
+                      Set the dimensions for the layer.
+                    </p>
+                  </div>
+                  <div className='grid gap-2'>
+                    <div className='grid grid-cols-3 items-center gap-4'>
+                      <Label htmlFor='width'>Width</Label>
+                      <Input
+                        id='width'
+                        defaultValue='100%'
+                        className='col-span-2 h-8'
+                      />
+                    </div>
+                    <div className='grid grid-cols-3 items-center gap-4'>
+                      <Label htmlFor='maxWidth'>Max. width</Label>
+                      <Input
+                        id='maxWidth'
+                        defaultValue='300px'
+                        className='col-span-2 h-8'
+                      />
+                    </div>
+                    <div className='grid grid-cols-3 items-center gap-4'>
+                      <Label htmlFor='height'>Height</Label>
+                      <Input
+                        id='height'
+                        defaultValue='25px'
+                        className='col-span-2 h-8'
+                      />
+                    </div>
+                    <div className='grid grid-cols-3 items-center gap-4'>
+                      <Label htmlFor='maxHeight'>Max. height</Label>
+                      <Input
+                        id='maxHeight'
+                        defaultValue='none'
+                        className='col-span-2 h-8'
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Popover.Content>
+            </Popover.Portal>
+          </Popover.Root>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Tooltip /&gt;</Title>
+        <div className='flex flex-row gap-4'>
+          <Tooltip.Provider>
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <Button variant='outline'>Hover me</Button>
+              </Tooltip.Trigger>
+              <Tooltip.Portal>
+                <Tooltip.Content>
+                  <p>Hello</p>
+                </Tooltip.Content>
+              </Tooltip.Portal>
+            </Tooltip.Root>
+          </Tooltip.Provider>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Resizable /&gt;</Title>
+        <div className='flex flex-row gap-4'>
+          <Resizable.Group
+            direction='horizontal'
+            className='max-w-md rounded-lg border md:min-w-[450px]'
+          >
+            <Resizable.Panel defaultSize={50}>
+              <div className='flex h-[200px] items-center justify-center p-6'>
+                <span className='font-semibold'>One</span>
+              </div>
+            </Resizable.Panel>
+            <Resizable.Handle withHandle />
+            <Resizable.Panel defaultSize={50}>
+              <Resizable.Group direction='vertical'>
+                <Resizable.Panel defaultSize={25}>
+                  <div className='flex h-full items-center justify-center p-6'>
+                    <span className='font-semibold'>Two</span>
+                  </div>
+                </Resizable.Panel>
+                <Resizable.Handle />
+                <Resizable.Panel defaultSize={75}>
+                  <div className='flex h-full items-center justify-center p-6'>
+                    <span className='font-semibold'>Three</span>
+                  </div>
+                </Resizable.Panel>
+              </Resizable.Group>
+            </Resizable.Panel>
+          </Resizable.Group>
         </div>
       </div>
     </div>
