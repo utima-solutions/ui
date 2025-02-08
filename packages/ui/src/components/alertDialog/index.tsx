@@ -1,9 +1,0 @@
-export { Root, Portal, Trigger } from '@radix-ui/react-alert-dialog';
-export { AlertDialogOverlay as Overlay } from './AlertDialogOverlay';
-export { AlertDialogContent as Content } from './AlertDialogContent';
-export { AlertDialogAction as Action } from './AlertDialogAction';
-export { AlertDialogCancel as Cancel } from './AlertDialogCancel';
-export { AlertDialogDescription as Description } from './AlertDialogDescription';
-export { AlertDialogFooter as Footer } from './AlertDialogFooter';
-export { AlertDialogHeader as Header } from './AlertDialogHeader';
-export { AlertDialogTitle as Title } from './AlertDialogTitle';

@@ -18,6 +18,8 @@ import {
   Input,
   Tooltip,
   Resizable,
+  Dialog,
+  AlertDialog,
 } from '@utima/ui';
 import {
   Check,
@@ -1125,6 +1127,80 @@ export default function Home() {
               </Resizable.Group>
             </Resizable.Panel>
           </Resizable.Group>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;Dialog /&gt;</Title>
+        <div className='flex flex-row gap-4'>
+          <Dialog.Root>
+            <Dialog.Trigger asChild>
+              <Button variant='outline'>Edit Profile</Button>
+            </Dialog.Trigger>
+            <Dialog.Content className='sm:max-w-[425px]'>
+              <Dialog.Header>
+                <Dialog.Title>Edit profile</Dialog.Title>
+                <Dialog.Description>
+                  Make changes to your profile here. Click save when you're
+                  done.
+                </Dialog.Description>
+              </Dialog.Header>
+              <div className='grid gap-4 py-4'>
+                <div className='grid grid-cols-4 items-center gap-4'>
+                  <Label htmlFor='name' className='text-right'>
+                    Name
+                  </Label>
+                  <Input
+                    id='name'
+                    value='Pedro Duarte'
+                    className='col-span-3'
+                  />
+                </div>
+                <div className='grid grid-cols-4 items-center gap-4'>
+                  <Label htmlFor='username' className='text-right'>
+                    Username
+                  </Label>
+                  <Input
+                    id='username'
+                    value='@peduarte'
+                    className='col-span-3'
+                  />
+                </div>
+              </div>
+              <Dialog.Footer>
+                <Button type='submit'>Save changes</Button>
+              </Dialog.Footer>
+            </Dialog.Content>
+          </Dialog.Root>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;AlertDialog /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <AlertDialog.Root>
+              <AlertDialog.Trigger asChild>
+                <Button variant='outline'>Show Dialog</Button>
+              </AlertDialog.Trigger>
+              <AlertDialog.Portal>
+                <AlertDialog.Overlay />
+                <AlertDialog.Content>
+                  <AlertDialog.Header>
+                    <AlertDialog.Title>
+                      Are you absolutely sure?
+                    </AlertDialog.Title>
+                    <AlertDialog.Description>
+                      This action cannot be undone. This will permanently delete
+                      your account and remove your data from our servers.
+                    </AlertDialog.Description>
+                  </AlertDialog.Header>
+                  <AlertDialog.Footer>
+                    <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+                    <AlertDialog.Action>Continue</AlertDialog.Action>
+                  </AlertDialog.Footer>
+                </AlertDialog.Content>
+              </AlertDialog.Portal>
+            </AlertDialog.Root>
+          </div>
         </div>
       </div>
     </div>

@@ -89,6 +89,11 @@ export * as Resizable from './components/resizable';
 // Tooltip
 export * as Tooltip from './components/tooltip';
 
+// Dialog
+export * as Dialog from './components/dialog';
+
+// AlertDialog
+export * as AlertDialog from './components/alert-dialog';
 
 
 
@@ -118,9 +123,3 @@ export { Toast, type ToastProps, toast } from './components/toast/Toast';
 // Command
 export * as Command from './components/command';
 export { useCommandState } from 'cmdk';
-
-// Dialog
-export * as Dialog from './components/dialog';
-
-// AlertDialog
-export * as AlertDialog from './components/alertDialog';
