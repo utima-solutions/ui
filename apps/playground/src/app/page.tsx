@@ -28,7 +28,10 @@ import {
   Select,
   Tabs,
   Card,
-  SelectContent,
+  Alert,
+  Accordion,
+  Collapsible,
+  Drawer,
 } from '@utima/ui';
 import {
   Check,
@@ -49,6 +52,9 @@ import {
   User,
   UserPlus,
   Users,
+  Terminal,
+  AlertCircle,
+  ChevronsUpDown,
 } from 'lucide-react';
 import { Breadcrumb } from '@utima/ui';
 
@@ -1558,6 +1564,197 @@ export default function Home() {
                 <Button>Deploy</Button>
               </Card.Footer>
             </Card.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Alert /&gt;</Title>
+          <Subtitle>Default</Subtitle>
+          <Alert.Root>
+            <Terminal className='size-4' />
+            <Alert.Title>Heads up!</Alert.Title>
+            <Alert.Description>
+              You can add components and dependencies to your app using the cli.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Subtitle>Primary</Subtitle>
+          <Alert.Root variant='primary'>
+            <Terminal className='size-4' />
+            <Alert.Title>Welcome!</Alert.Title>
+            <Alert.Description>
+              Get started with your new project by exploring the documentation.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Subtitle>Outline</Subtitle>
+          <Alert.Root variant='outline'>
+            <Terminal className='size-4' />
+            <Alert.Title>Welcome!</Alert.Title>
+            <Alert.Description>
+              Get started with your new project by exploring the documentation.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Alert.Root variant='primary'>
+            <MessageSquare className='size-4' />
+            <Alert.Description>
+              New message from your team. Click here to read it.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Subtitle>Success</Subtitle>
+          <Alert.Root variant='success'>
+            <Check className='size-4' />
+            <Alert.Title>Successfully saved!</Alert.Title>
+            <Alert.Description>
+              Your changes have been saved to the cloud.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Alert.Root variant='success'>
+            <Check className='size-4' />
+            <Alert.Description>
+              Your profile has been updated successfully.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Alert.Root variant='success'>
+            <Check className='size-4' />
+            <Alert.Title>Payment processed</Alert.Title>
+            <Alert.Description>
+              <div className='mb-3'>
+                Your payment has been successfully processed and confirmed.
+              </div>
+              <Button size='sm' variant='outline'>
+                View Receipt
+              </Button>
+            </Alert.Description>
+          </Alert.Root>
+
+          <Subtitle>Destructive</Subtitle>
+          <Alert.Root variant='destructive'>
+            <AlertCircle className='size-4' />
+            <Alert.Title>Error</Alert.Title>
+            <Alert.Description>
+              Your session has expired. Please log in again.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Subtitle>Without Icon</Subtitle>
+          <Alert.Root>
+            <Alert.Title>Note</Alert.Title>
+            <Alert.Description>
+              This is a simple alert without an icon.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Subtitle>Without Title</Subtitle>
+          <Alert.Root>
+            <Terminal className='size-4' />
+            <Alert.Description>
+              You can also create alerts without titles for simple messages.
+            </Alert.Description>
+          </Alert.Root>
+
+          <Subtitle>With Custom Content</Subtitle>
+          <Alert.Root>
+            <Terminal className='size-4' />
+            <Alert.Title>Deployment Started</Alert.Title>
+            <Alert.Description>
+              <div className='mb-3'>
+                Your application is being deployed to production.
+              </div>
+              <div className='flex gap-3'>
+                <Button size='sm' variant='outline'>
+                  View Logs
+                </Button>
+                <Button size='sm'>Open Dashboard</Button>
+              </div>
+            </Alert.Description>
+          </Alert.Root>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Accordion /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <Accordion.Root type='single' collapsible className='w-full'>
+              <Accordion.Item value='item-1'>
+                <Accordion.Trigger>Is it accessible?</Accordion.Trigger>
+                <Accordion.Content>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value='item-2'>
+                <Accordion.Trigger>Is it styled?</Accordion.Trigger>
+                <Accordion.Content>
+                  Yes. It comes with default styles that matches the other
+                  components&apos; aesthetic.
+                </Accordion.Content>
+              </Accordion.Item>
+              <Accordion.Item value='item-3'>
+                <Accordion.Trigger>Is it animated?</Accordion.Trigger>
+                <Accordion.Content>
+                  Yes. It's animated by default, but you can disable it if you
+                  prefer.
+                </Accordion.Content>
+              </Accordion.Item>
+            </Accordion.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Collapsible /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <Collapsible.Root className='w-[350px] space-y-2'>
+              <div className='flex items-center justify-between space-x-4 px-4'>
+                <h4 className='text-sm font-semibold'>
+                  @peduarte starred 3 repositories
+                </h4>
+                <Collapsible.Trigger asChild>
+                  <Button variant='ghost' size='sm'>
+                    <ChevronsUpDown className='h-4 w-4' />
+                    <span className='sr-only'>Toggle</span>
+                  </Button>
+                </Collapsible.Trigger>
+              </div>
+              <div className='rounded-md border px-4 py-2 font-mono text-sm shadow-sm'>
+                @radix-ui/primitives
+              </div>
+              <Collapsible.Content className='space-y-2'>
+                <div className='rounded-md border px-4 py-2 font-mono text-sm shadow-sm'>
+                  @radix-ui/colors
+                </div>
+                <div className='rounded-md border px-4 py-2 font-mono text-sm shadow-sm'>
+                  @stitches/react
+                </div>
+              </Collapsible.Content>
+            </Collapsible.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Drawer /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <Drawer.Root>
+              <Drawer.Trigger asChild>
+                <Button variant='outline'>Open Drawer</Button>
+              </Drawer.Trigger>
+              <Drawer.Portal>
+                <Drawer.Overlay />
+                <Drawer.Content>
+                  <div className='mx-auto w-full max-w-sm'>
+                    <Drawer.Header>
+                      <Drawer.Handle />
+                      <Drawer.Title>Move Goal</Drawer.Title>
+                      <Drawer.Description>
+                        Set your daily activity goal.
+                      </Drawer.Description>
+                    </Drawer.Header>
+                  </div>
+                </Drawer.Content>
+              </Drawer.Portal>
+            </Drawer.Root>
           </div>
         </div>
       </div>

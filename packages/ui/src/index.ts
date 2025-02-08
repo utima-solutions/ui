@@ -137,10 +137,21 @@ export * as Tabs from './components/tabs';
 // Card
 export * as Card from './components/card';
 
+// Accordion
+export * as Accordion from './components/accordion';
+
 // Inputs
 export { Input, type InputProps } from './components/input/Input';
 export { TextArea, type TextareaProps } from './components/input/TextArea';
 
+// Alert
+export * as Alert from './components/alert';
+
+// Collapsible
+export * as Collapsible from './components/collapsible';
+
+// Drawer
+export * as Drawer from './components/drawer';
 
 // Command
 export * as Command from './components/command';
