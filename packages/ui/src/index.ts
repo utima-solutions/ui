@@ -118,10 +118,6 @@ export { avatarVariants } from './components/avatar/avatar';
 // Skeleton
 export { Skeleton } from './components/skeleton/skeleton';
 
-// Inputs
-export { Input, type InputProps } from './components/input/Input';
-export { TextArea, type TextareaProps } from './components/input/TextArea';
-
 // Select
 export * as Select from './components/select';
 export * from './components/select/select-context';
@@ -134,6 +130,17 @@ export type {
   SelectScrollUpButtonProps,
   SelectTriggerProps,
 } from './components/select/select';
+
+// Tabs
+export * as Tabs from './components/tabs';
+
+// Card
+export * as Card from './components/card';
+
+// Inputs
+export { Input, type InputProps } from './components/input/Input';
+export { TextArea, type TextareaProps } from './components/input/TextArea';
+
 
 // Command
 export * as Command from './components/command';

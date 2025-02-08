@@ -23,12 +23,12 @@ import {
   Table,
   ScrollArea,
   toast,
-  Toaster,
   Avatar,
-  AvatarImage,
-  AvatarFallback,
   Skeleton,
   Select,
+  Tabs,
+  Card,
+  SelectContent,
 } from '@utima/ui';
 import {
   Check,
@@ -61,7 +61,7 @@ const invoices = [
     invoice: 'INV001',
     paymentStatus: 'Paid',
     totalAmount: '$250.00',
-    paymentMethod: 'Credit Card',
+    paymentMethod: 'Credit Card.',
   },
   {
     invoice: 'INV002',
@@ -79,7 +79,7 @@ const invoices = [
     invoice: 'INV004',
     paymentStatus: 'Paid',
     totalAmount: '$450.00',
-    paymentMethod: 'Credit Card',
+    paymentMethod: 'Credit Card.',
   },
   {
     invoice: 'INV005',
@@ -97,7 +97,7 @@ const invoices = [
     invoice: 'INV007',
     paymentStatus: 'Unpaid',
     totalAmount: '$300.00',
-    paymentMethod: 'Credit Card',
+    paymentMethod: 'Credit Card.',
   },
 ];
 
@@ -1495,6 +1495,70 @@ export default function Home() {
               </Select.Content>
             </Select.Portal>
           </Select.Root>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Tabs. /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <Tabs.Root defaultValue='account' className='w-[400px]'>
+              <Tabs.List className='grid w-full grid-cols-2'>
+                <Tabs.Trigger value='account'>Account</Tabs.Trigger>
+                <Tabs.Trigger value='password'>Password</Tabs.Trigger>
+              </Tabs.List>
+              <Tabs.Content value='account'>
+                <div className='width-96 h-32 border border-border bg-muted flex items-center justify-center rounded-md text-sm font-medium'>
+                  Account
+                </div>
+              </Tabs.Content>
+              <Tabs.Content value='password'>
+                <div className='width-96 h-32 border border-border bg-muted flex items-center justify-center rounded-md text-sm font-medium'>
+                  Password
+                </div>
+              </Tabs.Content>
+            </Tabs.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Card /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <Card.Root className='w-80'>
+              <Card.Header>
+                <Card.Title>Create project</Card.Title>
+                <Card.Description>
+                  Deploy your new project in one-click.
+                </Card.Description>
+              </Card.Header>
+              <Card.Content>
+                <form>
+                  <div className='grid w-full items-center gap-4'>
+                    <div className='flex flex-col space-y-1.5'>
+                      <Label htmlFor='name'>Name</Label>
+                      <Input id='name' placeholder='Name of your project' />
+                    </div>
+                    <div className='flex flex-col space-y-1.5'>
+                      <Label htmlFor='framework'>Framework</Label>
+                      <Select.Root>
+                        <Select.Trigger id='framework'>
+                          <Select.Value placeholder='Select' />
+                        </Select.Trigger>
+                        <Select.Content position='popper'>
+                          <Select.Item value='next'>Next.js</Select.Item>
+                          <Select.Item value='sveltekit'>SvelteKit</Select.Item>
+                          <Select.Item value='astro'>Astro</Select.Item>
+                          <Select.Item value='nuxt'>Nuxt.js</Select.Item>
+                        </Select.Content>
+                      </Select.Root>
+                    </div>
+                  </div>
+                </form>
+              </Card.Content>
+              <Card.Footer className='flex justify-between'>
+                <Button variant='outline'>Cancel</Button>
+                <Button>Deploy</Button>
+              </Card.Footer>
+            </Card.Root>
+          </div>
         </div>
       </div>
     </div>
