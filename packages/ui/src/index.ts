@@ -115,17 +115,25 @@ export * from './components/toast/toast';
 export * as Avatar from './components/avatar';
 export { avatarVariants } from './components/avatar/avatar';
 
-
+// Skeleton
+export { Skeleton } from './components/skeleton/skeleton';
 
 // Inputs
 export { Input, type InputProps } from './components/input/Input';
 export { TextArea, type TextareaProps } from './components/input/TextArea';
 
 // Select
-export * as SelectPrimitive from './components/old-select';
-export { Select, type SelectProps } from './components/old-select/Select';
-export { SelectItem } from './components/old-select/SelectItem';
-export { useSelectContext } from './components/old-select/useSelectContext';
+export * as Select from './components/select';
+export * from './components/select/select-context';
+export * from './components/select/use-select-context';
+export type {
+  SelectContentProps,
+  SelectItemProps,
+  SelectRootProps,
+  SelectScrollDownButtonProps,
+  SelectScrollUpButtonProps,
+  SelectTriggerProps,
+} from './components/select/select';
 
 // Command
 export * as Command from './components/command';

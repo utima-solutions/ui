@@ -27,6 +27,8 @@ import {
   Avatar,
   AvatarImage,
   AvatarFallback,
+  Skeleton,
+  Select,
 } from '@utima/ui';
 import {
   Check,
@@ -1385,6 +1387,114 @@ export default function Home() {
               Show Toast
             </Button>
           </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Skeleton /&gt;</Title>
+          <div className='flex items-center space-x-4'>
+            <Skeleton className='h-12 w-12 rounded-full' />
+            <div className='space-y-2'>
+              <Skeleton className='h-4 w-[250px]' />
+              <Skeleton className='h-4 w-[200px]' />
+            </div>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Select /&gt;</Title>
+          <Subtitle>Sizes</Subtitle>
+          <div className='flex items-end gap-4'>
+            <Select.Root size='xs'>
+              <Select.Trigger className='w-[180px]'>
+                <Select.Value placeholder='Extra small' />
+              </Select.Trigger>
+              <Select.Portal>
+                <Select.Content>
+                  <Select.Group>
+                    <Select.Label>Fruits</Select.Label>
+                    <Select.Item value='apple'>Apple</Select.Item>
+                    <Select.Item value='banana'>Banana</Select.Item>
+                    <Select.Item value='blueberry'>Blueberry</Select.Item>
+                    <Select.Item value='grapes'>Grapes</Select.Item>
+                    <Select.Item value='pineapple'>Pineapple</Select.Item>
+                  </Select.Group>
+                </Select.Content>
+              </Select.Portal>
+            </Select.Root>
+
+            <Select.Root size='sm'>
+              <Select.Trigger className='w-[180px]'>
+                <Select.Value placeholder='Small' />
+              </Select.Trigger>
+              <Select.Portal>
+                <Select.Content>
+                  <Select.Group>
+                    <Select.Label>Fruits</Select.Label>
+                    <Select.Item value='apple'>Apple</Select.Item>
+                    <Select.Item value='banana'>Banana</Select.Item>
+                    <Select.Item value='blueberry'>Blueberry</Select.Item>
+                    <Select.Item value='grapes'>Grapes</Select.Item>
+                    <Select.Item value='pineapple'>Pineapple</Select.Item>
+                  </Select.Group>
+                </Select.Content>
+              </Select.Portal>
+            </Select.Root>
+
+            <Select.Root size='md'>
+              <Select.Trigger className='w-[180px]'>
+                <Select.Value placeholder='Medium (default)' />
+              </Select.Trigger>
+              <Select.Portal>
+                <Select.Content>
+                  <Select.Group>
+                    <Select.Label>Fruits</Select.Label>
+                    <Select.Item value='apple'>Apple</Select.Item>
+                    <Select.Item value='banana'>Banana</Select.Item>
+                    <Select.Item value='blueberry'>Blueberry</Select.Item>
+                    <Select.Item value='grapes'>Grapes</Select.Item>
+                    <Select.Item value='pineapple'>Pineapple</Select.Item>
+                  </Select.Group>
+                </Select.Content>
+              </Select.Portal>
+            </Select.Root>
+
+            <Select.Root size='lg'>
+              <Select.Trigger className='w-[180px]'>
+                <Select.Value placeholder='Large' />
+              </Select.Trigger>
+              <Select.Portal>
+                <Select.Content>
+                  <Select.Group>
+                    <Select.Label>Fruits</Select.Label>
+                    <Select.Item value='apple'>Apple</Select.Item>
+                    <Select.Item value='banana'>Banana</Select.Item>
+                    <Select.Item value='blueberry'>Blueberry</Select.Item>
+                    <Select.Item value='grapes'>Grapes</Select.Item>
+                    <Select.Item value='pineapple'>Pineapple</Select.Item>
+                  </Select.Group>
+                </Select.Content>
+              </Select.Portal>
+            </Select.Root>
+          </div>
+
+          <Subtitle>Default Example</Subtitle>
+          <Select.Root>
+            <Select.Trigger className='w-[180px]'>
+              <Select.Value placeholder='Select a fruit' />
+            </Select.Trigger>
+            <Select.Portal>
+              <Select.Content>
+                <Select.Group>
+                  <Select.Label>Fruits</Select.Label>
+                  <Select.Item value='apple'>Apple</Select.Item>
+                  <Select.Item value='banana'>Banana</Select.Item>
+                  <Select.Item value='blueberry'>Blueberry</Select.Item>
+                  <Select.Item value='grapes'>Grapes</Select.Item>
+                  <Select.Item value='pineapple'>Pineapple</Select.Item>
+                </Select.Group>
+              </Select.Content>
+            </Select.Portal>
+          </Select.Root>
         </div>
       </div>
     </div>

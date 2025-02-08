@@ -2,10 +2,11 @@ import type { VariantProps } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
 
 import type { selectStyles } from './select.styles';
+import type { SetNonNullable } from 'type-fest';
 
-export const SelectContext = createContext<VariantProps<typeof selectStyles>>(
-  undefined!,
-);
+export const SelectContext = createContext<
+  SetNonNullable<VariantProps<typeof selectStyles>, 'size'>
+>(undefined!);
 
 /**
  * Used to pass down the styles and variants to the children of the Select component.
