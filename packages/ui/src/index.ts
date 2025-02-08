@@ -71,7 +71,11 @@ export * as Pagination from './components/pagination';
 export type * from './components/pagination/types';
 
 // Progress
-export { Progress, type ProgressProps, progressVariants } from './components/progress/progress';
+export {
+  Progress,
+  type ProgressProps,
+  progressVariants,
+} from './components/progress/progress';
 
 // Dropdown
 export * as Dropdown from './components/dropdown';
@@ -81,7 +85,10 @@ export type * from './components/dropdown/types';
 export * as Popover from './components/popover';
 
 // Aspect Ratio
-export { AspectRatio, type AspectRatioProps } from "@radix-ui/react-aspect-ratio"
+export {
+  AspectRatio,
+  type AspectRatioProps,
+} from '@radix-ui/react-aspect-ratio';
 
 // Resizable
 export * as Resizable from './components/resizable';
@@ -95,30 +102,30 @@ export * as Dialog from './components/dialog';
 // AlertDialog
 export * as AlertDialog from './components/alert-dialog';
 
-
-
-
-
-
-// Avatar
-export { Avatar, type AvatarProps } from './components/avatar/Avatar';
-export * as AvatarPrimitive from './components/avatar/index';
-
 // Table
 export * as Table from './components/table';
+
+// ScrollArea
+export { ScrollArea, type ScrollAreaProps } from './components/scroll-area';
+
+// Toast
+export * from './components/toast/toast';
+
+// Avatar
+export * as Avatar from './components/avatar';
+export { avatarVariants } from './components/avatar/avatar';
+
+
 
 // Inputs
 export { Input, type InputProps } from './components/input/Input';
 export { TextArea, type TextareaProps } from './components/input/TextArea';
 
 // Select
-export * as SelectPrimitive from './components/select';
-export { Select, type SelectProps } from './components/select/Select';
-export { SelectItem } from './components/select/SelectItem';
-export { useSelectContext } from './components/select/useSelectContext';
-
-// Toast
-export { Toast, type ToastProps, toast } from './components/toast/Toast';
+export * as SelectPrimitive from './components/old-select';
+export { Select, type SelectProps } from './components/old-select/Select';
+export { SelectItem } from './components/old-select/SelectItem';
+export { useSelectContext } from './components/old-select/useSelectContext';
 
 // Command
 export * as Command from './components/command';

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ThemeSwitcher } from '@/components/theme-switcher/theme-switcher';
 import { ThemeProvider } from '@/contexts/theme-provider';
+import { Toaster } from '@utima/ui';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -36,6 +37,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ThemeSwitcher />
+          <Toaster />
           {children}
         </ThemeProvider>
       </body>

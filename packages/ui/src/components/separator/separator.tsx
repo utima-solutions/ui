@@ -77,7 +77,7 @@ export const separatorVariants = tv({
   ],
   defaultVariants: {
     orientation: 'horizontal',
-    size: 'md',
+    size: 'sm',
   },
 });
 

@@ -20,6 +20,13 @@ import {
   Resizable,
   Dialog,
   AlertDialog,
+  Table,
+  ScrollArea,
+  toast,
+  Toaster,
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
 } from '@utima/ui';
 import {
   Check,
@@ -42,6 +49,55 @@ import {
   Users,
 } from 'lucide-react';
 import { Breadcrumb } from '@utima/ui';
+
+const tags = Array.from({ length: 50 }).map(
+  (_, i, a) => `v1.2.0-beta.${a.length - i}`,
+);
+
+const invoices = [
+  {
+    invoice: 'INV001',
+    paymentStatus: 'Paid',
+    totalAmount: '$250.00',
+    paymentMethod: 'Credit Card',
+  },
+  {
+    invoice: 'INV002',
+    paymentStatus: 'Pending',
+    totalAmount: '$150.00',
+    paymentMethod: 'PayPal',
+  },
+  {
+    invoice: 'INV003',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$350.00',
+    paymentMethod: 'Bank Transfer',
+  },
+  {
+    invoice: 'INV004',
+    paymentStatus: 'Paid',
+    totalAmount: '$450.00',
+    paymentMethod: 'Credit Card',
+  },
+  {
+    invoice: 'INV005',
+    paymentStatus: 'Paid',
+    totalAmount: '$550.00',
+    paymentMethod: 'PayPal',
+  },
+  {
+    invoice: 'INV006',
+    paymentStatus: 'Pending',
+    totalAmount: '$200.00',
+    paymentMethod: 'Bank Transfer',
+  },
+  {
+    invoice: 'INV007',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$300.00',
+    paymentMethod: 'Credit Card',
+  },
+];
 
 export default function Home() {
   return (
@@ -1200,6 +1256,134 @@ export default function Home() {
                 </AlertDialog.Content>
               </AlertDialog.Portal>
             </AlertDialog.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Table /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <Table.Root>
+              <Table.Header>
+                <Table.Row>
+                  <Table.Head className='w-[100px]'>Invoice</Table.Head>
+                  <Table.Head>Status</Table.Head>
+                  <Table.Head>Method</Table.Head>
+                  <Table.Head className='text-right'>Amount</Table.Head>
+                </Table.Row>
+              </Table.Header>
+              <Table.Body>
+                {invoices.map((invoice) => (
+                  <Table.Row key={invoice.invoice}>
+                    <Table.Cell className='font-medium'>
+                      {invoice.invoice}
+                    </Table.Cell>
+                    <Table.Cell>{invoice.paymentStatus}</Table.Cell>
+                    <Table.Cell>{invoice.paymentMethod}</Table.Cell>
+                    <Table.Cell className='text-right'>
+                      {invoice.totalAmount}
+                    </Table.Cell>
+                  </Table.Row>
+                ))}
+              </Table.Body>
+              <Table.Footer>
+                <Table.Row>
+                  <Table.Cell colSpan={3}>Total</Table.Cell>
+                  <Table.Cell className='text-right'>$2,500.00</Table.Cell>
+                </Table.Row>
+              </Table.Footer>
+            </Table.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;ScrollArea /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <ScrollArea className='h-72 w-48 rounded-md border'>
+              <div className='p-4'>
+                <h4 className='mb-4 text-sm font-medium leading-none'>Tags</h4>
+                {tags.map((tag) => (
+                  <>
+                    <div key={tag} className='text-sm'>
+                      {tag}
+                    </div>
+                    <Separator size='sm' className='my-2' />
+                  </>
+                ))}
+              </div>
+            </ScrollArea>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Avatar /&gt;</Title>
+          <Subtitle>Sizes</Subtitle>
+          <div className='flex items-center gap-4'>
+            <Avatar.Root size='xs'>
+              <Avatar.Image src='https://github.com/shadcn.png' alt='@shadcn' />
+              <Avatar.Fallback>CN</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root size='sm'>
+              <Avatar.Image src='https://github.com/shadcn.png' alt='@shadcn' />
+              <Avatar.Fallback>CN</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root size='md'>
+              <Avatar.Image src='https://github.com/shadcn.png' alt='@shadcn' />
+              <Avatar.Fallback>CN</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root size='lg'>
+              <Avatar.Image src='https://github.com/shadcn.png' alt='@shadcn' />
+              <Avatar.Fallback>CN</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root size='xl'>
+              <Avatar.Image src='https://github.com/shadcn.png' alt='@shadcn' />
+              <Avatar.Fallback>CN</Avatar.Fallback>
+            </Avatar.Root>
+          </div>
+
+          <Subtitle>With Fallback</Subtitle>
+          <div className='flex items-center gap-4'>
+            <Avatar.Root>
+              <Avatar.Fallback>JD</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root>
+              <Avatar.Fallback>AB</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root>
+              <Avatar.Fallback>🎉</Avatar.Fallback>
+            </Avatar.Root>
+            <Avatar.Root>
+              <Avatar.Fallback className='bg-primary text-primary-foreground'>
+                UI
+              </Avatar.Fallback>
+            </Avatar.Root>
+          </div>
+
+          <Subtitle>Invalid Image</Subtitle>
+          <div className='flex items-center gap-4'>
+            <Avatar.Root>
+              <Avatar.Image src='/broken-image.jpg' alt='@broken' />
+              <Avatar.Fallback>BK</Avatar.Fallback>
+            </Avatar.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Toast /&gt;</Title>
+          <div className='flex flex-row gap-4'>
+            <Button
+              variant='outline'
+              onClick={() =>
+                toast('Event has been created', {
+                  description: 'Sunday, December 03, 2023 at 9:00 AM',
+                  action: {
+                    label: 'Undo',
+                    onClick: () => console.log('Undo'),
+                  },
+                })
+              }
+            >
+              Show Toast
+            </Button>
           </div>
         </div>
       </div>
