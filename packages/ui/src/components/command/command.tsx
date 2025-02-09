@@ -45,7 +45,7 @@ export const Command = forwardRef<
   return (
     <CommandPrimitive
       ref={ref}
-      data-ui-command
+      data-uui-command
       className={cn(styles.base(), className)}
       {...restProps}
     />
@@ -60,7 +60,7 @@ export const CommandDialog = forwardRef<
   return (
     <Dialog.Content
       ref={ref}
-      data-ui-command-dialog
+      data-uui-command-dialog
       className={cn(styles.dialog(), className)}
       {...restProps}
     >
@@ -77,7 +77,7 @@ export const CommandSeparator = forwardRef<
   return (
     <CommandPrimitive.Separator
       ref={ref}
-      data-ui-command-separator
+      data-uui-command-separator
       className={cn(styles.separator(), className)}
       {...restProps}
     />
@@ -92,7 +92,7 @@ export const CommandList = forwardRef<
   return (
     <CommandPrimitive.List
       ref={ref}
-      data-ui-command-list
+      data-uui-command-list
       className={cn(styles.list(), className)}
       {...restProps}
     />
@@ -110,12 +110,12 @@ export const CommandInput = forwardRef<
 >(({ className, loading = false, ...restProps }, ref) => {
   const styles = commandVariants();
   return (
-    <div className={styles.inputWrapper()} cmdk-input-wrapper=''>
+    <div className={styles.inputWrapper()} data-uui-command-input-wrapper=''>
       <div className={styles.inputContainer()}>
         <Search className={styles.inputIcon()} />
         <CommandPrimitive.Input
           ref={ref}
-          data-ui-command-input
+          data-uui-command-input
           className={cn(styles.input(), className)}
           {...restProps}
         />
@@ -135,7 +135,7 @@ export const CommandGroup = forwardRef<
   return (
     <CommandPrimitive.Group
       ref={ref}
-      data-ui-command-group
+      data-uui-command-group
       className={cn(styles.group(), className)}
       {...restProps}
     />
@@ -170,7 +170,7 @@ export const CommandEmpty = forwardRef<
     return (
       <CommandPrimitive.Empty
         ref={ref}
-        data-ui-command-empty
+        data-uui-command-empty
         className={cn(styles.empty(), className)}
         {...restProps}
       >
@@ -204,7 +204,7 @@ export const CommandItem = forwardRef<
   return (
     <CommandPrimitive.Item
       ref={ref}
-      data-ui-command-item
+      data-uui-command-item
       className={cn(styles.item(), className)}
       {...restProps}
     />
