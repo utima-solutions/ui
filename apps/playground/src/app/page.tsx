@@ -1,41 +1,10 @@
 'use client';
 
-import { Subtitle } from '@/components/subtitle';
-import { Title } from '@/components/title';
 import {
-  Button,
-  IconButton,
-  Badge,
-  Label,
-  Kbd,
-  Checkbox,
-  Switch,
-  Separator,
-  Dropdown,
-  Pagination,
-  Progress,
-  Popover,
-  Input,
-  Tooltip,
-  Resizable,
-  Dialog,
-  AlertDialog,
-  Table,
-  ScrollArea,
-  toast,
-  Avatar,
-  Skeleton,
-  Select,
-  Tabs,
-  Card,
-  Alert,
-  Accordion,
-  Collapsible,
-  Drawer,
-} from '@utima/ui';
-import {
+  AlertCircle,
   Check,
   ChevronLeft,
+  ChevronsUpDown,
   Cloud,
   CreditCard,
   Download,
@@ -45,18 +14,52 @@ import {
   LogOut,
   Mail,
   Mailbox,
+  Menu,
   MessageSquare,
   Plus,
   PlusCircle,
   Settings,
+  Terminal,
   User,
   UserPlus,
   Users,
-  Terminal,
-  AlertCircle,
-  ChevronsUpDown,
+  X,
 } from 'lucide-react';
-import { Breadcrumb } from '@utima/ui';
+import {
+  Accordion,
+  Alert,
+  AlertDialog,
+  Avatar,
+  Badge,
+  Breadcrumb,
+  Button,
+  Card,
+  Checkbox,
+  Collapsible,
+  Dialog,
+  Drawer,
+  Dropdown,
+  IconButton,
+  Input,
+  Kbd,
+  Label,
+  Pagination,
+  Popover,
+  Progress,
+  Resizable,
+  ScrollArea,
+  Select,
+  Separator,
+  Skeleton,
+  Switch,
+  Table,
+  Tabs,
+  TextArea,
+  toast,
+  Tooltip,
+} from '@utima/ui';
+import { Subtitle } from '@/components/subtitle';
+import { Title } from '@/components/title';
 
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v1.2.0-beta.${a.length - i}`,
@@ -1755,6 +1758,82 @@ export default function Home() {
                 </Drawer.Content>
               </Drawer.Portal>
             </Drawer.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Input /&gt;</Title>
+          <Subtitle>Variants</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <Input placeholder='Default input' />
+            <Input variant='destructive' placeholder='Destructive input' />
+            <Input variant='success' placeholder='Success input' />
+          </div>
+
+          <Subtitle>Sizes</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <Input size='xs' placeholder='Extra small input' />
+            <Input size='sm' placeholder='Small input' />
+            <Input size='md' placeholder='Default input' />
+            <Input size='lg' placeholder='Large input' />
+          </div>
+
+          <Subtitle>With addons</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <Input addonBefore='http://' placeholder='example.com' />
+            <Input addonAfter='.com' placeholder='domain' />
+            <Input
+              addonBefore={<Mail className='size-4' />}
+              placeholder='Enter email'
+            />
+            <Input
+              addonAfter={<Check className='size-4' />}
+              placeholder='Verified input'
+            />
+          </div>
+
+          <Subtitle>States</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <Input placeholder='Disabled input' disabled />
+            <Input placeholder='Required input' required />
+            <Input placeholder='Read only input' readOnly />
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;TextArea /&gt;</Title>
+          <Subtitle>Variants</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <TextArea placeholder='Default textarea' />
+            <TextArea variant='destructive' placeholder='Destructive textarea' />
+            <TextArea variant='success' placeholder='Success textarea' />
+          </div>
+
+          <Subtitle>Sizes</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <TextArea size='xs' placeholder='Extra small textarea' />
+            <TextArea size='sm' placeholder='Small textarea' />
+            <TextArea size='md' placeholder='Default textarea' />
+            <TextArea size='lg' placeholder='Large textarea' />
+          </div>
+
+          <Subtitle>With addons</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <TextArea
+              addonBefore={<MessageSquare className='size-4' />}
+              placeholder='Enter message'
+            />
+            <TextArea
+              addonAfter={<Check className='size-4' />}
+              placeholder='Verified message'
+            />
+          </div>
+
+          <Subtitle>States</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <TextArea placeholder='Disabled textarea' disabled />
+            <TextArea placeholder='Required textarea' required />
+            <TextArea placeholder='Read only textarea' readOnly />
           </div>
         </div>
       </div>

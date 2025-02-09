@@ -1,4 +1,4 @@
-import type { VariantProps } from 'class-variance-authority';
+import { tv, type VariantProps } from 'tailwind-variants';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
@@ -6,23 +6,22 @@ import {
 } from 'react';
 
 import { cn } from '@/utils';
+import { inputVariants } from './input';
 
-import { inputDef, inputStyles } from './Input.styles';
+export const textareaVariants = tv({
+  extend: inputVariants,
+  slots: {
+    base: 'min-h-[80px] py-2',
+  },
+});
 
 export interface TextareaProps
   extends Omit<ComponentPropsWithoutRef<'textarea'>, 'size'>,
-    VariantProps<typeof inputStyles> {
+    VariantProps<typeof textareaVariants> {
   addonBefore?: ReactNode;
   addonAfter?: ReactNode;
 }
 
-/**
- * Textarea component with support for addons.
- *
- * ```tsx
- * <TextArea placeholder='Search...' />
- * ```
- */
 export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   function TextArea(
     {
@@ -35,48 +34,37 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
     },
     ref,
   ) {
+    const styles = textareaVariants({ size, variant });
+
     if (!addonAfter && !addonBefore) {
-      <textarea
-        ref={ref}
-        className={cn(inputStyles({ size, variant }), 'h-auto', className)}
-        {...restProps}
-      />;
+      return (
+        <textarea
+          ref={ref}
+          className={cn(styles.base(), className)}
+          {...restProps}
+        />
+      );
     }
 
     return (
-      <div className={cn(inputDef.wrapper, 'items-stretch')}>
+      <div className={styles.wrapper()}>
         {addonBefore && (
-          <span
-            className={cn(
-              inputStyles({ size }),
-              inputDef.addon.base,
-              inputDef.addon.before,
-              'h-auto',
-            )}
-          >
+          <span className={cn(styles.addonBase(), styles.addonBefore())}>
             {addonBefore}
           </span>
         )}
         <textarea
           ref={ref}
           className={cn(
-            inputStyles({ size, variant }),
+            styles.base(),
             addonBefore && 'rounded-l-none',
             addonAfter && 'rounded-r-none',
-            'h-auto',
             className,
           )}
           {...restProps}
         />
         {addonAfter && (
-          <span
-            className={cn(
-              inputStyles({ size }),
-              inputDef.addon.base,
-              inputDef.addon.after,
-              'h-auto',
-            )}
-          >
+          <span className={cn(styles.addonBase(), styles.addonAfter())}>
             {addonAfter}
           </span>
         )}
