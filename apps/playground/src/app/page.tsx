@@ -24,6 +24,14 @@ import {
   UserPlus,
   Users,
   X,
+  Calendar,
+  Smile,
+  Calculator,
+  FileText,
+  FolderPlus,
+  File,
+  Folder,
+  Search,
 } from 'lucide-react';
 import {
   Accordion,
@@ -57,6 +65,7 @@ import {
   TextArea,
   toast,
   Tooltip,
+  Command,
 } from '@utima/ui';
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
@@ -1834,6 +1843,108 @@ export default function Home() {
             <TextArea placeholder='Disabled textarea' disabled />
             <TextArea placeholder='Required textarea' required />
             <TextArea placeholder='Read only textarea' readOnly />
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Command /&gt;</Title>
+          <Subtitle>Default</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <Command.Root>
+              <Command.Input placeholder='Type a command or search...' />
+              <Command.List>
+                <Command.Empty>No results found.</Command.Empty>
+                <Command.Group heading='Suggestions'>
+                  <Command.Item>
+                    <Calendar className='mr-2 size-4' />
+                    <span>Calendar</span>
+                  </Command.Item>
+                  <Command.Item>
+                    <Smile className='mr-2 size-4' />
+                    <span>Search Emoji</span>
+                  </Command.Item>
+                  <Command.Item>
+                    <Calculator className='mr-2 size-4' />
+                    <span>Calculator</span>
+                  </Command.Item>
+                </Command.Group>
+                <Command.Separator />
+                <Command.Group heading='Settings'>
+                  <Command.Item>
+                    <User className='mr-2 size-4' />
+                    <span>Profile</span>
+                    <Kbd className='ml-auto' size='sm'>⌘P</Kbd>
+                  </Command.Item>
+                  <Command.Item>
+                    <CreditCard className='mr-2 size-4' />
+                    <span>Billing</span>
+                    <Kbd className='ml-auto' size='sm'>⌘B</Kbd>
+                  </Command.Item>
+                  <Command.Item>
+                    <Settings className='mr-2 size-4' />
+                    <span>Settings</span>
+                    <Kbd className='ml-auto' size='sm'>⌘S</Kbd>
+                  </Command.Item>
+                </Command.Group>
+              </Command.List>
+            </Command.Root>
+          </div>
+
+          <Subtitle>With Loading State</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <Command.Root>
+              <Command.Input placeholder='Loading example...' loading />
+              <Command.List>
+                <Command.Empty loading loadingMessage='Fetching results...' />
+              </Command.List>
+            </Command.Root>
+          </div>
+
+          <Subtitle>In Dialog</Subtitle>
+          <div className='flex flex-col gap-4'>
+            <Dialog.Root>
+              <Dialog.Trigger asChild>
+                <Button variant='outline'>
+                  <Search className='mr-2 size-4' />
+                  Search Commands
+                </Button>
+              </Dialog.Trigger>
+              <Command.Dialog>
+                <Command.Input placeholder='Type a command or search...' />
+                <Command.List>
+                  <Command.Empty>No results found.</Command.Empty>
+                  <Command.Group heading='Quick Actions'>
+                    <Command.Item>
+                      <Plus className='mr-2 size-4' />
+                      <span>Create New Project</span>
+                    </Command.Item>
+                    <Command.Item>
+                      <FileText className='mr-2 size-4' />
+                      <span>Create New Document</span>
+                    </Command.Item>
+                    <Command.Item>
+                      <FolderPlus className='mr-2 size-4' />
+                      <span>Create New Folder</span>
+                    </Command.Item>
+                  </Command.Group>
+                  <Command.Separator />
+                  <Command.Group heading='Recent'>
+                    <Command.Item>
+                      <File className='mr-2 size-4' />
+                      <span>design-system.fig</span>
+                    </Command.Item>
+                    <Command.Item>
+                      <File className='mr-2 size-4' />
+                      <span>presentation.pdf</span>
+                    </Command.Item>
+                    <Command.Item>
+                      <Folder className='mr-2 size-4' />
+                      <span>Project Assets</span>
+                    </Command.Item>
+                  </Command.Group>
+                </Command.List>
+              </Command.Dialog>
+            </Dialog.Root>
           </div>
         </div>
       </div>
