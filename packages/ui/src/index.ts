@@ -156,3 +156,6 @@ export * as Drawer from './components/drawer';
 // Command
 export * as Command from './components/command';
 export { useCommandState } from 'cmdk';
+
+// Sheet
+export * as Sheet from './components/sheet';

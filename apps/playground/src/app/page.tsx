@@ -66,6 +66,7 @@ import {
   toast,
   Tooltip,
   Command,
+  Sheet,
 } from '@utima/ui';
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
@@ -1945,6 +1946,145 @@ export default function Home() {
                 </Command.List>
               </Command.Dialog>
             </Dialog.Root>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Sheet /&gt;</Title>
+          <Subtitle>Default</Subtitle>
+          <div className='flex flex-row gap-4'>
+            <Sheet.Root>
+              <Sheet.Trigger asChild>
+                <Button variant='outline'>Open Sheet</Button>
+              </Sheet.Trigger>
+              <Sheet.Portal>
+                <Sheet.Overlay />
+                <Sheet.Content>
+                  <Sheet.Header>
+                    <Sheet.Title>Edit profile</Sheet.Title>
+                    <Sheet.Description>
+                      Make changes to your profile here. Click save when you're done.
+                    </Sheet.Description>
+                  </Sheet.Header>
+                  <div className='grid gap-4 py-4'>
+                    <div className='grid grid-cols-4 items-center gap-4'>
+                      <Label htmlFor='name' className='text-right'>
+                        Name
+                      </Label>
+                      <Input
+                        id='name'
+                        value='Pedro Duarte'
+                        className='col-span-3'
+                      />
+                    </div>
+                    <div className='grid grid-cols-4 items-center gap-4'>
+                      <Label htmlFor='username' className='text-right'>
+                        Username
+                      </Label>
+                      <Input
+                        id='username'
+                        value='@peduarte'
+                        className='col-span-3'
+                      />
+                    </div>
+                  </div>
+                  <Sheet.Footer>
+                    <Button type='submit'>Save changes</Button>
+                  </Sheet.Footer>
+                </Sheet.Content>
+              </Sheet.Portal>
+            </Sheet.Root>
+          </div>
+
+          <Subtitle>Side Variants</Subtitle>
+          <div className='flex flex-row gap-4'>
+            <Sheet.Root>
+              <Sheet.Trigger asChild>
+                <Button variant='outline'>Top Sheet</Button>
+              </Sheet.Trigger>
+              <Sheet.Portal>
+                <Sheet.Overlay />
+                <Sheet.Content side='top'>
+                  <Sheet.Header>
+                    <Sheet.Title>Top Sheet</Sheet.Title>
+                    <Sheet.Description>
+                      This sheet slides in from the top of the screen.
+                    </Sheet.Description>
+                  </Sheet.Header>
+                </Sheet.Content>
+              </Sheet.Portal>
+            </Sheet.Root>
+
+            <Sheet.Root>
+              <Sheet.Trigger asChild>
+                <Button variant='outline'>Right Sheet</Button>
+              </Sheet.Trigger>
+              <Sheet.Portal>
+                <Sheet.Overlay />
+                <Sheet.Content side='right'>
+                  <Sheet.Header>
+                    <Sheet.Title>Right Sheet</Sheet.Title>
+                    <Sheet.Description>
+                      This sheet slides in from the right of the screen.
+                    </Sheet.Description>
+                  </Sheet.Header>
+                </Sheet.Content>
+              </Sheet.Portal>
+            </Sheet.Root>
+
+            <Sheet.Root>
+              <Sheet.Trigger asChild>
+                <Button variant='outline'>Bottom Sheet</Button>
+              </Sheet.Trigger>
+              <Sheet.Portal>
+                <Sheet.Overlay />
+                <Sheet.Content side='bottom'>
+                  <Sheet.Header>
+                    <Sheet.Title>Bottom Sheet</Sheet.Title>
+                    <Sheet.Description>
+                      This sheet slides in from the bottom of the screen.
+                    </Sheet.Description>
+                  </Sheet.Header>
+                </Sheet.Content>
+              </Sheet.Portal>
+            </Sheet.Root>
+
+            <Sheet.Root>
+              <Sheet.Trigger asChild>
+                <Button variant='outline'>Left Sheet</Button>
+              </Sheet.Trigger>
+              <Sheet.Portal>
+                <Sheet.Overlay />
+                <Sheet.Content side='left'>
+                  <Sheet.Header>
+                    <Sheet.Title>Left Sheet</Sheet.Title>
+                    <Sheet.Description>
+                      This sheet slides in from the left of the screen.
+                    </Sheet.Description>
+                  </Sheet.Header>
+                </Sheet.Content>
+              </Sheet.Portal>
+            </Sheet.Root>
+          </div>
+
+          <Subtitle>Custom Close Icon</Subtitle>
+          <div className='flex flex-row gap-4'>
+            <Sheet.Root>
+              <Sheet.Trigger asChild>
+                <Button variant='outline'>Custom Close</Button>
+              </Sheet.Trigger>
+              <Sheet.Portal>
+                <Sheet.Overlay />
+                <Sheet.Content closeIcon={<Menu className='size-4' />} closeLabel='Menu'>
+                  <Sheet.Header>
+                    <Sheet.Title>Custom Close Icon</Sheet.Title>
+                    <Sheet.Description>
+                      This sheet uses a custom close icon and label.
+                    </Sheet.Description>
+                  </Sheet.Header>
+                </Sheet.Content>
+              </Sheet.Portal>
+            </Sheet.Root>
           </div>
         </div>
       </div>
