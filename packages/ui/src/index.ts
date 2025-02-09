@@ -120,7 +120,7 @@ export { Skeleton } from './components/skeleton/skeleton';
 
 // Select
 export * as Select from './components/select';
-export * from './components/select/select-context';
+export * from './components/select/select.style';
 export * from './components/select/use-select-context';
 export type {
   SelectContentProps,

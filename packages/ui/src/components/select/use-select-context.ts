@@ -1,11 +1,11 @@
-import type { VariantProps } from 'class-variance-authority';
 import { createContext, useContext } from 'react';
+import type { VariantProps } from 'tailwind-variants';
 
-import type { selectStyles } from './select.styles';
 import type { SetNonNullable } from 'type-fest';
+import type { selectVariants } from './select.style';
 
 export const SelectContext = createContext<
-  SetNonNullable<VariantProps<typeof selectStyles>, 'size'>
+  SetNonNullable<VariantProps<typeof selectVariants>, 'size'>
 >(undefined!);
 
 /**

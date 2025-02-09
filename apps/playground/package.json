@@ -22,6 +22,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"
   }
 }
