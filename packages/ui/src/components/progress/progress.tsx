@@ -25,7 +25,7 @@ export const progressVariants = tv({
         root: 'h-2',
       },
       lg: {
-        root: 'h-4',
+        root: 'h-3',
       },
       xl: {
         root: 'h-4',

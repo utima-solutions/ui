@@ -21,7 +21,6 @@ import { cn } from '@/utils';
 import { Input } from '../input/input';
 import { Separator } from '../breadcrumb';
 import { Skeleton } from '../skeleton/skeleton';
-import { Button } from '../button/button';
 import { IconButton } from '../icon-button/icon-button';
 import { useIsMobile } from '@/hooks/use-is-mobile';
 

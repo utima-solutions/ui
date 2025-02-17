@@ -67,6 +67,8 @@ import {
   Tooltip,
   Command,
   Sheet,
+  FormField,
+  Slider,
 } from '@utima/ui';
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
@@ -1815,7 +1817,10 @@ export default function Home() {
           <Subtitle>Variants</Subtitle>
           <div className='flex flex-col gap-4'>
             <TextArea placeholder='Default textarea' />
-            <TextArea variant='destructive' placeholder='Destructive textarea' />
+            <TextArea
+              variant='destructive'
+              placeholder='Destructive textarea'
+            />
             <TextArea variant='success' placeholder='Success textarea' />
           </div>
 
@@ -1874,17 +1879,23 @@ export default function Home() {
                   <Command.Item>
                     <User className='mr-2 size-4' />
                     <span>Profile</span>
-                    <Kbd className='ml-auto' size='sm'>⌘P</Kbd>
+                    <Kbd className='ml-auto' size='sm'>
+                      ⌘P
+                    </Kbd>
                   </Command.Item>
                   <Command.Item>
                     <CreditCard className='mr-2 size-4' />
                     <span>Billing</span>
-                    <Kbd className='ml-auto' size='sm'>⌘B</Kbd>
+                    <Kbd className='ml-auto' size='sm'>
+                      ⌘B
+                    </Kbd>
                   </Command.Item>
                   <Command.Item>
                     <Settings className='mr-2 size-4' />
                     <span>Settings</span>
-                    <Kbd className='ml-auto' size='sm'>⌘S</Kbd>
+                    <Kbd className='ml-auto' size='sm'>
+                      ⌘S
+                    </Kbd>
                   </Command.Item>
                 </Command.Group>
               </Command.List>
@@ -1963,7 +1974,8 @@ export default function Home() {
                   <Sheet.Header>
                     <Sheet.Title>Edit profile</Sheet.Title>
                     <Sheet.Description>
-                      Make changes to your profile here. Click save when you're done.
+                      Make changes to your profile here. Click save when you're
+                      done.
                     </Sheet.Description>
                   </Sheet.Header>
                   <div className='grid gap-4 py-4'>
@@ -2075,7 +2087,10 @@ export default function Home() {
               </Sheet.Trigger>
               <Sheet.Portal>
                 <Sheet.Overlay />
-                <Sheet.Content closeIcon={<Menu className='size-4' />} closeLabel='Menu'>
+                <Sheet.Content
+                  closeIcon={<Menu className='size-4' />}
+                  closeLabel='Menu'
+                >
                   <Sheet.Header>
                     <Sheet.Title>Custom Close Icon</Sheet.Title>
                     <Sheet.Description>
@@ -2086,6 +2101,515 @@ export default function Home() {
               </Sheet.Portal>
             </Sheet.Root>
           </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;Slider /&gt;</Title>
+          <Subtitle>Variants</Subtitle>
+          <div className='flex flex-col gap-4 max-w-md'>
+            <Slider defaultValue={[50]} variant='primary' />
+            <Slider defaultValue={[75]} variant='success' />
+            <Slider defaultValue={[25]} variant='destructive' />
+            <Slider defaultValue={[60]} variant='secondary' />
+            <Slider defaultValue={[40]} variant='outline' />
+          </div>
+
+          <Subtitle>Sizes</Subtitle>
+          <div className='flex flex-col gap-8 max-w-md'>
+            <FormField.Root size='xs'>
+              <FormField.Label>Extra Small</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[25]} size='xs' />
+                <FormField.Description>
+                  Extra small slider with matching form field size
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root size='sm'>
+              <FormField.Label>Small</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[50]} size='sm' />
+                <FormField.Description>
+                  Small slider with matching form field size
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root size='md'>
+              <FormField.Label>Medium (Default)</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[75]} size='md' />
+                <FormField.Description>
+                  Default size slider with matching form field size
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root size='lg'>
+              <FormField.Label>Large</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[85]} size='lg' />
+                <FormField.Description>
+                  Large slider with matching form field size
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+
+          <Subtitle>Layouts</Subtitle>
+          <div className='flex flex-col gap-8 max-w-md'>
+            <FormField.Root layout='vertical'>
+              <FormField.Label>Vertical Layout</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[50]} />
+                <FormField.Description>
+                  Label appears above the slider
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root layout='horizontal'>
+              <FormField.Label>Horizontal Layout</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[60]} />
+                <FormField.Description>
+                  Label appears beside the slider
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root layout='inline'>
+              <FormField.Label>Inline Layout</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[70]} />
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+
+          <Subtitle>With Helpers</Subtitle>
+          <div className='flex flex-col gap-8 max-w-md'>
+            <FormField.Root>
+              <FormField.Label tooltip='Drag to adjust volume'>
+                Volume
+              </FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[75]} />
+                <FormField.Helpers>
+                  <FormField.Description>
+                    Adjust system volume
+                  </FormField.Description>
+                  <FormField.HelperText position='right'>
+                    75%
+                  </FormField.HelperText>
+                </FormField.Helpers>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root error='Value must be between 20 and 80'>
+              <FormField.Label required>Range Selection</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[10, 90]} variant='destructive' />
+                <FormField.Description>
+                  Select a range between 20 and 80
+                </FormField.Description>
+                <FormField.Error>
+                  Value must be between 20 and 80
+                </FormField.Error>
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+
+          <Subtitle>States</Subtitle>
+          <div className='flex flex-col gap-4 max-w-md'>
+            <Slider
+              onValueChange={(value) => console.log(value)}
+              defaultValue={[50]}
+              disabled
+            />
+            <Slider
+              onValueChange={(value) => console.log(value)}
+              defaultValue={[30, 70]}
+              disabled
+            />
+          </div>
+
+          <Subtitle>Custom Steps</Subtitle>
+          <div className='flex flex-col gap-4 max-w-md'>
+            <FormField.Root>
+              <FormField.Label>Step 10</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[50]} step={10} />
+                <FormField.Description>
+                  Slider with step value of 10
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root>
+              <FormField.Label>Fine Control</FormField.Label>
+              <FormField.Content>
+                <Slider
+                  defaultValue={[0.1, 0.2, 0.7]}
+                  onValueChange={(value) => console.log(value)}
+                  max={1}
+                  step={0.1}
+                />
+                <FormField.Description>
+                  Slider with decimal steps (0.1)
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+
+          <Subtitle>Vertical Orientation</Subtitle>
+          <div className='flex flex-row gap-8 h-48'>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Primary</Label>
+              <Slider defaultValue={[30]} orientation='vertical' />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Success</Label>
+              <Slider
+                defaultValue={[50]}
+                orientation='vertical'
+                variant='success'
+              />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Destructive</Label>
+              <Slider
+                defaultValue={[70]}
+                orientation='vertical'
+                variant='destructive'
+              />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Secondary</Label>
+              <Slider
+                defaultValue={[40]}
+                orientation='vertical'
+                variant='secondary'
+              />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Outline</Label>
+              <Slider
+                defaultValue={[60]}
+                orientation='vertical'
+                variant='outline'
+              />
+            </div>
+          </div>
+
+          <Subtitle>Vertical Sizes</Subtitle>
+          <div className='flex flex-row gap-8 h-48'>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label size='xs'>XS</Label>
+              <Slider defaultValue={[30]} orientation='vertical' size='xs' />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label size='sm'>SM</Label>
+              <Slider defaultValue={[40]} orientation='vertical' size='sm' />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>MD</Label>
+              <Slider defaultValue={[50]} orientation='vertical' size='md' />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label size='lg'>LG</Label>
+              <Slider defaultValue={[60]} orientation='vertical' size='lg' />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label size='xl'>XL</Label>
+              <Slider defaultValue={[70]} orientation='vertical' size='xl' />
+            </div>
+          </div>
+
+          <Subtitle>Vertical Range</Subtitle>
+          <div className='flex flex-row gap-8 h-48'>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Primary</Label>
+              <Slider defaultValue={[20, 80]} orientation='vertical' />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Success</Label>
+              <Slider
+                defaultValue={[30, 60]}
+                orientation='vertical'
+                variant='success'
+              />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>With Steps</Label>
+              <Slider
+                defaultValue={[25, 75]}
+                orientation='vertical'
+                step={25}
+              />
+            </div>
+          </div>
+
+          <Subtitle>Thumb Shapes</Subtitle>
+          <div className='flex flex-col gap-4 max-w-md'>
+            <FormField.Root>
+              <FormField.Label>Circle (Default)</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[50]} shape='circle' />
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root>
+              <FormField.Label>Boxed</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[50]} shape='square' />
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root>
+              <FormField.Label>Boxed Range</FormField.Label>
+              <FormField.Content>
+                <Slider
+                  defaultValue={[30, 70]}
+                  shape='square'
+                  variant='success'
+                />
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root>
+              <FormField.Label>Boxed with Steps</FormField.Label>
+              <FormField.Content>
+                <Slider
+                  defaultValue={[25]}
+                  shape='square'
+                  step={25}
+                  variant='destructive'
+                />
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+
+          <Subtitle>Vertical with Shapes</Subtitle>
+          <div className='flex flex-row gap-8 h-48'>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Circle</Label>
+              <Slider
+                defaultValue={[30]}
+                orientation='vertical'
+                shape='circle'
+              />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Boxed</Label>
+              <Slider
+                defaultValue={[50]}
+                orientation='vertical'
+                shape='square'
+              />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Boxed Range</Label>
+              <Slider
+                defaultValue={[20, 80]}
+                orientation='vertical'
+                shape='square'
+                variant='success'
+              />
+            </div>
+            <div className='flex flex-col gap-2 items-center'>
+              <Label>Boxed Steps</Label>
+              <Slider
+                defaultValue={[25]}
+                orientation='vertical'
+                shape='square'
+                step={25}
+                variant='destructive'
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className='flex flex-col gap-4'>
+          <Title>&lt;FormField /&gt;</Title>
+
+          <Subtitle>Sizes</Subtitle>
+          <div className='flex flex-col gap-8'>
+            <FormField.Root size='xs'>
+              <FormField.Label required optional tooltip='Extra Small Field'>
+                Extra Small Field
+              </FormField.Label>
+              <FormField.Content>
+                <Input placeholder='Extra small input' />
+                <FormField.Helpers>
+                <FormField.Description>
+                  This is a very small field
+                </FormField.Description>
+                <FormField.HelperText>This is Helper Text</FormField.HelperText>
+                </FormField.Helpers>
+                <FormField.Error>This field is required</FormField.Error>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root size='sm'>
+              <FormField.Label required optional tooltip='Small Field'>
+                Small Field
+              </FormField.Label>
+              <FormField.Content>
+                <Input placeholder='Small input' />
+                <FormField.Helpers>
+                  <FormField.Description>
+                    This is a small field
+                  </FormField.Description>
+                  <FormField.HelperText>
+                    This is Helper Text
+                  </FormField.HelperText>
+                </FormField.Helpers>
+                <FormField.Error>This field is required</FormField.Error>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root size='md'>
+              <FormField.Label required optional tooltip='Default Field'>
+                Default Field
+              </FormField.Label>
+              <FormField.Content>
+                <Input placeholder='Default input' />
+                <FormField.Helpers>
+                  <FormField.Description>
+                    This is a default field
+                  </FormField.Description>
+                  <FormField.HelperText>
+                    This is Helper Text
+                  </FormField.HelperText>
+                </FormField.Helpers>
+                <FormField.Error>This field is required</FormField.Error>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root size='lg'>
+              <FormField.Label required optional tooltip='Large Field'>
+                Large Field
+              </FormField.Label>
+              <FormField.Content>
+                <Input placeholder='Large input' />
+                <FormField.Helpers>
+                  <FormField.Description>
+                    This is a large field
+                  </FormField.Description>
+                  <FormField.HelperText>
+                    This is Helper Text
+                  </FormField.HelperText>
+                </FormField.Helpers>
+                <FormField.Error>This field is required</FormField.Error>
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+
+          <Subtitle>Layouts</Subtitle>
+          <div className='flex flex-col gap-8'>
+            <FormField.Root layout='vertical'>
+              <FormField.Label>Vertical Layout</FormField.Label>
+              <FormField.Content>
+                <Input placeholder='Default vertical layout' />
+                <FormField.Description>
+                  Label appears above the input
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root layout='horizontal'>
+              <FormField.Label>Horizontal Layout</FormField.Label>
+              <FormField.Content>
+                <Input placeholder='Horizontal layout' />
+                <FormField.Description>
+                  Label appears beside the input
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root layout='inline'>
+              <FormField.Label>Inline Layout</FormField.Label>
+              <FormField.Content>
+                <Input placeholder='Inline layout' />
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+          <Subtitle>With Helpers</Subtitle>
+          <div className='flex flex-col gap-8'>
+            <FormField.Root>
+              <FormField.Label tooltip='Must be at least 8 characters'>
+                Password
+              </FormField.Label>
+              <FormField.Content>
+                <Input type='password' />
+                <FormField.Helpers>
+                  <FormField.Description>
+                    Use 8+ characters
+                  </FormField.Description>
+                  <FormField.HelperText position='right'>
+                    Strong
+                  </FormField.HelperText>
+                </FormField.Helpers>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root error='This field is required'>
+              <FormField.Label required>Required Field</FormField.Label>
+              <FormField.Content>
+                <Input />
+                <FormField.Description>
+                  This field cannot be empty
+                </FormField.Description>
+                <FormField.Error>This field is required</FormField.Error>
+              </FormField.Content>
+            </FormField.Root>
+          </div>
+
+          <FormField.Root>
+            <Subtitle>Groups and Sections</Subtitle>
+            <FormField.Section
+              title='Personal Information'
+              description='Enter your personal details'
+            >
+              <FormField.Group title='Name' description='Your full name'>
+                <FormField.Row>
+                  <FormField.Root>
+                    <FormField.Label>First Name</FormField.Label>
+                    <FormField.Content>
+                      <Input />
+                    </FormField.Content>
+                  </FormField.Root>
+                  <FormField.Root>
+                    <FormField.Label>Last Name</FormField.Label>
+                    <FormField.Content>
+                      <Input />
+                    </FormField.Content>
+                  </FormField.Root>
+                </FormField.Row>
+              </FormField.Group>
+
+              <FormField.Group
+                title='Contact'
+                description='How can we reach you?'
+              >
+                <FormField.Root>
+                  <FormField.Label>Email</FormField.Label>
+                  <FormField.Content>
+                    <Input type='email' />
+                    <FormField.Description>
+                      We'll never share your email
+                    </FormField.Description>
+                  </FormField.Content>
+                </FormField.Root>
+              </FormField.Group>
+
+              <FormField.Actions>
+                <Button variant='outline'>Cancel</Button>
+                <Button>Save Changes</Button>
+              </FormField.Actions>
+            </FormField.Section>
+          </FormField.Root>
         </div>
       </div>
     </div>

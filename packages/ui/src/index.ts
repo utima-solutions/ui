@@ -159,3 +159,16 @@ export { useCommandState } from 'cmdk';
 
 // Sheet
 export * as Sheet from './components/sheet';
+
+// Sidebar
+export * as Sidebar from './components/sidebar';
+
+// FormField
+export * as FormField from './components/form-field';
+
+// Slider
+export {
+  Slider,
+  type SliderProps,
+  sliderVariants,
+} from './components/slider/slider';
