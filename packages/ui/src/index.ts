@@ -166,6 +166,9 @@ export * as Sidebar from './components/sidebar';
 // FormField
 export * as FormField from './components/form-field';
 
+// Form
+export * as Form from './components/form';
+
 // Slider
 export {
   Slider,

@@ -69,6 +69,7 @@ import {
   Sheet,
   FormField,
   Slider,
+  Form,
 } from '@utima/ui';
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
@@ -2120,9 +2121,6 @@ export default function Home() {
               <FormField.Label>Extra Small</FormField.Label>
               <FormField.Content>
                 <Slider defaultValue={[25]} size='xs' />
-                <FormField.Description>
-                  Extra small slider with matching form field size
-                </FormField.Description>
               </FormField.Content>
             </FormField.Root>
 
@@ -2162,7 +2160,17 @@ export default function Home() {
             <FormField.Root layout='vertical'>
               <FormField.Label>Vertical Layout</FormField.Label>
               <FormField.Content>
-                <Slider defaultValue={[50]} />
+                <Slider defaultValue={[75]} />
+                <FormField.Description>
+                  Label appears above the slider
+                </FormField.Description>
+              </FormField.Content>
+            </FormField.Root>
+
+            <FormField.Root layout='vertical'>
+              <FormField.Label>Vertical Layout</FormField.Label>
+              <FormField.Content>
+                <Slider defaultValue={[75]} />
                 <FormField.Description>
                   Label appears above the slider
                 </FormField.Description>
@@ -2172,17 +2180,10 @@ export default function Home() {
             <FormField.Root layout='horizontal'>
               <FormField.Label>Horizontal Layout</FormField.Label>
               <FormField.Content>
-                <Slider defaultValue={[60]} />
+                <Slider defaultValue={[75]} />
                 <FormField.Description>
-                  Label appears beside the slider
+                  Default size slider with matching form field size
                 </FormField.Description>
-              </FormField.Content>
-            </FormField.Root>
-
-            <FormField.Root layout='inline'>
-              <FormField.Label>Inline Layout</FormField.Label>
-              <FormField.Content>
-                <Slider defaultValue={[70]} />
               </FormField.Content>
             </FormField.Root>
           </div>
@@ -2435,145 +2436,316 @@ export default function Home() {
 
           <Subtitle>Sizes</Subtitle>
           <div className='flex flex-col gap-8'>
-            <FormField.Root size='xs'>
-              <FormField.Label required optional tooltip='Extra Small Field'>
-                Extra Small Field
-              </FormField.Label>
-              <FormField.Content>
-                <Input placeholder='Extra small input' />
-                <FormField.Helpers>
-                <FormField.Description>
-                  This is a very small field
-                </FormField.Description>
-                <FormField.HelperText>This is Helper Text</FormField.HelperText>
-                </FormField.Helpers>
-                <FormField.Error>This field is required</FormField.Error>
-              </FormField.Content>
-            </FormField.Root>
+            <Form.Section>
+              <Form.Group>
+                <Form.Row>
+                  <FormField.Root size='xs'>
+                    <FormField.Label
+                      required
+                      optional
+                      tooltip='Extra Small Field'
+                    >
+                      Extra Small Field
+                    </FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Extra small input' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
 
-            <FormField.Root size='sm'>
-              <FormField.Label required optional tooltip='Small Field'>
-                Small Field
-              </FormField.Label>
-              <FormField.Content>
-                <Input placeholder='Small input' />
-                <FormField.Helpers>
-                  <FormField.Description>
-                    This is a small field
-                  </FormField.Description>
-                  <FormField.HelperText>
-                    This is Helper Text
-                  </FormField.HelperText>
-                </FormField.Helpers>
-                <FormField.Error>This field is required</FormField.Error>
-              </FormField.Content>
-            </FormField.Root>
+                <Form.Row>
+                  <FormField.Root size='sm'>
+                    <FormField.Label required optional tooltip='Small Field'>
+                      Small Field
+                    </FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Small input' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
 
-            <FormField.Root size='md'>
-              <FormField.Label required optional tooltip='Default Field'>
-                Default Field
-              </FormField.Label>
-              <FormField.Content>
-                <Input placeholder='Default input' />
-                <FormField.Helpers>
-                  <FormField.Description>
-                    This is a default field
-                  </FormField.Description>
-                  <FormField.HelperText>
-                    This is Helper Text
-                  </FormField.HelperText>
-                </FormField.Helpers>
-                <FormField.Error>This field is required</FormField.Error>
-              </FormField.Content>
-            </FormField.Root>
+                <Form.Row>
+                  <FormField.Root size='md'>
+                    <FormField.Label required optional tooltip='Default Field'>
+                      Default Field
+                    </FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Default input' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a default field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
 
-            <FormField.Root size='lg'>
-              <FormField.Label required optional tooltip='Large Field'>
-                Large Field
-              </FormField.Label>
-              <FormField.Content>
-                <Input placeholder='Large input' />
-                <FormField.Helpers>
-                  <FormField.Description>
-                    This is a large field
-                  </FormField.Description>
-                  <FormField.HelperText>
-                    This is Helper Text
-                  </FormField.HelperText>
-                </FormField.Helpers>
-                <FormField.Error>This field is required</FormField.Error>
-              </FormField.Content>
-            </FormField.Root>
+                <Form.Row>
+                  <FormField.Root size='lg'>
+                    <FormField.Label required optional tooltip='Large Field'>
+                      Large Field
+                    </FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Large input' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a large field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
+              </Form.Group>
+            </Form.Section>
           </div>
 
           <Subtitle>Layouts</Subtitle>
           <div className='flex flex-col gap-8'>
-            <FormField.Root layout='vertical'>
-              <FormField.Label>Vertical Layout</FormField.Label>
-              <FormField.Content>
-                <Input placeholder='Default vertical layout' />
-                <FormField.Description>
-                  Label appears above the input
-                </FormField.Description>
-              </FormField.Content>
-            </FormField.Root>
+            <Form.Section>
+              <Form.Group>
+                <Form.Row>
+                  <FormField.Root layout='vertical'>
+                    <FormField.Label>Vertical Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Default vertical layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
 
-            <FormField.Root layout='horizontal'>
-              <FormField.Label>Horizontal Layout</FormField.Label>
-              <FormField.Content>
-                <Input placeholder='Horizontal layout' />
-                <FormField.Description>
-                  Label appears beside the input
-                </FormField.Description>
-              </FormField.Content>
-            </FormField.Root>
+                <Form.Row>
+                  <FormField.Root size='xs' layout='horizontal'>
+                    <FormField.Label>Horizontal Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input size='xs' placeholder='Horizontal layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
+                <Form.Row>
+                  <FormField.Root size='sm' layout='horizontal'>
+                    <FormField.Label>Horizontal Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input size='sm' placeholder='Horizontal layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
+                <Form.Row>
+                  <FormField.Root size='md' layout='horizontal'>
+                    <FormField.Label>Horizontal Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input size='md' placeholder='Horizontal layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
+                <Form.Row>
+                  <FormField.Root size='lg' layout='horizontal'>
+                    <FormField.Label>Horizontal Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input size='lg' placeholder='Horizontal layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
 
-            <FormField.Root layout='inline'>
-              <FormField.Label>Inline Layout</FormField.Label>
-              <FormField.Content>
-                <Input placeholder='Inline layout' />
-              </FormField.Content>
-            </FormField.Root>
+                <Form.Row>
+                  <FormField.Root layout='inline'>
+                    <FormField.Label>Inline Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Inline layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                  <FormField.Root layout='inline'>
+                    <FormField.Label>Inline Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Inline layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                  <FormField.Root layout='inline'>
+                    <FormField.Label>Inline Layout</FormField.Label>
+                    <FormField.Content>
+                      <Input placeholder='Inline layout' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          This is a very small field
+                        </FormField.Description>
+                        <FormField.HelperText>
+                          This is Helper Text
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
+              </Form.Group>
+            </Form.Section>
           </div>
+
           <Subtitle>With Helpers</Subtitle>
           <div className='flex flex-col gap-8'>
-            <FormField.Root>
-              <FormField.Label tooltip='Must be at least 8 characters'>
-                Password
-              </FormField.Label>
-              <FormField.Content>
-                <Input type='password' />
-                <FormField.Helpers>
-                  <FormField.Description>
-                    Use 8+ characters
-                  </FormField.Description>
-                  <FormField.HelperText position='right'>
-                    Strong
-                  </FormField.HelperText>
-                </FormField.Helpers>
-              </FormField.Content>
-            </FormField.Root>
+            <Form.Section title='Password' description='Enter your password'>
+              <Form.Group title='Password' description='Enter your password'>
+                <Form.Row>
+                  <FormField.Root>
+                    <FormField.Label tooltip='Must be at least 8 characters'>
+                      Password
+                    </FormField.Label>
+                    <FormField.Content>
+                      <Input type='password' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          Use 8+ characters
+                        </FormField.Description>
+                        <FormField.HelperText position='right'>
+                          Strong
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                    </FormField.Content>
+                  </FormField.Root>
+                  <FormField.Root>
+                    <FormField.Label tooltip='Must be at least 8 characters'>
+                      Password
+                    </FormField.Label>
+                    <FormField.Content>
+                      <Input type='password' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          Use 8+ characters
+                        </FormField.Description>
+                        <FormField.HelperText position='right'>
+                          Strong
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                    </FormField.Content>
+                  </FormField.Root>
+                  <FormField.Root>
+                    <FormField.Label tooltip='Must be at least 8 characters'>
+                      Password
+                    </FormField.Label>
+                    <FormField.Content>
+                      <Input type='password' />
+                      <FormField.Helpers>
+                        <FormField.Description>
+                          Use 8+ characters
+                        </FormField.Description>
+                        <FormField.HelperText position='right'>
+                          Strong
+                        </FormField.HelperText>
+                      </FormField.Helpers>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
 
-            <FormField.Root error='This field is required'>
-              <FormField.Label required>Required Field</FormField.Label>
-              <FormField.Content>
-                <Input />
-                <FormField.Description>
-                  This field cannot be empty
-                </FormField.Description>
-                <FormField.Error>This field is required</FormField.Error>
-              </FormField.Content>
-            </FormField.Root>
+                <Form.Row>
+                  <FormField.Root>
+                    <FormField.Label required>Required Field</FormField.Label>
+                    <FormField.Content>
+                      <Input />
+                      <FormField.Description>
+                        This field cannot be empty
+                      </FormField.Description>
+                      <FormField.Error>This field is required</FormField.Error>
+                    </FormField.Content>
+                  </FormField.Root>
+                </Form.Row>
+              </Form.Group>
+            </Form.Section>
           </div>
 
-          <FormField.Root>
-            <Subtitle>Groups and Sections</Subtitle>
-            <FormField.Section
+          <Subtitle>Groups and Sections</Subtitle>
+          <Form.Root>
+            <Form.Section
               title='Personal Information'
               description='Enter your personal details'
             >
-              <FormField.Group title='Name' description='Your full name'>
-                <FormField.Row>
+              <Form.Group title='Name' description='Your full name'>
+                <Form.Row>
                   <FormField.Root>
                     <FormField.Label>First Name</FormField.Label>
                     <FormField.Content>
@@ -2586,13 +2758,10 @@ export default function Home() {
                       <Input />
                     </FormField.Content>
                   </FormField.Root>
-                </FormField.Row>
-              </FormField.Group>
+                </Form.Row>
+              </Form.Group>
 
-              <FormField.Group
-                title='Contact'
-                description='How can we reach you?'
-              >
+              <Form.Group title='Contact' description='How can we reach you?'>
                 <FormField.Root>
                   <FormField.Label>Email</FormField.Label>
                   <FormField.Content>
@@ -2602,14 +2771,14 @@ export default function Home() {
                     </FormField.Description>
                   </FormField.Content>
                 </FormField.Root>
-              </FormField.Group>
+              </Form.Group>
 
-              <FormField.Actions>
+              <Form.Actions>
                 <Button variant='outline'>Cancel</Button>
                 <Button>Save Changes</Button>
-              </FormField.Actions>
-            </FormField.Section>
-          </FormField.Root>
+              </Form.Actions>
+            </Form.Section>
+          </Form.Root>
         </div>
       </div>
     </div>
