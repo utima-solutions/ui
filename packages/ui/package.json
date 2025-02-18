@@ -19,19 +19,6 @@
       "node": "./dist/cjs/index.js",
       "require": "./dist/cjs/index.js",
       "default": "./dist/cjs/index.js"
-    },
-    "./overrides": {
-      "import": "./dist/esm/overrides.js",
-      "types": "./dist/src/overrides.d.ts",
-      "node": "./dist/cjs/overrides.js",
-      "require": "./dist/cjs/overrides.js",
-      "default": "./dist/cjs/overrides.js"
-    },
-    "./plugin": {
-      "types": "./plugin.d.ts",
-      "node": "./plugin.cjs",
-      "require": "./plugin.cjs",
-      "default": "./plugin.cjs"
     }
   },
   "keywords": [

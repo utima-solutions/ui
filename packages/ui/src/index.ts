@@ -163,8 +163,9 @@ export * as Sheet from './components/sheet';
 // Sidebar
 export * as Sidebar from './components/sidebar';
 
-// FormField
-export * as FormField from './components/form-field';
+// FormItem
+export * as FormItem from './components/form-item';
+export { formItemVariants } from './components/form-item/form-item';
 
 // Form
 export * as Form from './components/form';

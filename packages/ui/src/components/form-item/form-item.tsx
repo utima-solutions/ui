@@ -14,7 +14,7 @@ import { HelpCircle, AlertCircle } from 'lucide-react';
 
 // TODO rename to form item?
 
-const formFieldVariants = tv({
+export const formItemVariants = tv({
   slots: {
     root: 'flex gap-2',
     content: 'flex flex-col gap-2',
@@ -103,37 +103,37 @@ const formFieldVariants = tv({
   },
 });
 
-type FormFieldContextValue = {
+type FormItemContextValue = {
   layout: 'vertical' | 'horizontal' | 'inline';
   size: 'xs' | 'sm' | 'md' | 'lg';
 };
 
-const FormFieldContext = createContext<FormFieldContextValue | null>(null);
+const FormItemContext = createContext<FormItemContextValue | null>(null);
 
-export function useFormField() {
-  const context = useContext(FormFieldContext);
+export function useFormItem() {
+  const context = useContext(FormItemContext);
 
   if (!context) {
-    throw new Error('useFormField must be used within a FormField');
+    throw new Error('useFormItem must be used within a FormItem');
   }
 
   return context;
 }
 
-export interface FormFieldProps extends VariantProps<typeof formFieldVariants> {
+export interface FormItemProps extends VariantProps<typeof formItemVariants> {
   className?: string;
   children?: ReactNode;
 }
 
-export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
+export const FormItem = forwardRef<HTMLDivElement, FormItemProps>(
   (
     { layout = 'vertical', size = 'md', className, children, ...props },
     ref,
   ) => {
-    const styles = formFieldVariants({ layout, size });
+    const styles = formItemVariants({ layout, size });
 
     return (
-      <FormFieldContext.Provider value={{ layout, size }}>
+      <FormItemContext.Provider value={{ layout, size }}>
         <div
           ref={ref}
           data-uui-form-field
@@ -142,27 +142,27 @@ export const FormField = forwardRef<HTMLDivElement, FormFieldProps>(
         >
           {children}
         </div>
-      </FormFieldContext.Provider>
+      </FormItemContext.Provider>
     );
   },
 );
 
-export interface FormFieldContentProps {
+export interface FormItemContentProps {
   className?: string;
   children?: ReactNode;
 }
 
-export function FormFieldContent({
+export function FormItemContent({
   className,
   children,
-}: FormFieldContentProps) {
-  const { layout } = useFormField();
-  const styles = formFieldVariants({ layout });
+}: FormItemContentProps) {
+  const { layout } = useFormItem();
+  const styles = formItemVariants({ layout });
 
   return <div className={cn(styles.content(), className)}>{children}</div>;
 }
 
-export interface FormFieldLabelProps extends HTMLAttributes<HTMLDivElement> {
+export interface FormItemLabelProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: ReactNode;
   tooltip?: ReactNode;
@@ -171,10 +171,10 @@ export interface FormFieldLabelProps extends HTMLAttributes<HTMLDivElement> {
   htmlFor?: string;
 }
 
-export const FormFieldLabel = forwardRef<HTMLDivElement, FormFieldLabelProps>(
+export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
   ({ className, children, tooltip, required, optional, htmlFor, ...props }, ref) => {
-    const { layout, size } = useFormField();
-    const styles = formFieldVariants({ layout, size });
+    const { layout, size } = useFormItem();
+    const styles = formItemVariants({ layout, size });
 
     return (
       <div
@@ -209,17 +209,17 @@ export const FormFieldLabel = forwardRef<HTMLDivElement, FormFieldLabelProps>(
   },
 );
 
-export interface FormFieldDescriptionProps {
+export interface FormItemDescriptionProps {
   className?: string;
   children?: ReactNode;
 }
 
-export function FormFieldDescription({
+export function FormItemDescription({
   className,
   children,
-}: FormFieldDescriptionProps) {
-  const { layout, size } = useFormField();
-  const styles = formFieldVariants({ layout, size });
+}: FormItemDescriptionProps) {
+  const { layout, size } = useFormItem();
+  const styles = formItemVariants({ layout, size });
 
   return (
     <p
@@ -231,14 +231,14 @@ export function FormFieldDescription({
   );
 }
 
-export interface FormFieldErrorProps {
+export interface FormItemErrorProps {
   className?: string;
   children?: ReactNode;
 }
 
-export function FormFieldError({ className, children }: FormFieldErrorProps) {
-  const { layout, size } = useFormField();
-  const styles = formFieldVariants({ layout, size });
+export function FormItemError({ className, children }: FormItemErrorProps) {
+  const { layout, size } = useFormItem();
+  const styles = formItemVariants({ layout, size });
 
   return (
     <p data-uui-form-field-error className={cn(styles.error(), className)}>
@@ -248,19 +248,19 @@ export function FormFieldError({ className, children }: FormFieldErrorProps) {
   );
 }
 
-export interface FormFieldHelperTextProps {
+export interface FormItemHelperTextProps {
   className?: string;
   children?: ReactNode;
   position?: 'left' | 'right';
 }
 
-export function FormFieldHelperText({
+export function FormItemHelperText({
   className,
   children,
   position = 'left',
-}: FormFieldHelperTextProps) {
-  const { layout, size } = useFormField();
-  const styles = formFieldVariants({ layout, size });
+}: FormItemHelperTextProps) {
+  const { layout, size } = useFormItem();
+  const styles = formItemVariants({ layout, size });
 
   return (
     <p
@@ -276,17 +276,17 @@ export function FormFieldHelperText({
   );
 }
 
-export interface FormFieldHelpersProps {
+export interface FormItemHelpersProps {
   className?: string;
   children?: ReactNode;
 }
 
-export function FormFieldHelpers({
+export function FormItemHelpers({
   className,
   children,
-}: FormFieldHelpersProps) {
-  const { layout } = useFormField();
-  const styles = formFieldVariants({ layout });
+}: FormItemHelpersProps) {
+  const { layout } = useFormItem();
+  const styles = formItemVariants({ layout });
 
   return (
     <div
