@@ -1,39 +1,6 @@
 'use client';
 
 import {
-  AlertCircle,
-  Check,
-  ChevronLeft,
-  ChevronsUpDown,
-  Cloud,
-  CreditCard,
-  Download,
-  GitBranchPlus,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  Mailbox,
-  Menu,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  Terminal,
-  User,
-  UserPlus,
-  Users,
-  X,
-  Calendar,
-  Smile,
-  Calculator,
-  FileText,
-  FolderPlus,
-  File,
-  Folder,
-  Search,
-} from 'lucide-react';
-import {
   Accordion,
   Alert,
   AlertDialog,
@@ -71,6 +38,39 @@ import {
   Slider,
   Form,
 } from '@utima/ui';
+import {
+  AlertCircle,
+  Check,
+  ChevronLeft,
+  ChevronsUpDown,
+  Cloud,
+  CreditCard,
+  Download,
+  GitBranchPlus,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  Mailbox,
+  Menu,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  Terminal,
+  User,
+  UserPlus,
+  Users,
+  Calendar,
+  Smile,
+  Calculator,
+  FileText,
+  FolderPlus,
+  File,
+  Folder,
+  Search,
+} from 'lucide-react';
+
 import { Subtitle } from '@/components/subtitle';
 import { Title } from '@/components/title';
 
@@ -125,11 +125,11 @@ const invoices = [
 
 export default function Home() {
   return (
-    <div className='grid mt-12 items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
+    <div className='mt-12 grid min-h-screen items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20'>
       <div className='flex flex-col gap-4'>
         <Title>&lt;Button /&gt;</Title>
         <Subtitle>Variants</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <Button variant='primary'>Default</Button>
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
           </div>
         </div>
         <Subtitle>Sizes</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <Button size='xs' variant='primary'>
               XS
@@ -181,7 +181,7 @@ export default function Home() {
           </div>
         </div>
         <Subtitle>With icons</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <Button size='xs' variant='primary'>
               <Download className='size-10' /> Default
@@ -209,7 +209,7 @@ export default function Home() {
           </div>
         </div>
         <Subtitle>States</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <Button size='xs' variant='primary' loading>
               Default
@@ -241,7 +241,7 @@ export default function Home() {
       <div className='flex flex-col gap-4'>
         <Title>&lt;IconButton /&gt;</Title>
         <Subtitle>Variants</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <IconButton variant='primary'>
               <Mailbox />
@@ -279,7 +279,7 @@ export default function Home() {
           </div>
         </div>
         <Subtitle>Sizes</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <IconButton size='xs' variant='primary'>
               <Download />
@@ -307,7 +307,7 @@ export default function Home() {
           </div>
         </div>
         <Subtitle>With icons</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <IconButton size='xs' variant='primary'>
               <Download />
@@ -335,7 +335,7 @@ export default function Home() {
           </div>
         </div>
         <Subtitle>States</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <IconButton size='xs' variant='primary' loading>
               <Download />
@@ -369,7 +369,7 @@ export default function Home() {
       <div className='flex flex-col gap-4'>
         <Title>&lt;Badge /&gt;</Title>
         <Subtitle>Variants</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <Badge variant='primary'>Default</Badge>
           </div>
@@ -388,7 +388,7 @@ export default function Home() {
         </div>
 
         <Subtitle>Sizes</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap items-center'>
+        <div className='flex flex-row flex-wrap items-center gap-4'>
           <div>
             <Badge size='xs' variant='primary'>
               XS
@@ -417,7 +417,7 @@ export default function Home() {
         </div>
 
         <Subtitle>States</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <Badge variant='primary' disabled>
               Disabled
@@ -440,8 +440,8 @@ export default function Home() {
           </div>
           <div>
             <Badge variant='outline' circle>
-              <span className='size-1.5 rounded-full bg-success'></span>Custom
-              Status
+              <span className='bg-success size-1.5 rounded-full' />
+              Custom Status
             </Badge>
           </div>
         </div>
@@ -479,7 +479,7 @@ export default function Home() {
       <div className='flex flex-col gap-4'>
         <Title>&lt;Kbd /&gt;</Title>
         <Subtitle>Variants</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap'>
+        <div className='flex flex-row flex-wrap gap-4'>
           <div>
             <Kbd variant='outline'>Outline ⌘</Kbd>
           </div>
@@ -489,7 +489,7 @@ export default function Home() {
         </div>
 
         <Subtitle>Sizes</Subtitle>
-        <div className='flex flex-row gap-4 flex-wrap items-center'>
+        <div className='flex flex-row flex-wrap items-center gap-4'>
           <div>
             <Kbd size='xs'>⌘</Kbd>
           </div>
@@ -517,7 +517,7 @@ export default function Home() {
               Add new
               <Kbd
                 variant='outline'
-                className='text-primary-foreground/50 bg-transparent border-border/50'
+                className='text-primary-foreground/50 border-border/50 bg-transparent'
                 size='xs'
               >
                 ⌘ + K
@@ -533,7 +533,7 @@ export default function Home() {
               size='lg'
               variant='outline'
               circle
-              className='opacity-50 pointer-events-none'
+              className='pointer-events-none opacity-50'
             >
               Esc
             </Kbd>{' '}
@@ -548,7 +548,7 @@ export default function Home() {
       <div className='flex flex-col gap-4'>
         <Title>&lt;Checkbox /&gt;</Title>
         <Subtitle>Variants</Subtitle>
-        <div className='flex flex-row gap-4 items-center'>
+        <div className='flex flex-row items-center gap-4'>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-primary' variant='primary' defaultChecked />
             <Label htmlFor='checkbox-primary'>Primary</Label>
@@ -580,7 +580,7 @@ export default function Home() {
         </div>
 
         <Subtitle>Sizes</Subtitle>
-        <div className='flex flex-row gap-4 items-center'>
+        <div className='flex flex-row items-center gap-4'>
           <div className='flex items-center gap-2'>
             <Checkbox id='checkbox-xs' size='xs' defaultChecked />
             <Label htmlFor='checkbox-xs' size='xs'>
@@ -666,7 +666,7 @@ export default function Home() {
       <div className='flex flex-col gap-4'>
         <Title>&lt;Switch /&gt;</Title>
         <Subtitle>Variants</Subtitle>
-        <div className='flex flex-row gap-4 items-center'>
+        <div className='flex flex-row items-center gap-4'>
           <div className='flex items-center gap-2'>
             <Switch id='switch-primary' variant='primary' defaultChecked />
             <Label htmlFor='switch-primary'>Primary</Label>
@@ -690,7 +690,7 @@ export default function Home() {
         </div>
 
         <Subtitle>Sizes</Subtitle>
-        <div className='flex flex-row gap-4 items-center'>
+        <div className='flex flex-row items-center gap-4'>
           <div className='flex items-center gap-2'>
             <Switch id='switch-xs' size='xs' defaultChecked />
             <Label htmlFor='switch-xs' size='xs'>
@@ -1115,7 +1115,7 @@ export default function Home() {
                 <div className='grid gap-4'>
                   <div className='space-y-2'>
                     <h4 className='font-medium leading-none'>Dimensions</h4>
-                    <p className='text-sm text-muted-foreground'>
+                    <p className='text-muted-foreground text-sm'>
                       Set the dimensions for the layer.
                     </p>
                   </div>
@@ -1296,7 +1296,7 @@ export default function Home() {
                 </Table.Row>
               </Table.Header>
               <Table.Body>
-                {invoices.map((invoice) => (
+                {invoices.map(invoice => (
                   <Table.Row key={invoice.invoice}>
                     <Table.Cell className='font-medium'>
                       {invoice.invoice}
@@ -1325,7 +1325,7 @@ export default function Home() {
             <ScrollArea className='h-72 w-48 rounded-md border'>
               <div className='p-4'>
                 <h4 className='mb-4 text-sm font-medium leading-none'>Tags</h4>
-                {tags.map((tag) => (
+                {tags.map(tag => (
                   <>
                     <div key={tag} className='text-sm'>
                       {tag}
@@ -1414,7 +1414,7 @@ export default function Home() {
         <div className='flex flex-col gap-4'>
           <Title>&lt;Skeleton /&gt;</Title>
           <div className='flex items-center space-x-4'>
-            <Skeleton className='h-12 w-12 rounded-full' />
+            <Skeleton className='size-12 rounded-full' />
             <div className='space-y-2'>
               <Skeleton className='h-4 w-[250px]' />
               <Skeleton className='h-4 w-[200px]' />
@@ -1528,12 +1528,12 @@ export default function Home() {
                 <Tabs.Trigger value='password'>Password</Tabs.Trigger>
               </Tabs.List>
               <Tabs.Content value='account'>
-                <div className='width-96 h-32 border border-border bg-muted flex items-center justify-center rounded-md text-sm font-medium'>
+                <div className='width-96 border-border bg-muted flex h-32 items-center justify-center rounded-md border text-sm font-medium'>
                   Account
                 </div>
               </Tabs.Content>
               <Tabs.Content value='password'>
-                <div className='width-96 h-32 border border-border bg-muted flex items-center justify-center rounded-md text-sm font-medium'>
+                <div className='width-96 border-border bg-muted flex h-32 items-center justify-center rounded-md border text-sm font-medium'>
                   Password
                 </div>
               </Tabs.Content>
@@ -1729,7 +1729,7 @@ export default function Home() {
                 </h4>
                 <Collapsible.Trigger asChild>
                   <Button variant='ghost' size='sm'>
-                    <ChevronsUpDown className='h-4 w-4' />
+                    <ChevronsUpDown className='size-4' />
                     <span className='sr-only'>Toggle</span>
                   </Button>
                 </Collapsible.Trigger>
@@ -2107,7 +2107,7 @@ export default function Home() {
         <div className='flex flex-col gap-4'>
           <Title>&lt;Slider /&gt;</Title>
           <Subtitle>Variants</Subtitle>
-          <div className='flex flex-col gap-4 max-w-md'>
+          <div className='flex max-w-md flex-col gap-4'>
             <Slider defaultValue={[50]} variant='primary' />
             <Slider defaultValue={[75]} variant='success' />
             <Slider defaultValue={[25]} variant='destructive' />
@@ -2116,7 +2116,7 @@ export default function Home() {
           </div>
 
           <Subtitle>Sizes</Subtitle>
-          <div className='flex flex-col gap-8 max-w-md'>
+          <div className='flex max-w-md flex-col gap-8'>
             <FormItem.Root size='xs'>
               <FormItem.Label>Extra Small</FormItem.Label>
               <FormItem.Content>
@@ -2156,7 +2156,7 @@ export default function Home() {
           </div>
 
           <Subtitle>Layouts</Subtitle>
-          <div className='flex flex-col gap-8 max-w-md'>
+          <div className='flex max-w-md flex-col gap-8'>
             <FormItem.Root layout='vertical'>
               <FormItem.Label>Vertical Layout</FormItem.Label>
               <FormItem.Content>
@@ -2189,7 +2189,7 @@ export default function Home() {
           </div>
 
           <Subtitle>With Helpers</Subtitle>
-          <div className='flex flex-col gap-8 max-w-md'>
+          <div className='flex max-w-md flex-col gap-8'>
             <FormItem.Root>
               <FormItem.Label tooltip='Drag to adjust volume'>
                 Volume
@@ -2214,29 +2214,27 @@ export default function Home() {
                 <FormItem.Description>
                   Select a range between 20 and 80
                 </FormItem.Description>
-                <FormItem.Error>
-                  Value must be between 20 and 80
-                </FormItem.Error>
+                <FormItem.Error>Value must be between 20 and 80</FormItem.Error>
               </FormItem.Content>
             </FormItem.Root>
           </div>
 
           <Subtitle>States</Subtitle>
-          <div className='flex flex-col gap-4 max-w-md'>
+          <div className='flex max-w-md flex-col gap-4'>
             <Slider
-              onValueChange={(value) => console.log(value)}
+              onValueChange={value => console.log(value)}
               defaultValue={[50]}
               disabled
             />
             <Slider
-              onValueChange={(value) => console.log(value)}
+              onValueChange={value => console.log(value)}
               defaultValue={[30, 70]}
               disabled
             />
           </div>
 
           <Subtitle>Custom Steps</Subtitle>
-          <div className='flex flex-col gap-4 max-w-md'>
+          <div className='flex max-w-md flex-col gap-4'>
             <FormItem.Root>
               <FormItem.Label>Step 10</FormItem.Label>
               <FormItem.Content>
@@ -2252,7 +2250,7 @@ export default function Home() {
               <FormItem.Content>
                 <Slider
                   defaultValue={[0.1, 0.2, 0.7]}
-                  onValueChange={(value) => console.log(value)}
+                  onValueChange={value => console.log(value)}
                   max={1}
                   step={0.1}
                 />
@@ -2264,12 +2262,12 @@ export default function Home() {
           </div>
 
           <Subtitle>Vertical Orientation</Subtitle>
-          <div className='flex flex-row gap-8 h-48'>
-            <div className='flex flex-col gap-2 items-center'>
+          <div className='flex h-48 flex-row gap-8'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Primary</Label>
               <Slider defaultValue={[30]} orientation='vertical' />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Success</Label>
               <Slider
                 defaultValue={[50]}
@@ -2277,7 +2275,7 @@ export default function Home() {
                 variant='success'
               />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Destructive</Label>
               <Slider
                 defaultValue={[70]}
@@ -2285,7 +2283,7 @@ export default function Home() {
                 variant='destructive'
               />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Secondary</Label>
               <Slider
                 defaultValue={[40]}
@@ -2293,7 +2291,7 @@ export default function Home() {
                 variant='secondary'
               />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Outline</Label>
               <Slider
                 defaultValue={[60]}
@@ -2304,36 +2302,36 @@ export default function Home() {
           </div>
 
           <Subtitle>Vertical Sizes</Subtitle>
-          <div className='flex flex-row gap-8 h-48'>
-            <div className='flex flex-col gap-2 items-center'>
+          <div className='flex h-48 flex-row gap-8'>
+            <div className='flex flex-col items-center gap-2'>
               <Label size='xs'>XS</Label>
               <Slider defaultValue={[30]} orientation='vertical' size='xs' />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label size='sm'>SM</Label>
               <Slider defaultValue={[40]} orientation='vertical' size='sm' />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>MD</Label>
               <Slider defaultValue={[50]} orientation='vertical' size='md' />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label size='lg'>LG</Label>
               <Slider defaultValue={[60]} orientation='vertical' size='lg' />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label size='xl'>XL</Label>
               <Slider defaultValue={[70]} orientation='vertical' size='xl' />
             </div>
           </div>
 
           <Subtitle>Vertical Range</Subtitle>
-          <div className='flex flex-row gap-8 h-48'>
-            <div className='flex flex-col gap-2 items-center'>
+          <div className='flex h-48 flex-row gap-8'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Primary</Label>
               <Slider defaultValue={[20, 80]} orientation='vertical' />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Success</Label>
               <Slider
                 defaultValue={[30, 60]}
@@ -2341,7 +2339,7 @@ export default function Home() {
                 variant='success'
               />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>With Steps</Label>
               <Slider
                 defaultValue={[25, 75]}
@@ -2352,7 +2350,7 @@ export default function Home() {
           </div>
 
           <Subtitle>Thumb Shapes</Subtitle>
-          <div className='flex flex-col gap-4 max-w-md'>
+          <div className='flex max-w-md flex-col gap-4'>
             <FormItem.Root>
               <FormItem.Label>Circle (Default)</FormItem.Label>
               <FormItem.Content>
@@ -2392,8 +2390,8 @@ export default function Home() {
           </div>
 
           <Subtitle>Vertical with Shapes</Subtitle>
-          <div className='flex flex-row gap-8 h-48'>
-            <div className='flex flex-col gap-2 items-center'>
+          <div className='flex h-48 flex-row gap-8'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Circle</Label>
               <Slider
                 defaultValue={[30]}
@@ -2401,7 +2399,7 @@ export default function Home() {
                 shape='circle'
               />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Boxed</Label>
               <Slider
                 defaultValue={[50]}
@@ -2409,7 +2407,7 @@ export default function Home() {
                 shape='square'
               />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Boxed Range</Label>
               <Slider
                 defaultValue={[20, 80]}
@@ -2418,7 +2416,7 @@ export default function Home() {
                 variant='success'
               />
             </div>
-            <div className='flex flex-col gap-2 items-center'>
+            <div className='flex flex-col items-center gap-2'>
               <Label>Boxed Steps</Label>
               <Slider
                 defaultValue={[25]}

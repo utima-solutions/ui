@@ -29,12 +29,13 @@ export default function Home() {
         /> */}
         <InputControl
           name='input'
+          required='Custom required'
           description='Description'
           fieldType='number'
-          required
           helperText='Helper Text'
           zodSchema={z.number().nullish()}
           label='Label'
+          helperText='Helper Text'
           // clean={clean}
           // mask={mask}
           // parser={parser}

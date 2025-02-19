@@ -163,7 +163,7 @@ export interface FormItemLabelProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
   children?: ReactNode;
   tooltip?: ReactNode;
-  required?: boolean;
+  required?: boolean | undefined | string;
   optional?: boolean;
   htmlFor?: string;
 }
@@ -189,7 +189,11 @@ export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
           className='inline-flex items-center gap-1.5'
         >
           {children}
-          {required && <span className='text-destructive'>*</span>}
+          {required && (
+            <span className='text-destructive'>
+              {typeof required === 'string' ? required : '*'}
+            </span>
+          )}
           {optional && (
             <span className='text-muted-foreground'>(Optional)</span>
           )}
@@ -221,6 +225,10 @@ export function FormItemDescription({
   const { layout, size } = useFormItem();
   const styles = formItemVariants({ layout, size });
 
+  if (!children) {
+    return null;
+  }
+
   return (
     <p
       data-uui-form-field-description
@@ -239,6 +247,10 @@ export interface FormItemErrorProps {
 export function FormItemError({ className, children }: FormItemErrorProps) {
   const { layout, size } = useFormItem();
   const styles = formItemVariants({ layout, size });
+
+  if (!children) {
+    return null;
+  }
 
   return (
     <p data-uui-form-field-error className={cn(styles.error(), className)}>
@@ -261,6 +273,10 @@ export function FormItemHelperText({
 }: FormItemHelperTextProps) {
   const { layout, size } = useFormItem();
   const styles = formItemVariants({ layout, size });
+
+  if (!children) {
+    return null;
+  }
 
   return (
     <p

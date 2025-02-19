@@ -20,28 +20,6 @@ export type FieldType =
   | 'checkbox'
   | string;
 
-export interface CommonFieldProps {
-  label?: ReactNode;
-  description?: ReactNode;
-  tooltip?: ReactNode;
-  helperText?: ReactNode;
-  readOnly?: boolean;
-}
-
-// export type ControlProps<UserProps> = FieldProps &
-//   Omit<
-//     UserProps,
-//     | 'onChange'
-//     | 'onBlur'
-//     | 'onFocus'
-//     | 'value'
-//     | 'defaultValue'
-//     | 'required'
-//     | 'id'
-//     | 'name'
-//     | 'value'
-//   >;
-
 /**
  * Common props used on controls at multipla places, these
  * are usually passed down from the FormField component and
@@ -53,6 +31,11 @@ export interface ControlPropsCommon {
   showRequired?: boolean;
   loading?: boolean;
   disabled?: boolean;
+  required?: boolean | undefined | string; // TODO can be custom text?
+  label?: ReactNode | undefined;
+  description?: ReactNode | undefined;
+  tooltip?: ReactNode | undefined;
+  helperText?: ReactNode | undefined;
 }
 
 /**
@@ -63,10 +46,7 @@ export interface ControlPropsCommon {
 export interface ControlProps
   extends ControlPropsCommon,
     Omit<SetOptional<FieldProps, 'id'>, 'type'> {
-  label?: ReactNode | undefined;
-  description?: ReactNode | undefined;
-  tooltip?: ReactNode | undefined;
-  helperText?: ReactNode | undefined;
+  fieldType?: FieldType;
 }
 
 export type ControlDuplicateProps =
@@ -92,6 +72,7 @@ export type FormFieldRender = (
   params: {
     id: string;
     error?: string;
+    hasHelpers: boolean;
   } & ControlPropsCommon &
     ReturnType<typeof useField<unknown, any>>,
 ) => ReactNode;
@@ -102,7 +83,6 @@ export type FormFieldRender = (
  * them optional.
  */
 export interface FormFieldProps extends ControlProps {
-  fieldType?: FieldType;
   zodSchema?: ZodType;
   render: FormFieldRender;
 }
@@ -123,6 +103,7 @@ export function FormField({
   const id = useId();
   const scopedName = useScope(name);
 
+  // TODO use translations from form context
   // TODO Run functions non values in readonly mode
   // TODO Addons in readonly
 
@@ -153,6 +134,7 @@ export function FormField({
   // We want to omit some userProps that may cause issues
   const { ...restUserProps } = field.userProps;
   const { showError, error } = field.fieldState;
+  const hasHelpers = !!(restProps.description || restProps.helperText);
 
   return field.render(
     render({
@@ -161,6 +143,8 @@ export function FormField({
       readOnly: readOnly || restProps.readOnly,
       showOptional: showOptional || formShowOptional,
       loading: loading || restProps.loading,
+      hasHelpers: hasHelpers ?? false,
+      required: restProps.required,
       disabled,
       ...field,
       userProps: restUserProps,

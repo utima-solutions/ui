@@ -1,15 +1,15 @@
 import { Root } from '@radix-ui/react-label';
-import { tv, type VariantProps } from 'tailwind-variants';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
-  type ElementRef,
+  type ComponentRef,
 } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
 export const labelVariants = tv({
-  base: 'text-foreground font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 select-none',
+  base: 'text-foreground select-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
   variants: {
     size: {
       xs: 'text-xs leading-3',
@@ -27,10 +27,11 @@ export const labelVariants = tv({
   },
 });
 
-export type LabelProps = ComponentPropsWithoutRef<typeof Root> &
-  VariantProps<typeof labelVariants>;
+export interface LabelProps
+  extends ComponentPropsWithoutRef<typeof Root>,
+    VariantProps<typeof labelVariants> {}
 
-export const Label = forwardRef<ElementRef<typeof Root>, LabelProps>(
+export const Label = forwardRef<ComponentRef<typeof Root>, LabelProps>(
   function Label({ className, size, disabled, ...restProps }, ref) {
     return (
       <Root

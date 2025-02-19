@@ -1,11 +1,7 @@
 /**
  * Controls
  */
-// export { Switch, type SwitchProps } from './controls/switch/Switch';
-// export { Checkbox, type CheckboxProps } from './controls/checkbox/Checkbox';
-// export { Input, type InputProps } from './controls/input/Input';
-// export { Select, type SelectProps } from './controls/select/Select';
-// export { TextArea, type TextAreaProps } from './controls/textArea/TextArea';
+export { InputControl, type InputControlProps } from './controls/input-control';
 
 export type * from './types';
 
@@ -23,8 +19,7 @@ export {
  * FormControl
  */
 export { FormField } from './form-field/form-field';
-export { SwitchControl } from './form-field/form-field';
-export { InputControl } from './form-field/form-field';
+
 /**
  * FormTranslationsContext
  */
