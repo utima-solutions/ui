@@ -10,19 +10,6 @@
 
 import type { FieldState, FormController, RelevantParams } from 'informed';
 
-// TODO user props??
-
-// TODO yup validation fields?
-/**
-  required,
-  noFalsy,
-  minimum,
-  maximum,
-  minLength,
-  maxLength,
-  pattern,
- */
-
 export interface FieldProps {
   id: string;
   name: string;

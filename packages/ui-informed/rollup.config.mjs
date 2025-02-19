@@ -5,5 +5,5 @@ import { createRollupConfig } from '../../createRollupConfig.mjs';
  */
 export default [
   ...createRollupConfig(),
-  ...createRollupConfig('src/devtools/Devtools.tsx'),
+  ...createRollupConfig('src/devtools/devtools.tsx'),
 ];

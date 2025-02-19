@@ -3,7 +3,7 @@ import { useId, type ReactNode } from 'react';
 import type { SetOptional } from 'type-fest';
 import type { ZodType } from 'zod';
 
-import { useFormContext } from '@/form/useFormContext';
+import { useFormContext } from '@/form/use-form-context';
 import type { FieldProps } from '@/types';
 import { zodResolver, getFieldZodObject } from '@/zodUtils';
 

@@ -9,7 +9,7 @@ import {
 } from 'react';
 import type { ZodObject, ZodRawShape } from 'zod';
 
-import { FormContext, type FormContextType } from './useFormContext';
+import { FormContext, type FormContextType } from './use-form-context';
 import { useFormTranslationsContext } from '..';
 
 export interface TypedFormState<T> extends Omit<FormState, 'values'> {
@@ -73,6 +73,7 @@ export function Form<T>({
 
   /**
    * Promisified submit handler that handles
+   * form submission and validation.
    */
   const handleSubmit = useCallback(
     async (formState: FormState) => {

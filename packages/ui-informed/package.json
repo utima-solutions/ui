@@ -21,11 +21,11 @@
       "default": "./dist/cjs/index.js"
     },
     "./devtools": {
-      "import": "./dist/esm/Devtools.js",
-      "types": "./dist/src/devtools/Devtools.d.ts",
-      "require": "./dist/cjs/Devtools.js",
-      "node": "./dist/cjs/Devtools.js",
-      "default": "./dist/cjs/Devtools.js"
+      "import": "./dist/esm/devtools.js",
+      "types": "./dist/src/devtools/devtools.d.ts",
+      "require": "./dist/cjs/devtools.js",
+      "node": "./dist/cjs/devtools.js",
+      "default": "./dist/cjs/devtools.js"
     }
   },
   "keywords": [

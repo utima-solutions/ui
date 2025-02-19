@@ -4,8 +4,8 @@ import { ChevronDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { JSONTree } from 'react-json-tree';
 
-import { DevtoolsLabel } from './DevtoolsLabel';
-import { DevtoolsTrigger } from './DevtoolsTrigger';
+import { DevtoolsLabel } from './devtools-label';
+import { DevtoolsTrigger } from './devtools-trigger';
 
 export interface DevtoolsProps {
   className?: string;
