@@ -1,69 +1,65 @@
-// //-------------------
-// // Test component
-// //-------------------
-// export interface SwitchControlProps
-//   extends CommonFieldProps,
-//     FormFieldProps,
-//     SwitchProps {}
+import { Switch, FormItem, type SwitchProps } from '@utima/ui';
 
-// // TODO make wrappers so we properly show errors? we will se how it will work in the end
-// export function SwitchControl({
-//   name,
-//   label,
-//   description,
-//   helperText,
-//   tooltip,
-//   errorMessage,
-//   defaultValue,
-//   initialValue,
-//   onCheckedChange,
-// }: SwitchControlProps) {
-//   const hasHelpers = description || helperText;
+import {
+  FormField,
+  type ControlProps,
+  type ControlDuplicateProps,
+} from '@/form-field/form-field';
 
-//   return (
-//     <FormField
-//       name={name}
-//       type='checkbox'
-//       defaultValue={defaultValue as unknown as boolean}
-//       initialValue={initialValue as unknown as boolean}
-//       render={({ id, userProps, ref, fieldApi, fieldState }) => {
-//         return (
-//           <FormItem.Root>
-//             <FormItem.Label tooltip={tooltip} htmlFor={id}>
-//               {label}
-//             </FormItem.Label>
-//             <FormItem.Content>
-//               <Switch
-//                 id={id}
-//                 ref={ref}
-//                 value={fieldState.value as string}
-//                 checked={fieldState.value as boolean}
-//                 onCheckedChange={value => {
-//                   onCheckedChange?.(value);
-//                   fieldApi.setTouched(true);
-//                   fieldApi.setValue(value);
-//                   fieldApi.setFocused(true);
-//                 }}
-//                 {...userProps}
-//               />
-//               {hasHelpers && (
-//                 <FormItem.Helpers>
-//                   {description && (
-//                     <FormItem.Description>{description}</FormItem.Description>
-//                   )}
-//                   {helperText && (
-//                     <FormItem.HelperText>{helperText}</FormItem.HelperText>
-//                   )}
-//                 </FormItem.Helpers>
-//               )}
-//               {fieldState.showError && errorMessage && (
-//                 <FormItem.Error>{errorMessage}</FormItem.Error>
-//               )}
-//             </FormItem.Content>
-//           </FormItem.Root>
-//         );
-//       }}
-//     />
-//   );
-// }
-// eslint-disable-next-line unicorn/no-empty-file
+// TODO handlers for rendering readonly, etc.
+export interface SwitchControlProps
+  extends ControlProps,
+    Omit<SwitchProps, ControlDuplicateProps> {}
+
+export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
+  return (
+    <FormField<SwitchControlProps>
+      fieldType='checkbox'
+      render={({
+        id,
+        userProps,
+        ref,
+        hasHelpers,
+        error,
+        fieldState,
+        fieldApi,
+        required,
+      }) => {
+        const { helperText, tooltip, label, description, ...restUserProps } =
+          userProps;
+
+        return (
+          <FormItem.Root>
+            <FormItem.Label required={required} tooltip={tooltip} htmlFor={id}>
+              {label}
+            </FormItem.Label>
+            <FormItem.Content>
+              <Switch
+                id={id}
+                ref={ref}
+                required={!!required}
+                value={fieldState.value as string}
+                checked={fieldState.value as boolean}
+                onCheckedChange={value => {
+                  userProps?.onCheckedChange?.(value);
+                  fieldApi.setTouched(true);
+                  fieldApi.setValue(value);
+                  fieldApi.setFocused(true);
+                }}
+                {...restUserProps}
+              />
+              {hasHelpers && (
+                <FormItem.Helpers>
+                  <FormItem.Description>{description}</FormItem.Description>
+                  <FormItem.HelperText>{helperText}</FormItem.HelperText>
+                </FormItem.Helpers>
+              )}
+              <FormItem.Error>{error}</FormItem.Error>
+            </FormItem.Content>
+          </FormItem.Root>
+        );
+      }}
+      {...restProps}
+    />
+  );
+}

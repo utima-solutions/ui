@@ -1,12 +1,16 @@
 'use client';
 
 import { Button } from '@utima/ui';
-import { Form, InputControl } from '@utima/ui-informed';
+import { Form, InputControl, SwitchControl } from '@utima/ui-informed';
 import { Devtools } from '@utima/ui-informed/devtools';
 import { z } from 'zod';
 
 const clean = (value: string) => {
   console.log('value', value);
+
+  if (!value) {
+    return null;
+  }
 
   return value.replaceAll(/[!#$%&()*@^]/g, '');
 };
@@ -38,6 +42,16 @@ export default function Home() {
           clean={clean}
           mask={mask}
           parser={parser}
+          allowEmptyString
+        />
+        <SwitchControl
+          name='switch'
+          required
+          description='Description'
+          fieldType='number'
+          helperText='Helper Text'
+          zodSchema={z.string().nullish()}
+          label='Label'
           allowEmptyString
         />
 

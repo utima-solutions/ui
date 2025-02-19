@@ -1,5 +1,4 @@
-import { Input, FormItem } from '@utima/ui';
-import type { InputProps } from 'informed';
+import { Input, FormItem, type InputProps } from '@utima/ui';
 
 import {
   FormField,
@@ -28,11 +27,10 @@ export function InputControl({
         informed,
         error,
         required,
-        tooltip,
-        label,
-        description,
-        helperText,
       }) => {
+        const { helperText, tooltip, label, description, ...restUserProps } =
+          userProps;
+
         return (
           <FormItem.Root>
             <FormItem.Label required={required} tooltip={tooltip} htmlFor={id}>
@@ -42,9 +40,10 @@ export function InputControl({
               <Input
                 type={type}
                 id={id}
+                required={!!required}
                 ref={ref}
                 {...informed}
-                {...userProps}
+                {...restUserProps}
               />
               {hasHelpers && (
                 <FormItem.Helpers>

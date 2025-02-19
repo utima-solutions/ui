@@ -7,6 +7,7 @@ export type FormContextType<T = unknown> = {
   readOnly: boolean;
   loading: boolean;
   showOptional: boolean;
+  showRequired: boolean;
   zodSchema?: AnyZodObject;
 };
 

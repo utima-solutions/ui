@@ -27,6 +27,7 @@ export interface FormProps<T>
   readOnly?: boolean;
   loading?: boolean;
   showOptional?: boolean;
+  showRequired?: boolean;
   zodSchema?: ZodObject<ZodRawShape>;
 }
 
@@ -42,6 +43,7 @@ export function Form<T>({
   disabled = false,
   loading = false,
   showOptional = false,
+  showRequired = true,
   zodSchema,
   ...restProps
 }: FormProps<T>) {
@@ -53,6 +55,7 @@ export function Form<T>({
       disabled,
       readOnly,
       loading: loading || isSubmitting,
+      showRequired,
       showOptional,
       zodSchema,
     }),
@@ -63,6 +66,7 @@ export function Form<T>({
       readOnly,
       zodSchema,
       showOptional,
+      showRequired,
       isSubmitting,
     ],
   );

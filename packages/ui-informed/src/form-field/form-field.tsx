@@ -69,14 +69,15 @@ export type ControlDuplicateProps =
  * Some of the values are also available in the fieldState,
  * however we duplicate here for convenience.
  */
-export type FormFieldRender = (
+export type FormFieldRender<T extends ControlProps> = (
   params: {
     id: string;
     error?: string;
     hasHelpers: boolean;
-  } & ControlPropsCommon &
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ReturnType<typeof useField<any, any>>,
+    required: boolean | undefined | string;
+    showOptional: boolean;
+    showRequired: boolean;
+  } & ReturnType<typeof useField<Omit<T, 'name'>, any>>, // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ) => ReactNode;
 
 /**
@@ -84,23 +85,25 @@ export type FormFieldRender = (
  * Currently we only add render function so users can
  * connect it to the informed.
  */
-export interface FormFieldProps extends ControlProps {
-  render: FormFieldRender;
+export interface FormFieldProps<T extends ControlProps> extends ControlProps {
+  render: FormFieldRender<T>;
 }
 
 /**
  * Base form field component that is used to wrap form items
  * and hook them into informed APIs.
  */
-export function FormField({
+export function FormField<T extends ControlProps>({
   name,
   id: userId,
   render,
   showOptional,
+  showRequired,
   zodSchema,
   fieldType,
+  required,
   ...restProps
-}: FormFieldProps) {
+}: FormFieldProps<T>) {
   const id = useId();
   const scopedName = useScope(name);
 
@@ -114,6 +117,7 @@ export function FormField({
     loading,
     readOnly,
     showOptional: formShowOptional,
+    showRequired: formShowRequired,
     zodSchema: zodFullSchema,
   } = useFormContext();
 
@@ -128,6 +132,7 @@ export function FormField({
     name,
     type: fieldType,
     disabled,
+    required,
     validate,
     ...restProps,
   });
@@ -139,13 +144,17 @@ export function FormField({
     render({
       id: userId ?? id,
       error: showError ? (error as string) : undefined,
-      readOnly: readOnly || restProps.readOnly,
-      showOptional: showOptional || formShowOptional,
-      loading: loading || restProps.loading,
       hasHelpers: hasHelpers ?? false,
-      required: restProps.required,
-      disabled,
+      showOptional: showOptional || formShowOptional,
+      showRequired: showRequired || formShowRequired,
+      required,
       ...field,
+      userProps: {
+        ...field.userProps,
+        readOnly: readOnly || restProps.readOnly,
+        loading: loading || restProps.loading,
+        disabled,
+      } as never,
     }),
   );
 }

@@ -2,6 +2,10 @@
  * Controls
  */
 export { InputControl, type InputControlProps } from './controls/input-control';
+export {
+  SwitchControl,
+  type SwitchControlProps,
+} from './controls/switch-control';
 
 export type * from './types';
 
