@@ -1,12 +1,13 @@
-import { tv, type VariantProps } from 'tailwind-variants';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ReactNode,
 } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
-import { inputVariants } from './input';
+
+import { inputVariants } from './input.styles';
 
 export const textareaVariants = tv({
   extend: inputVariants,
@@ -36,39 +37,12 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ) {
     const styles = textareaVariants({ size, variant });
 
-    if (!addonAfter && !addonBefore) {
-      return (
-        <textarea
-          ref={ref}
-          className={cn(styles.base(), className)}
-          {...restProps}
-        />
-      );
-    }
-
     return (
-      <div className={styles.wrapper()}>
-        {addonBefore && (
-          <span className={cn(styles.addonBase(), styles.addonBefore())}>
-            {addonBefore}
-          </span>
-        )}
-        <textarea
-          ref={ref}
-          className={cn(
-            styles.base(),
-            addonBefore && 'rounded-l-none',
-            addonAfter && 'rounded-r-none',
-            className,
-          )}
-          {...restProps}
-        />
-        {addonAfter && (
-          <span className={cn(styles.addonBase(), styles.addonAfter())}>
-            {addonAfter}
-          </span>
-        )}
-      </div>
+      <textarea
+        ref={ref}
+        className={cn(styles.base(), className)}
+        {...restProps}
+      />
     );
   },
 );

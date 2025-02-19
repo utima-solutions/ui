@@ -43,25 +43,25 @@ export const formItemVariants = tv({
     size: {
       xs: {
         content: 'gap-1',
-        description: 'text-xs',
+        description: 'text-[11px]',
         error: 'text-xs [&>svg]:size-3',
         helperText: 'text-xs',
       },
       sm: {
         content: 'gap-1.5',
-        description: 'text-sm',
+        description: 'text-[11px]',
         error: 'text-sm [&>svg]:size-3.5',
         helperText: 'text-sm',
       },
       md: {
         content: 'gap-2',
-        description: 'text-sm',
+        description: 'text-xs',
         error: 'text-sm [&>svg]:size-4',
         helperText: 'text-sm',
       },
       lg: {
         content: 'gap-2.5',
-        description: 'text-base',
+        description: 'text-sm',
         error: 'text-base [&>svg]:size-5',
         helperText: 'text-base',
       },

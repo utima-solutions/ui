@@ -8,6 +8,7 @@ module.exports = [
     files: ['**/*.ts', '**/*.tsx'],
     rules: {
       'react/no-multi-comp': 'off',
+      'react-refresh/only-export-components': 'off',
     },
   },
 ];
