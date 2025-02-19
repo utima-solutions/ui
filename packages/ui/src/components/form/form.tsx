@@ -1,5 +1,6 @@
-import { tv, type VariantProps } from 'tailwind-variants';
 import { type ReactNode, forwardRef, type HTMLAttributes } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
+
 import { cn } from '@/utils';
 
 const formVariants = tv({
@@ -7,13 +8,13 @@ const formVariants = tv({
     group: 'space-y-4',
     groupHeader: 'space-y-1',
     groupTitle: 'text-sm font-medium',
-    groupDescription: 'text-sm text-muted-foreground',
-    row: 'flex gap-4 items-start',
+    groupDescription: 'text-muted-foreground text-sm',
+    row: 'flex items-start gap-4',
     section: 'space-y-6',
     sectionHeader: 'space-y-1',
     sectionTitle: 'text-lg font-medium',
-    sectionDescription: 'text-sm text-muted-foreground',
-    actions: 'flex gap-3 mt-6',
+    sectionDescription: 'text-muted-foreground text-sm',
+    actions: 'mt-6 flex gap-3',
   },
   variants: {
     size: {

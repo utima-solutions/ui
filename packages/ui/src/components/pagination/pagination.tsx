@@ -1,23 +1,22 @@
-import { tv } from 'tailwind-variants';
-import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
+import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
+import { forwardRef, useMemo, type ComponentPropsWithoutRef } from 'react';
+import { tv } from 'tailwind-variants';
 
 import { cn } from '@/utils';
-import { ChevronLeft } from 'lucide-react';
-import { ChevronRight } from 'lucide-react';
+
 import {
   PaginationContext,
   usePaginationContext,
   type PaginationSize,
 } from './pagination-context';
-import { MoreHorizontal } from 'lucide-react';
 import { buttonVariants } from '../button/button';
 
 export const paginationVariants = tv({
   slots: {
     root: 'flex flex-row items-center gap-1',
     content: 'flex flex-row items-center gap-1',
-    ellipsis: 'flex items-center justify-center text-muted-foreground mx-1',
+    ellipsis: 'text-muted-foreground mx-1 flex items-center justify-center',
   },
   variants: {
     size: {
@@ -50,9 +49,10 @@ export interface PaginationProps extends ComponentPropsWithoutRef<'nav'> {
 export const Pagination = forwardRef<HTMLElement, PaginationProps>(
   function Pagination({ size = 'md', className, ...props }, ref) {
     const { root } = paginationVariants({ size });
+    const contextValue = useMemo(() => ({ size }), [size]);
 
     return (
-      <PaginationContext.Provider value={{ size }}>
+      <PaginationContext.Provider value={contextValue}>
         <nav
           ref={ref}
           role='navigation'

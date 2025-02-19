@@ -1,6 +1,5 @@
 import * as SelectPrimitive from '@radix-ui/react-select';
 import { Check, ChevronDown, ChevronUp } from 'lucide-react';
-import { tv, type VariantProps } from 'tailwind-variants';
 import {
   forwardRef,
   memo,
@@ -9,10 +8,12 @@ import {
   type ComponentRef,
   type ReactNode,
 } from 'react';
+import type { VariantProps } from 'tailwind-variants';
+
 import { cn } from '@/utils';
-import { SelectContext } from './use-select-context';
-import { useSelectContext } from './use-select-context';
+
 import { selectVariants } from './select.style';
+import { SelectContext, useSelectContext } from './use-select-context';
 
 export interface SelectRootProps
   extends ComponentPropsWithoutRef<typeof SelectPrimitive.Root>,

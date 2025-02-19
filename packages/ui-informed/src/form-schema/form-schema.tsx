@@ -1,47 +1,47 @@
+import { Select } from '@utima/ui';
 import { type RelevantParams, Input as InformedInput } from 'informed';
 import type { ComponentType } from 'react';
 
+import { CheckboxControl } from '@/controls/checkbox-control';
 import { InputControl } from '@/controls/input-control';
+import { SelectControl } from '@/controls/select-control';
 import { SwitchControl } from '@/controls/switch-control';
+import { TextareaControl } from '@/controls/textarea-control';
 import type { FieldType } from '@/form-field/form-field';
 
 /**
- * TODO
- *
- * All of this will probably be moved to utima plugin at some point.
+ * Default form schema adapter, that maps field types to components.
  */
-
 export const defaultFormSchemaAdapter: FormSchemaAdapter = {
   text: InputControl,
-  // number: Input,
-  // textarea: TextArea,
-  // checkbox: Checkbox as any,
+  number: props => <InputControl {...props} fieldType='number' />,
+  textarea: TextareaControl,
+  checkbox: CheckboxControl,
   switch: SwitchControl,
   hidden: props => <InformedInput {...props} type='hidden' />,
-  // chatSelect: ChatSelect,
-  // select: props => {
-  //   const { options, ...restProps } = props;
+  select: props => {
+    const { options, ...restProps } = props;
 
-  //   return (
-  //     <Select {...restProps}>
-  //       {Object.entries(options!).map(([value, label]) => (
-  //         <Select.Item key={value} value={value}>
-  //           {label}
-  //         </Select.Item>
-  //       ))}
-  //     </Select>
-  //   );
-  // },
+    return (
+      <SelectControl {...restProps}>
+        {Object.entries(options!).map(([value, label]) => (
+          <Select.Item key={value} value={value}>
+            {label}
+          </Select.Item>
+        ))}
+      </SelectControl>
+    );
+  },
 };
 
 export interface FormSchemaAdapter {
   text: ComponentType<FormSchemaFieldDef>;
   switch: ComponentType<FormSchemaFieldDef>;
   hidden: ComponentType<FormSchemaFieldDef>;
-  // number: ComponentType<FormSchemaFieldDef>;
-  // textarea: ComponentType<FormSchemaFieldDef>;
-  // checkbox: ComponentType<FormSchemaFieldDef>;
-  // select: ComponentType<FormSchemaFieldDef>;
+  checkbox: ComponentType<FormSchemaFieldDef>;
+  number: ComponentType<FormSchemaFieldDef>;
+  textarea: ComponentType<FormSchemaFieldDef>;
+  select: ComponentType<FormSchemaFieldDef>;
 }
 
 export interface FormSchemaFieldDef {

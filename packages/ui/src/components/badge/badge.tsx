@@ -1,17 +1,19 @@
-import { tv, type VariantProps } from 'tailwind-variants';
 import { type ComponentPropsWithoutRef, memo } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
 export const badgeVariants = tv({
-  base: 'inline-flex items-center gap-1 rounded-md border text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  base: 'focus:ring-ring inline-flex items-center gap-1 rounded-md border text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2',
   variants: {
     variant: {
-      success: 'border-transparent bg-success text-success-foreground',
-      primary: 'border-transparent bg-primary text-primary-foreground',
-      destructive: 'border-transparent bg-destructive text-destructive-foreground',
-      secondary: 'border-transparent bg-secondary text-secondary-foreground',
-      outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
+      success: 'bg-success text-success-foreground border-transparent',
+      primary: 'bg-primary text-primary-foreground border-transparent',
+      destructive:
+        'bg-destructive text-destructive-foreground border-transparent',
+      secondary: 'bg-secondary text-secondary-foreground border-transparent',
+      outline:
+        'border-input bg-background hover:bg-accent hover:text-accent-foreground border',
     },
     size: {
       xs: 'px-1 py-0 text-[10px]',
@@ -21,7 +23,7 @@ export const badgeVariants = tv({
       xl: 'px-3 py-1 text-base',
     },
     disabled: {
-      true: 'opacity-50 cursor-not-allowed',
+      true: 'cursor-not-allowed opacity-50',
     },
   },
   defaultVariants: {

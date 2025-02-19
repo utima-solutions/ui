@@ -1,5 +1,6 @@
 import { tv } from 'tailwind-variants';
 
+// TODO extract common styles for example for ring etc.
 // eslint-disable-next-line tailwindcss/no-custom-classname
 export const inputVariants = tv({
   slots: {

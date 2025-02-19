@@ -1,11 +1,11 @@
 import * as TooltipPrimitive from '@radix-ui/react-tooltip';
-
-import { cn } from '@/utils';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ComponentRef,
 } from 'react';
+
+import { cn } from '@/utils';
 
 export interface TooltipContentProps
   extends ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> {}

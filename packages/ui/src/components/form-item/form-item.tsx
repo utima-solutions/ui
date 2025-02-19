@@ -5,6 +5,7 @@ import {
   type ReactNode,
   forwardRef,
   type HTMLAttributes,
+  useMemo,
 } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
@@ -131,9 +132,10 @@ export const FormItem = forwardRef<HTMLDivElement, FormItemProps>(
     ref,
   ) => {
     const styles = formItemVariants({ layout, size });
+    const contextValue = useMemo(() => ({ layout, size }), [layout, size]);
 
     return (
-      <FormItemContext.Provider value={{ layout, size }}>
+      <FormItemContext.Provider value={contextValue}>
         <div
           ref={ref}
           data-uui-form-field

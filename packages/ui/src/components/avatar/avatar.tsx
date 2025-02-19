@@ -1,10 +1,10 @@
 import * as AvatarPrimitive from '@radix-ui/react-avatar';
-import { tv, type VariantProps } from 'tailwind-variants';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ComponentRef,
 } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
@@ -12,11 +12,11 @@ export const avatarVariants = tv({
   base: 'relative flex shrink-0 overflow-hidden rounded-full',
   variants: {
     size: {
-      xs: 'h-6 w-6',
-      sm: 'h-8 w-8',
-      md: 'h-10 w-10',
-      lg: 'h-12 w-12',
-      xl: 'h-14 w-14',
+      xs: 'size-6',
+      sm: 'size-8',
+      md: 'size-10',
+      lg: 'size-12',
+      xl: 'size-14',
     },
   },
   defaultVariants: {
@@ -28,15 +28,16 @@ export interface AvatarProps
   extends ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
     VariantProps<typeof avatarVariants> {}
 
-const Avatar = forwardRef<ComponentRef<typeof AvatarPrimitive.Root>, AvatarProps>(
-  ({ className, size, ...props }, ref) => (
-    <AvatarPrimitive.Root
-      ref={ref}
-      className={cn(avatarVariants({ size }), className)}
-      {...props}
-    />
-  ),
-);
+const Avatar = forwardRef<
+  ComponentRef<typeof AvatarPrimitive.Root>,
+  AvatarProps
+>(({ className, size, ...props }, ref) => (
+  <AvatarPrimitive.Root
+    ref={ref}
+    className={cn(avatarVariants({ size }), className)}
+    {...props}
+  />
+));
 
 const AvatarImage = forwardRef<
   ComponentRef<typeof AvatarPrimitive.Image>,

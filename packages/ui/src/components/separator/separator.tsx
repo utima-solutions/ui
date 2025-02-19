@@ -1,19 +1,19 @@
 import { Root } from '@radix-ui/react-separator';
-import { tv, type VariantProps } from 'tailwind-variants';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ComponentRef,
 } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
 export const separatorVariants = tv({
-  base: 'shrink-0 bg-border',
+  base: 'bg-border shrink-0',
   variants: {
     orientation: {
-      horizontal: 'h-[1px] w-full',
-      vertical: 'h-full w-[1px]',
+      horizontal: 'h-px w-full',
+      vertical: 'h-full w-px',
     },
     size: {
       xs: '',
@@ -37,12 +37,12 @@ export const separatorVariants = tv({
     {
       orientation: 'horizontal',
       size: 'sm',
-      className: 'h-[1px]',
+      className: 'h-px',
     },
     {
       orientation: 'vertical',
       size: 'sm',
-      className: 'w-[1px]',
+      className: 'w-px',
     },
     {
       orientation: 'horizontal',

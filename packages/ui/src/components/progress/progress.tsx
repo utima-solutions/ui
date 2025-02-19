@@ -3,15 +3,16 @@ import {
   Indicator,
   type ProgressProps as RadixProgressProps,
 } from '@radix-ui/react-progress';
-import { tv, type VariantProps } from 'tailwind-variants';
 import { forwardRef, memo } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
 export const progressVariants = tv({
   slots: {
-    root: 'relative h-full w-full overflow-hidden rounded-full bg-secondary',
-    indicator: 'h-full w-full flex-1 transition-all data-[state=indeterminate]:animate-indeterminate',
+    root: 'bg-secondary relative size-full overflow-hidden rounded-full',
+    indicator:
+      'data-[state=indeterminate]:animate-indeterminate size-full flex-1 transition-all',
   },
   variants: {
     size: {
@@ -38,19 +39,19 @@ export const progressVariants = tv({
       },
       success: {
         root: 'bg-success/25',
-        indicator: 'bg-success'
+        indicator: 'bg-success',
       },
       destructive: {
         root: 'bg-destructive/25',
-        indicator: 'bg-destructive'
+        indicator: 'bg-destructive',
       },
       secondary: {
         root: 'bg-secondary-foreground/25',
-        indicator: 'bg-secondary-foreground'
+        indicator: 'bg-secondary-foreground',
       },
       outline: {
-        root: 'border border-input bg-background shadow-xs',
-        indicator: 'bg-border/75'
+        root: 'border-input bg-background shadow-xs border',
+        indicator: 'bg-border/75',
       },
     },
   },
@@ -63,8 +64,8 @@ export const progressVariants = tv({
 export interface ProgressProps
   extends RadixProgressProps,
     VariantProps<typeof progressVariants> {
-      indicatorClassName?: string;
-    }
+  indicatorClassName?: string;
+}
 
 /**
  * A progress bar component. It is used to show the progress of an operation.

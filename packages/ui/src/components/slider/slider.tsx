@@ -1,18 +1,20 @@
 import * as SliderPrimitive from '@radix-ui/react-slider';
-import { tv, type VariantProps } from 'tailwind-variants';
-import { cn } from '@/utils';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ComponentRef,
 } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
+
+import { cn } from '@/utils';
 
 export const sliderVariants = tv({
   slots: {
     root: 'relative touch-none select-none',
     track: 'relative grow overflow-hidden rounded-full',
     range: 'absolute',
-    thumb: 'block border shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+    thumb:
+      'focus-visible:ring-ring block border shadow transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50',
   },
   variants: {
     variant: {
@@ -37,7 +39,7 @@ export const sliderVariants = tv({
         thumb: 'border-secondary/50 bg-background',
       },
       outline: {
-        track: 'border border-input bg-background shadow-xs',
+        track: 'border-input bg-background shadow-xs border',
         range: 'bg-border/75',
         thumb: 'border-border/50 bg-background',
       },
@@ -58,19 +60,19 @@ export const sliderVariants = tv({
     },
     size: {
       xs: {
-        thumb: 'h-3 w-3',
+        thumb: 'size-3',
       },
       sm: {
-        thumb: 'h-4 w-4',
+        thumb: 'size-4',
       },
       md: {
-        thumb: 'h-5 w-5',
+        thumb: 'size-5',
       },
       lg: {
-        thumb: 'h-6 w-6',
+        thumb: 'size-6',
       },
       xl: {
-        thumb: 'h-7 w-7',
+        thumb: 'size-7',
       },
     },
     shape: {
@@ -168,14 +170,20 @@ export const sliderVariants = tv({
 });
 
 export interface SliderProps
-  extends Omit<ComponentPropsWithoutRef<typeof SliderPrimitive.Root>, 'asChild'>,
+  extends Omit<
+      ComponentPropsWithoutRef<typeof SliderPrimitive.Root>,
+      'asChild'
+    >,
     VariantProps<typeof sliderVariants> {
   trackClassName?: string;
   rangeClassName?: string;
   thumbClassName?: string;
 }
 
-export const Slider = forwardRef<ComponentRef<typeof SliderPrimitive.Root>, SliderProps>(
+export const Slider = forwardRef<
+  ComponentRef<typeof SliderPrimitive.Root>,
+  SliderProps
+>(
   (
     {
       className,
@@ -190,7 +198,12 @@ export const Slider = forwardRef<ComponentRef<typeof SliderPrimitive.Root>, Slid
     },
     ref,
   ) => {
-    const { root, track, range, thumb } = sliderVariants({ variant, size, orientation, shape });
+    const { root, track, range, thumb } = sliderVariants({
+      variant,
+      size,
+      orientation,
+      shape,
+    });
 
     return (
       <SliderPrimitive.Root

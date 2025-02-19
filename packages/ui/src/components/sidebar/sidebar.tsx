@@ -1,7 +1,6 @@
 import { Slot } from '@radix-ui/react-slot';
 import { type VariantProps, cva } from 'class-variance-authority';
 import { PanelLeft } from 'lucide-react';
-
 import {
   createContext,
   useContext,
@@ -15,14 +14,15 @@ import {
   type CSSProperties,
 } from 'react';
 
-import * as Tooltip from '../tooltip';
-import * as Sheet from '../sheet';
-import { cn } from '@/utils';
-import { Input } from '../input/input';
-import { Separator } from '../breadcrumb';
-import { Skeleton } from '../skeleton/skeleton';
-import { IconButton } from '../icon-button/icon-button';
 import { useIsMobile } from '@/hooks/use-is-mobile';
+import { cn } from '@/utils';
+
+import { Separator } from '../breadcrumb';
+import { IconButton } from '../icon-button/icon-button';
+import { Input } from '../input/input';
+import * as Sheet from '../sheet';
+import { Skeleton } from '../skeleton/skeleton';
+import * as Tooltip from '../tooltip';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -96,9 +96,7 @@ export const SidebarProvider = forwardRef<
 
     // Helper to toggle the sidebar.
     const toggleSidebar = useCallback(() => {
-      return isMobile
-        ? setOpenMobile((open) => !open)
-        : setOpen((open) => !open);
+      return isMobile ? setOpenMobile(open => !open) : setOpen(open => !open);
     }, [isMobile, setOpen, setOpenMobile]);
 
     // Adds a keyboard shortcut to toggle the sidebar.
@@ -114,6 +112,7 @@ export const SidebarProvider = forwardRef<
       };
 
       window.addEventListener('keydown', handleKeyDown);
+
       return () => window.removeEventListener('keydown', handleKeyDown);
     }, [toggleSidebar]);
 
@@ -212,7 +211,7 @@ export const Sidebar = forwardRef<
             <Sheet.Content
               data-sidebar='sidebar'
               data-mobile='true'
-              className='w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden'
+              className='bg-sidebar text-sidebar-foreground w-[--sidebar-width] p-0 [&>button]:hidden'
               style={
                 {
                   '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
@@ -220,7 +219,7 @@ export const Sidebar = forwardRef<
               }
               side={side}
             >
-              <div className='flex h-full w-full flex-col'>{children}</div>
+              <div className='flex size-full flex-col'>{children}</div>
             </Sheet.Content>
           </Sheet.Portal>
         </Sheet.Root>
@@ -230,7 +229,7 @@ export const Sidebar = forwardRef<
     return (
       <div
         ref={ref}
-        className='group peer hidden text-sidebar-foreground md:block'
+        className='text-sidebar-foreground group peer hidden md:block'
         data-state={state}
         data-collapsible={state === 'collapsed' ? collapsible : ''}
         data-variant={variant}
@@ -263,7 +262,7 @@ export const Sidebar = forwardRef<
         >
           <div
             data-sidebar='sidebar'
-            className='flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow'
+            className='bg-sidebar group-data-[variant=floating]:border-sidebar-border flex size-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow'
           >
             {children}
           </div>
@@ -286,7 +285,7 @@ export const SidebarTrigger = forwardRef<
       variant='ghost'
       size='md'
       className={cn('h-7 w-7', className)}
-      onClick={(event) => {
+      onClick={event => {
         onClick?.(event);
         toggleSidebar();
       }}
@@ -506,13 +505,13 @@ export const SidebarMenuItem = forwardRef<HTMLLIElement, ComponentProps<'li'>>(
 
 // TODO rewrite to tailwind variants
 const sidebarMenuButtonVariants = cva(
-  'peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0',
+  'peer/menu-button ring-sidebar-ring hover:bg-sidebar-accent hover:text-sidebar-accent-foreground active:bg-sidebar-accent active:text-sidebar-accent-foreground data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none transition-[width,height,padding] focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0',
   {
     variants: {
       variant: {
         default: 'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground',
         outline:
-          'bg-background shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
+          'bg-background hover:bg-sidebar-accent hover:text-sidebar-accent-foreground shadow-[0_0_0_1px_hsl(var(--sidebar-border))] hover:shadow-[0_0_0_1px_hsl(var(--sidebar-accent))]',
       },
       size: {
         default: 'h-8 text-sm',

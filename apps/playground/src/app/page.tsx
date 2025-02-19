@@ -29,7 +29,7 @@ import {
   Switch,
   Table,
   Tabs,
-  TextArea,
+  Textarea,
   toast,
   Tooltip,
   Command,
@@ -1817,29 +1817,29 @@ export default function Home() {
           <Title>&lt;TextArea /&gt;</Title>
           <Subtitle>Variants</Subtitle>
           <div className='flex flex-col gap-4'>
-            <TextArea placeholder='Default textarea' />
-            <TextArea
+            <Textarea placeholder='Default textarea' />
+            <Textarea
               variant='destructive'
               placeholder='Destructive textarea'
             />
-            <TextArea variant='success' placeholder='Success textarea' />
+            <Textarea variant='success' placeholder='Success textarea' />
           </div>
 
           <Subtitle>Sizes</Subtitle>
           <div className='flex flex-col gap-4'>
-            <TextArea size='xs' placeholder='Extra small textarea' />
-            <TextArea size='sm' placeholder='Small textarea' />
-            <TextArea size='md' placeholder='Default textarea' />
-            <TextArea size='lg' placeholder='Large textarea' />
+            <Textarea size='xs' placeholder='Extra small textarea' />
+            <Textarea size='sm' placeholder='Small textarea' />
+            <Textarea size='md' placeholder='Default textarea' />
+            <Textarea size='lg' placeholder='Large textarea' />
           </div>
 
           <Subtitle>With addons</Subtitle>
           <div className='flex flex-col gap-4'>
-            <TextArea
+            <Textarea
               addonBefore={<MessageSquare className='size-4' />}
               placeholder='Enter message'
             />
-            <TextArea
+            <Textarea
               addonAfter={<Check className='size-4' />}
               placeholder='Verified message'
             />
@@ -1847,9 +1847,9 @@ export default function Home() {
 
           <Subtitle>States</Subtitle>
           <div className='flex flex-col gap-4'>
-            <TextArea placeholder='Disabled textarea' disabled />
-            <TextArea placeholder='Required textarea' required />
-            <TextArea placeholder='Read only textarea' readOnly />
+            <Textarea placeholder='Disabled textarea' disabled />
+            <Textarea placeholder='Required textarea' required />
+            <Textarea placeholder='Read only textarea' readOnly />
           </div>
         </div>
 

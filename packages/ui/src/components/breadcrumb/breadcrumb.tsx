@@ -1,5 +1,5 @@
-import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 import { ChevronRight, MoreHorizontal } from 'lucide-react';
+import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import { cn } from '@/utils';
 

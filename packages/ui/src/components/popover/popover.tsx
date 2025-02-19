@@ -1,5 +1,4 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover';
-import { tv, type VariantProps } from 'tailwind-variants';
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 
 import { cn } from '@/utils';

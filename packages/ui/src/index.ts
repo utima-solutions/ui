@@ -145,7 +145,7 @@ export { inputVariants } from './components/input/input.styles';
 export { Input, type InputProps } from './components/input/input';
 
 export {
-  TextArea,
+  Textarea,
   textareaVariants,
   type TextareaProps,
 } from './components/input/textarea';

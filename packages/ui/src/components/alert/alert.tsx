@@ -1,13 +1,14 @@
-import { cn } from '@/utils';
-import { tv, type VariantProps } from 'tailwind-variants';
 import { forwardRef, type HTMLAttributes } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
+
+import { cn } from '@/utils';
 
 const alertVariants = tv({
   slots: {
-    base: 'relative w-full rounded-lg border px-4 py-3 text-sm [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-3.5 [&>svg]:text-foreground [&>svg~*]:pl-7',
+    base: '[&>svg]:text-foreground relative w-full rounded-lg border px-4 py-3 text-sm [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-3.5 [&>svg~*]:pl-7',
     icon: 'mr-3 inline-block align-text-bottom',
     content: '[&>svg+div]:translate-y-[-3px]',
-    title: 'mb-1 leading-none tracking-tight font-semibold',
+    title: 'mb-1 font-semibold leading-none tracking-tight',
     description: 'text-sm [&_p]:leading-relaxed',
   },
   variants: {

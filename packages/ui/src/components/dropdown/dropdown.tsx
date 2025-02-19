@@ -1,4 +1,5 @@
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { Check, ChevronRight, Circle } from 'lucide-react';
 import {
   forwardRef,
   type ReactNode,
@@ -6,7 +7,6 @@ import {
 } from 'react';
 
 import { cn } from '@/utils';
-import { Check, ChevronRight, Circle } from 'lucide-react';
 
 export interface DropdownContentProps
   extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> {}

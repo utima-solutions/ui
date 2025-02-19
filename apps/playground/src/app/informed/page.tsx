@@ -34,10 +34,34 @@ export default function Home() {
       label: 'Input',
     },
     {
+      name: 'textarea',
+      label: 'Textarea',
+      control: 'textarea',
+    },
+    {
+      name: 'number',
+      label: 'Number',
+      control: 'number',
+    },
+    {
       name: 'switch',
       label: 'Switch',
       control: 'switch',
-      fieldType: 'checkbox',
+    },
+    {
+      name: 'checkbox',
+      label: 'Checkbox',
+      control: 'checkbox',
+    },
+    {
+      name: 'select',
+      label: 'Select',
+      control: 'select',
+      options: {
+        a: 'A',
+        b: 'B',
+        c: 'C',
+      },
     },
   ]);
 

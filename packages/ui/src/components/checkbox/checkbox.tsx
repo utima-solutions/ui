@@ -1,18 +1,18 @@
 import { Root, Indicator } from '@radix-ui/react-checkbox';
-import { tv, type VariantProps } from 'tailwind-variants';
+import { Check } from 'lucide-react';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ComponentRef,
   type ReactNode,
 } from 'react';
-import { Check } from 'lucide-react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
 export const checkboxVariants = tv({
   slots: {
-    root: 'peer inline-flex shrink-0 cursor-pointer items-center shadow-black/5 justify-center rounded-[0.25rem] border shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
+    root: 'focus-visible:ring-ring peer inline-flex shrink-0 cursor-pointer items-center justify-center rounded border shadow-sm shadow-black/5 focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50',
     indicator: 'text-current',
   },
   variants: {
@@ -35,23 +35,23 @@ export const checkboxVariants = tv({
     },
     size: {
       xs: {
-        root: 'h-3 w-3',
+        root: 'size-3',
         indicator: '[&_svg]:size-2',
       },
       sm: {
-        root: 'h-3.5 w-3.5',
+        root: 'size-3.5',
         indicator: '[&_svg]:size-2.5',
       },
       md: {
-        root: 'h-4 w-4',
+        root: 'size-4',
         indicator: '[&_svg]:size-3',
       },
       lg: {
-        root: 'h-5 w-5',
+        root: 'size-5',
         indicator: '[&_svg]:size-4',
       },
       xl: {
-        root: 'h-6 w-6',
+        root: 'size-6',
         indicator: '[&_svg]:size-5',
       },
     },
@@ -71,26 +71,28 @@ export interface CheckboxProps
 }
 
 export const Checkbox = forwardRef<ComponentRef<typeof Root>, CheckboxProps>(
-  function Checkbox({
-    className,
-    classNameIndicator,
-    size,
-    variant,
-    circle,
-    indicator = <Check strokeWidth={3} />,
-    ...restProps
-  }, ref) {
-    const { root, indicator: indicatorClass } = checkboxVariants({ size, variant });
+  function Checkbox(
+    {
+      className,
+      classNameIndicator,
+      size,
+      variant,
+      circle,
+      indicator = <Check strokeWidth={3} />,
+      ...restProps
+    },
+    ref,
+  ) {
+    const { root, indicator: indicatorClass } = checkboxVariants({
+      size,
+      variant,
+    });
 
     return (
       <Root
         ref={ref}
         data-uui-checkbox
-        className={cn(
-          root(),
-          circle && 'rounded-full',
-          className,
-        )}
+        className={cn(root(), circle && 'rounded-full', className)}
         {...restProps}
       >
         <Indicator

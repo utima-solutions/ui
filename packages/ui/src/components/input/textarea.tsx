@@ -23,8 +23,8 @@ export interface TextareaProps
   addonAfter?: ReactNode;
 }
 
-export const TextArea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  function TextArea(
+export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
+  function Textarea(
     {
       className,
       size = 'md',

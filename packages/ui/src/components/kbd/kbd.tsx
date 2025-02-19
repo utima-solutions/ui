@@ -1,14 +1,14 @@
-import { tv, type VariantProps } from 'tailwind-variants';
 import { memo, type ComponentPropsWithoutRef } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
 export const kbdVariants = tv({
-  base: 'inline-flex items-center shadow-black/5 justify-center rounded-md font-mono font-medium text-foreground tracking-widest',
+  base: 'text-foreground inline-flex items-center justify-center rounded-md font-mono font-medium tracking-widest shadow-black/5',
   variants: {
     variant: {
       ghost: 'opacity-60',
-      outline: 'shadow-sm bg-white py-0.5 px-1 border-border border',
+      outline: 'border-border border bg-white px-1 py-0.5 shadow-sm',
     },
     size: {
       xs: 'h-5 min-w-5 px-1 text-[11px]',
@@ -18,7 +18,7 @@ export const kbdVariants = tv({
       xl: 'h-9 min-w-9 px-3 text-lg',
     },
     disabled: {
-      true: 'opacity-50 cursor-not-allowed pointer-events-none',
+      true: 'pointer-events-none cursor-not-allowed opacity-50',
     },
   },
   defaultVariants: {

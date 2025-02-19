@@ -1,8 +1,10 @@
-import * as React from 'react';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
+import * as React from 'react';
+import type { ComponentRef, ComponentPropsWithoutRef } from 'react';
+
 import { cn } from '@/utils';
+
 import { buttonVariants } from '../button/button';
-import { type ComponentRef, type ComponentPropsWithoutRef } from 'react';
 
 export const AlertDialog = AlertDialogPrimitive.Root;
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;

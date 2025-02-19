@@ -1,4 +1,3 @@
-import { cn } from '@/utils';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { ChevronDown } from 'lucide-react';
 import {
@@ -7,6 +6,8 @@ import {
   type ComponentRef,
   type ReactNode,
 } from 'react';
+
+import { cn } from '@/utils';
 
 export const AccordionItem = forwardRef<
   ComponentRef<typeof AccordionPrimitive.Item>,
@@ -60,7 +61,7 @@ export const AccordionContent = forwardRef<
   <AccordionPrimitive.Content
     data-uui-accordion-content
     ref={ref}
-    className='overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down'
+    className='data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm'
     {...props}
   >
     <div className={cn('pb-4 pt-0', className)}>{children}</div>

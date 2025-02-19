@@ -1,39 +1,39 @@
-import { tv } from 'tailwind-variants';
 import { Command as CommandPrimitive } from 'cmdk';
+import { Search, Loader2, PackageSearch } from 'lucide-react';
 import {
   forwardRef,
   type ComponentPropsWithoutRef,
   type ComponentRef,
-  type ElementRef,
   type ReactNode,
 } from 'react';
+import { tv } from 'tailwind-variants';
 
 import { cn } from '@/utils';
+
 import * as Dialog from '../dialog';
-import { Search, Loader2, PackageSearch } from 'lucide-react';
 
 /**
  * Style definition for command components
  */
 export const commandVariants = tv({
   slots: {
-    base: 'flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-fg',
+    base: 'bg-popover text-popover-fg flex size-full flex-col overflow-hidden rounded-md',
     dialog:
-      '[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5 overflow-hidden p-0',
-    empty: 'py-6 text-sm flex items-center justify-center gap-2',
+      '[&_[cmdk-group-heading]]:text-muted-foreground overflow-hidden p-0 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:size-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:size-5',
+    empty: 'flex items-center justify-center gap-2 py-6 text-sm',
     emptyIcon: 'size-5',
     group:
-      'overflow-hidden p-1.5 text-fg [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-fg',
+      'text-fg [&_[cmdk-group-heading]]:text-muted-fg overflow-hidden p-1.5 [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium',
     inputWrapper: 'px-1.5 pt-1.5',
-    inputContainer: 'flex bg-accent/50 rounded-md items-center px-3',
-    inputIcon: 'mr-2 h-4 w-4 shrink-0',
+    inputContainer: 'bg-accent/50 flex items-center rounded-md px-3',
+    inputIcon: 'mr-2 size-4 shrink-0',
     inputLoader:
-      'animate-spin transition-opacity opacity-0 ml-2 size-4 shrink-0',
+      'ml-2 size-4 shrink-0 animate-spin opacity-0 transition-opacity',
     input:
-      'bg-accent flex h-9 w-full rounded-md bg-transparent py-3 text-sm outline-none placeholder:placeholder disabled:cursor-not-allowed disabled:opacity-50',
-    item: 'transition-all cursor-pointer relative flex select-none items-center rounded-md px-2 py-1.5 text-sm outline-none aria-selected:bg-accent aria-selected:text-accent-fg data-[disabled="true"]:pointer-events-none data-[disabled="true"]:opacity-50',
+      'bg-accent placeholder:placeholder flex h-9 w-full rounded-md bg-transparent py-3 text-sm outline-none disabled:cursor-not-allowed disabled:opacity-50',
+    item: 'aria-selected:bg-accent aria-selected:text-accent-fg relative flex cursor-pointer select-none items-center rounded-md px-2 py-1.5 text-sm outline-none transition-all data-[disabled="true"]:pointer-events-none data-[disabled="true"]:opacity-50',
     list: 'max-h-[300px] overflow-y-auto overflow-x-hidden',
-    separator: '-mx-1 h-px bg-separator',
+    separator: 'bg-separator -mx-1 h-px',
   },
 });
 
@@ -42,6 +42,7 @@ export const Command = forwardRef<
   ComponentPropsWithoutRef<typeof CommandPrimitive>
 >(({ className, ...restProps }, ref) => {
   const styles = commandVariants();
+
   return (
     <CommandPrimitive
       ref={ref}
@@ -57,6 +58,7 @@ export const CommandDialog = forwardRef<
   ComponentPropsWithoutRef<typeof Dialog.Content>
 >(({ className, children, ...restProps }, ref) => {
   const styles = commandVariants();
+
   return (
     <Dialog.Content
       ref={ref}
@@ -74,6 +76,7 @@ export const CommandSeparator = forwardRef<
   ComponentPropsWithoutRef<typeof CommandPrimitive.Separator>
 >(({ className, ...restProps }, ref) => {
   const styles = commandVariants();
+
   return (
     <CommandPrimitive.Separator
       ref={ref}
@@ -89,6 +92,7 @@ export const CommandList = forwardRef<
   ComponentPropsWithoutRef<typeof CommandPrimitive.List>
 >(({ className, ...restProps }, ref) => {
   const styles = commandVariants();
+
   return (
     <CommandPrimitive.List
       ref={ref}
@@ -109,6 +113,7 @@ export const CommandInput = forwardRef<
   CommandInputProps
 >(({ className, loading = false, ...restProps }, ref) => {
   const styles = commandVariants();
+
   return (
     <div className={styles.inputWrapper()} data-uui-command-input-wrapper=''>
       <div className={styles.inputContainer()}>
@@ -132,6 +137,7 @@ export const CommandGroup = forwardRef<
   ComponentPropsWithoutRef<typeof CommandPrimitive.Group>
 >(({ className, ...restProps }, ref) => {
   const styles = commandVariants();
+
   return (
     <CommandPrimitive.Group
       ref={ref}
@@ -167,6 +173,7 @@ export const CommandEmpty = forwardRef<
     ref,
   ) => {
     const styles = commandVariants();
+
     return (
       <CommandPrimitive.Empty
         ref={ref}

@@ -1,4 +1,4 @@
-import { Switch, FormItem, type SwitchProps } from '@utima/ui';
+import { Textarea, FormItem, type TextareaProps } from '@utima/ui';
 
 import {
   FormField,
@@ -7,32 +7,28 @@ import {
 } from '@/form-field/form-field';
 
 // TODO handlers for rendering readonly, etc.
-export interface SwitchControlProps
+export interface TextareaControlProps
   extends ControlProps,
-    Omit<SwitchProps, ControlDuplicateProps> {}
+    Omit<TextareaProps, ControlDuplicateProps> {}
 
-export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
+export function TextareaControl({
+  fieldType,
+  ...restProps
+}: TextareaControlProps) {
   return (
-    <FormField<SwitchControlProps>
-      fieldType='checkbox'
+    <FormField
+      fieldType='text'
       render={({
         id,
         userProps,
         ref,
         hasHelpers,
+        informed,
         error,
-        fieldState,
-        fieldApi,
         required,
       }) => {
-        const {
-          helperText,
-          tooltip,
-          label,
-          description,
-          type,
-          ...restUserProps
-        } = userProps;
+        const { helperText, tooltip, label, description, ...restUserProps } =
+          userProps;
 
         return (
           <FormItem.Root>
@@ -40,19 +36,11 @@ export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
               {label}
             </FormItem.Label>
             <FormItem.Content>
-              <Switch
+              <Textarea
                 id={id}
-                ref={ref}
-                type='button'
                 required={!!required}
-                value={fieldState.value as string}
-                checked={fieldState.value as boolean}
-                onCheckedChange={value => {
-                  userProps?.onCheckedChange?.(value);
-                  fieldApi.setTouched(true);
-                  fieldApi.setValue(value);
-                  fieldApi.setFocused(true);
-                }}
+                ref={ref}
+                {...informed}
                 {...restUserProps}
               />
               {hasHelpers && (

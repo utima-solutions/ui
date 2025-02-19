@@ -1,39 +1,41 @@
-import { cn } from '@/utils';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { tv, type VariantProps } from 'tailwind-variants';
 import { X } from 'lucide-react';
-
 import {
   forwardRef,
   type ComponentRef,
   type ComponentPropsWithoutRef,
   type HTMLAttributes,
 } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
+
+import { cn } from '@/utils';
 
 const sheetVariants = tv({
   slots: {
-    base: 'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out',
-    overlay: 'fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+    base: 'bg-background data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 gap-4 p-6 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+    overlay:
+      'data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/80',
     header: 'flex flex-col space-y-2 text-center sm:text-left',
     footer: 'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
-    title: 'text-lg font-semibold text-foreground',
-    description: 'text-sm text-muted-foreground',
-    close: 'absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary',
-    closeIcon: 'h-4 w-4',
+    title: 'text-foreground text-lg font-semibold',
+    description: 'text-muted-foreground text-sm',
+    close:
+      'ring-offset-background focus:ring-ring data-[state=open]:bg-secondary absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none',
+    closeIcon: 'size-4',
   },
   variants: {
     side: {
       top: {
-        base: 'inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
+        base: 'data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top inset-x-0 top-0 border-b',
       },
       bottom: {
-        base: 'inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom',
+        base: 'data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 border-t',
       },
       left: {
-        base: 'inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm',
+        base: 'data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left inset-y-0 left-0 h-full w-3/4 border-r sm:max-w-sm',
       },
       right: {
-        base: 'inset-y-0 right-0 h-full w-3/4 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm',
+        base: 'data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm',
       },
     },
   },
@@ -47,6 +49,7 @@ export const SheetOverlay = forwardRef<
   ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
 >(({ className, ...props }, ref) => {
   const styles = sheetVariants();
+
   return (
     <DialogPrimitive.Overlay
       data-uui-sheet-overlay
@@ -84,6 +87,7 @@ export const SheetContent = forwardRef<
     ref,
   ) => {
     const styles = sheetVariants({ side });
+
     return (
       <DialogPrimitive.Content
         ref={ref}
@@ -114,6 +118,7 @@ export function SheetHeader({
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
   const styles = sheetVariants();
+
   return (
     <div
       data-uui-sheet-header
@@ -128,6 +133,7 @@ export function SheetFooter({
   ...props
 }: HTMLAttributes<HTMLDivElement>) {
   const styles = sheetVariants();
+
   return (
     <div
       data-uui-sheet-footer
@@ -142,6 +148,7 @@ export const SheetTitle = forwardRef<
   ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
 >(({ className, ...props }, ref) => {
   const styles = sheetVariants();
+
   return (
     <DialogPrimitive.Title
       ref={ref}
@@ -157,6 +164,7 @@ export const SheetDescription = forwardRef<
   ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
 >(({ className, ...props }, ref) => {
   const styles = sheetVariants();
+
   return (
     <DialogPrimitive.Description
       ref={ref}

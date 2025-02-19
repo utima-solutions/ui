@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react';
 import type { VariantProps } from 'tailwind-variants';
-
 import type { SetNonNullable } from 'type-fest';
+
 import type { selectVariants } from './select.style';
 
 export const SelectContext = createContext<

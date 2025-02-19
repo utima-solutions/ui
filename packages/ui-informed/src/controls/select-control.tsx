@@ -1,4 +1,4 @@
-import { Switch, FormItem, type SwitchProps } from '@utima/ui';
+import { Select, FormItem, type SelectRootProps } from '@utima/ui';
 
 import {
   FormField,
@@ -7,30 +7,30 @@ import {
 } from '@/form-field/form-field';
 
 // TODO handlers for rendering readonly, etc.
-export interface SwitchControlProps
+export interface SelectControlProps
   extends ControlProps,
-    Omit<SwitchProps, ControlDuplicateProps> {}
+    Omit<SelectRootProps, ControlDuplicateProps | 'onValueChange'> {}
 
-export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
+export function SelectControl({ children, ...restProps }: SelectControlProps) {
   return (
-    <FormField<SwitchControlProps>
-      fieldType='checkbox'
+    <FormField
+      fieldType='text'
       render={({
         id,
         userProps,
-        ref,
         hasHelpers,
         error,
-        fieldState,
-        fieldApi,
         required,
+        ref,
+        fieldApi,
+        fieldState,
       }) => {
         const {
           helperText,
           tooltip,
           label,
           description,
-          type,
+          onValueChange,
           ...restUserProps
         } = userProps;
 
@@ -40,21 +40,30 @@ export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
               {label}
             </FormItem.Label>
             <FormItem.Content>
-              <Switch
-                id={id}
-                ref={ref}
-                type='button'
-                required={!!required}
+              <Select.Root
                 value={fieldState.value as string}
-                checked={fieldState.value as boolean}
-                onCheckedChange={value => {
-                  userProps?.onCheckedChange?.(value);
-                  fieldApi.setTouched(true);
+                onValueChange={value => {
                   fieldApi.setValue(value);
-                  fieldApi.setFocused(true);
+                }}
+                onOpenChange={open => {
+                  fieldApi.setFocused(open);
                 }}
                 {...restUserProps}
-              />
+              >
+                <Select.Trigger>
+                  <Select.Value placeholder='Extra small' />
+                </Select.Trigger>
+                <Select.Portal>
+                  <Select.Content
+                    ref={ref}
+                    onCloseAutoFocus={event => {
+                      fieldApi.setTouched(true);
+                    }}
+                  >
+                    <Select.Group>{children}</Select.Group>
+                  </Select.Content>
+                </Select.Portal>
+              </Select.Root>
               {hasHelpers && (
                 <FormItem.Helpers>
                   <FormItem.Description>{description}</FormItem.Description>

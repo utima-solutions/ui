@@ -1,4 +1,4 @@
-import { Switch, FormItem, type SwitchProps } from '@utima/ui';
+import { Checkbox, FormItem, type CheckboxProps } from '@utima/ui';
 
 import {
   FormField,
@@ -7,13 +7,16 @@ import {
 } from '@/form-field/form-field';
 
 // TODO handlers for rendering readonly, etc.
-export interface SwitchControlProps
+export interface CheckboxControlProps
   extends ControlProps,
-    Omit<SwitchProps, ControlDuplicateProps> {}
+    Omit<CheckboxProps, ControlDuplicateProps> {}
 
-export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
+export function CheckboxControl({
+  fieldType,
+  ...restProps
+}: CheckboxControlProps) {
   return (
-    <FormField<SwitchControlProps>
+    <FormField<CheckboxControlProps>
       fieldType='checkbox'
       render={({
         id,
@@ -40,10 +43,10 @@ export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
               {label}
             </FormItem.Label>
             <FormItem.Content>
-              <Switch
+              <Checkbox
                 id={id}
                 ref={ref}
-                type='button'
+                type={type}
                 required={!!required}
                 value={fieldState.value as string}
                 checked={fieldState.value as boolean}

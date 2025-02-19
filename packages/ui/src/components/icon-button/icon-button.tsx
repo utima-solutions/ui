@@ -1,27 +1,24 @@
-import { tv, type VariantProps } from 'tailwind-variants';
-import {
-  forwardRef,
-  memo,
-  type ButtonHTMLAttributes,
-} from 'react';
-import { Loader2 } from 'lucide-react';
 import { Slot } from '@radix-ui/react-slot';
+import { Loader2 } from 'lucide-react';
+import { forwardRef, memo, type ButtonHTMLAttributes } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '@/utils';
 
 export const iconButtonVariants = tv({
-  base: 'inline-flex cursor-pointer shadow-black/5 items-center transition-colors justify-center whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
+  base: 'focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm font-medium shadow-black/5 transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0',
   variants: {
     variant: {
       success:
-        'bg-success text-success-foreground shadow-sm hover:bg-success-light active:bg-success-dark',
-      primary: 'bg-primary text-primary-foreground shadow hover:bg-primary-light active:bg-primary-dark',
+        'bg-success text-success-foreground hover:bg-success-light active:bg-success-dark shadow-sm',
+      primary:
+        'bg-primary text-primary-foreground hover:bg-primary-light active:bg-primary-dark shadow',
       destructive:
-        'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive-light active:bg-destructive-dark',
+        'bg-destructive text-destructive-foreground hover:bg-destructive-light active:bg-destructive-dark shadow-sm',
       outline:
-        'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
+        'border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm',
       secondary:
-        'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary-light active:bg-secondary-dark',
+        'bg-secondary text-secondary-foreground hover:bg-secondary-light active:bg-secondary-dark shadow-sm',
       ghost: 'hover:bg-accent hover:text-accent-foreground',
       link: 'text-primary underline-offset-4 hover:underline',
     },
@@ -29,7 +26,7 @@ export const iconButtonVariants = tv({
       md: 'size-9 [&_svg]:size-4',
       xs: 'size-7 rounded-md [&_svg]:size-3',
       sm: 'size-8 rounded-md [&_svg]:size-3.5',
-      lg: 'size-10 rounded-md [&_svg]:size-4.5',
+      lg: '[&_svg]:size-4.5 size-10 rounded-md',
       xl: 'size-11 rounded-md [&_svg]:size-5',
     },
   },
