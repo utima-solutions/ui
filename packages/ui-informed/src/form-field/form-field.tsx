@@ -12,13 +12,7 @@ import { zodResolver, getFieldZodObject } from '@/zodUtils';
  * pre-defined setters for ref fields. E.g. for checkbox it will use
  * checked property.
  */
-export type FieldType =
-  | 'text'
-  | 'number'
-  | 'textArea'
-  | 'select'
-  | 'checkbox'
-  | string;
+export type FieldType = 'text' | 'number' | 'textArea' | 'select' | 'checkbox';
 
 /**
  * Common props used on controls at multipla places, these
