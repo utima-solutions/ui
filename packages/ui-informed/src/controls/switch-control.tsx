@@ -40,8 +40,8 @@
 //                 checked={fieldState.value as boolean}
 //                 onCheckedChange={value => {
 //                   onCheckedChange?.(value);
-//                   fieldApi.setValue(value);
 //                   fieldApi.setTouched(true);
+//                   fieldApi.setValue(value);
 //                   fieldApi.setFocused(true);
 //                 }}
 //                 {...userProps}
@@ -66,3 +66,4 @@
 //     />
 //   );
 // }
+// eslint-disable-next-line unicorn/no-empty-file

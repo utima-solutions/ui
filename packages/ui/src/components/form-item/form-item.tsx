@@ -166,11 +166,29 @@ export interface FormItemLabelProps extends HTMLAttributes<HTMLDivElement> {
   required?: boolean | undefined | string;
   optional?: boolean;
   htmlFor?: string;
+  helpIcon?: ReactNode;
+  classNameRequired?: string;
+  classNameOptional?: string;
+  classNameIcon?: string;
+  classNameLabel?: string;
 }
 
 export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
   (
-    { className, children, tooltip, required, optional, htmlFor, ...props },
+    {
+      className,
+      children,
+      tooltip,
+      required,
+      optional,
+      htmlFor,
+      helpIcon,
+      classNameRequired,
+      classNameOptional,
+      classNameIcon,
+      classNameLabel,
+      ...props
+    },
     ref,
   ) => {
     const { layout, size } = useFormItem();
@@ -186,22 +204,39 @@ export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
         <LabelPrimitive.Label
           size={size}
           htmlFor={htmlFor}
-          className='inline-flex items-center gap-1.5'
+          data-uui-form-field-label
+          className={cn('inline-flex items-center gap-1.5', classNameLabel)}
         >
           {children}
           {required && (
-            <span className='text-destructive'>
+            <span
+              data-uui-form-field-label-required
+              className={cn('text-destructive', classNameRequired)}
+            >
               {typeof required === 'string' ? required : '*'}
             </span>
           )}
           {optional && (
-            <span className='text-muted-foreground'>(Optional)</span>
+            <span
+              data-uui-form-field-label-optional
+              className={cn('text-muted-foreground', classNameOptional)}
+            >
+              (Optional)
+            </span>
           )}
           {tooltip && (
             <Tooltip.Provider>
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
-                  <HelpCircle className='text-muted-foreground size-4 cursor-help' />
+                  {helpIcon || (
+                    <HelpCircle
+                      data-uui-form-field-label-tooltip
+                      className={cn(
+                        'text-muted-foreground size-4 cursor-help',
+                        classNameIcon,
+                      )}
+                    />
+                  )}
                 </Tooltip.Trigger>
                 <Tooltip.Content>{tooltip}</Tooltip.Content>
               </Tooltip.Root>

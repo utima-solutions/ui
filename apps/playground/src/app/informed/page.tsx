@@ -33,12 +33,11 @@ export default function Home() {
           description='Description'
           fieldType='number'
           helperText='Helper Text'
-          zodSchema={z.number().nullish()}
+          zodSchema={z.string().nullish()}
           label='Label'
-          helperText='Helper Text'
-          // clean={clean}
-          // mask={mask}
-          // parser={parser}
+          clean={clean}
+          mask={mask}
+          parser={parser}
           allowEmptyString
         />
 

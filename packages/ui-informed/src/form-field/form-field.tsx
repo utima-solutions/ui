@@ -31,7 +31,7 @@ export interface ControlPropsCommon {
   showRequired?: boolean;
   loading?: boolean;
   disabled?: boolean;
-  required?: boolean | undefined | string; // TODO can be custom text?
+  required?: boolean | undefined | string;
   label?: ReactNode | undefined;
   description?: ReactNode | undefined;
   tooltip?: ReactNode | undefined;
@@ -46,6 +46,7 @@ export interface ControlPropsCommon {
 export interface ControlProps
   extends ControlPropsCommon,
     Omit<SetOptional<FieldProps, 'id'>, 'type'> {
+  zodSchema?: ZodType;
   fieldType?: FieldType;
 }
 
@@ -74,16 +75,16 @@ export type FormFieldRender = (
     error?: string;
     hasHelpers: boolean;
   } & ControlPropsCommon &
-    ReturnType<typeof useField<unknown, any>>,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ReturnType<typeof useField<any, any>>,
 ) => ReactNode;
 
 /**
- * FormField props essentially proxy informed field props.
- * However we provide some defaults like 'id' so we make
- * them optional.
+ * FormField should essentially proxy all control props.
+ * Currently we only add render function so users can
+ * connect it to the informed.
  */
 export interface FormFieldProps extends ControlProps {
-  zodSchema?: ZodType;
   render: FormFieldRender;
 }
 
@@ -131,8 +132,6 @@ export function FormField({
     ...restProps,
   });
 
-  // We want to omit some userProps that may cause issues
-  const { ...restUserProps } = field.userProps;
   const { showError, error } = field.fieldState;
   const hasHelpers = !!(restProps.description || restProps.helperText);
 
@@ -147,7 +146,6 @@ export function FormField({
       required: restProps.required,
       disabled,
       ...field,
-      userProps: restUserProps,
     }),
   );
 }
