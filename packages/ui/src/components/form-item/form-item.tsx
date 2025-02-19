@@ -1,4 +1,4 @@
-import { tv, type VariantProps } from 'tailwind-variants';
+import { HelpCircle, AlertCircle } from 'lucide-react';
 import {
   createContext,
   useContext,
@@ -6,32 +6,32 @@ import {
   forwardRef,
   type HTMLAttributes,
 } from 'react';
+import { tv, type VariantProps } from 'tailwind-variants';
+
 import { cn } from '@/utils';
+
 import * as LabelPrimitive from '../label/label';
-
 import * as Tooltip from '../tooltip';
-import { HelpCircle, AlertCircle } from 'lucide-react';
 
-// TODO rename to form item?
-
+// eslint-disable-next-line tailwindcss/no-custom-classname
 export const formItemVariants = tv({
   slots: {
     root: 'flex gap-2',
     content: 'flex flex-col gap-2',
     label: 'flex items-center gap-1.5',
-    description: 'text-sm text-muted-foreground',
-    error: 'text-sm text-destructive font-medium flex items-center gap-1.5',
-    helperText: 'text-sm text-muted-foreground italic',
-    helpers: 'flex justify-between items-center gap-2',
+    description: 'text-muted-foreground text-sm',
+    error: 'text-destructive flex items-center gap-1.5 text-sm font-medium',
+    helperText: 'text-muted-foreground text-sm italic',
+    helpers: 'flex items-center justify-between gap-2',
   },
   variants: {
     layout: {
       vertical: {
-        root: 'flex-col w-full',
+        root: 'w-full flex-col',
         label: '',
       },
       horizontal: {
-        root: 'grid grid-cols-4 items-start w-full gap-4',
+        root: 'grid w-full grid-cols-4 items-start gap-4',
         label: 'col-span-1 justify-end text-right',
         content: 'col-span-3',
       },
@@ -72,29 +72,29 @@ export const formItemVariants = tv({
       layout: 'horizontal',
       size: 'xs',
       class: {
-        label: 'mt-1.5'
-      }
+        label: 'mt-1.5',
+      },
     },
     {
       layout: 'horizontal',
       size: 'sm',
       class: {
-        label: 'mt-1.5'
-      }
+        label: 'mt-1.5',
+      },
     },
     {
       layout: 'horizontal',
       size: 'md',
       class: {
-        label: 'mt-2'
-      }
+        label: 'mt-2',
+      },
     },
     {
       layout: 'horizontal',
       size: 'lg',
       class: {
-        label: 'mt-2.5'
-      }
+        label: 'mt-2.5',
+      },
     },
   ],
   defaultVariants: {
@@ -152,10 +152,7 @@ export interface FormItemContentProps {
   children?: ReactNode;
 }
 
-export function FormItemContent({
-  className,
-  children,
-}: FormItemContentProps) {
+export function FormItemContent({ className, children }: FormItemContentProps) {
   const { layout } = useFormItem();
   const styles = formItemVariants({ layout });
 
@@ -172,7 +169,10 @@ export interface FormItemLabelProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
-  ({ className, children, tooltip, required, optional, htmlFor, ...props }, ref) => {
+  (
+    { className, children, tooltip, required, optional, htmlFor, ...props },
+    ref,
+  ) => {
     const { layout, size } = useFormItem();
     const styles = formItemVariants({ layout, size });
 
@@ -197,7 +197,7 @@ export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
             <Tooltip.Provider>
               <Tooltip.Root>
                 <Tooltip.Trigger asChild>
-                  <HelpCircle className='size-4 cursor-help text-muted-foreground' />
+                  <HelpCircle className='text-muted-foreground size-4 cursor-help' />
                 </Tooltip.Trigger>
                 <Tooltip.Content>{tooltip}</Tooltip.Content>
               </Tooltip.Root>
@@ -281,10 +281,7 @@ export interface FormItemHelpersProps {
   children?: ReactNode;
 }
 
-export function FormItemHelpers({
-  className,
-  children,
-}: FormItemHelpersProps) {
+export function FormItemHelpers({ className, children }: FormItemHelpersProps) {
   const { layout } = useFormItem();
   const styles = formItemVariants({ layout });
 

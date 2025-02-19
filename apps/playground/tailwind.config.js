@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('node:path');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,7 +7,7 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     `${path.dirname(require.resolve('@utima/ui'))}/**/*.js`,
-    // `${path.dirname(require.resolve('@utima/ui-informed'))}/**/*.js`,
+    `${path.dirname(require.resolve('@utima/ui-informed'))}/**/*.js`,
   ],
   darkMode: ['class'],
   theme: {

@@ -1,7 +1,6 @@
-import { Label, Tooltip, cn } from '@utima/ui';
+import { Label, cn } from '@utima/ui';
 import { type VariantProps, cva } from 'class-variance-authority';
 import { type FieldProps, useField, useScope } from 'informed';
-import { HelpCircle } from 'lucide-react';
 import { useId, type ReactNode } from 'react';
 import type { ZodType } from 'zod';
 
@@ -145,13 +144,13 @@ export function FormControl({
           htmlFor={id}
         >
           {label}
-          {tooltip && (
+          {/* {tooltip && (
             <Tooltip title={tooltip}>
               <FormInfo className='cursor-help'>
                 <HelpCircle size={14} />
               </FormInfo>
             </Tooltip>
-          )}
+          )} */}
           {(showOptional ?? formShowOptional) && !required && (
             <FormInfo>({messages.labels.optional})</FormInfo>
           )}

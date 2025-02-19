@@ -174,6 +174,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      zod:
+        specifier: ^3.24.2
+        version: 3.24.2
     devDependencies:
       '@types/node':
         specifier: ^20
@@ -296,8 +299,8 @@ importers:
         specifier: '*'
         version: 1.0.7(tailwindcss@3.4.17(ts-node@10.9.1(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@20.17.17)(typescript@5.7.3)))
       type-fest:
-        specifier: '*'
-        version: 4.34.1
+        specifier: ^4.35.0
+        version: 4.35.0
       vaul:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -329,6 +332,9 @@ importers:
       tailwind-variants:
         specifier: ^0.3.1
         version: 0.3.1(tailwindcss@3.4.17(ts-node@10.9.1(@swc/core@1.10.15(@swc/helpers@0.5.15))(@types/node@20.17.17)(typescript@5.7.3)))
+      type-fest:
+        specifier: ^4.35.0
+        version: 4.35.0
     devDependencies:
       informed:
         specifier: ^4.63.0
@@ -7086,8 +7092,8 @@ packages:
     resolution: {integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA==}
     engines: {node: '>=12.20'}
 
-  type-fest@4.34.1:
-    resolution: {integrity: sha512-6kSc32kT0rbwxD6QL1CYe8IqdzN/J/ILMrNK+HMQCKH3insCDRY/3ITb0vcBss0a3t72fzh2YSzj8ko1HgwT3g==}
+  type-fest@4.35.0:
+    resolution: {integrity: sha512-2/AwEFQDFEy30iOLjrvHDIH7e4HEWH+f1Yl1bI5XMqzuoCUqwYCdxachgsgv0og/JdVZUhbfjcJAoHj5L1753A==}
     engines: {node: '>=16'}
 
   type-is@1.6.18:
@@ -15362,7 +15368,7 @@ snapshots:
 
   type-fest@2.19.0: {}
 
-  type-fest@4.34.1: {}
+  type-fest@4.35.0: {}
 
   type-is@1.6.18:
     dependencies:

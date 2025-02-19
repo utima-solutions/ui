@@ -35,6 +35,8 @@ const theme = {
 const SESSION_KEY_VISIBLE = 'utima_ui_informed_devtools_visible';
 const SESSION_KEY_HEIGHT = 'utima_ui_informed_devtools_height';
 
+// TODO add buttons to enable/disable dev logging
+
 /**
  * Wrapper around informed Debug component with some custom visuals.
  */
@@ -106,11 +108,11 @@ export function Devtools({ className }: DevtoolsProps) {
           >
             <span
               onMouseDown={handleMouseDown}
-              className='absolute -top-[2px] h-1 w-full cursor-row-resize transition-colors hover:bg-zinc-500'
+              className='absolute top-[-2px] h-1 w-full cursor-row-resize transition-colors hover:bg-zinc-500'
             />
             <button
               type='button'
-              className='absolute -top-5 right-2 flex h-5 w-6 items-center justify-center rounded-t-md bg-transparent'
+              className='absolute -top-5 right-2 flex h-5 w-6 items-center justify-center rounded-t-md bg-zinc-800 p-2 hover:bg-zinc-500'
               onClick={() => setVisible(false)}
             >
               <ChevronDown className='size-4' />
@@ -184,11 +186,8 @@ export function Devtools({ className }: DevtoolsProps) {
               </Resizable.Panel>
               <Resizable.Handle
                 withHandle
-                classNames={{
-                  handle: 'bg-zinc-600',
-                  iconWrapper: 'bg-zinc-600 border-zinc-600',
-                  icon: 'text-zinc-100',
-                }}
+                className='bg-zinc-600'
+                classNameHandle='bg-zinc-600 border-zinc-700'
               />
               <Resizable.Panel>
                 <div

@@ -66,7 +66,7 @@
     "sonner": "^1.7.4",
     "tailwind-merge": "^3.0.1",
     "tailwind-variants": "^0.3.1",
-    "type-fest": "*",
+    "type-fest": "^4.35.0",
     "vaul": "^1.1.2"
   },
   "devDependencies": {

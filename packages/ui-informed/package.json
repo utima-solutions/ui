@@ -43,20 +43,22 @@
     "library",
     "components"
   ],
-  "author": "Matúš Hlaváčik",
+  "author": "Jan Šimeček",
   "license": "MIT",
   "devDependencies": {
-    "informed": "^4.60.3",
-    "zod": "^3.23.8"
+    "informed": "^4.63.0",
+    "zod": "^3.24.2"
   },
   "dependencies": {
     "@utima/ui": "workspace:^",
     "class-variance-authority": "^0.7.0",
-    "react-json-tree": "^0.19.0"
+    "react-json-tree": "^0.19.0",
+    "tailwind-variants": "^0.3.1",
+    "type-fest": "^4.35.0"
   },
   "peerDependencies": {
-    "lucide-react": "*",
     "informed": ">=4",
+    "lucide-react": "*",
     "react": ">=18",
     "react-dom": ">=18",
     "zod": ">=3.0.0 <4.0.0"

@@ -141,8 +141,16 @@ export * as Card from './components/card';
 export * as Accordion from './components/accordion';
 
 // Inputs
-export { Input, inputVariants, type InputProps } from './components/input/input';
-export { TextArea, textareaVariants, type TextareaProps } from './components/input/textarea';
+export {
+  Input,
+  inputVariants,
+  type InputProps,
+} from './components/input/input';
+export {
+  TextArea,
+  textareaVariants,
+  type TextareaProps,
+} from './components/input/textarea';
 
 // Alert
 export * as Alert from './components/alert';

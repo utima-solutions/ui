@@ -1,25 +1,21 @@
-import { memo, type ComponentPropsWithoutRef } from 'react';
-import { PanelGroup } from 'react-resizable-panels';
-
 import { GripVertical } from 'lucide-react';
-import { PanelResizeHandle } from 'react-resizable-panels';
+import { memo, type ComponentPropsWithoutRef } from 'react';
+import { PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 
 import { cn } from '@/utils';
 
 export interface ResizableHandleProps
   extends ComponentPropsWithoutRef<typeof PanelResizeHandle> {
   withHandle?: boolean;
-  handleClassName?: string;
-  iconWrapperClassName?: string;
-  iconClassName?: string;
+  classNameHandle?: string;
+  classNameIcon?: string;
 }
 
 export const ResizableHandle = memo(function ResizableHandle({
   withHandle,
   className,
-  handleClassName,
-  iconWrapperClassName,
-  iconClassName,
+  classNameHandle,
+  classNameIcon,
   ...props
 }: ResizableHandleProps) {
   return (
@@ -36,12 +32,12 @@ export const ResizableHandle = memo(function ResizableHandle({
           data-uui-resizable-handle-icon-wrapper
           className={cn(
             'z-10 flex h-4 w-3 items-center justify-center rounded-sm border bg-border',
-            iconWrapperClassName,
+            classNameHandle,
           )}
         >
           <GripVertical
             data-uui-resizable-handle-icon
-            className={cn('h-2.5 w-2.5', iconClassName)}
+            className={cn('h-2.5 w-2.5', classNameIcon)}
           />
         </div>
       )}
