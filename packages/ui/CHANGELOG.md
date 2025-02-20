@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 1.0.0-alpha.4
+
+### Patch Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`add8d90`](https://github.com/utima-solutions/ui/commit/add8d90219697eb3410e19774f069134a54d4636) Thanks [@jsimck](https://github.com/jsimck)! - Fixed types
+
 ## 1.0.0-alpha.3
 
 ### Patch Changes
