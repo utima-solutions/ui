@@ -1,5 +1,16 @@
 # @utima/ui-informed
 
+## 1.0.0-alpha.2
+
+### Major Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`0314953`](https://github.com/utima-solutions/ui/commit/03149539ee22c3aaa9b903dbf5cb5f6529b3cef6) Thanks [@jsimck](https://github.com/jsimck)! - Complete rewrite to be more aligned with defaults from shadcn/ui for better and easier extensibility
+
+### Patch Changes
+
+- Updated dependencies [[`0314953`](https://github.com/utima-solutions/ui/commit/03149539ee22c3aaa9b903dbf5cb5f6529b3cef6)]:
+  - @utima/ui@1.0.0-alpha.2
+
 ## 1.0.0-alpha.1
 
 ### Patch Changes
