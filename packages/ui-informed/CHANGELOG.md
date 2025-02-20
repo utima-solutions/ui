@@ -1,5 +1,14 @@
 # @utima/ui-informed
 
+## 1.0.0-alpha.3
+
+### Patch Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`94ee81c`](https://github.com/utima-solutions/ui/commit/94ee81c46d82a08cdda6d721ca31467496875ec5) Thanks [@jsimck](https://github.com/jsimck)! - Added missing exports"
+
+- Updated dependencies [[`94ee81c`](https://github.com/utima-solutions/ui/commit/94ee81c46d82a08cdda6d721ca31467496875ec5)]:
+  - @utima/ui@1.0.0-alpha.3
+
 ## 1.0.0-alpha.2
 
 ### Major Changes
