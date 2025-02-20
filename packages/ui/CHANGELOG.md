@@ -1,5 +1,11 @@
 # @utima/ui
 
+## 1.0.0-alpha.2
+
+### Major Changes
+
+- [`438ba71`](https://github.com/utima-solutions/ui/commit/438ba7185af2a34f55c9b7b7be99fadad6b97843) Thanks [@jsimck](https://github.com/jsimck)! - Complete rewrite. We're using more defaults from shadcn/ui in order to make it more reusable.
+
 ## 1.0.0-alpha.1
 
 ### Patch Changes
