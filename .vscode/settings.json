@@ -1,5 +1,8 @@
 {
   "tailwindCSS.experimental.classRegex": [
     ["{([\\s\\S]*)}", ":\\s*['\"`]([^'\"`]*)['\"`]"]
+  ],
+  "cSpell.words": [
+    "Sonner"
   ]
 }

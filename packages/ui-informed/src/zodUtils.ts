@@ -15,7 +15,9 @@ export function isZodError(error: unknown) {
  * Create a resolver function for a Zod schema.
  */
 export function zodResolver(schema?: ZodType) {
-  if (!schema) return;
+  if (!schema) {
+    return;
+  }
 
   return (values: unknown) => {
     try {

@@ -9,6 +9,11 @@
       ],
     },
   },
+  "references": [
+    {
+      "path": "../../packages/ui"
+    },
+  ],
   "include": [
     "src",
     "./.storybook/**/*",
