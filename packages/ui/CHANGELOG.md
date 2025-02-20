@@ -1,5 +1,23 @@
 # @utima/ui
 
+## 1.0.0-alpha.2
+
+### Major Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`0314953`](https://github.com/utima-solutions/ui/commit/03149539ee22c3aaa9b903dbf5cb5f6529b3cef6) Thanks [@jsimck](https://github.com/jsimck)! - Complete rewrite to be more aligned with defaults from shadcn/ui for better and easier extensibility
+
+## 1.0.0-alpha.1
+
+### Patch Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`9c876a6`](https://github.com/utima-solutions/ui/commit/9c876a6163a0734864642bb3dca48d305cf25b9e) Thanks [@jsimck](https://github.com/jsimck)! - Updated Layout and table styles
+
+## 1.0.0-alpha.0
+
+### Major Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`410c8b5`](https://github.com/utima-solutions/ui/commit/410c8b54f86a056aa5d64492b32c84f659fef28b) Thanks [@jsimck](https://github.com/jsimck)! - First alpha release
+
 ## 0.31.3
 
 ## 0.31.2

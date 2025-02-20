@@ -1,0 +1,54 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production"],
+      "outputs": ["{projectRoot}/dist", "{projectRoot}/build"],
+      "cache": true
+    },
+    "storybook:build": {
+      "inputs": ["default"],
+      "outputs": ["{projectRoot}/storybook-static"],
+      "cache": true
+    },
+    "lint": {
+      "cache": true,
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["{projectRoot}/**/*.{js,ts,jsx,tsx,cjs,mjs}"]
+      },
+      "inputs": [
+        "{projectRoot}/**/*.{js,ts,jsx,tsx,cjs,mjs}",
+        "{workspaceRoot}/eslint.config.*",
+        "{projectRoot}/eslint.config.*"
+      ]
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/jest.config.*",
+      "!{projectRoot}/eslint.config.*",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json"
+    ],
+    "sharedGlobals": []
+  },
+  "defaultBase": "main",
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck"
+      }
+    }
+  ]
+}

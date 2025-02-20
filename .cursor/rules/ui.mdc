@@ -1,0 +1,10 @@
+---
+description: UI rules
+globs: ./packages/**
+---
+You are an expert AI programming assistant that primarily focuses on producing clear, readable React and TypeScript code.
+
+- You are creating reusable Reactjs component library based on tailwindCSS and shadcn/ui.
+- Use `cn` function from utils to merge existing class names.
+- Create reusable primitive components, where each children should be it's own component in [radix primitives pattern.](https://www.radix-ui.com/primitives).
+- Focus on creating and maintaining predictable and same variants for each component. Use tailwind-variants to generate component variants.

@@ -1,35 +1,26 @@
 /**
  * Controls
  */
-export { Switch, type SwitchProps } from './controls/switch/Switch';
-export { Checkbox, type CheckboxProps } from './controls/checkbox/Checkbox';
-export { Input, type InputProps } from './controls/input/Input';
-export { Select, type SelectProps } from './controls/select/Select';
-export { TextArea, type TextAreaProps } from './controls/textArea/TextArea';
-
-/**
- * Form
- */
-export { Form, type FormProps, type TypedFormState } from './form/Form';
+export { InputControl, type InputControlProps } from './controls/input-control';
 export {
-  useFormContext,
-  type FormContext,
-  type FormContextType,
-} from './form/useFormContext';
+  SwitchControl,
+  type SwitchControlProps,
+} from './controls/switch-control';
 
 /**
  * FormControl
  */
+export { FormField } from './form-field/form-field';
+
+/**
+ * Form
+ */
+export { Form, type FormProps, type TypedFormState } from './form/form';
 export {
-  FormControl,
-  type ConsumeFormControlProps,
-  type FieldType,
-  type FormControlConsumerProps,
-  type FormControlConsumerPropsKeys,
-  type FormControlProps,
-  type FormControlRender,
-  type UserFieldProps,
-} from './formControl/FormControl';
+  useFormContext,
+  type FormContext,
+  type FormContextType,
+} from './form/use-form-context';
 
 /**
  * FormTranslationsContext
@@ -37,9 +28,19 @@ export {
 export {
   FormTranslationsContext,
   useFormTranslationsContext,
-} from './formTranslationsContext/useFormTranslationContext';
+} from './form/use-form-translation-context';
 
 /**
  * ZodUtils
  */
 export { isZodError, zodResolver, getFieldZodObject } from './zodUtils';
+
+/**
+ * FormSchema
+ */
+export * from './form-schema/use-fields-schema';
+export * from './form-schema/form-schema';
+export * from './form-schema/schema-fields';
+export * from './form-schema/form-schema-context';
+
+export type * from './types';

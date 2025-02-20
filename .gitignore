@@ -133,3 +133,8 @@ dist
 .turbo
 out
 storybook-static
+
+
+
+.nx/cache
+.nx/workspace-data

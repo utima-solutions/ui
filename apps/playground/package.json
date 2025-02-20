@@ -1,19 +1,29 @@
 {
   "name": "@utima/ui-playground",
+  "version": "0.1.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "ESLINT_USE_FLAT_CONFIG=true eslint -c ../../eslint.config.mjs './**/*.{js,ts,jsx,tsx,cjs,mjs}'",
-    "preview": "vite preview"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@utima/ui": "workspace:*",
     "@utima/ui-informed": "workspace:*",
-    "informed": "^4.58.2",
-    "lucide-react": "^0.321.0",
-    "reset-css": "^5.0.2"
+    "lucide-react": "^0.474.0",
+    "next": "15.1.6",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5"
   }
 }

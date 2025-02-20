@@ -1,7 +1,10 @@
-export { Root, Close, Trigger } from '@radix-ui/react-dialog';
+export { Root, Close, Trigger, Portal } from '@radix-ui/react-dialog';
 
-export { DialogContent as Content } from './DialogContent';
-export { DialogDescription as Description } from './DialogDescription';
-export { DialogFooter as Footer } from './DialogFooter';
-export { DialogHeader as Header } from './DialogHeader';
-export { DialogTitle as Title } from './DialogTitle';
+export {
+  DialogContent as Content,
+  DialogDescription as Description,
+  DialogOverlay as Overlay,
+  DialogFooter as Footer,
+  DialogHeader as Header,
+  DialogTitle as Title,
+} from './dialog';
