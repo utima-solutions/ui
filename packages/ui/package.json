@@ -8,9 +8,7 @@
   "types": "dist/src/index.d.ts",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "storybook": "storybook dev -p 6006",
-    "storybook:build": "pnpm build; storybook build"
+    "dev": "rollup -c -w"
   },
   "exports": {
     ".": {

@@ -7,11 +7,6 @@
       "outputs": ["{projectRoot}/dist", "{projectRoot}/build"],
       "cache": true
     },
-    "storybook:build": {
-      "inputs": ["default"],
-      "outputs": ["{projectRoot}/storybook-static"],
-      "cache": true
-    },
     "lint": {
       "cache": true,
       "executor": "@nx/eslint:lint",
