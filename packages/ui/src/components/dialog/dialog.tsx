@@ -7,7 +7,7 @@ import {
   type HTMLAttributes,
 } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export interface DialogOverlayProps
   extends ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> {}

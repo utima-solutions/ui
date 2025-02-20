@@ -2,7 +2,7 @@ import { GripVertical } from 'lucide-react';
 import { memo, type ComponentPropsWithoutRef } from 'react';
 import { PanelGroup, PanelResizeHandle } from 'react-resizable-panels';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export interface ResizableHandleProps
   extends ComponentPropsWithoutRef<typeof PanelResizeHandle> {

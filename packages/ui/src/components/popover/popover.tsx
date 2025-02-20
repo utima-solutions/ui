@@ -1,7 +1,7 @@
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export interface PopoverContentProps
   extends ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> {}

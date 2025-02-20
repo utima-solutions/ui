@@ -4,7 +4,7 @@ import {
   FormField,
   type ControlProps,
   type ControlDuplicateProps,
-} from '@/form-field/form-field';
+} from '../form-field/form-field';
 
 // TODO handlers for rendering readonly, etc.
 export interface SwitchControlProps

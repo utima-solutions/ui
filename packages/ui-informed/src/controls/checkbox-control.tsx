@@ -1,10 +1,10 @@
 import { Checkbox, FormItem, type CheckboxProps } from '@utima/ui';
 
 import {
-  FormField,
   type ControlProps,
   type ControlDuplicateProps,
-} from '@/form-field/form-field';
+  FormField,
+} from '../form-field/form-field';
 
 // TODO handlers for rendering readonly, etc.
 export interface CheckboxControlProps

@@ -1,7 +1,7 @@
 import { type ComponentPropsWithoutRef, memo } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export const badgeVariants = tv({
   base: 'focus:ring-ring inline-flex items-center gap-1 rounded-md border text-xs font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2',

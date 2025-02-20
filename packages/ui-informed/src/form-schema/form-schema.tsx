@@ -2,12 +2,12 @@ import { Select } from '@utima/ui';
 import { type RelevantParams, Input as InformedInput } from 'informed';
 import type { ComponentType } from 'react';
 
-import { CheckboxControl } from '@/controls/checkbox-control';
-import { InputControl } from '@/controls/input-control';
-import { SelectControl } from '@/controls/select-control';
-import { SwitchControl } from '@/controls/switch-control';
-import { TextareaControl } from '@/controls/textarea-control';
-import type { FieldType } from '@/form-field/form-field';
+import { CheckboxControl } from '../controls/checkbox-control';
+import { InputControl } from '../controls/input-control';
+import { SelectControl } from '../controls/select-control';
+import { SwitchControl } from '../controls/switch-control';
+import { TextareaControl } from '../controls/textarea-control';
+import type { FieldType } from '../form-field/form-field';
 
 /**
  * Default form schema adapter, that maps field types to components.

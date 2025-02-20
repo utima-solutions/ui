@@ -6,7 +6,7 @@ import {
 } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export const avatarVariants = tv({
   base: 'relative flex shrink-0 overflow-hidden rounded-full',

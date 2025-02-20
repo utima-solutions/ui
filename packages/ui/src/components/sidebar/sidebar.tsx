@@ -14,9 +14,8 @@ import {
   type CSSProperties,
 } from 'react';
 
-import { useIsMobile } from '@/hooks/use-is-mobile';
-import { cn } from '@/utils';
-
+import { useIsMobile } from '../../hooks/use-is-mobile';
+import { cn } from '../../utils';
 import { Separator } from '../breadcrumb';
 import { IconButton } from '../icon-button/icon-button';
 import { Input } from '../input/input';

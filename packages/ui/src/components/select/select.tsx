@@ -10,10 +10,9 @@ import {
 } from 'react';
 import type { VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
-
 import { selectVariants } from './select.style';
 import { SelectContext, useSelectContext } from './use-select-context';
+import { cn } from '../../utils';
 
 export interface SelectRootProps
   extends ComponentPropsWithoutRef<typeof SelectPrimitive.Root>,

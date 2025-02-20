@@ -1,7 +1,7 @@
 import { ChevronRight, MoreHorizontal } from 'lucide-react';
 import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export interface BreadcrumbProps extends ComponentPropsWithoutRef<'nav'> {}
 

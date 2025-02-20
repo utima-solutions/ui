@@ -1,7 +1,7 @@
 import { memo, type ComponentPropsWithoutRef } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export const kbdVariants = tv({
   base: 'text-foreground inline-flex items-center justify-center rounded-md font-mono font-medium tracking-widest shadow-black/5',

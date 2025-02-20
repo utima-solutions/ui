@@ -1,10 +1,12 @@
+import { Toaster } from '@utima/ui';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+
+import { Layout } from '@/components/layout';
 import { ThemeSwitcher } from '@/components/theme-switcher/theme-switcher';
 import { ThemeProvider } from '@/contexts/theme-provider';
-import { Sidebar, Toaster } from '@utima/ui';
-import { Layout } from '@/components/layout';
+
+import './globals.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

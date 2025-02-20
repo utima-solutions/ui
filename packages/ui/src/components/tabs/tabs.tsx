@@ -5,7 +5,7 @@ import {
   type ComponentPropsWithoutRef,
 } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export const TabsList = forwardRef<
   ComponentRef<typeof TabsPrimitive.List>,

@@ -5,9 +5,8 @@ import {
 } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
-
 import { inputVariants } from './input.styles';
+import { cn } from '../../utils';
 
 export const textareaVariants = tv({
   extend: inputVariants,

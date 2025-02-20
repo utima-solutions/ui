@@ -3,13 +3,12 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
 import { forwardRef, useMemo, type ComponentPropsWithoutRef } from 'react';
 import { tv } from 'tailwind-variants';
 
-import { cn } from '@/utils';
-
 import {
   PaginationContext,
   usePaginationContext,
   type PaginationSize,
 } from './pagination-context';
+import { cn } from '../../utils';
 import { buttonVariants } from '../button/button';
 
 export const paginationVariants = tv({

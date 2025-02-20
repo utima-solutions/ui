@@ -5,7 +5,7 @@ import {
   type ComponentRef,
 } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export interface TooltipContentProps
   extends ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> {}

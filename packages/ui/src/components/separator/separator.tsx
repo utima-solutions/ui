@@ -6,7 +6,7 @@ import {
 } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export const separatorVariants = tv({
   base: 'bg-border shrink-0',

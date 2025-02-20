@@ -8,8 +8,7 @@ import {
 } from 'react';
 import { tv } from 'tailwind-variants';
 
-import { cn } from '@/utils';
-
+import { cn } from '../../utils';
 import * as Dialog from '../dialog';
 
 /**

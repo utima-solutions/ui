@@ -1,7 +1,7 @@
 import { type ReactNode, forwardRef, type HTMLAttributes } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 const formVariants = tv({
   slots: {

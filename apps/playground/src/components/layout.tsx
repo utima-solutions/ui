@@ -71,7 +71,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Sidebar.GroupLabel>Application</Sidebar.GroupLabel>
             <Sidebar.GroupContent>
               <Sidebar.Menu>
-                {items.map((item) => (
+                {items.map(item => (
                   <Sidebar.MenuItem key={item.title}>
                     <Sidebar.MenuButton asChild>
                       <a href={item.url}>
@@ -95,7 +95,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               <Collapsible.Content>
                 <Sidebar.GroupContent>
                   <Sidebar.Menu>
-                    {items.map((item) => (
+                    {items.map(item => (
                       <Sidebar.MenuItem key={item.title}>
                         <Sidebar.MenuButton asChild>
                           <a href={item.url}>

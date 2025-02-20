@@ -6,7 +6,7 @@ import {
 } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export const labelVariants = tv({
   base: 'text-foreground select-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70',

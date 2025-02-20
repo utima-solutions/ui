@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from 'react';
 
-import { cn } from '@/utils';
+import { cn } from '../../utils';
 
 export const AccordionItem = forwardRef<
   ComponentRef<typeof AccordionPrimitive.Item>,

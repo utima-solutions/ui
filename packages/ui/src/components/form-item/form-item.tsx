@@ -9,8 +9,7 @@ import {
 } from 'react';
 import { tv, type VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
-
+import { cn } from '../../utils';
 import * as LabelPrimitive from '../label/label';
 import * as Tooltip from '../tooltip';
 

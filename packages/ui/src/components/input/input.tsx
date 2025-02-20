@@ -1,9 +1,8 @@
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 import type { VariantProps } from 'tailwind-variants';
 
-import { cn } from '@/utils';
-
 import { inputVariants } from './input.styles';
+import { cn } from '../../utils';
 
 export interface InputProps
   extends Omit<ComponentPropsWithoutRef<'input'>, 'size'>,
