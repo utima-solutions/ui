@@ -91,6 +91,37 @@ export default function Home() {
         c: 'C',
       },
     },
+    {
+      name: 'volume',
+      label: 'Volume',
+      control: 'slider',
+      defaultValue: 50,
+      helperText: 'Adjust the volume level',
+    },
+    {
+      name: 'range',
+      label: 'Price Range',
+      control: 'slider',
+      defaultValue: [20, 80],
+      helperText: 'Select min and max price',
+      uiProps: {
+        min: 0,
+        max: 100,
+        step: 1,
+      },
+    },
+    {
+      name: 'distribution',
+      label: 'Resource Distribution',
+      control: 'slider',
+      defaultValue: [10, 30, 60],
+      helperText: 'Adjust resource allocation',
+      uiProps: {
+        variant: 'success',
+        size: 'lg',
+        shape: 'square',
+      },
+    },
   ]);
 
   return (

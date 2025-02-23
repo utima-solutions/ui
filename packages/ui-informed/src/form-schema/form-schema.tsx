@@ -5,6 +5,7 @@ import type { ComponentType, ReactNode } from 'react';
 import { CheckboxControl } from '../controls/checkbox-control';
 import { InputControl } from '../controls/input-control';
 import { SelectControl } from '../controls/select-control';
+import { SliderControl } from '../controls/slider-control';
 import { SwitchControl } from '../controls/switch-control';
 import { TextareaControl } from '../controls/textarea-control';
 import type { FieldType } from '../form-field/form-field';
@@ -36,6 +37,7 @@ export const defaultFormSchemaAdapter: FormSchemaAdapter = {
       </SelectControl>
     );
   },
+  slider: SliderControl,
 };
 
 export interface FormSchemaAdapter {
@@ -46,6 +48,7 @@ export interface FormSchemaAdapter {
   number: ComponentType<FormSchemaFieldDef>;
   textarea: ComponentType<FormSchemaFieldDef>;
   select: ComponentType<FormSchemaFieldDef>;
+  slider: ComponentType<FormSchemaFieldDef>;
 }
 
 export interface FormSchemaFieldDef {

@@ -70,6 +70,7 @@ export type FormFieldRender<T extends ControlProps> = (
     hasHelpers: boolean;
     required: boolean | undefined | string;
     showOptional: boolean;
+    defaultValue: T['defaultValue'];
     showRequired: boolean;
   } & ReturnType<typeof useField<Omit<T, 'name'>, any>>, // eslint-disable-next-line @typescript-eslint/no-explicit-any
 ) => ReactNode;
@@ -96,6 +97,7 @@ export function FormField<T extends ControlProps>({
   zodSchema,
   fieldType,
   required,
+  defaultValue,
   ...restProps
 }: FormFieldProps<T>) {
   const id = useId();
@@ -127,6 +129,7 @@ export function FormField<T extends ControlProps>({
     type: fieldType,
     disabled,
     required,
+    defaultValue,
     validate,
     ...restProps,
   });
@@ -142,6 +145,7 @@ export function FormField<T extends ControlProps>({
       showOptional: showOptional || formShowOptional,
       showRequired: showRequired || formShowRequired,
       required,
+      defaultValue,
       ...field,
       userProps: {
         ...field.userProps,
