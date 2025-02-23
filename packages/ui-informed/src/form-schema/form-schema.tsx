@@ -1,6 +1,6 @@
 import { Select } from '@utima/ui';
 import { type RelevantParams, Input as InformedInput } from 'informed';
-import type { ComponentType } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 
 import { CheckboxControl } from '../controls/checkbox-control';
 import { InputControl } from '../controls/input-control';
@@ -20,15 +20,19 @@ export const defaultFormSchemaAdapter: FormSchemaAdapter = {
   switch: SwitchControl,
   hidden: props => <InformedInput {...props} type='hidden' />,
   select: props => {
-    const { options, ...restProps } = props;
+    const { options, renderOption, ...restProps } = props;
 
     return (
       <SelectControl {...restProps}>
-        {Object.entries(options!).map(([value, label]) => (
-          <Select.Item key={value} value={value}>
-            {label}
-          </Select.Item>
-        ))}
+        {Object.entries(options!).map(([value, label], index) =>
+          renderOption ? (
+            renderOption({ value, label, index })
+          ) : (
+            <Select.Item key={value} value={value}>
+              {label}
+            </Select.Item>
+          ),
+        )}
       </SelectControl>
     );
   },
@@ -45,7 +49,6 @@ export interface FormSchemaAdapter {
 }
 
 export interface FormSchemaFieldDef {
-  // TODO typeof keyof FormSchemaAdapter ???
   /**
    * The data type of the field. It is used to map to adapter components.
    */
@@ -224,6 +227,12 @@ export interface FormSchemaFieldDef {
   showOptional?: boolean;
 
   /**
+   * Whether to allow empty string e.g. when field value is deleted
+   * the form values is equal to "" for strings and 0 for numbers.
+   */
+  allowEmptyString?: boolean;
+
+  /**
    * Use to define when the field is relevant. This function is applied directly
    * on the input itself, not wrapped in `Relevant` component.
    */
@@ -239,9 +248,47 @@ export interface FormSchemaFieldDef {
    * the relevance check.
    */
   relevanceWhen?: string[];
+
+  /**
+   * Custom render function for the field. This allows overriding
+   * the default rendering behavior of the field.
+   */
+  render?: (props: FormSchemaRenderProps) => ReactNode;
+
+  /**
+   * Custom render function specifically for select options.
+   */
+  renderOption?: (props: {
+    value: string;
+    label: string;
+    index: number;
+  }) => ReactNode;
 }
 
-type FormSchemaFieldsDef =
+export interface FormSchemaRenderProps {
+  /**
+   * The field component from the adapter
+   */
+  Component: ComponentType<FormSchemaFieldDef>;
+
+  /**
+   * The field props
+   */
+  props: FormSchemaFieldDef;
+
+  /**
+   * Children to render (useful for select options etc.)
+   */
+  children?: ReactNode;
+
+  /**
+   * The key for the field
+   */
+  key: string;
+}
+
+export type FormSchemaFieldsDef =
+  | ReactNode
   | FormSchemaFieldDef
   | {
       $relevant?: {
@@ -252,6 +299,12 @@ type FormSchemaFieldsDef =
   | {
       $scope?: {
         $scopeName: string;
+        $fields: FormSchemaFieldsDef[];
+      };
+    }
+  | {
+      $component: {
+        $render: ReactNode | ((props: FormSchemaRenderProps) => ReactNode);
         $fields: FormSchemaFieldsDef[];
       };
     };

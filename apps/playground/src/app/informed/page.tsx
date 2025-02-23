@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Input, InputAddon, Separator } from '@utima/ui';
+import { Button, cn, Input, InputAddon, Select, Separator } from '@utima/ui';
 import {
   defaultFormSchemaAdapter,
   Form,
@@ -37,6 +37,10 @@ export default function Home() {
       name: 'textarea',
       label: 'Textarea',
       control: 'textarea',
+      parser: (value: any) => (value ? value.toUpperCase() : null) as any,
+      uiProps: {
+        allowEmptyString: true,
+      },
     },
     {
       name: 'number',
@@ -47,6 +51,30 @@ export default function Home() {
       name: 'switch',
       label: 'Switch',
       control: 'switch',
+    },
+    {
+      name: 'select',
+      label: 'Select',
+      control: 'select',
+      options: {
+        a: 'A',
+        b: 'B',
+        c: 'C',
+      },
+      renderOption: ({ value, label }) => (
+        <Select.Item key={value} value={value}>
+          <span className='flex items-center gap-2'>
+            <span
+              className={cn('h-4 w-4 rounded-md block', {
+                'bg-red-500': value === 'a',
+                'bg-blue-500': value === 'b',
+                'bg-green-500': value === 'c',
+              })}
+            />
+            {label}
+          </span>
+        </Select.Item>
+      ),
     },
     {
       name: 'checkbox',
