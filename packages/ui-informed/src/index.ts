@@ -6,6 +6,7 @@ export * from './controls/switch-control';
 export * from './controls/select-control';
 export * from './controls/textarea-control';
 export * from './controls/checkbox-control';
+export * from './controls/slider-control';
 
 /**
  * FormControl
