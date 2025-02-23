@@ -5,7 +5,7 @@ import { type FormSchemaDef, createFormSchema } from './form-schema';
 /**
  * Helper hook for creating a schema from a list of fields.
  */
-export function useFieldsSchema(
+export function useFormFieldsSchema(
   fieldsDef: FormSchemaDef['$fields'],
   dependencies: any[] = [],
 ) {

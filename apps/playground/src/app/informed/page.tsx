@@ -6,9 +6,9 @@ import {
   Form,
   FormSchemaProvider,
   InputControl,
-  SchemaFields,
+  FormSchemaFields,
   SwitchControl,
-  useFieldsSchema,
+  useFormFieldsSchema,
 } from '@utima/ui-informed';
 import { Devtools } from '@utima/ui-informed/devtools';
 import { UserIcon, CheckIcon } from 'lucide-react';
@@ -28,7 +28,7 @@ import { z } from 'zod';
 // const parser = (value: string) => value.toLowerCase();
 
 export default function Home() {
-  const { schema } = useFieldsSchema([
+  const { schema } = useFormFieldsSchema([
     {
       name: 'input',
       label: 'Input',
@@ -107,7 +107,7 @@ export default function Home() {
           label='Label'
         /> */}
 
-          <SchemaFields schema={schema} />
+          <FormSchemaFields schema={schema} />
 
           <div className='my-12' />
           <Separator size='lg' />

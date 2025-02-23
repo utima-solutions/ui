@@ -34,9 +34,9 @@ export { isZodError, zodResolver, getFieldZodObject } from './zodUtils';
 /**
  * FormSchema
  */
-export * from './form-schema/use-fields-schema';
+export * from './form-schema/use-form-fields-schema';
 export * from './form-schema/form-schema';
-export * from './form-schema/schema-fields';
+export * from './form-schema/form-schema-fields';
 export * from './form-schema/form-schema-context';
 
 export type * from './types';

@@ -4,7 +4,7 @@ import { cloneElement, isValidElement, type ReactNode } from 'react';
 import type { FormSchemaDef, FormSchemaFieldsDef } from './form-schema';
 import { useFormSchema } from './form-schema-context';
 
-export type SchemaFieldsProps = {
+export type FormSchemaFieldsProps = {
   schema: FormSchemaDef;
 };
 
@@ -13,7 +13,7 @@ export type SchemaFieldsProps = {
 /**
  * Renders fields based on the schema definition.
  */
-export function SchemaFields({ schema }: SchemaFieldsProps) {
+export function FormSchemaFields({ schema }: FormSchemaFieldsProps) {
   const { adapter } = useFormSchema();
 
   if (!schema?.$fields) {
@@ -36,7 +36,7 @@ export function SchemaFields({ schema }: SchemaFieldsProps) {
           key={`scope-${index.toString()}`}
           scope={field.$scope.$scopeName}
         >
-          <SchemaFields schema={field.$scope} />
+          <FormSchemaFields schema={field.$scope} />
         </Scope>
       );
     }
@@ -48,7 +48,7 @@ export function SchemaFields({ schema }: SchemaFieldsProps) {
           key={`relevant-${index.toString()}`}
           when={field.$relevant.$when}
         >
-          <SchemaFields schema={field.$relevant} />
+          <FormSchemaFields schema={field.$relevant} />
         </Relevant>
       );
     }
