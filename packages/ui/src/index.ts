@@ -24,6 +24,12 @@ export {
   iconButtonVariants,
 } from './components/icon-button/icon-button';
 
+// ButtonGroup
+export {
+  ButtonGroup,
+  type ButtonGroupProps,
+} from './components/button-group/button-group';
+
 // Badge
 export {
   Badge,

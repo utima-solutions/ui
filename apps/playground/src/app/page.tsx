@@ -37,6 +37,7 @@ import {
   FormItem,
   Slider,
   Form,
+  ButtonGroup,
 } from '@utima/ui';
 import {
   AlertCircle,
@@ -363,6 +364,70 @@ export default function Home() {
               </a>
             </IconButton>
           </div>
+        </div>
+      </div>
+
+      <div className='flex flex-col gap-4'>
+        <Title>&lt;ButtonGroup /&gt;</Title>
+        <Subtitle>Button</Subtitle>
+        <div className='flex flex-row flex-wrap gap-4'>
+          <ButtonGroup>
+            <Button variant='primary'>
+              <Download /> Default
+            </Button>
+            <Button variant='primary'>
+              <Download /> Destructive
+            </Button>
+            <Button variant='primary'>
+              <Download /> Ghost
+            </Button>
+            <Button variant='primary'>
+              <Download /> Link
+            </Button>
+            <Button variant='primary'>
+              <Download /> Success
+            </Button>
+          </ButtonGroup>
+        </div>
+        <div className='flex flex-row flex-wrap gap-4'>
+          <ButtonGroup variant='outline'>
+            <Button variant='outline'>
+              <Download className='size-10' /> Default
+            </Button>
+            <Button variant='outline'>
+              <Download /> Destructive
+            </Button>
+            <Button variant='outline'>
+              <Download /> Ghost
+            </Button>
+            <Button variant='outline'>
+              <Download /> Link
+            </Button>
+            <Button variant='outline'>
+              <Download /> Success
+            </Button>
+          </ButtonGroup>
+        </div>
+        <div className='flex flex-row flex-wrap gap-4'>
+          <ButtonGroup variant='success'>
+            <IconButton variant='success'>
+              <Download />
+            </IconButton>
+            <IconButton variant='success'>
+              <Download />
+            </IconButton>
+            <IconButton variant='success'>
+              <Download />
+            </IconButton>
+            <IconButton variant='success'>
+              <Download />
+            </IconButton>
+            <IconButton variant='success' asChild>
+              <a href='/'>
+                <Download />
+              </a>
+            </IconButton>
+          </ButtonGroup>
         </div>
       </div>
 

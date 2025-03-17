@@ -5,6 +5,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '../../utils';
 
+// eslint-disable-next-line tailwindcss/no-custom-classname
 export const buttonVariants = tv({
   base: 'focus-visible:ring-ring inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium shadow-black/5 transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   variants: {
@@ -16,7 +17,7 @@ export const buttonVariants = tv({
       destructive:
         'bg-destructive text-destructive-foreground hover:bg-destructive-light active:bg-destructive-dark shadow-sm',
       outline:
-        'border-input bg-background hover:bg-accent hover:text-accent-foreground border shadow-sm',
+        'border-input bg-background hover:bg-accent hover:text-accent-foreground active:bg-accent/50 border shadow-sm',
       secondary:
         'bg-secondary text-secondary-foreground hover:bg-secondary-light active:bg-secondary-dark shadow-sm',
       ghost: 'hover:bg-accent hover:text-accent-foreground',

@@ -32,6 +32,9 @@ export default function Home() {
     {
       name: 'input',
       label: 'Input',
+      render: ({ Component, props }) => {
+        return <Component {...props} />;
+      },
     },
     {
       name: 'textarea',
