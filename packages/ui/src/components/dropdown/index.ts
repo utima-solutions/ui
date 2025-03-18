@@ -14,6 +14,7 @@ export {
   DropdownRadioItem as RadioItem,
   DropdownSeparator as Separator,
   DropdownContent as Content,
+  DropdownShortcut as Shortcut,
   DropdownSubContent as SubContent,
   DropdownSubTrigger as SubTrigger,
 } from './dropdown';

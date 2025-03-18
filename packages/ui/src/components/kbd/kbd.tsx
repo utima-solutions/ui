@@ -11,11 +11,11 @@ export const kbdVariants = tv({
       outline: 'border-border border bg-white px-1 py-0.5 shadow-sm',
     },
     size: {
-      xs: 'h-5 min-w-5 px-1 text-[11px]',
-      sm: 'h-6 min-w-6 px-1.5 text-xs',
-      md: 'h-7 min-w-7 px-2 text-sm',
-      lg: 'h-8 min-w-8 px-2.5 text-base',
-      xl: 'h-9 min-w-9 px-3 text-lg',
+      xs: 'h-4 min-w-4 px-1 text-[10px]',
+      sm: 'h-5 min-w-5 px-1 text-[11px]',
+      md: 'h-6 min-w-6 px-1.5 text-xs',
+      lg: 'h-7 min-w-7 px-2 text-sm',
+      xl: 'h-8 min-w-8 px-2.5 text-base',
     },
     disabled: {
       true: 'pointer-events-none cursor-not-allowed opacity-50',

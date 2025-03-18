@@ -1,143 +1,35 @@
 'use client';
 
-import { Collapsible, Dropdown, Sidebar } from '@utima/ui';
-import {
-  Calendar,
-  ChevronDown,
-  ChevronUp,
-  Home,
-  Inbox,
-  Search,
-  Settings,
-} from 'lucide-react';
+import { Breadcrumb, Separator, Sidebar } from '@utima/ui';
 
-// Menu items.
-const items = [
-  {
-    title: 'Home',
-    url: '#',
-    icon: Home,
-  },
-  {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
-  },
-  {
-    title: 'Calendar',
-    url: '#',
-    icon: Calendar,
-  },
-  {
-    title: 'Search',
-    url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
-    url: '#',
-    icon: Settings,
-  },
-];
+import { AppSidebar } from './sidebar/app-sidebar';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <Sidebar.Provider>
-      <Sidebar.Root>
-        <Sidebar.Header>
-          <Sidebar.Menu>
-            <Sidebar.MenuItem>
-              <Dropdown.Root>
-                <Dropdown.Trigger asChild>
-                  <Sidebar.MenuButton>
-                    Select Workspace
-                    <ChevronDown className='ml-auto' />
-                  </Sidebar.MenuButton>
-                </Dropdown.Trigger>
-                <Dropdown.Content className='w-[--radix-popper-anchor-width]'>
-                  <Dropdown.Item>
-                    <span>Acme Inc</span>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <span>Acme Corp.</span>
-                  </Dropdown.Item>
-                </Dropdown.Content>
-              </Dropdown.Root>
-            </Sidebar.MenuItem>
-          </Sidebar.Menu>
-        </Sidebar.Header>
-        <Sidebar.Content>
-          <Sidebar.Group>
-            <Sidebar.GroupLabel>Application</Sidebar.GroupLabel>
-            <Sidebar.GroupContent>
-              <Sidebar.Menu>
-                {items.map(item => (
-                  <Sidebar.MenuItem key={item.title}>
-                    <Sidebar.MenuButton asChild>
-                      <a href={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
-                      </a>
-                    </Sidebar.MenuButton>
-                  </Sidebar.MenuItem>
-                ))}
-              </Sidebar.Menu>
-            </Sidebar.GroupContent>
-          </Sidebar.Group>
-          <Collapsible.Root defaultOpen className='group/collapsible'>
-            <Sidebar.Group>
-              <Sidebar.GroupLabel asChild>
-                <Collapsible.Trigger>
-                  Collapsible{' '}
-                  <ChevronDown className='ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180' />
-                </Collapsible.Trigger>
-              </Sidebar.GroupLabel>
-              <Collapsible.Content>
-                <Sidebar.GroupContent>
-                  <Sidebar.Menu>
-                    {items.map(item => (
-                      <Sidebar.MenuItem key={item.title}>
-                        <Sidebar.MenuButton asChild>
-                          <a href={item.url}>
-                            <item.icon />
-                            <span>{item.title}</span>
-                          </a>
-                        </Sidebar.MenuButton>
-                      </Sidebar.MenuItem>
-                    ))}
-                  </Sidebar.Menu>
-                </Sidebar.GroupContent>
-              </Collapsible.Content>
-            </Sidebar.Group>
-          </Collapsible.Root>
-        </Sidebar.Content>
-        <Sidebar.Footer>
-          <Sidebar.Menu>
-            <Sidebar.MenuItem>
-              <Dropdown.Root>
-                <Dropdown.Trigger asChild>
-                  <Sidebar.MenuButton>
-                    Username
-                    <ChevronUp className='ml-auto' />
-                  </Sidebar.MenuButton>
-                </Dropdown.Trigger>
-                <Dropdown.Content className='w-[--radix-popper-anchor-width]'>
-                  <Dropdown.Item>
-                    <span>Acme Inc</span>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <span>Acme Corp.</span>
-                  </Dropdown.Item>
-                </Dropdown.Content>
-              </Dropdown.Root>
-            </Sidebar.MenuItem>
-          </Sidebar.Menu>
-        </Sidebar.Footer>
-      </Sidebar.Root>
-      <main>
-        <Sidebar.Trigger />
-        {children}
-      </main>
+      <AppSidebar />
+      <Sidebar.Inset>
+        <header className='flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12'>
+          <div className='flex items-center gap-2 px-4'>
+            <Sidebar.Trigger className='-ml-1' />
+            <Separator orientation='vertical' className='mr-2 h-4' />
+            <Breadcrumb.Root>
+              <Breadcrumb.List>
+                <Breadcrumb.Item className='hidden md:block'>
+                  <Breadcrumb.Link href='#'>
+                    Building Your Application
+                  </Breadcrumb.Link>
+                </Breadcrumb.Item>
+                <Breadcrumb.Separator className='hidden md:block' />
+                <Breadcrumb.Item>
+                  <Breadcrumb.Page>Data Fetching</Breadcrumb.Page>
+                </Breadcrumb.Item>
+              </Breadcrumb.List>
+            </Breadcrumb.Root>
+          </div>
+        </header>
+        <main>{children}</main>
+      </Sidebar.Inset>
     </Sidebar.Provider>
   );
 }

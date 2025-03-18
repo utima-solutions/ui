@@ -175,6 +175,7 @@ export { useCommandState } from 'cmdk';
 export * as Sheet from './components/sheet';
 
 // Sidebar
+export { useSidebar } from './components/sidebar/sidebar';
 export * as Sidebar from './components/sidebar';
 
 // FormItem

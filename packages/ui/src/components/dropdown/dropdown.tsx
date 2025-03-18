@@ -7,6 +7,7 @@ import {
 } from 'react';
 
 import { cn } from '../../utils';
+import { Kbd } from '../kbd/kbd';
 
 export interface DropdownContentProps
   extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> {}
@@ -213,3 +214,11 @@ export const DropdownCheckboxItem = forwardRef<
     </DropdownMenuPrimitive.CheckboxItem>
   );
 });
+
+export function DropdownShortcut({ children }: { children: ReactNode }) {
+  return (
+    <Kbd className='ml-auto' variant='ghost'>
+      {children}
+    </Kbd>
+  );
+}
