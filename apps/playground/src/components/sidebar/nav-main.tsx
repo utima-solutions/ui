@@ -1,16 +1,19 @@
 'use client';
 
-import { Collapsible, Sidebar } from '@utima/ui';
+import { cn, Collapsible, Sidebar } from '@utima/ui';
 import { ChevronRight, type LucideIcon } from 'lucide-react';
 
 export function NavMain({
   items,
+  label,
 }: {
+  label?: string;
   items: {
     title: string;
     url: string;
     icon?: LucideIcon;
     isActive?: boolean;
+    highlight?: boolean;
     items?: {
       title: string;
       url: string;
@@ -19,7 +22,7 @@ export function NavMain({
 }) {
   return (
     <Sidebar.Group>
-      <Sidebar.GroupLabel>Platform</Sidebar.GroupLabel>
+      {label && <Sidebar.GroupLabel>{label}</Sidebar.GroupLabel>}
       <Sidebar.Menu>
         {items.map(item => (
           <Collapsible.Root
@@ -41,7 +44,10 @@ export function NavMain({
                   {item.items?.map(subItem => (
                     <Sidebar.MenuSubItem key={subItem.title}>
                       <Sidebar.MenuSubButton asChild>
-                        <a href={subItem.url}>
+                        <a
+                          className={cn(item.highlight && 'text-emerald-500 ')}
+                          href={subItem.url}
+                        >
                           <span>{subItem.title}</span>
                         </a>
                       </Sidebar.MenuSubButton>
