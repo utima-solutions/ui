@@ -1,5 +1,15 @@
 # @utima/ui
 
+## 1.0.0-alpha.5
+
+### Minor Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`3ab99c8`](https://github.com/utima-solutions/ui/commit/3ab99c82b16c5a9e4a1f03937b0cf68b8a0bb0d6) Thanks [@jsimck](https://github.com/jsimck)! - Added new Slider Control to ui-informed. Change SchemaFields to FormSchemaFields to prevent conflicts
+
+### Patch Changes
+
+- [#25](https://github.com/utima-solutions/ui/pull/25) [`2c095aa`](https://github.com/utima-solutions/ui/commit/2c095aae354a4f3a7844382446a47e1522139d52) Thanks [@jsimck](https://github.com/jsimck)! - Added Button group
+
 ## 1.0.0-alpha.4
 
 ### Patch Changes
