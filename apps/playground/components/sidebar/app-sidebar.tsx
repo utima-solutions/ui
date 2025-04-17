@@ -1,4 +1,10 @@
-import { Sidebar } from '@utima/ui';
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarRail,
+} from '@utima/ui';
 import {
   AudioWaveform,
   BookOpen,
@@ -149,18 +155,18 @@ const data = {
 
 export function AppSidebar() {
   return (
-    <Sidebar.Root>
-      <Sidebar.Header>
+    <Sidebar>
+      <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
-      </Sidebar.Header>
-      <Sidebar.Content>
+      </SidebarHeader>
+      <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
-      </Sidebar.Content>
-      <Sidebar.Footer>
+      </SidebarContent>
+      <SidebarFooter>
         <NavUser user={data.user} />
-      </Sidebar.Footer>
-      <Sidebar.Rail />
-    </Sidebar.Root>
+      </SidebarFooter>
+      <SidebarRail />
+    </Sidebar>
   );
 }

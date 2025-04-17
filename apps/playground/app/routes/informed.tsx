@@ -1,33 +1,29 @@
-'use client';
-
-import { Button, cn, Input, InputAddon, Select, Separator } from '@utima/ui';
+import {
+  Button,
+  cn,
+  Input,
+  InputAddon,
+  InputAddonContent,
+  InputAddonEnd,
+  InputAddonStart,
+  Select,
+  SelectItem,
+  Separator,
+} from '@utima/ui';
 import {
   defaultFormSchemaAdapter,
   Form,
-  FormSchemaProvider,
-  InputControl,
   FormSchemaFields,
-  SwitchControl,
+  FormSchemaProvider,
+  InputField,
+  SwitchField,
   useFormFieldsSchema,
 } from '@utima/ui-informed';
 import { Devtools } from '@utima/ui-informed/devtools';
 import { UserIcon, CheckIcon } from 'lucide-react';
 import { z } from 'zod';
 
-// const clean = (value: string) => {
-//   console.log('value', value);
-
-//   if (!value) {
-//     return null;
-//   }
-
-//   return value.replaceAll(/[!#$%&()*@^]/g, '');
-// };
-
-// const mask = (value: string) => value.toUpperCase();
-// const parser = (value: string) => value.toLowerCase();
-
-export default function Home() {
+export default function Index() {
   const { schema } = useFormFieldsSchema([
     {
       name: 'input',
@@ -65,7 +61,7 @@ export default function Home() {
         c: 'C',
       },
       renderOption: ({ value, label }) => (
-        <Select.Item key={value} value={value}>
+        <SelectItem key={value} value={value}>
           <span className='flex items-center gap-2'>
             <span
               className={cn('h-4 w-4 rounded-md block', {
@@ -76,7 +72,7 @@ export default function Home() {
             />
             {label}
           </span>
-        </Select.Item>
+        </SelectItem>
       ),
     },
     {
@@ -134,7 +130,7 @@ export default function Home() {
           onSubmit={({ values }) => alert(JSON.stringify(values))}
           initialValues={{ switch: true, input: null }}
         >
-          {/* <SwitchControl
+          {/* <SwitchField
           // name='switch'
           description='Description'
           helperText='Helper Text'
@@ -147,7 +143,7 @@ export default function Home() {
           <Separator size='lg' />
           <div className='my-12' />
 
-          <InputControl
+          <InputField
             name='input'
             required='Custom required'
             description='Description'
@@ -160,7 +156,7 @@ export default function Home() {
             // parser={parser}
             allowEmptyString
           />
-          <SwitchControl
+          <SwitchField
             name='switch'
             required
             description='Description'
@@ -173,63 +169,63 @@ export default function Home() {
           <Button type='submit'>Submit</Button>
           <Devtools />
           <div className='flex flex-col gap-4'>
-            <InputAddon.Root hasStart hasEnd>
-              <InputAddon.Start>
+            <InputAddon hasStart hasEnd>
+              <InputAddonStart>
                 <UserIcon className='size-4' />
-              </InputAddon.Start>
-              <InputAddon.Content>
+              </InputAddonStart>
+              <InputAddonContent>
                 <Input />
-              </InputAddon.Content>
-              <InputAddon.End>
+              </InputAddonContent>
+              <InputAddonEnd>
                 <CheckIcon className='size-4' />
-              </InputAddon.End>
-            </InputAddon.Root>
-            <InputAddon.Root hasEnd>
-              <InputAddon.Content>
+              </InputAddonEnd>
+            </InputAddon>
+            <InputAddon hasEnd>
+              <InputAddonContent>
                 <Input placeholder='Search...' />
-              </InputAddon.Content>
-              <InputAddon.End>
+              </InputAddonContent>
+              <InputAddonEnd>
                 <Button variant='secondary'>Search</Button>
-              </InputAddon.End>
-            </InputAddon.Root>
+              </InputAddonEnd>
+            </InputAddon>
 
-            <InputAddon.Root hasStart hasEnd>
-              <InputAddon.Start>$</InputAddon.Start>
-              <InputAddon.Content>
+            <InputAddon hasStart hasEnd>
+              <InputAddonStart>$</InputAddonStart>
+              <InputAddonContent>
                 <Input type='number' />
-              </InputAddon.Content>
-              <InputAddon.End>USD</InputAddon.End>
-            </InputAddon.Root>
+              </InputAddonContent>
+              <InputAddonEnd>USD</InputAddonEnd>
+            </InputAddon>
 
-            <InputAddon.Root size='xs' hasStart hasEnd>
-              <InputAddon.Start>$</InputAddon.Start>
-              <InputAddon.Content>
+            <InputAddon size='xs' hasStart hasEnd>
+              <InputAddonStart>$</InputAddonStart>
+              <InputAddonContent>
                 <Input size='xs' type='number' />
-              </InputAddon.Content>
-              <InputAddon.End>USD</InputAddon.End>
-            </InputAddon.Root>
+              </InputAddonContent>
+              <InputAddonEnd>USD</InputAddonEnd>
+            </InputAddon>
 
-            <InputAddon.Root variant='default' hasStart>
-              <InputAddon.Start>$</InputAddon.Start>
-              <InputAddon.Content>
+            <InputAddon variant='default' hasStart>
+              <InputAddonStart>$</InputAddonStart>
+              <InputAddonContent>
                 <Input />
-              </InputAddon.Content>
-            </InputAddon.Root>
+              </InputAddonContent>
+            </InputAddon>
 
-            <InputAddon.Root size='lg' variant='outline' hasStart>
-              <InputAddon.Start>$</InputAddon.Start>
-              <InputAddon.Content>
+            <InputAddon size='lg' variant='outline' hasStart>
+              <InputAddonStart>$</InputAddonStart>
+              <InputAddonContent>
                 <Input size='lg' />
-              </InputAddon.Content>
-            </InputAddon.Root>
+              </InputAddonContent>
+            </InputAddon>
 
-            <InputAddon.Root variant='absolute' hasStart hasEnd>
-              <InputAddon.Start>$</InputAddon.Start>
-              <InputAddon.Content>
+            <InputAddon variant='absolute' hasStart hasEnd>
+              <InputAddonStart>$</InputAddonStart>
+              <InputAddonContent>
                 <Input className='pl-8 pr-12' />
-              </InputAddon.Content>
-              <InputAddon.End>USD</InputAddon.End>
-            </InputAddon.Root>
+              </InputAddonContent>
+              <InputAddonEnd>USD</InputAddonEnd>
+            </InputAddon>
           </div>
         </Form>
       </div>

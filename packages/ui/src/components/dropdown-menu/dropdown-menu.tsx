@@ -9,12 +9,12 @@ import {
 import { cn } from '../../utils';
 import { Kbd } from '../kbd/kbd';
 
+export const DropdownMenu = DropdownMenuPrimitive.Root;
 export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
 export const DropdownMenuGroup = DropdownMenuPrimitive.Group;
 export const DropdownMenuSub = DropdownMenuPrimitive.Sub;
 export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
 export const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
-export const DropdownMenuRoot = DropdownMenuPrimitive.Root;
 
 export const DropdownMenuContent = forwardRef<
   HTMLDivElement,

@@ -1,4 +1,4 @@
-import { Sidebar } from '@utima/ui';
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from '@utima/ui';
 import {
   AudioWaveform,
   BookOpen,
@@ -191,8 +191,8 @@ const data = {
 
 export function KanbuSidebar() {
   return (
-    <Sidebar.Root>
-      <Sidebar.Header>
+    <Sidebar>
+      <SidebarHeader>
         <div className='flex items-center justify-between px-4 py-2'>
           <div className='flex items-center gap-2'>
             <img
@@ -206,8 +206,8 @@ export function KanbuSidebar() {
             <ChevronDown className='ml-1 size-4' />
           </button>
         </div>
-      </Sidebar.Header>
-      <Sidebar.Content>
+      </SidebarHeader>
+      <SidebarContent>
         <NavMain items={data.globalNav} />
         <div className='border-border mx-2 rounded-md border bg-white'>
           <div className='mt-2 px-2'>
@@ -216,11 +216,11 @@ export function KanbuSidebar() {
           <NavMain items={data.agentNav} />
         </div>
         <NavMain items={data.adminNav} label='Superadmin' />
-      </Sidebar.Content>
-      <Sidebar.Footer>
+      </SidebarContent>
+      <SidebarFooter>
         <NavUser user={data.user} />
-      </Sidebar.Footer>
-      <Sidebar.Rail />
-    </Sidebar.Root>
+      </SidebarFooter>
+      <SidebarRail />
+    </Sidebar>
   );
 }

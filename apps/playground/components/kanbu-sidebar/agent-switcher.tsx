@@ -1,6 +1,19 @@
 'use client';
 
-import { Dropdown, Sidebar, useSidebar } from '@utima/ui';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuTrigger,
+  Sidebar,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  useSidebar,
+} from '@utima/ui';
 import {
   AudioWaveform,
   ChevronsUpDown,
@@ -38,11 +51,11 @@ export function AgentSwitcher() {
   }
 
   return (
-    <Sidebar.Menu>
-      <Sidebar.MenuItem>
-        <Dropdown.Root>
-          <Dropdown.Trigger asChild>
-            <Sidebar.MenuButton
+    <SidebarMenu>
+      <SidebarMenuItem>
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <SidebarMenuButton
               size='lg'
               className='data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground'
             >
@@ -56,19 +69,19 @@ export function AgentSwitcher() {
                 <span className='truncate text-xs'>{activeTeam.plan}</span>
               </div>
               <ChevronsUpDown className='ml-auto' />
-            </Sidebar.MenuButton>
-          </Dropdown.Trigger>
-          <Dropdown.Content
+            </SidebarMenuButton>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent
             className='w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg'
             align='start'
             side={isMobile ? 'bottom' : 'right'}
             sideOffset={4}
           >
-            <Dropdown.Label className='text-muted-foreground text-xs'>
+            <DropdownMenuLabel className='text-muted-foreground text-xs'>
               Teams
-            </Dropdown.Label>
+            </DropdownMenuLabel>
             {agents.map((team, index) => (
-              <Dropdown.Item
+              <DropdownMenuItem
                 key={team.name}
                 onClick={() => setActiveTeam(team)}
                 className='gap-2 p-2'
@@ -77,19 +90,19 @@ export function AgentSwitcher() {
                   <team.logo className='size-4 shrink-0' />
                 </div>
                 {team.name}
-                <Dropdown.Shortcut>⌘{index + 1}</Dropdown.Shortcut>
-              </Dropdown.Item>
+                <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
+              </DropdownMenuItem>
             ))}
-            <Dropdown.Separator />
-            <Dropdown.Item className='gap-2 p-2'>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem className='gap-2 p-2'>
               <div className='bg-background flex size-6 items-center justify-center rounded-md border'>
                 <Plus className='size-4' />
               </div>
               <div className='text-muted-foreground font-medium'>Add team</div>
-            </Dropdown.Item>
-          </Dropdown.Content>
-        </Dropdown.Root>
-      </Sidebar.MenuItem>
-    </Sidebar.Menu>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </SidebarMenuItem>
+    </SidebarMenu>
   );
 }

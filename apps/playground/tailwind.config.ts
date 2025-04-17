@@ -1,7 +1,8 @@
-const path = require('node:path');
+import path from 'node:path';
+import type { Config } from 'tailwindcss';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -76,5 +77,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
-};
+  plugins: [tailwindcssAnimate],
+} satisfies Config;
