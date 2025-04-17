@@ -38,17 +38,16 @@ export interface BadgeProps
   circle?: boolean;
 }
 
-export const Badge = memo(function Badge({
-  className,
-  variant,
-  size,
-  disabled,
-  circle = false,
-  ...restProps
-}: BadgeProps) {
-  return (
+export const Badge = memo(
+  ({
+    className,
+    variant,
+    size,
+    disabled,
+    circle = false,
+    ...restProps
+  }: BadgeProps) => (
     <span
-      data-uui-badge
       className={cn(
         badgeVariants({
           variant,
@@ -58,7 +57,8 @@ export const Badge = memo(function Badge({
         circle && 'rounded-full',
         className,
       )}
+      data-uui-badge
       {...restProps}
     />
-  );
-});
+  ),
+);

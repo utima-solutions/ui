@@ -10,85 +10,43 @@ export { Portal, type PortalProps } from '@radix-ui/react-portal';
 /**
  * Components
  */
-// Buttton
-export {
-  Button,
-  type ButtonProps,
-  buttonVariants,
-} from './components/button/button';
-
-// IconButton
-export {
-  IconButton,
-  type IconButtonProps,
-  iconButtonVariants,
-} from './components/icon-button/icon-button';
-
-// ButtonGroup
-export {
-  ButtonGroup,
-  type ButtonGroupProps,
-} from './components/button-group/button-group';
+// Butttons
+export * from './components/button/button';
+export * from './components/button/icon-button';
+export * from './components/button/button-group';
 
 // Badge
-export {
-  Badge,
-  type BadgeProps,
-  badgeVariants,
-} from './components/badge/badge';
+export * from './components/badge/badge';
 
 // Kbd
-export { Kbd, type KbdProps, kbdVariants } from './components/kbd/kbd';
+export * from './components/kbd/kbd';
 
 // Switch
-export {
-  Switch,
-  type SwitchProps,
-  switchVariants,
-} from './components/switch/switch';
+export * from './components/switch/switch';
 
 // Label
-export {
-  Label,
-  type LabelProps,
-  labelVariants,
-} from './components/label/label';
+export * from './components/label/label';
 
 // Checkbox
-export {
-  Checkbox,
-  type CheckboxProps,
-  checkboxVariants,
-} from './components/checkbox/checkbox';
+export * from './components/checkbox/checkbox';
 
 // Separator
-export {
-  Separator,
-  type SeparatorProps,
-  separatorVariants,
-} from './components/separator/separator';
+export * from './components/separator/separator';
 
 // Breadcrumb
-export * as Breadcrumb from './components/breadcrumb';
-export type * from './components/breadcrumb/types';
+export * from './components/breadcrumb/breadcrumb';
 
 // Pagination
-export * as Pagination from './components/pagination';
-export type * from './components/pagination/types';
+export * from './components/pagination/pagination';
 
 // Progress
-export {
-  Progress,
-  type ProgressProps,
-  progressVariants,
-} from './components/progress/progress';
+export * from './components/progress/progress';
 
 // Dropdown
-export * as Dropdown from './components/dropdown';
-export type * from './components/dropdown/types';
+export * from './components/dropdown-menu/dropdown-menu';
 
 // Popover
-export * as Popover from './components/popover';
+export * from './components/popover/popover';
 
 // Aspect Ratio
 export {
@@ -97,97 +55,76 @@ export {
 } from '@radix-ui/react-aspect-ratio';
 
 // Resizable
-export * as Resizable from './components/resizable';
+export * from './components/resizable/resizable';
 
 // Tooltip
-export * as Tooltip from './components/tooltip';
+export * from './components/tooltip/tooltip';
 
 // Dialog
-export * as Dialog from './components/dialog';
+export * from './components/dialog/dialog';
 
 // AlertDialog
-export * as AlertDialog from './components/alert-dialog';
+export * from './components/alert-dialog/alert-dialog';
 
 // Table
-export * as Table from './components/table';
+export * from './components/table/table';
 
 // ScrollArea
-export { ScrollArea, type ScrollAreaProps } from './components/scroll-area';
+export * from './components/scroll-area/scroll-area';
 
 // Toast
 export * from './components/toast/toast';
 
 // Avatar
-export * as Avatar from './components/avatar';
-export { avatarVariants } from './components/avatar/avatar';
+export * from './components/avatar/avatar';
 
 // Skeleton
-export { Skeleton } from './components/skeleton/skeleton';
+export * from './components/skeleton/skeleton';
 
 // Select
-export * as Select from './components/select';
+export * from './components/select/select';
 export * from './components/select/select.style';
 export * from './components/select/use-select-context';
-export type {
-  SelectContentProps,
-  SelectItemProps,
-  SelectRootProps,
-  SelectScrollDownButtonProps,
-  SelectScrollUpButtonProps,
-  SelectTriggerProps,
-} from './components/select/select';
 
 // Tabs
-export * as Tabs from './components/tabs';
+export * from './components/tabs/tabs';
 
 // Card
-export * as Card from './components/card';
+export * from './components/card/card';
 
 // Accordion
-export * as Accordion from './components/accordion';
+export * from './components/accordion/accordion';
 
 // Inputs
-export { inputVariants } from './components/input/input.styles';
-export { Input, type InputProps } from './components/input/input';
-
-export {
-  Textarea,
-  textareaVariants,
-  type TextareaProps,
-} from './components/input/textarea';
-
-export { InputAddon } from './components/input/input-addon';
+export * from './components/input/input.styles';
+export * from './components/input/input';
+export * from './components/input/textarea';
+export * from './components/input/input-addon';
 
 // Alert
-export * as Alert from './components/alert';
+export * from './components/alert/alert';
 
 // Collapsible
-export * as Collapsible from './components/collapsible';
+export * from './components/collapsible/collapsible';
 
 // Drawer
-export * as Drawer from './components/drawer';
+export * from './components/drawer/drawer';
 
 // Command
-export * as Command from './components/command';
+export * from './components/command/command';
 export { useCommandState } from 'cmdk';
 
 // Sheet
-export * as Sheet from './components/sheet';
+export * from './components/sheet/sheet';
 
 // Sidebar
-export { useSidebar } from './components/sidebar/sidebar';
-export * as Sidebar from './components/sidebar';
+export * from './components/sidebar/sidebar';
 
 // FormItem
-export * as FormItem from './components/form-item';
-export { formItemVariants } from './components/form-item/form-item';
+export * from './components/form-item/form-item';
 
 // Form
-export * as Form from './components/form';
+export * from './components/form/form';
 
 // Slider
-export {
-  Slider,
-  type SliderProps,
-  sliderVariants,
-} from './components/slider/slider';
+export * from './components/slider/slider';

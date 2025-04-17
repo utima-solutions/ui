@@ -4,7 +4,7 @@ import { tv, type VariantProps } from 'tailwind-variants';
 import { cn } from '../../utils';
 
 // eslint-disable-next-line tailwindcss/no-custom-classname
-export const buttonVariants = tv({
+export const buttonGroupVariants = tv({
   base: 'block [&>*:first-child]:rounded-l-md [&>*:last-child]:rounded-r-md [&>*:last-child]:border-r-0 [&>*]:rounded-none [&>*]:border-l-0 [&>*]:border-r [&>*]:border-solid',
   variants: {
     variant: {
@@ -25,7 +25,7 @@ export const buttonVariants = tv({
 
 export interface ButtonGroupProps
   extends HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof buttonGroupVariants> {}
 
 export function ButtonGroup({
   children,
@@ -33,10 +33,8 @@ export function ButtonGroup({
   variant,
   ...props
 }: ButtonGroupProps) {
-  console.log(buttonVariants({ variant }));
-
   return (
-    <div className={cn(buttonVariants({ variant }), className)} {...props}>
+    <div className={cn(buttonGroupVariants({ variant }), className)} {...props}>
       {children}
     </div>
   );

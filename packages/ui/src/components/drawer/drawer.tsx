@@ -9,6 +9,12 @@ import { Drawer as DrawerPrimitive } from 'vaul';
 
 import { cn } from '../../utils';
 
+export const DrawerPortal = DrawerPrimitive.Portal;
+export const DrawerNestedRoot = DrawerPrimitive.NestedRoot;
+export const DrawerClose = DrawerPrimitive.Close;
+export const DrawerTrigger = DrawerPrimitive.Trigger;
+export const DrawerHandle = DrawerPrimitive.Handle;
+
 export function Drawer({
   shouldScaleBackground = true,
   ...props

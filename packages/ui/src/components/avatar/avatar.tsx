@@ -28,7 +28,7 @@ export interface AvatarProps
   extends ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>,
     VariantProps<typeof avatarVariants> {}
 
-const Avatar = forwardRef<
+export const Avatar = forwardRef<
   ComponentRef<typeof AvatarPrimitive.Root>,
   AvatarProps
 >(({ className, size, ...props }, ref) => (
@@ -39,7 +39,7 @@ const Avatar = forwardRef<
   />
 ));
 
-const AvatarImage = forwardRef<
+export const AvatarImage = forwardRef<
   ComponentRef<typeof AvatarPrimitive.Image>,
   ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
 >(({ className, ...props }, ref) => (
@@ -50,7 +50,7 @@ const AvatarImage = forwardRef<
   />
 ));
 
-const AvatarFallback = forwardRef<
+export const AvatarFallback = forwardRef<
   ComponentRef<typeof AvatarPrimitive.Fallback>,
   ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
 >(({ className, ...props }, ref) => (
@@ -63,9 +63,3 @@ const AvatarFallback = forwardRef<
     {...props}
   />
 ));
-
-Avatar.displayName = 'Avatar';
-AvatarImage.displayName = 'AvatarImage';
-AvatarFallback.displayName = 'AvatarFallback';
-
-export { Avatar, AvatarImage, AvatarFallback };

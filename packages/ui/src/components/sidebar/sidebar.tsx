@@ -16,12 +16,13 @@ import { tv, type VariantProps } from 'tailwind-variants';
 
 import { useIsMobile } from '../../hooks/use-is-mobile';
 import { cn } from '../../utils';
-import { Separator } from '../breadcrumb';
-import { IconButton } from '../icon-button/icon-button';
+import { BreadcrumbSeparator } from '../breadcrumb/breadcrumb';
+import { IconButton } from '../button/icon-button';
 import { Input } from '../input/input';
-import * as Sheet from '../sheet';
 import { Skeleton } from '../skeleton/skeleton';
-import * as Tooltip from '../tooltip';
+import { Sheet, SheetOverlay, SheetContent, SheetPortal } from '../sheet/sheet';
+import { TooltipContent, TooltipProvider, TooltipTrigger, Tooltip } from '../tooltip/tooltip';
+import type { TooltipContentProps } from '@radix-ui/react-tooltip';
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state';
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -95,7 +96,9 @@ export const SidebarProvider = forwardRef<
 
     // Helper to toggle the sidebar.
     const toggleSidebar = useCallback(() => {
-      return isMobile ? setOpenMobile(open => !open) : setOpen(open => !open);
+      return isMobile
+        ? setOpenMobile((open) => !open)
+        : setOpen((open) => !open);
     }, [isMobile, setOpen, setOpenMobile]);
 
     // Adds a keyboard shortcut to toggle the sidebar.
@@ -142,7 +145,7 @@ export const SidebarProvider = forwardRef<
 
     return (
       <SidebarContext.Provider value={contextValue}>
-        <Tooltip.Provider delayDuration={0}>
+        <TooltipProvider delayDuration={0}>
           <div
             style={
               {
@@ -161,7 +164,7 @@ export const SidebarProvider = forwardRef<
           >
             {children}
           </div>
-        </Tooltip.Provider>
+        </TooltipProvider>
       </SidebarContext.Provider>
     );
   },
@@ -206,10 +209,10 @@ export const Sidebar = forwardRef<
 
     if (isMobile) {
       return (
-        <Sheet.Root open={openMobile} onOpenChange={setOpenMobile} {...props}>
-          <Sheet.Portal>
-            <Sheet.Overlay />
-            <Sheet.Content
+        <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
+          <SheetPortal>
+            <SheetOverlay />
+            <SheetContent
               data-sidebar='sidebar'
               data-uui-sidebar-sheet-content
               data-mobile='true'
@@ -222,9 +225,9 @@ export const Sidebar = forwardRef<
               side={side}
             >
               <div className='flex size-full flex-col'>{children}</div>
-            </Sheet.Content>
-          </Sheet.Portal>
-        </Sheet.Root>
+            </SheetContent>
+          </SheetPortal>
+        </Sheet>
       );
     }
 
@@ -292,7 +295,7 @@ export const SidebarTrigger = forwardRef<
       variant='ghost'
       size='md'
       className={cn('h-7 w-7', className)}
-      onClick={event => {
+      onClick={(event) => {
         onClick?.(event);
         toggleSidebar();
       }}
@@ -397,11 +400,11 @@ export const SidebarFooter = forwardRef<HTMLDivElement, ComponentProps<'div'>>(
 );
 
 export const SidebarSeparator = forwardRef<
-  ComponentRef<typeof Separator>,
-  ComponentProps<typeof Separator>
+  ComponentRef<typeof BreadcrumbSeparator>,
+  ComponentProps<typeof BreadcrumbSeparator>
 >(({ className, ...props }, ref) => {
   return (
-    <Separator
+    <BreadcrumbSeparator
       ref={ref}
       data-sidebar='separator'
       data-uui-sidebar-separator
@@ -549,7 +552,7 @@ export const SidebarMenuButton = forwardRef<
   ComponentProps<'button'> & {
     asChild?: boolean;
     isActive?: boolean;
-    tooltip?: string | Tooltip.TooltipContentProps;
+    tooltip?: string | TooltipContentProps;
   } & VariantProps<typeof sidebarMenuButtonVariants>
 >(
   (
@@ -590,15 +593,15 @@ export const SidebarMenuButton = forwardRef<
     }
 
     return (
-      <Tooltip.Root>
-        <Tooltip.Trigger asChild>{button}</Tooltip.Trigger>
-        <Tooltip.Content
+      <Tooltip>
+        <TooltipTrigger asChild>{button}</TooltipTrigger>
+        <TooltipContent
           side='right'
           align='center'
           hidden={state !== 'collapsed' || isMobile}
           {...tooltip}
         />
-      </Tooltip.Root>
+      </Tooltip>
     );
   },
 );

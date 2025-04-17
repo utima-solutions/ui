@@ -23,7 +23,7 @@ export interface TextareaProps
 }
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  function Textarea(
+  (
     {
       className,
       size = 'md',
@@ -32,8 +32,8 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
       addonAfter,
       ...restProps
     },
-    ref,
-  ) {
+    ref
+  ) => {
     const styles = textareaVariants({ size, variant });
 
     return (

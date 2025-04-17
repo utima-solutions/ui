@@ -1,6 +1,6 @@
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import * as React from 'react';
-import type { ComponentRef, ComponentPropsWithoutRef } from 'react';
+import { type ComponentRef, type ComponentPropsWithoutRef, type HTMLAttributes, forwardRef } from 'react';
 
 import { cn } from '../../utils';
 import { buttonVariants } from '../button/button';
@@ -9,13 +9,10 @@ export const AlertDialog = AlertDialogPrimitive.Root;
 export const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
 export const AlertDialogPortal = AlertDialogPrimitive.Portal;
 
-export interface AlertDialogOverlayProps
-  extends ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay> {}
-
-export const AlertDialogOverlay = React.forwardRef<
+export const AlertDialogOverlay = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Overlay>,
-  AlertDialogOverlayProps
->(function AlertDialogOverlay({ className, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>
+>(({ className, ...props }, ref) => {
   return (
     <AlertDialogPrimitive.Overlay
       className={cn(
@@ -29,13 +26,10 @@ export const AlertDialogOverlay = React.forwardRef<
   );
 });
 
-export interface AlertDialogContentProps
-  extends ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content> {}
-
-export const AlertDialogContent = React.forwardRef<
+export const AlertDialogContent = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Content>,
-  AlertDialogContentProps
->(function AlertDialogContent({ className, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Content>
+>(({ className, ...props }, ref) => {
   return (
     <AlertDialogPrimitive.Content
       ref={ref}
@@ -49,13 +43,10 @@ export const AlertDialogContent = React.forwardRef<
   );
 });
 
-export interface AlertDialogHeaderProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function AlertDialogHeader({
   className,
   ...props
-}: AlertDialogHeaderProps) {
+}: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-uui-alert-dialog-header
@@ -68,13 +59,10 @@ export function AlertDialogHeader({
   );
 }
 
-export interface AlertDialogFooterProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function AlertDialogFooter({
   className,
   ...props
-}: AlertDialogFooterProps) {
+}: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-uui-alert-dialog-footer
@@ -87,12 +75,9 @@ export function AlertDialogFooter({
   );
 }
 
-export interface AlertDialogTitleProps
-  extends ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title> {}
-
-export const AlertDialogTitle = React.forwardRef<
+export const AlertDialogTitle = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Title>,
-  AlertDialogTitleProps
+  ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Title>
 >(function AlertDialogTitle({ className, ...props }, ref) {
   return (
     <AlertDialogPrimitive.Title
@@ -104,12 +89,9 @@ export const AlertDialogTitle = React.forwardRef<
   );
 });
 
-export interface AlertDialogDescriptionProps
-  extends ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description> {}
-
-export const AlertDialogDescription = React.forwardRef<
+export const AlertDialogDescription = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Description>,
-  AlertDialogDescriptionProps
+  ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Description>
 >(function AlertDialogDescription({ className, ...props }, ref) {
   return (
     <AlertDialogPrimitive.Description
@@ -121,12 +103,9 @@ export const AlertDialogDescription = React.forwardRef<
   );
 });
 
-export interface AlertDialogActionProps
-  extends ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action> {}
-
-export const AlertDialogAction = React.forwardRef<
+export const AlertDialogAction = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Action>,
-  AlertDialogActionProps
+  ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
 >(function AlertDialogAction({ className, ...props }, ref) {
   return (
     <AlertDialogPrimitive.Action
@@ -138,15 +117,10 @@ export const AlertDialogAction = React.forwardRef<
   );
 });
 
-export interface AlertDialogCancelProps
-  extends ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel> {}
-
-export const AlertDialogCancel = React.forwardRef<
+export const AlertDialogCancel = forwardRef<
   ComponentRef<typeof AlertDialogPrimitive.Cancel>,
-  AlertDialogCancelProps
+  ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Cancel>
 >(function AlertDialogCancel({ className, ...props }, ref) {
-  console.log('AlertDialogCancel', buttonVariants({ variant: 'outline' }));
-
   return (
     <AlertDialogPrimitive.Cancel
       ref={ref}

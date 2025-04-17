@@ -32,20 +32,18 @@ export interface LabelProps
     VariantProps<typeof labelVariants> {}
 
 export const Label = forwardRef<ComponentRef<typeof Root>, LabelProps>(
-  function Label({ className, size, disabled, ...restProps }, ref) {
-    return (
-      <Root
-        data-uui-label
-        ref={ref}
-        className={cn(
-          labelVariants({
-            size,
-            disabled,
-          }),
-          className,
-        )}
-        {...restProps}
-      />
-    );
-  },
+  ({ className, size, disabled, ...restProps }, ref) => (
+    <Root
+      data-uui-label
+      ref={ref}
+      className={cn(
+        labelVariants({
+          size,
+          disabled,
+        }),
+        className,
+      )}
+      {...restProps}
+    />
+  ),
 );

@@ -9,6 +9,8 @@ import {
 
 import { cn } from '../../utils';
 
+export const Accordion = AccordionPrimitive.Root;
+
 export const AccordionItem = forwardRef<
   ComponentRef<typeof AccordionPrimitive.Item>,
   ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>

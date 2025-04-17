@@ -32,15 +32,8 @@ export type KbdProps = ComponentPropsWithoutRef<'span'> &
     circle?: boolean;
   };
 
-export const Kbd = memo(function Kbd({
-  className,
-  size,
-  variant,
-  circle,
-  disabled,
-  ...restProps
-}: KbdProps) {
-  return (
+export const Kbd = memo(
+  ({ className, size, variant, circle, disabled, ...restProps }: KbdProps) => (
     <kbd
       data-uui-kbd
       className={cn(
@@ -54,5 +47,5 @@ export const Kbd = memo(function Kbd({
       )}
       {...restProps}
     />
-  );
-});
+  ),
+);

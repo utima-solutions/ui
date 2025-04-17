@@ -7,6 +7,8 @@ import {
 
 import { cn } from '../../utils';
 
+export const Tabs = TabsPrimitive.Root;
+
 export const TabsList = forwardRef<
   ComponentRef<typeof TabsPrimitive.List>,
   ComponentPropsWithoutRef<typeof TabsPrimitive.List>

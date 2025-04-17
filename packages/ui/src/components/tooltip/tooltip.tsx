@@ -7,12 +7,14 @@ import {
 
 import { cn } from '../../utils';
 
-export interface TooltipContentProps
-  extends ComponentPropsWithoutRef<typeof TooltipPrimitive.Content> {}
+export const Tooltip = TooltipPrimitive.Root;
+export const TooltipTrigger = TooltipPrimitive.Trigger;
+export const TooltipPortal = TooltipPrimitive.Portal;
+export const TooltipProvider = TooltipPrimitive.Provider;
 
 export const TooltipContent = forwardRef<
   ComponentRef<typeof TooltipPrimitive.Content>,
-  TooltipContentProps
+  ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
 >(({ className, sideOffset = 4, ...props }, ref) => (
   <TooltipPrimitive.Content
     ref={ref}

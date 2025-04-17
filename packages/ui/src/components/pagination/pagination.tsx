@@ -3,13 +3,30 @@ import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
 import { forwardRef, useMemo, type ComponentPropsWithoutRef } from 'react';
 import { tv } from 'tailwind-variants';
 
-import {
-  PaginationContext,
-  usePaginationContext,
-  type PaginationSize,
-} from './pagination-context';
 import { cn } from '../../utils';
 import { buttonVariants } from '../button/button';
+import { createContext, useContext } from 'react';
+
+export type PaginationSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export interface PaginationContextValue {
+  size: PaginationSize;
+}
+
+export const PaginationContext = createContext<PaginationContextValue>({
+  size: 'md',
+});
+
+export function usePaginationContext() {
+  const context = useContext(PaginationContext);
+
+  if (!context) {
+    throw new Error(
+      'No PaginationContext.Provider found when calling usePaginationContext.',
+    );
+  }
+
+  return context;
+}
 
 export const paginationVariants = tv({
   slots: {
@@ -46,7 +63,7 @@ export interface PaginationProps extends ComponentPropsWithoutRef<'nav'> {
 }
 
 export const Pagination = forwardRef<HTMLElement, PaginationProps>(
-  function Pagination({ size = 'md', className, ...props }, ref) {
+  ({ size = 'md', className, ...props }, ref) => {
     const { root } = paginationVariants({ size });
     const contextValue = useMemo(() => ({ size }), [size]);
 
@@ -73,7 +90,7 @@ export interface PaginationContentProps
 export const PaginationContent = forwardRef<
   HTMLDivElement,
   PaginationContentProps
->(function PaginationContent({ className, size: sizeProp, ...props }, ref) {
+>(({ className, size: sizeProp, ...props }, ref) => {
   const { size: contextSize } = usePaginationContext();
   const { content } = paginationVariants({ size: sizeProp ?? contextSize });
 
@@ -97,10 +114,7 @@ export interface PaginationNextProps
 export const PaginationNext = forwardRef<
   HTMLButtonElement,
   PaginationNextProps
->(function PaginationNext(
-  { className, size, srLabel, asChild, children, type, ...props },
-  ref,
-) {
+>(({ className, size, srLabel, asChild, children, type, ...props }, ref) => {
   const { size: contextSize } = usePaginationContext();
   const Comp = asChild ? Slot : 'button';
 
@@ -140,10 +154,7 @@ export interface PaginationItemProps
 export const PaginationItem = forwardRef<
   HTMLButtonElement,
   PaginationItemProps
->(function PaginationItem(
-  { className, size, selected, asChild, type, ...props },
-  ref,
-) {
+>(({ className, size, selected, asChild, type, ...props }, ref) => {
   const { size: contextSize } = usePaginationContext();
   const Comp = asChild ? Slot : 'button';
 
@@ -173,7 +184,7 @@ export interface PaginationEllipsisProps
 export const PaginationEllipsis = forwardRef<
   HTMLDivElement,
   PaginationEllipsisProps
->(function PaginationEllipsis({ className, size: sizeProp, ...props }, ref) {
+>(({ className, size: sizeProp, ...props }, ref) => {
   const { size: contextSize } = usePaginationContext();
   const { ellipsis } = paginationVariants({ size: sizeProp ?? contextSize });
 
@@ -199,10 +210,7 @@ export interface PaginationPrevProps
 export const PaginationPrev = forwardRef<
   HTMLButtonElement,
   PaginationPrevProps
->(function PaginationPrev(
-  { className, size, srLabel, asChild, children, type, ...props },
-  ref,
-) {
+>(({ className, size, srLabel, asChild, children, type, ...props }, ref) => {
   const { size: contextSize } = usePaginationContext();
   const Comp = asChild ? Slot : 'button';
 

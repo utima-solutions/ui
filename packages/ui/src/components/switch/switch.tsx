@@ -73,10 +73,10 @@ export interface SwitchProps
 }
 
 export const Switch = forwardRef<ComponentRef<typeof Root>, SwitchProps>(
-  function Switch(
+  (
     { className, classNameThumb, size, variant, circle, thumb, ...restProps },
     ref,
-  ) {
+  ) => {
     const { root, thumb: thumbClass } = switchVariants({ size, variant });
 
     return (

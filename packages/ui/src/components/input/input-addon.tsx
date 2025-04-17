@@ -84,7 +84,7 @@ export interface InputAddonRootProps
   hasEnd?: boolean;
 }
 
-const InputAddonRoot = forwardRef<HTMLDivElement, InputAddonRootProps>(
+export const InputAddon = forwardRef<HTMLDivElement, InputAddonRootProps>(
   (
     {
       className,
@@ -124,7 +124,7 @@ export interface InputAddonContentProps
   classNameInput?: string;
 }
 
-const InputAddonContent = forwardRef<HTMLDivElement, InputAddonContentProps>(
+export const InputAddonContent = forwardRef<HTMLDivElement, InputAddonContentProps>(
   ({ className, children, classNameInput, ...props }, ref) => {
     const { size, hasStart, hasEnd, variant } = useInputAddonContext();
     const styles = inputAddonVariants({ size });
@@ -151,7 +151,7 @@ interface InputAddonItemProps extends ComponentPropsWithoutRef<'div'> {
   size?: VariantProps<typeof inputAddonVariants>['size'];
 }
 
-const InputAddonStart = forwardRef<HTMLDivElement, InputAddonItemProps>(
+export const InputAddonStart = forwardRef<HTMLDivElement, InputAddonItemProps>(
   ({ className, size, children, ...props }, ref) => {
     const context = useInputAddonContext();
     const styles = inputAddonVariants({
@@ -172,7 +172,7 @@ const InputAddonStart = forwardRef<HTMLDivElement, InputAddonItemProps>(
   },
 );
 
-const InputAddonEnd = forwardRef<HTMLDivElement, InputAddonItemProps>(
+export const InputAddonEnd = forwardRef<HTMLDivElement, InputAddonItemProps>(
   ({ className, size, children, ...props }, ref) => {
     const context = useInputAddonContext();
     const styles = inputAddonVariants({
@@ -192,10 +192,3 @@ const InputAddonEnd = forwardRef<HTMLDivElement, InputAddonItemProps>(
     );
   },
 );
-
-export const InputAddon = {
-  Content: InputAddonContent,
-  Root: InputAddonRoot,
-  Start: InputAddonStart,
-  End: InputAddonEnd,
-};

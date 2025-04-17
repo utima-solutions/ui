@@ -9,7 +9,7 @@ import {
 import { tv } from 'tailwind-variants';
 
 import { cn } from '../../utils';
-import * as Dialog from '../dialog';
+import { DialogContent } from '../dialog/dialog';
 
 /**
  * Style definition for command components
@@ -53,20 +53,20 @@ export const Command = forwardRef<
 });
 
 export const CommandDialog = forwardRef<
-  ComponentRef<typeof Dialog.Content>,
-  ComponentPropsWithoutRef<typeof Dialog.Content>
+  ComponentRef<typeof DialogContent>,
+  ComponentPropsWithoutRef<typeof DialogContent>
 >(({ className, children, ...restProps }, ref) => {
   const styles = commandVariants();
 
   return (
-    <Dialog.Content
+    <DialogContent
       ref={ref}
       data-uui-command-dialog
       className={cn(styles.dialog(), className)}
       {...restProps}
     >
       <Command className={styles.base()}>{children}</Command>
-    </Dialog.Content>
+    </DialogContent>
   );
 });
 

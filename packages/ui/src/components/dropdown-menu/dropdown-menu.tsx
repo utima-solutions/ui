@@ -9,34 +9,39 @@ import {
 import { cn } from '../../utils';
 import { Kbd } from '../kbd/kbd';
 
-export interface DropdownContentProps
-  extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content> {}
+export const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+export const DropdownMenuGroup = DropdownMenuPrimitive.Group;
+export const DropdownMenuSub = DropdownMenuPrimitive.Sub;
+export const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+export const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
+export const DropdownMenuRoot = DropdownMenuPrimitive.Root;
 
-export const DropdownContent = forwardRef<HTMLDivElement, DropdownContentProps>(
-  function DropdownContent({ className, ...props }, ref) {
-    return (
-      <DropdownMenuPrimitive.Content
-        ref={ref}
-        data-uui-dropdown-content
-        className={cn(
-          'z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
-          className,
-        )}
-        {...props}
-      />
-    );
-  },
-);
+export const DropdownMenuContent = forwardRef<
+  HTMLDivElement,
+  ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
+>(({ className, ...props }, ref) => {
+  return (
+    <DropdownMenuPrimitive.Content
+      ref={ref}
+      data-uui-dropdown-content
+      className={cn(
+        'z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 
-export interface DropdownSubTriggerProps
+export interface DropdownMenuSubTriggerProps
   extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> {
   inset?: boolean;
 }
 
-export const DropdownSubTrigger = forwardRef<
+export const DropdownMenuSubTrigger = forwardRef<
   HTMLDivElement,
-  DropdownSubTriggerProps
->(function DropdownSubTrigger({ className, inset, children, ...props }, ref) {
+  DropdownMenuSubTriggerProps
+>(({ className, inset, children, ...props }, ref) => {
   return (
     <DropdownMenuPrimitive.SubTrigger
       ref={ref}
@@ -54,13 +59,10 @@ export const DropdownSubTrigger = forwardRef<
   );
 });
 
-export interface DropdownSubContentProps
-  extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent> {}
-
-export const DropdownSubContent = forwardRef<
+export const DropdownMenuSubContent = forwardRef<
   HTMLDivElement,
-  DropdownSubContentProps
->(function DropdownSubContent({ className, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent>
+>(({ className, ...props }, ref) => {
   return (
     <DropdownMenuPrimitive.SubContent
       ref={ref}
@@ -74,14 +76,10 @@ export const DropdownSubContent = forwardRef<
   );
 });
 
-export type DropdownSeparatorProps = ComponentPropsWithoutRef<
-  typeof DropdownMenuPrimitive.Separator
->;
-
-export const DropdownSeparator = forwardRef<
+export const DropdownMenuSeparator = forwardRef<
   HTMLDivElement,
-  DropdownSeparatorProps
->(function DropdownSeparator({ className, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+>(({ className, ...props }, ref) => {
   return (
     <DropdownMenuPrimitive.Separator
       ref={ref}
@@ -92,19 +90,16 @@ export const DropdownSeparator = forwardRef<
   );
 });
 
-export interface DropdownRadioItemProps
+export interface DropdownMenuRadioItemProps
   extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem> {
   indicator?: ReactNode;
   classNameIndicator?: string;
 }
 
-export const DropdownRadioItem = forwardRef<
+export const DropdownMenuRadioItem = forwardRef<
   HTMLDivElement,
-  DropdownRadioItemProps
->(function DropdownRadioItem(
-  { className, children, indicator, classNameIndicator, ...props },
-  ref,
-) {
+  DropdownMenuRadioItemProps
+>(({ className, children, indicator, classNameIndicator, ...props }, ref) => {
   return (
     <DropdownMenuPrimitive.RadioItem
       ref={ref}
@@ -130,15 +125,17 @@ export const DropdownRadioItem = forwardRef<
   );
 });
 
-export interface DropdownLabelProps
+export interface DropdownMenuLabelProps
   extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> {
   inset?: boolean;
 }
 
-export const DropdownLabel = forwardRef<HTMLDivElement, DropdownLabelProps>(
-  function DropdownLabel({ className, inset, ...props }, ref) {
-    return (
-      <DropdownMenuPrimitive.Label
+export const DropdownMenuLabel = forwardRef<
+  HTMLDivElement,
+  DropdownMenuLabelProps
+>(({ className, inset, ...props }, ref) => {
+  return (
+    <DropdownMenuPrimitive.Label
         ref={ref}
         data-uui-dropdown-label
         className={cn(
@@ -152,15 +149,17 @@ export const DropdownLabel = forwardRef<HTMLDivElement, DropdownLabelProps>(
   },
 );
 
-export interface DropdownItemProps
+export interface DropdownMenuItemProps
   extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> {
   inset?: boolean;
 }
 
-export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
-  function DropdownItem({ className, children, inset, ...props }, ref) {
-    return (
-      <DropdownMenuPrimitive.Item
+export const DropdownMenuItem = forwardRef<
+  HTMLDivElement,
+  DropdownMenuItemProps
+>(({ className, children, inset, ...props }, ref) => {
+  return (
+    <DropdownMenuPrimitive.Item
         ref={ref}
         data-uui-dropdown-item
         className={cn(
@@ -176,19 +175,16 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(
   },
 );
 
-export interface DropdownCheckboxItemProps
+export interface DropdownMenuCheckboxItemProps
   extends ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem> {
   classNameIndicator?: string;
   indicator?: ReactNode;
 }
 
-export const DropdownCheckboxItem = forwardRef<
+export const DropdownMenuCheckboxItem = forwardRef<
   HTMLDivElement,
-  DropdownCheckboxItemProps
->(function DropdownCheckboxItem(
-  { className, children, classNameIndicator, indicator, ...props },
-  ref,
-) {
+  DropdownMenuCheckboxItemProps
+>(({ className, children, classNameIndicator, indicator, ...props }, ref) => {
   return (
     <DropdownMenuPrimitive.CheckboxItem
       ref={ref}
@@ -215,7 +211,7 @@ export const DropdownCheckboxItem = forwardRef<
   );
 });
 
-export function DropdownShortcut({ children }: { children: ReactNode }) {
+export function DropdownMenuShortcut({ children }: { children: ReactNode }) {
   return (
     <Kbd className='ml-auto' variant='ghost'>
       {children}

@@ -9,13 +9,17 @@ import {
 
 import { cn } from '../../utils';
 
-export interface DialogOverlayProps
-  extends ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay> {}
+export {
+  Root as Dialog,
+  Close as DialogClose,
+  Trigger as DialogTrigger,
+  Portal as DialogPortal,
+} from '@radix-ui/react-dialog';
 
 export const DialogOverlay = forwardRef<
   ComponentRef<typeof DialogPrimitive.Overlay>,
-  DialogOverlayProps
->(function DialogOverlay({ className, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
+>(({ className, ...props }, ref) => {
   return (
     <DialogPrimitive.Overlay
       ref={ref}
@@ -29,13 +33,10 @@ export const DialogOverlay = forwardRef<
   );
 });
 
-export interface DialogContentProps
-  extends ComponentPropsWithoutRef<typeof DialogPrimitive.Content> {}
-
 export const DialogContent = forwardRef<
   ComponentRef<typeof DialogPrimitive.Content>,
-  DialogContentProps
->(function DialogContent({ className, children, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
+>(({ className, children, ...props }, ref) => {
   return (
     <DialogPrimitive.Content
       ref={ref}
@@ -58,9 +59,10 @@ export const DialogContent = forwardRef<
   );
 });
 
-export interface DialogHeaderProps extends HTMLAttributes<HTMLDivElement> {}
-
-export function DialogHeader({ className, ...props }: DialogHeaderProps) {
+export function DialogHeader({
+  className,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-uui-dialog-header
@@ -73,9 +75,10 @@ export function DialogHeader({ className, ...props }: DialogHeaderProps) {
   );
 }
 
-export interface DialogFooterProps extends HTMLAttributes<HTMLDivElement> {}
-
-export function DialogFooter({ className, ...props }: DialogFooterProps) {
+export function DialogFooter({
+  className,
+  ...props
+}: HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       data-uui-dialog-footer
@@ -88,13 +91,10 @@ export function DialogFooter({ className, ...props }: DialogFooterProps) {
   );
 }
 
-export interface DialogTitleProps
-  extends ComponentPropsWithoutRef<typeof DialogPrimitive.Title> {}
-
 export const DialogTitle = forwardRef<
   ComponentRef<typeof DialogPrimitive.Title>,
-  DialogTitleProps
->(function DialogTitle({ className, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Title>
+>(({ className, ...props }, ref) => {
   return (
     <DialogPrimitive.Title
       ref={ref}
@@ -108,13 +108,10 @@ export const DialogTitle = forwardRef<
   );
 });
 
-export interface DialogDescriptionProps
-  extends ComponentPropsWithoutRef<typeof DialogPrimitive.Description> {}
-
 export const DialogDescription = forwardRef<
   ComponentRef<typeof DialogPrimitive.Description>,
-  DialogDescriptionProps
->(function DialogDescription({ className, ...props }, ref) {
+  ComponentPropsWithoutRef<typeof DialogPrimitive.Description>
+>(({ className, ...props }, ref) => {
   return (
     <DialogPrimitive.Description
       ref={ref}

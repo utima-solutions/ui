@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { Toaster as Sonner, toast } from 'sonner';
 
-interface ToasterProps extends ComponentPropsWithoutRef<typeof Sonner> {}
+export interface ToasterProps extends ComponentPropsWithoutRef<typeof Sonner> {}
 
 export function Toaster({ ...props }: ToasterProps) {
   return (

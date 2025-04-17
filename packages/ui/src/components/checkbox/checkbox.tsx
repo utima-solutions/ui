@@ -71,7 +71,7 @@ export interface CheckboxProps
 }
 
 export const Checkbox = forwardRef<ComponentRef<typeof Root>, CheckboxProps>(
-  function Checkbox(
+  (
     {
       className,
       classNameIndicator,
@@ -81,8 +81,8 @@ export const Checkbox = forwardRef<ComponentRef<typeof Root>, CheckboxProps>(
       indicator = <Check strokeWidth={3} />,
       ...restProps
     },
-    ref,
-  ) {
+    ref
+  ) => {
     const { root, indicator: indicatorClass } = checkboxVariants({
       size,
       variant,

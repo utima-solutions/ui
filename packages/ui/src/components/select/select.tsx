@@ -14,14 +14,15 @@ import { selectVariants } from './select.style';
 import { SelectContext, useSelectContext } from './use-select-context';
 import { cn } from '../../utils';
 
+export const SelectGroup = SelectPrimitive.Group;
+export const SelectValue = SelectPrimitive.Value;
+export const SelectPortal = SelectPrimitive.Portal;
+
 export interface SelectRootProps
   extends ComponentPropsWithoutRef<typeof SelectPrimitive.Root>,
     VariantProps<typeof selectVariants> {}
 
-export const SelectRoot = memo(function SelectRoot({
-  size = 'md',
-  ...props
-}: SelectRootProps) {
+export const SelectRoot = memo(({ size = 'md', ...props }: SelectRootProps) => {
   const contextValue = useMemo(() => ({ size }), [size]);
 
   return (

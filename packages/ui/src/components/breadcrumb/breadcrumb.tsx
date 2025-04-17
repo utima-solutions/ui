@@ -3,35 +3,28 @@ import { type ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import { cn } from '../../utils';
 
-export interface BreadcrumbProps extends ComponentPropsWithoutRef<'nav'> {}
-
-export const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
-  function Breadcrumb({ className, ...restProps }, ref) {
-    return (
-      <nav
-        ref={ref}
-        data-uui-breadcrumb
-        aria-label='breadcrumb'
-        className={cn(
-          'inline-flex items-center gap-1.5 text-sm text-muted-foreground',
-          className,
-        )}
-        {...restProps}
-      />
-    );
-  },
-);
-
-export interface BreadcrumbSeparatorProps
-  extends ComponentPropsWithoutRef<'span'> {}
+export const Breadcrumb = forwardRef<
+  HTMLElement,
+  ComponentPropsWithoutRef<'nav'>
+>(({ className, ...restProps }, ref) => {
+  return (
+    <nav
+      ref={ref}
+      data-uui-breadcrumb
+      aria-label='breadcrumb'
+      className={cn(
+        'inline-flex items-center gap-1.5 text-sm text-muted-foreground',
+        className,
+      )}
+      {...restProps}
+    />
+  );
+});
 
 export const BreadcrumbSeparator = forwardRef<
   HTMLSpanElement,
-  BreadcrumbSeparatorProps
->(function BreadcrumbSeparator(
-  { className, children = <ChevronRight />, ...restProps },
-  ref,
-) {
+  ComponentPropsWithoutRef<'span'>
+>(({ className, children = <ChevronRight />, ...restProps }, ref) => {
   return (
     <span
       ref={ref}
@@ -46,16 +39,10 @@ export const BreadcrumbSeparator = forwardRef<
   );
 });
 
-export interface BreadcrumbEllipsisProps
-  extends ComponentPropsWithoutRef<'span'> {}
-
 export const BreadcrumbEllipsis = forwardRef<
   HTMLSpanElement,
-  BreadcrumbEllipsisProps
->(function BreadcrumbEllipsis(
-  { className, children = <MoreHorizontal />, ...restProps },
-  ref,
-) {
+  ComponentPropsWithoutRef<'span'>
+>(({ className, children = <MoreHorizontal />, ...restProps }, ref) => {
   return (
     <span
       ref={ref}
@@ -73,46 +60,42 @@ export const BreadcrumbEllipsis = forwardRef<
   );
 });
 
-export interface BreadcrumbPageProps extends ComponentPropsWithoutRef<'span'> {}
+export const BreadcrumbPage = forwardRef<
+  HTMLSpanElement,
+  ComponentPropsWithoutRef<'span'>
+>(({ className, ...restProps }, ref) => {
+  return (
+    <span
+      ref={ref}
+      data-uui-breadcrumb-page
+      aria-current='page'
+      className={cn('font-medium text-foreground', className)}
+      {...restProps}
+    />
+  );
+});
 
-export const BreadcrumbPage = forwardRef<HTMLSpanElement, BreadcrumbPageProps>(
-  function BreadcrumbPage({ className, ...restProps }, ref) {
-    return (
-      <span
-        ref={ref}
-        data-uui-breadcrumb-page
-        aria-current='page'
-        className={cn('font-medium text-foreground', className)}
-        {...restProps}
-      />
-    );
-  },
-);
-
-export interface BreadcrumbListProps extends ComponentPropsWithoutRef<'ol'> {}
-
-export const BreadcrumbList = forwardRef<HTMLOListElement, BreadcrumbListProps>(
-  function BreadcrumbList({ className, ...restProps }, ref) {
-    return (
-      <ol
-        ref={ref}
-        data-uui-breadcrumb-list
-        className={cn(
-          'flex flex-wrap items-center gap-1 break-words text-sm text-muted-fg sm:gap-1.5',
-          className,
-        )}
-        {...restProps}
-      />
-    );
-  },
-);
-
-export interface BreadcrumbLinkProps extends ComponentPropsWithoutRef<'a'> {}
+export const BreadcrumbList = forwardRef<
+  HTMLOListElement,
+  ComponentPropsWithoutRef<'ol'>
+>(({ className, ...restProps }, ref) => {
+  return (
+    <ol
+      ref={ref}
+      data-uui-breadcrumb-list
+      className={cn(
+        'flex flex-wrap items-center gap-1 break-words text-sm text-muted-fg sm:gap-1.5',
+        className,
+      )}
+      {...restProps}
+    />
+  );
+});
 
 export const BreadcrumbLink = forwardRef<
   HTMLAnchorElement,
-  BreadcrumbLinkProps
->(function BreadcrumbLink({ className, ...restProps }, ref) {
+  ComponentPropsWithoutRef<'a'>
+>(({ className, ...restProps }, ref) => {
   return (
     <a
       ref={ref}
@@ -126,17 +109,16 @@ export const BreadcrumbLink = forwardRef<
   );
 });
 
-export interface BreadcrumbItemProps extends ComponentPropsWithoutRef<'li'> {}
-
-export const BreadcrumbItem = forwardRef<HTMLLIElement, BreadcrumbItemProps>(
-  function BreadcrumbItem({ className, ...restProps }, ref) {
-    return (
-      <li
-        ref={ref}
-        data-uui-breadcrumb-item
-        className={cn('inline-flex items-center gap-1.5', className)}
-        {...restProps}
-      />
-    );
-  },
-);
+export const BreadcrumbItem = forwardRef<
+  HTMLLIElement,
+  ComponentPropsWithoutRef<'li'>
+>(({ className, ...restProps }, ref) => {
+  return (
+    <li
+      ref={ref}
+      data-uui-breadcrumb-item
+      className={cn('inline-flex items-center gap-1.5', className)}
+      {...restProps}
+    />
+  );
+});

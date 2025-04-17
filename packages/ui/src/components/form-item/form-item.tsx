@@ -10,10 +10,9 @@ import {
 import { tv, type VariantProps } from 'tailwind-variants';
 
 import { cn } from '../../utils';
-import * as LabelPrimitive from '../label/label';
-import * as Tooltip from '../tooltip';
+import { Label } from '../label/label';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../tooltip/tooltip';
 
-// eslint-disable-next-line tailwindcss/no-custom-classname
 export const formItemVariants = tv({
   slots: {
     root: 'flex gap-2',
@@ -202,7 +201,7 @@ export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
         className={cn(styles.label(), className)}
         {...props}
       >
-        <LabelPrimitive.Label
+        <Label
           size={size}
           htmlFor={htmlFor}
           data-uui-form-field-label
@@ -226,9 +225,9 @@ export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
             </span>
           )}
           {tooltip && (
-            <Tooltip.Provider>
-              <Tooltip.Root>
-                <Tooltip.Trigger asChild>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
                   {helpIcon || (
                     <HelpCircle
                       data-uui-form-field-label-tooltip
@@ -238,12 +237,12 @@ export const FormItemLabel = forwardRef<HTMLDivElement, FormItemLabelProps>(
                       )}
                     />
                   )}
-                </Tooltip.Trigger>
-                <Tooltip.Content>{tooltip}</Tooltip.Content>
-              </Tooltip.Root>
-            </Tooltip.Provider>
+                </TooltipTrigger>
+                <TooltipContent>{tooltip}</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
-        </LabelPrimitive.Label>
+        </Label>
       </div>
     );
   },

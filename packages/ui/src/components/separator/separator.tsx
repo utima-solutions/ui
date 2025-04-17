@@ -86,15 +86,13 @@ export interface SeparatorProps
     VariantProps<typeof separatorVariants> {}
 
 export const Separator = forwardRef<ComponentRef<typeof Root>, SeparatorProps>(
-  function Separator({ className, orientation, size, ...restProps }, ref) {
-    return (
-      <Root
-        ref={ref}
-        data-uui-separator
-        orientation={orientation}
-        className={cn(separatorVariants({ orientation, size }), className)}
-        {...restProps}
-      />
-    );
-  },
+  ({ className, orientation, size, ...restProps }, ref) => (
+    <Root
+      ref={ref}
+      data-uui-separator
+      orientation={orientation}
+      className={cn(separatorVariants({ orientation, size }), className)}
+      {...restProps}
+    />
+  ),
 );
