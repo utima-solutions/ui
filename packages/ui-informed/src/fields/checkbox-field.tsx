@@ -1,19 +1,32 @@
-import { Switch, FormItem, type SwitchProps } from '@utima/ui';
+import {
+  Checkbox,
+  FormItem,
+  FormItemContent,
+  FormItemDescription,
+  FormItemError,
+  FormItemHelpers,
+  FormItemHelperText,
+  FormItemLabel,
+  type CheckboxProps,
+} from '@utima/ui';
 
 import {
+  type FieldProps,
+  type FieldDuplicateProps,
   FormField,
-  type ControlProps,
-  type ControlDuplicateProps,
 } from '../form-field/form-field';
 
 // TODO handlers for rendering readonly, etc.
-export interface SwitchControlProps
-  extends ControlProps,
-    Omit<SwitchProps, ControlDuplicateProps> {}
+export interface CheckboxFieldProps
+  extends FieldProps,
+    Omit<CheckboxProps, FieldDuplicateProps> {}
 
-export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
+export function CheckboxField({
+  fieldType,
+  ...restProps
+}: CheckboxFieldProps) {
   return (
-    <FormField<SwitchControlProps>
+    <FormField<CheckboxFieldProps>
       fieldType='checkbox'
       render={({
         id,
@@ -35,19 +48,19 @@ export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
         } = userProps;
 
         return (
-          <FormItem.Root>
-            <FormItem.Label required={required} tooltip={tooltip} htmlFor={id}>
+          <FormItem>
+            <FormItemLabel required={required} tooltip={tooltip} htmlFor={id}>
               {label}
-            </FormItem.Label>
-            <FormItem.Content>
-              <Switch
+            </FormItemLabel>
+            <FormItemContent>
+              <Checkbox
                 id={id}
                 ref={ref}
-                type='button'
+                type={type}
                 required={!!required}
                 value={fieldState.value as string}
                 checked={fieldState.value as boolean}
-                onCheckedChange={value => {
+                onCheckedChange={(value) => {
                   userProps?.onCheckedChange?.(value);
                   fieldApi.setTouched(true);
                   fieldApi.setValue(value);
@@ -56,14 +69,14 @@ export function SwitchControl({ fieldType, ...restProps }: SwitchControlProps) {
                 {...restUserProps}
               />
               {hasHelpers && (
-                <FormItem.Helpers>
-                  <FormItem.Description>{description}</FormItem.Description>
-                  <FormItem.HelperText>{helperText}</FormItem.HelperText>
-                </FormItem.Helpers>
+                <FormItemHelpers>
+                  <FormItemDescription>{description}</FormItemDescription>
+                  <FormItemHelperText>{helperText}</FormItemHelperText>
+                </FormItemHelpers>
               )}
-              <FormItem.Error>{error}</FormItem.Error>
-            </FormItem.Content>
-          </FormItem.Root>
+              <FormItemError>{error}</FormItemError>
+            </FormItemContent>
+          </FormItem>
         );
       }}
       {...restProps}

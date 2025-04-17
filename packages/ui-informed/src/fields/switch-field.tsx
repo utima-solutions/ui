@@ -1,22 +1,29 @@
-import { Checkbox, FormItem, type CheckboxProps } from '@utima/ui';
+import {
+  Switch,
+  FormItem,
+  type SwitchProps,
+  FormItemContent,
+  FormItemDescription,
+  FormItemError,
+  FormItemHelpers,
+  FormItemHelperText,
+  FormItemLabel,
+} from '@utima/ui';
 
 import {
-  type ControlProps,
-  type ControlDuplicateProps,
   FormField,
+  type FieldProps,
+  type FieldDuplicateProps,
 } from '../form-field/form-field';
 
 // TODO handlers for rendering readonly, etc.
-export interface CheckboxControlProps
-  extends ControlProps,
-    Omit<CheckboxProps, ControlDuplicateProps> {}
+export interface SwitchFieldProps
+  extends FieldProps,
+    Omit<SwitchProps, FieldDuplicateProps> {}
 
-export function CheckboxControl({
-  fieldType,
-  ...restProps
-}: CheckboxControlProps) {
+export function SwitchField({ fieldType, ...restProps }: SwitchFieldProps) {
   return (
-    <FormField<CheckboxControlProps>
+    <FormField<SwitchFieldProps>
       fieldType='checkbox'
       render={({
         id,
@@ -38,19 +45,19 @@ export function CheckboxControl({
         } = userProps;
 
         return (
-          <FormItem.Root>
-            <FormItem.Label required={required} tooltip={tooltip} htmlFor={id}>
+          <FormItem>
+            <FormItemLabel required={required} tooltip={tooltip} htmlFor={id}>
               {label}
-            </FormItem.Label>
-            <FormItem.Content>
-              <Checkbox
+            </FormItemLabel>
+            <FormItemContent>
+              <Switch
                 id={id}
                 ref={ref}
-                type={type}
+                type='button'
                 required={!!required}
                 value={fieldState.value as string}
                 checked={fieldState.value as boolean}
-                onCheckedChange={value => {
+                onCheckedChange={(value) => {
                   userProps?.onCheckedChange?.(value);
                   fieldApi.setTouched(true);
                   fieldApi.setValue(value);
@@ -59,14 +66,14 @@ export function CheckboxControl({
                 {...restUserProps}
               />
               {hasHelpers && (
-                <FormItem.Helpers>
-                  <FormItem.Description>{description}</FormItem.Description>
-                  <FormItem.HelperText>{helperText}</FormItem.HelperText>
-                </FormItem.Helpers>
+                <FormItemHelpers>
+                  <FormItemDescription>{description}</FormItemDescription>
+                  <FormItemHelperText>{helperText}</FormItemHelperText>
+                </FormItemHelpers>
               )}
-              <FormItem.Error>{error}</FormItem.Error>
-            </FormItem.Content>
-          </FormItem.Root>
+              <FormItemError>{error}</FormItemError>
+            </FormItemContent>
+          </FormItem>
         );
       }}
       {...restProps}

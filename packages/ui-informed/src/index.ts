@@ -1,15 +1,15 @@
 /**
- * Controls
+ * Form fields
  */
-export * from './controls/input-control';
-export * from './controls/switch-control';
-export * from './controls/select-control';
-export * from './controls/textarea-control';
-export * from './controls/checkbox-control';
-export * from './controls/slider-control';
+export * from './fields/input-field';
+export * from './fields/switch-field';
+export * from './fields/select-field';
+export * from './fields/textarea-field';
+export * from './fields/checkbox-field';
+export * from './fields/slider-field';
 
 /**
- * FormControl
+ * Form field
  */
 export * from './form-field/form-field';
 

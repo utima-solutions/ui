@@ -39,7 +39,7 @@ export default function Home() {
     {
       name: 'textarea',
       label: 'Textarea',
-      control: 'textarea',
+      field: 'textarea',
       parser: (value: any) => (value ? value.toUpperCase() : null) as any,
       uiProps: {
         allowEmptyString: true,
@@ -48,17 +48,17 @@ export default function Home() {
     {
       name: 'number',
       label: 'Number',
-      control: 'number',
+      field: 'number',
     },
     {
       name: 'switch',
       label: 'Switch',
-      control: 'switch',
+      field: 'switch',
     },
     {
       name: 'select',
       label: 'Select',
-      control: 'select',
+      field: 'select',
       options: {
         a: 'A',
         b: 'B',
@@ -82,12 +82,12 @@ export default function Home() {
     {
       name: 'checkbox',
       label: 'Checkbox',
-      control: 'checkbox',
+      field: 'checkbox',
     },
     {
       name: 'select',
       label: 'Select',
-      control: 'select',
+      field: 'select',
       options: {
         a: 'A',
         b: 'B',
@@ -97,14 +97,14 @@ export default function Home() {
     {
       name: 'volume',
       label: 'Volume',
-      control: 'slider',
+      field: 'slider',
       defaultValue: 50,
       helperText: 'Adjust the volume level',
     },
     {
       name: 'range',
       label: 'Price Range',
-      control: 'slider',
+      field: 'slider',
       defaultValue: [20, 80],
       helperText: 'Select min and max price',
       uiProps: {
@@ -116,7 +116,7 @@ export default function Home() {
     {
       name: 'distribution',
       label: 'Resource Distribution',
-      control: 'slider',
+      field: 'slider',
       defaultValue: [10, 30, 60],
       helperText: 'Adjust resource allocation',
       uiProps: {

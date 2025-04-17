@@ -1,43 +1,43 @@
-import { Select } from '@utima/ui';
+import { SelectItem } from '@utima/ui';
 import { type RelevantParams, Input as InformedInput } from 'informed';
 import type { ComponentType, ReactNode } from 'react';
 
-import { CheckboxControl } from '../controls/checkbox-control';
-import { InputControl } from '../controls/input-control';
-import { SelectControl } from '../controls/select-control';
-import { SliderControl } from '../controls/slider-control';
-import { SwitchControl } from '../controls/switch-control';
-import { TextareaControl } from '../controls/textarea-control';
+import { CheckboxField } from '../fields/checkbox-field';
+import { InputField } from '../fields/input-field';
+import { SelectField } from '../fields/select-field';
+import { SliderField } from '../fields/slider-field';
+import { SwitchField } from '../fields/switch-field';
+import { TextareaField } from '../fields/textarea-field';
 import type { FieldType } from '../form-field/form-field';
 
 /**
  * Default form schema adapter, that maps field types to components.
  */
 export const defaultFormSchemaAdapter: FormSchemaAdapter = {
-  text: InputControl,
-  number: props => <InputControl {...props} fieldType='number' />,
-  textarea: TextareaControl,
-  checkbox: CheckboxControl,
-  switch: SwitchControl,
-  hidden: props => <InformedInput {...props} type='hidden' />,
-  select: props => {
+  text: InputField,
+  number: (props) => <InputField {...props} fieldType='number' />,
+  textarea: TextareaField,
+  checkbox: CheckboxField,
+  switch: SwitchField,
+  hidden: (props) => <InformedInput {...props} type='hidden' />,
+  select: (props) => {
     const { options, renderOption, ...restProps } = props;
 
     return (
-      <SelectControl {...restProps}>
+      <SelectField {...restProps}>
         {Object.entries(options!).map(([value, label], index) =>
           renderOption ? (
             renderOption({ value, label, index })
           ) : (
-            <Select.Item key={value} value={value}>
+            <SelectItem key={value} value={value}>
               {label}
-            </Select.Item>
+            </SelectItem>
           ),
         )}
-      </SelectControl>
+      </SelectField>
     );
   },
-  slider: SliderControl,
+  slider: SliderField,
 };
 
 export interface FormSchemaAdapter {
@@ -63,9 +63,9 @@ export interface FormSchemaFieldDef {
   options?: Record<string, string>;
 
   /**
-   * You can override default control for given type, from the adapter.
+   * You can override default field component for given type, from the adapter.
    */
-  control?: keyof FormSchemaAdapter;
+  field?: keyof FormSchemaAdapter;
 
   /**
    * Override given field UI component.

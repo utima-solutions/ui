@@ -1,4 +1,10 @@
-import { Portal, Resizable, cn } from '@utima/ui';
+import {
+  Portal,
+  ResizableGroup,
+  ResizableHandle,
+  ResizablePanel,
+  cn,
+} from '@utima/ui';
 import { useFormState } from 'informed';
 import { ChevronDown } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -94,7 +100,7 @@ export function Devtools({ className }: DevtoolsProps) {
   return (
     <div className={cn(visible && 'pb-[500px]')}>
       <DevtoolsTrigger
-        onClick={() => setVisible(v => !v)}
+        onClick={() => setVisible((v) => !v)}
         className={className}
       />
       {visible && (
@@ -165,13 +171,13 @@ export function Devtools({ className }: DevtoolsProps) {
               </div>
             </header>
 
-            <Resizable.Group
+            <ResizableGroup
               storage={sessionStorage}
               autoSaveId='utima_ui_informed_devtools'
               direction='horizontal'
               className='grid grid-cols-2'
             >
-              <Resizable.Panel>
+              <ResizablePanel>
                 <div
                   className='overflow-y-auto text-sm'
                   style={{ colorScheme: 'dark', height: height - 48 }}
@@ -183,13 +189,13 @@ export function Devtools({ className }: DevtoolsProps) {
                     <JSONTree hideRoot data={formState} theme={theme} />
                   </div>
                 </div>
-              </Resizable.Panel>
-              <Resizable.Handle
+              </ResizablePanel>
+              <ResizableHandle
                 withHandle
                 className='bg-zinc-600'
                 classNameHandle='bg-zinc-600 border-zinc-700'
               />
-              <Resizable.Panel>
+              <ResizablePanel>
                 <div
                   className='overflow-y-auto text-sm'
                   style={{ colorScheme: 'dark', height: height - 48 }}
@@ -206,8 +212,8 @@ export function Devtools({ className }: DevtoolsProps) {
                     />
                   </div>
                 </div>
-              </Resizable.Panel>
-            </Resizable.Group>
+              </ResizablePanel>
+            </ResizableGroup>
           </div>
         </Portal>
       )}

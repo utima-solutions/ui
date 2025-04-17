@@ -18,11 +18,11 @@ export const SelectGroup = SelectPrimitive.Group;
 export const SelectValue = SelectPrimitive.Value;
 export const SelectPortal = SelectPrimitive.Portal;
 
-export interface SelectRootProps
+export interface SelectProps
   extends ComponentPropsWithoutRef<typeof SelectPrimitive.Root>,
     VariantProps<typeof selectVariants> {}
 
-export const SelectRoot = memo(({ size = 'md', ...props }: SelectRootProps) => {
+export const Select = memo(({ size = 'md', ...props }: SelectProps) => {
   const contextValue = useMemo(() => ({ size }), [size]);
 
   return (

@@ -20,52 +20,52 @@ export function FormSchemaFields({ schema }: FormSchemaFieldsProps) {
     return null;
   }
 
-  return schema.$fields.map((formField, index) => {
+  return schema.$fields.map((item, index) => {
     // Handle React nodes directly
-    if (isValidElement(formField)) {
-      return cloneElement(formField, { key: `node-${index}` });
+    if (isValidElement(item)) {
+      return cloneElement(item, { key: `node-${index}` });
     }
 
     // We already know it's not a React node, so we can safely cast it to FormSchemaFieldsDef
-    const field = formField as Exclude<FormSchemaFieldsDef, ReactNode>;
+    const formField = item as Exclude<FormSchemaFieldsDef, ReactNode>;
 
     // Handle scope
-    if ('$scope' in field && field.$scope) {
+    if ('$scope' in formField && formField.$scope) {
       return (
         <Scope
           key={`scope-${index.toString()}`}
-          scope={field.$scope.$scopeName}
+          scope={formField.$scope.$scopeName}
         >
-          <FormSchemaFields schema={field.$scope} />
+          <FormSchemaFields schema={formField.$scope} />
         </Scope>
       );
     }
 
     // Handle relevant
-    if ('$relevant' in field && field.$relevant) {
+    if ('$relevant' in formField && formField.$relevant) {
       return (
         <Relevant
           key={`relevant-${index.toString()}`}
-          when={field.$relevant.$when}
+          when={formField.$relevant.$when}
         >
-          <FormSchemaFields schema={field.$relevant} />
+          <FormSchemaFields schema={formField.$relevant} />
         </Relevant>
       );
     }
 
     // Handle visible
-    if ('visible' in field && field.visible === false) {
+    if ('visible' in formField && formField.visible === false) {
       return null;
     }
 
-    if ('name' in field && field.name) {
+    if ('name' in formField && formField.name) {
       // Destructure props with defaults
-      const { uiProps, control, visible, fieldType, render, ...fieldProps } =
-        field;
+      const { uiProps, field, visible, fieldType, render, ...fieldProps } =
+        formField;
 
-      const key = `field-${field.name}-${index.toString()}`;
+      const key = `field-${formField.name}-${index.toString()}`;
       const FieldComponent = (adapter as any)[
-        control ?? fieldType ?? 'text'
+        formField.field ?? formField.fieldType ?? 'text'
       ] as any;
 
       // Handle custom render function
@@ -87,7 +87,7 @@ export function FormSchemaFields({ schema }: FormSchemaFieldsProps) {
       );
     }
 
-    console.error('Invalid schema field:', formField);
+    console.error('Invalid schema field:', item);
 
     return null;
   });

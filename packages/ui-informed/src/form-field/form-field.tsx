@@ -4,7 +4,7 @@ import type { SetOptional } from 'type-fest';
 import type { ZodType } from 'zod';
 
 import { useFormContext } from '../form/use-form-context';
-import type { FieldProps } from '../types';
+import type { InformedFieldProps } from '../types';
 import { getFieldZodObject, zodResolver } from '../zodUtils';
 
 /**
@@ -15,11 +15,11 @@ import { getFieldZodObject, zodResolver } from '../zodUtils';
 export type FieldType = 'text' | 'number' | 'textArea' | 'select' | 'checkbox';
 
 /**
- * Common props used on controls at multipla places, these
+ * Common props used on fields at multipla places, these
  * are usually passed down from the FormField component and
  * render function.
  */
-export interface ControlPropsCommon {
+export interface FieldPropsCommon {
   readOnly?: boolean;
   showOptional?: boolean;
   showRequired?: boolean;
@@ -33,18 +33,18 @@ export interface ControlPropsCommon {
 }
 
 /**
- * Props for custom form control components. These
+ * Props for custom form field components. These
  * are used to wrap form fields and provide additional
  * information like label, description, tooltip, etc.
  */
-export interface ControlProps
-  extends ControlPropsCommon,
-    Omit<SetOptional<FieldProps, 'id'>, 'type'> {
+export interface FieldProps
+  extends FieldPropsCommon,
+    Omit<SetOptional<InformedFieldProps, 'id'>, 'type'> {
   zodSchema?: ZodType;
   fieldType?: FieldType;
 }
 
-export type ControlDuplicateProps =
+export type FieldDuplicateProps =
   | 'name'
   | 'id'
   | 'required'
@@ -63,7 +63,7 @@ export type ControlDuplicateProps =
  * Some of the values are also available in the fieldState,
  * however we duplicate here for convenience.
  */
-export type FormFieldRender<T extends ControlProps> = (
+export type FormFieldRender<T extends FieldProps> = (
   params: {
     id: string;
     error?: string;
@@ -80,7 +80,7 @@ export type FormFieldRender<T extends ControlProps> = (
  * Currently we only add render function so users can
  * connect it to the informed.
  */
-export interface FormFieldProps<T extends ControlProps> extends ControlProps {
+export interface FormFieldProps<T extends FieldProps> extends FieldProps {
   render: FormFieldRender<T>;
 }
 
@@ -88,7 +88,7 @@ export interface FormFieldProps<T extends ControlProps> extends ControlProps {
  * Base form field component that is used to wrap form items
  * and hook them into informed APIs.
  */
-export function FormField<T extends ControlProps>({
+export function FormField<T extends FieldProps>({
   name,
   id: userId,
   render,

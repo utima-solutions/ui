@@ -2,7 +2,7 @@
  * The informed types are not up to date so we kind of need to soply our own.
  * All is based on https://github.com/teslamotors/informed/blob/master/index.d.ts
  *
- * FieldProps are for example missing mask, clean definitions and others.
+ * InformedFieldProps are for example missing mask, clean definitions and others.
  *
  * We could probably incorporate this into actual PR into informed if the guys
  * are interested when the types are completed.
@@ -10,7 +10,7 @@
 
 import type { FieldState, FormController, RelevantParams } from 'informed';
 
-export interface FieldProps {
+export interface InformedFieldProps {
   id: string;
   name: string;
   type?: string;
